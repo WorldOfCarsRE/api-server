@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "libamf": "^1.4.1"
+    "express": "^4.17.3",
+    "libamf": "^1.4.1",
+    "xmlbuilder2": "^3.0.2"
   }
 }
