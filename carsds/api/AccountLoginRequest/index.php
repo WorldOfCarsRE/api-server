@@ -1,7 +1,7 @@
 <?php
 // This API requires Guzzle.
 // You can install Guzzle using Composer.
-require '../../../vendor/autoload.php';
+require '../vendor/autoload.php';
 
 if (!isset($_GET['username']) || !isset($_GET['password'])) {
     $message = 'Invalid parameters.';
