@@ -9,6 +9,7 @@ const Racecar = require('./racecar/Racecar');
 const {create} = require('xmlbuilder2');
 
 libamf.Service.RequireRegistration = false;
+libamf.Server.DisableDefaultHome = true;
 
 libamf.registerClassAlias('com.disney.cars.domain.catalog.Item', CatalogItem);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.racing.RaceSeries', CatalogItemRaceSeries);
@@ -93,7 +94,7 @@ server.registerService(raceCarService);
 server.registerService(playerService);
 
 server.app.get('/', (req, res) => {
-    res.send('World of Cars web API service.')
+    res.send('World of Cars API service.')
 })
 
 server.app.get('/carsds/api/WhoAmIRequest', (req, res) => {
