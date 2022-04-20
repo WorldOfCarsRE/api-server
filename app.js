@@ -6,6 +6,8 @@ const CatalogItemWorldZone = require('./catalog/CatalogItemWorldZone')
 
 const Racecar = require('./racecar/Racecar');
 
+const {create} = require('xmlbuilder2');
+
 libamf.Service.RequireRegistration = false;
 
 libamf.registerClassAlias('com.disney.cars.domain.catalog.Item', CatalogItem);
@@ -89,6 +91,45 @@ const playerService = new PlayerService();
 server.registerService(catalogService);
 server.registerService(raceCarService);
 server.registerService(playerService);
+
+server.app.get('/', (req, res) => {
+    res.send('World of Cars web API service.')
+})
+
+server.app.get('/carsds/api/WhoAmIRequest', (req, res) => {
+    res.send('');
+})
+
+server.app.get('/carsds/api/AccountLoginRequest', (req, res) => {
+    const root = create().ele('AccountLoginResponse');
+    const item = root.ele('success');
+    item.txt('true');
+
+    const xml = root.end({prettyPrint: true});
+    res.send(xml);
+})
+
+server.app.get('/carsds/api/GameEntranceRequest', (req, res) => {
+    const root = create().ele('GameEntranceRequestResponse');
+    const item = root.ele('success');
+    item.txt('true');
+
+    const queue = root.ele('queue');
+    const canEnter = queue.ele('can_enter_game');
+      canEnter.txt('true');
+
+    const xml = root.end({prettyPrint: true});
+    res.send(xml);
+})
+
+server.app.get('/carsds/api/GenerateTokenRequest', (req, res) => {
+    const root = create().ele('GenerateTokenRequestResponse');
+    const item = root.ele('success');
+    item.txt('true');
+
+    const xml = root.end({prettyPrint: true});
+    res.send(xml);
+})
 
 server.listen(8013, () => {
     console.log('Listening on port 8013');
