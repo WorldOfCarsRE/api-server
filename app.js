@@ -98,7 +98,27 @@ server.app.get('/', (req, res) => {
 })
 
 server.app.get('/carsds/api/WhoAmIRequest', (req, res) => {
-    res.send('');
+    const root = create().ele('WhoAmIResponse');
+
+    const item = root.ele('success');
+    item.txt('true');
+
+    const status = root.ele('status');
+    status.txt('logged_in_player');
+
+    account = root.ele('account', {'account_id': '100000002'})
+    account.ele('first_name');
+    account.ele('dname');
+    account.ele('age').txt(0);
+    account.ele('touAccepted').txt('basic');
+    account.ele('access').txt('true');
+    account.ele('speed_chat_prompt').txt('false');
+
+    root.ele('userTestAccessAllowed').txt('false');
+    root.ele('testUser').txt('false');
+
+    const xml = root.end({prettyPrint: true});
+    res.send(xml);
 })
 
 server.app.get('/carsds/api/AccountLoginRequest', (req, res) => {
@@ -117,7 +137,7 @@ server.app.get('/carsds/api/GameEntranceRequest', (req, res) => {
 
     const queue = root.ele('queue');
     const canEnter = queue.ele('can_enter_game');
-      canEnter.txt('true');
+    canEnter.txt('true');
 
     const xml = root.end({prettyPrint: true});
     res.send(xml);
