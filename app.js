@@ -125,8 +125,12 @@ server.app.get('/carsds/api/GameEntranceRequest', (req, res) => {
 
 server.app.get('/carsds/api/GenerateTokenRequest', (req, res) => {
     const root = create().ele('GenerateTokenRequestResponse');
+
     const item = root.ele('success');
     item.txt('true');
+
+    const token = root.ele('token')
+    token.txt('developer')
 
     const xml = root.end({prettyPrint: true});
     res.send(xml);
