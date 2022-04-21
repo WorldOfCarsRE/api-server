@@ -30,6 +30,10 @@ class PlayerService extends libamf.Service {
         console.log('getRuleStates: ', playerId + ' ' + __ + ' ' + tutorialRuleId);
 
         const resp = new ArrayCollection();
+
+        // Having a empty array means autoLogin is true.
+        resp.push(1);
+
         return resp;
     }
 }

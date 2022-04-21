@@ -1,5 +1,6 @@
 class Racecar {
     constructor() {
+        this.playerId = 0;
     }
 }
 
