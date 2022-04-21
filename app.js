@@ -3,6 +3,7 @@ const ArrayCollection = require('libamf/src/amf/flash/flex/ArrayCollection');
 const CatalogItem = require('./catalog/CatalogItem');
 const CatalogItemRaceSeries = require('./catalog/CatalogItemRaceSeries');
 const CatalogItemWorldZone = require('./catalog/CatalogItemWorldZone')
+var cors = require('cors')
 
 const Racecar = require('./racecar/Racecar');
 
@@ -95,6 +96,9 @@ const playerService = new PlayerService();
 
 server.registerService(catalogService);
 server.registerService(raceCarService);
+
+server.app.use(cors())
+
 server.registerService(playerService);
 
 server.app.get('/', (req, res) => {
