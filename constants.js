@@ -1,6 +1,7 @@
 const CatalogItemPaint = require('./catalog/CatalogItemPaint');
 const CatalogItemChassis = require('./catalog/CatalogItemChassis');
 const CatalogItemNPC = require('./catalog/CatalogItemNPC');
+const CatalogItemWorldZone = require('./catalog/CatalogItemWorldZone');
 
 var clientData = {};
 
@@ -55,13 +56,13 @@ clientData[20207] = {
 };
 
 clientData[15002] = {
-    'name': '?',
-    'classObj': new CatalogItemNPC()
+    'name': 'FillmoresFields',
+    'classObj': new CatalogItemWorldZone()
 };
 
 clientData[15003] = {
-    'name': '?',
-    'classObj': new CatalogItemNPC()
+    'name': 'RedhoodValley',
+    'classObj': new CatalogItemWorldZone()
 };
 
 clientData[31010] = {
@@ -70,8 +71,8 @@ clientData[31010] = {
 };
 
 clientData[15006] = {
-    'name': '?',
-    'classObj': new CatalogItemChassis()
+    'name': 'WillysButte',
+    'classObj': new CatalogItemWorldZone()
 };
 
 clientData[20209] = {
