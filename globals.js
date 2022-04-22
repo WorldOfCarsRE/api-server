@@ -1,0 +1,48 @@
+global.libamf = require('libamf');
+
+global.CatalogItem = require('./catalog/CatalogItem');
+global.CatalogItemRaceSeries = require('./catalog/CatalogItemRaceSeries');
+global.CatalogItemWorldZone = require('./catalog/CatalogItemWorldZone');
+global.CatalogItemPaint = require('./catalog/CatalogItemPaint');
+global.CatalogItemChassis = require('./catalog/CatalogItemChassis');
+
+var cors = require('cors')
+
+global.Racecar = require('./racecar/Racecar');
+
+_create = require('xmlbuilder2');
+global.create = _create.create;
+
+global.ArrayCollection = require('libamf/src/amf/flash/flex/ArrayCollection');
+
+libamf.Service.RequireRegistration = false;
+libamf.Server.DisableDefaultHome = true;
+
+libamf.registerClassAlias('com.disney.cars.domain.catalog.Item', CatalogItem);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.racing.RaceSeries', CatalogItemRaceSeries);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.world.WorldZone', CatalogItemWorldZone)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Paint', CatalogItemPaint)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Chassis', CatalogItemChassis);
+
+libamf.registerClassAlias('com.disney.cars.domain.racecar.Racecar', Racecar);
+
+global.server = new libamf.Server({
+    path: '/carsds/messagebroker/amf'
+});
+
+let CatalogService = require('./services/CatalogService');
+let PlayerService = require('./services/PlayerService');
+let RaceCarService = require('./services/RaceCarService');
+
+let catalogService = new CatalogService();
+let raceCarService = new RaceCarService();
+let playerService = new PlayerService();
+
+server.registerService(catalogService);
+server.registerService(raceCarService);
+server.registerService(playerService);
+
+server.app.use(cors());
+
+// Include our web routes.
+require('./services/web');
