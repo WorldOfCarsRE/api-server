@@ -112,9 +112,9 @@ server.app.get('/carsds/api/WhoAmIRequest', (req, res) => {
     item.txt('true');
 
     const status = root.ele('status');
-    status.txt('logged_in_player');
+    status.txt('not_logged_in');
 
-    account = root.ele('account', {'account_id': '100000002'})
+    account = root.ele('account', {'account_id': '-1'})
     account.ele('first_name');
     account.ele('dname');
     account.ele('age').txt(0);
@@ -124,6 +124,28 @@ server.app.get('/carsds/api/WhoAmIRequest', (req, res) => {
 
     root.ele('userTestAccessAllowed').txt('false');
     root.ele('testUser').txt('false');
+
+    const xml = root.end({prettyPrint: true});
+    res.send(xml);
+})
+
+server.app.get('/dxd/flashAPI/login', (req, res) => {
+    const root = create().ele('result');
+
+    const success = root.ele('success');
+    success.txt('0');
+
+    const err = root.ele('error');
+    err.txt('PARAM_ERROR');
+
+    const input = root.ele('input');
+    input.ele('cookieValue');
+
+    input.ele('loginType').txt('hard');
+
+    root.ele('token');
+    root.ele('type').txt('hard');
+    root.ele('banURL');
 
     const xml = root.end({prettyPrint: true});
     res.send(xml);
