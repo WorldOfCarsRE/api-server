@@ -1,10 +1,10 @@
 const CatalogItem = require('./CatalogItem');
 
 class CatalogItemRaceSeries extends CatalogItem {
-    constructor() {
+    constructor(itemId) {
         super();
 
-        this.itemId = 44000;
+        this.itemId = itemId;
     }
 }
 

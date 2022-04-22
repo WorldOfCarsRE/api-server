@@ -15,9 +15,10 @@ class CatalogService extends libamf.Service {
         const array = new ArrayCollection();
 
         for (const itemId of itemIds) {
-            console.log(itemId);
-
             var item = clientData[itemId]['classObj'];
+
+            console.log(item);
+
             array.push(item);
         }
 
@@ -28,7 +29,7 @@ class CatalogService extends libamf.Service {
         console.log('getTreeById:', id, depth);
 
         const resp = new ArrayCollection();
-        resp.push(new CatalogItemRaceSeries());
+        resp.push(new CatalogItemRaceSeries(44000));
         return resp;
     }
 
@@ -44,7 +45,6 @@ class CatalogService extends libamf.Service {
         console.log('getItem:', itemId);
 
         var item = clientData[itemId]['classObj'];
-        item.itemId = itemId;
 
         return item;
     }

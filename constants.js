@@ -1,7 +1,8 @@
-const CatalogItemPaint = require('./catalog/CatalogItemPaint');
-const CatalogItemChassis = require('./catalog/CatalogItemChassis');
-const CatalogItemNPC = require('./catalog/CatalogItemNPC');
-const CatalogItemWorldZone = require('./catalog/CatalogItemWorldZone');
+const CatalogItemPaint = global.CatalogItemPaint;
+const CatalogItemChassis = global.CatalogItemChassis;
+const CatalogItemNPC = global.CatalogItemNPC;
+const CatalogItemWorldZone = global.CatalogItemWorldZone;
+const CatalogItemDecal = global.CatalogItemDecal;
 
 var clientData = {};
 
@@ -37,12 +38,12 @@ clientData[30502] = {
 
 clientData[51103] = {
     'name': 'Car Decal',
-    'classObj': new CatalogItemChassis()
+    'classObj': new CatalogItemDecal()
 };
 
 clientData[51104] = {
     'name': 'Car Decal',
-    'classObj': new CatalogItemChassis()
+    'classObj': new CatalogItemDecal()
 };
 
 clientData[20206] = {
