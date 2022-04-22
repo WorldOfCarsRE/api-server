@@ -4,7 +4,7 @@ CatalogItemWorldZone = global.CatalogItemWorldZone;
 libamf = global.libamf;
 ArrayCollection = global.ArrayCollection;
 
-const {items} = require('../constants');
+const {clientData} = require('../constants');
 
 class CatalogService extends libamf.Service {
     constructor() {
@@ -17,7 +17,7 @@ class CatalogService extends libamf.Service {
         for (const itemId of itemIds) {
             console.log(itemId);
 
-            var item = items[itemId]['itemObj'];
+            var item = clientData[itemId]['classObj'];
             array.push(item);
         }
 
@@ -43,7 +43,7 @@ class CatalogService extends libamf.Service {
     getItem(itemId) {
         console.log('getItem:', itemId);
 
-        var item = items[itemId]['itemObj'];
+        var item = clientData[itemId]['classObj'];
         item.itemId = itemId;
 
         return item;

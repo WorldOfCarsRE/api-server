@@ -5,8 +5,9 @@ global.CatalogItemRaceSeries = require('./catalog/CatalogItemRaceSeries');
 global.CatalogItemWorldZone = require('./catalog/CatalogItemWorldZone');
 global.CatalogItemPaint = require('./catalog/CatalogItemPaint');
 global.CatalogItemChassis = require('./catalog/CatalogItemChassis');
+global.CatalogItemNPC = require('./catalog/CatalogItemNPC');
 
-var cors = require('cors')
+var cors = require('cors');
 
 global.Racecar = require('./racecar/Racecar');
 
@@ -23,6 +24,7 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.racing.RaceSeries', Ca
 libamf.registerClassAlias('com.disney.cars.domain.catalog.world.WorldZone', CatalogItemWorldZone)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Paint', CatalogItemPaint)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Chassis', CatalogItemChassis);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.Npc', CatalogItemNPC);
 
 libamf.registerClassAlias('com.disney.cars.domain.racecar.Racecar', Racecar);
 
