@@ -1,10 +1,10 @@
 const CatalogItem = require('./CatalogItem');
 
 class CatalogItemPaint extends CatalogItem {
-    constructor() {
+    constructor(color) {
         super();
 
-        this.color = 0;
+        this.color = color;
     }
 }
 
