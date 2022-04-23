@@ -8,7 +8,7 @@ class CatalogPlayerItem extends CatalogItem {
 
         this.maximumOwnable = 0;
         this.categoryId = 0;
-        this.ownershipEnd = ''; // Date type?
+        this.ownershipEnd = new Date();
         this.startState = 0;
         this.subcategoryId = 0;
         this.careerType = 0;
