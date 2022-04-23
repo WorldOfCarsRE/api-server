@@ -1,6 +1,6 @@
-const CatalogItem = require('./CatalogItem');
+const CatalogCarItem = require('./CatalogCarItem');
 
-class CatalogItemPaint extends CatalogItem {
+class CatalogItemPaint extends CatalogCarItem {
     constructor(color) {
         super();
 

@@ -6,6 +6,7 @@ const CatalogItemDecal = global.CatalogItemDecal;
 const CatalogItemEyeColor = global.CatalogItemEyeColor;
 const CatalogItemWheel = global.CatalogItemWheel;
 const CatalogItemTire = global.CatalogItemTire;
+const CatalogItemAnimation = global.CatalogItemAnimation;
 
 var clientData = {};
 
@@ -82,16 +83,21 @@ clientData[15006] = {
 clientData[20209] = {
     'name': 'Powerhouse Purple',
     'classObj': new CatalogItemPaint(10571765)
-}
+};
 
 clientData[20201] = {
     'name': 'DJ Blue',
     'classObj': new CatalogItemPaint(167913)
-}
+};
 
 clientData[20205] = {
     'name': 'Chick Hicks Green',
     'classObj': new CatalogItemPaint(7322195)
-}
+};
+
+clientData[33275] = {
+    'name': '?',
+    'classObj': new CatalogItemAnimation()
+};
 
 module.exports = {clientData};

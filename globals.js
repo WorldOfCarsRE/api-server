@@ -10,6 +10,10 @@ global.CatalogItemDecal = require('./catalog/CatalogItemDecal');
 global.CatalogItemEyeColor = require('./catalog/CatalogItemEyeColor');
 global.CatalogItemWheel = require('./catalog/CatalogItemWheel');
 global.CatalogItemTire = require('./catalog/CatalogItemTire');
+global.CatalogCarItem = require('./catalog/CatalogCarItem');
+global.CatalogPlayerItem = require('./catalog/CatalogPlayerItem');
+global.CatalogPlayerStoreItem = require('./catalog/CatalogPlayerStoreItem');
+global.CatalogItemAnimation = require('./catalog/CatalogItemAnimation');
 
 var cors = require('cors');
 
@@ -25,14 +29,18 @@ libamf.Server.DisableDefaultHome = true;
 
 libamf.registerClassAlias('com.disney.cars.domain.catalog.Item', CatalogItem);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.racing.RaceSeries', CatalogItemRaceSeries);
-libamf.registerClassAlias('com.disney.cars.domain.catalog.world.WorldZone', CatalogItemWorldZone)
-libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Paint', CatalogItemPaint)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.world.WorldZone', CatalogItemWorldZone);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Paint', CatalogItemPaint);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Chassis', CatalogItemChassis);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.Npc', CatalogItemNPC);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Decal', CatalogItemDecal);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.EyeColor', CatalogItemEyeColor);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Wheel', CatalogItemWheel);
-libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Tire', CatalogItemTire)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Tire', CatalogItemTire);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.CarItem', CatalogCarItem);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.PlayerItem', CatalogPlayerItem);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.PlayerStoreItem', CatalogPlayerStoreItem);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.effects.Animation', CatalogItemAnimation);
 
 libamf.registerClassAlias('com.disney.cars.domain.racecar.Racecar', Racecar);
 

@@ -1,15 +1,15 @@
-const CatalogItem = require('./CatalogItem');
+const CatalogCarItem = require('./CatalogCarItem');
 
 ArrayCollection = global.ArrayCollection;
 
-class CatalogItemDecal extends CatalogItem {
+class CatalogItemDecal extends CatalogCarItem {
     constructor() {
         super();
 
         this.type = 1;
 
         this.assets = new ArrayCollection();
-        this.assets.push('car_t_cst_eyl_avatar.jpg');
+        this.assets.push('car_t_chr_avt_stock_sideWindows.jpg');
 
         this.slots = new ArrayCollection();
     }
