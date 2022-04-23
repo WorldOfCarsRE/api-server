@@ -24,6 +24,13 @@ class RaceCarService extends libamf.Service {
         const resp = new Racecar();
         return resp;
     }
+
+    getRacecarByUserId(racecarId) {
+        console.log('getRacecarByUserId: ', racecarId);
+
+        const resp = new Racecar();
+        return resp;
+    }
 }
 
 module.exports = RaceCarService;

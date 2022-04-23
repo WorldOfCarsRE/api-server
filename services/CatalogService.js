@@ -16,6 +16,7 @@ class CatalogService extends libamf.Service {
 
         for (const itemId of itemIds) {
             var item = clientData[itemId]['classObj'];
+            item.itemId = itemId;
 
             console.log(item);
 
@@ -45,6 +46,7 @@ class CatalogService extends libamf.Service {
         console.log('getItem:', itemId);
 
         var item = clientData[itemId]['classObj'];
+        item.itemId = itemId;
 
         return item;
     }

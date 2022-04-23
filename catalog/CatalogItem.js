@@ -1,5 +1,6 @@
 class CatalogItem {
     constructor() {
+        this.itemId = 0;
     }
 }
 

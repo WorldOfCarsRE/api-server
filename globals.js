@@ -7,6 +7,9 @@ global.CatalogItemPaint = require('./catalog/CatalogItemPaint');
 global.CatalogItemChassis = require('./catalog/CatalogItemChassis');
 global.CatalogItemNPC = require('./catalog/CatalogItemNPC');
 global.CatalogItemDecal = require('./catalog/CatalogItemDecal');
+global.CatalogItemEyeColor = require('./catalog/CatalogItemEyeColor');
+global.CatalogItemWheel = require('./catalog/CatalogItemWheel');
+global.CatalogItemTire = require('./catalog/CatalogItemTire');
 
 var cors = require('cors');
 
@@ -27,6 +30,9 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Paint', Cat
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Chassis', CatalogItemChassis);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.Npc', CatalogItemNPC);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Decal', CatalogItemDecal);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.EyeColor', CatalogItemEyeColor);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Wheel', CatalogItemWheel);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Tire', CatalogItemTire)
 
 libamf.registerClassAlias('com.disney.cars.domain.racecar.Racecar', Racecar);
 

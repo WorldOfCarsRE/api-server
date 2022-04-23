@@ -3,6 +3,9 @@ const CatalogItemChassis = global.CatalogItemChassis;
 const CatalogItemNPC = global.CatalogItemNPC;
 const CatalogItemWorldZone = global.CatalogItemWorldZone;
 const CatalogItemDecal = global.CatalogItemDecal;
+const CatalogItemEyeColor = global.CatalogItemEyeColor;
+const CatalogItemWheel = global.CatalogItemWheel;
+const CatalogItemTire = global.CatalogItemTire;
 
 var clientData = {};
 
@@ -23,17 +26,17 @@ clientData[15001] = {
 
 clientData[10101] = {
     'name': 'Eye Color',
-    'classObj': new CatalogItemChassis()
+    'classObj': new CatalogItemEyeColor(0)
 };
 
 clientData[30601] = {
     'name': 'Wheel',
-    'classObj': new CatalogItemChassis()
+    'classObj': new CatalogItemWheel('car_t_cst_rim_01.jpg')
 };
 
 clientData[30502] = {
     'name': 'Tire',
-    'classObj': new CatalogItemChassis()
+    'classObj': new CatalogItemTire('car_t_cst_tir_wall_black.jpg')
 };
 
 clientData[51103] = {
