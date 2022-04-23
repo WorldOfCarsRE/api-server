@@ -1,8 +1,8 @@
-const CatalogItem = require('./CatalogItem');
+const CatalogCarItem = require('./CatalogCarItem');
 
 ArrayCollection = global.ArrayCollection;
 
-class CatalogItemChassis extends CatalogItem {
+class CatalogItemChassis extends CatalogCarItem {
     constructor() {
         super();
 
