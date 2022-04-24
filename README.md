@@ -1,2 +1,2 @@
-# woc-amf
- AMF web service for World of Cars.
+# woc-api
+AMF & website API service for World of Cars.

@@ -8,28 +8,66 @@ class RaceCarService extends libamf.Service {
         super('racecar');
     }
 
-    getRacecarIdsByUserId(accountId) {
+    async updateRacecar(carObj) {
+        var car = await db.retrieveCar(carObj.playerId);
+
+        if (car) {
+            var serialized = libamf.serialize(carObj, libamf.ENCODING.AMF3);
+            car.serializedData = serialized;
+            car.save();
+        }
+
+        return carObj;
+    }
+
+    async insertCustomItems(carObj) {
+        var car = await db.retrieveCar(carObj.playerId);
+
+        if (car) {
+            var serialized = libamf.serialize(carObj, libamf.ENCODING.AMF3);
+            car.serializedData = serialized;
+            car.save();
+        }
+
+        return carObj;
+    }
+
+    async getRacecarIdsByUserId(accountId) {
         console.log('getRacecarIdsByUserId: ', accountId);
 
-        const racecarId = 1;
+        var serializedData = await db.retrieveCarData(accountId);
+
+        var car = libamf.deserialize(serializedData, libamf.ENCODING.AMF3);
+
+        var carId = car.playerId;
 
         const resp = new ArrayCollection();
-        resp.push(racecarId);
+        resp.push(carId);
         return resp;
     }
 
-    getRacecarOnLogin(racecarId) {
+    async getRacecarOnLogin(racecarId) {
         console.log('getRacecarOnLogin: ', racecarId);
 
-        const resp = new Racecar();
-        return resp;
+        var dbCar = await db.retrieveCar(racecarId);
+
+        if (dbCar) {
+            var car = libamf.deserialize(dbCar.serializedData, libamf.ENCODING.AMF3);
+            return car;
+        }
     }
 
-    getRacecarByUserId(racecarId) {
-        console.log('getRacecarByUserId: ', racecarId);
+    async getRacecarByUserId(accountId) {
+        console.log('getRacecarByUserId: ', accountId);
 
-        const resp = new Racecar();
-        return resp;
+        if (!await db.doesCarExist(accountId)) {
+            await db.createCar(accountId);
+        }
+
+        var serializedData = await db.retrieveCarData(accountId);
+
+        var car = libamf.deserialize(serializedData, libamf.ENCODING.AMF3);
+        return car;
     }
 }
 

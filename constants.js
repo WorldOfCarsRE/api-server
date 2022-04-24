@@ -131,4 +131,14 @@ clientData[33275] = {
     'classObj': new CatalogItemSimpleAnimation()
 };
 
+clientData[33274] = {
+    'name': '?',
+    'classObj': new CatalogItemSimpleAnimation()
+}
+
+clientData[60025] = {
+    'name': '?',
+    'classObj': new CatalogItemSimpleAnimation()
+}
+
 module.exports = {clientData};

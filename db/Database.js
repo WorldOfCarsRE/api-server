@@ -2,6 +2,8 @@ mongoose = global.mongoose;
 create = global.create;
 
 var Account = require('./models/Account');
+var Cars = require('./models/Cars');
+
 const bcrypt = require('bcrypt');
 
 const saltRounds = 12;
@@ -66,20 +68,23 @@ class Database {
         }
 
         var validCredentials = await this.verifyCredentials(username, password);
+        var accountId = await this.getAccountIdFromUser(username);
 
         if (validCredentials) {
-            console.log('Authenticated!')
             var ses = req.session;
             ses.username = username;
             ses.success = '1';
             ses.status = 'logged_in_player';
             ses.logged = true;
-            ses.userId = await this.getAccountIdFromUser(username);
+            ses.userId = accountId;
         }
 
         const root = create().ele('AccountLoginResponse');
         const success = root.ele('success');
         success.txt(validCredentials);
+
+        const account = root.ele('account');
+        account.ele('account_id').txt(accountId);
 
         const xml = root.end({prettyPrint: true});
         res.send(xml);
@@ -93,7 +98,37 @@ class Database {
        }
 
        return true;
-}
+    }
+
+    async doesCarExist(accountId) {
+        var car = await Cars.findOne({accountId: accountId});
+
+        if (car) {
+            return true;
+        }
+
+        return false;
+    }
+
+    async retrieveCar(accountId) {
+        var car = await Cars.findOne({accountId: accountId});
+
+        if (car) {
+            return car;
+        }
+
+        return false;
+    }
+
+    async retrieveCarData(accountId) {
+        var car = await this.retrieveCar(accountId);
+
+        if (car) {
+            return car.serializedData;
+        }
+
+        return false;
+    }
 
    async getAccountIdFromUser(username) {
        var account = await this.retrieveAccount(username);
@@ -119,6 +154,28 @@ class Database {
         }
 
         return bcrypt.compareSync(password, account.password);
+    }
+
+    async createCar(accountId) {
+        const playerId = await Cars.countDocuments({}) + 1;
+
+        car = new Racecar();
+
+        car.userId = accountId;
+        car.playerId = playerId;
+        car.racecarId = playerId; // TODO: Is this okay?
+
+        var serialized = libamf.serialize(car, libamf.ENCODING.AMF3);
+
+        // Store out car.
+        var car = new Cars({
+            accountId: accountId,
+            serializedData: serialized
+        })
+
+        await car.save();
+
+        return true;
     }
 
     async createAccount(username, password) {

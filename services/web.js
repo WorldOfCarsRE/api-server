@@ -25,9 +25,9 @@ server.app.get('/carsds/api/WhoAmIRequest', async (req, res) => {
 
     if (ses.logged && ses.username && ses.userId) {
         status.txt('logged_in_player');
-        user.txt(sess.username);
+        user.txt(ses.username);
 
-        accountId = sess.userId;
+        accountId = ses.userId;
     } else {
         status.txt('not_logged_in');
     }
@@ -103,11 +103,15 @@ server.app.get('/carsds/api/GameEntranceRequest', (req, res) => {
 server.app.get('/carsds/api/GenerateTokenRequest', (req, res) => {
     const root = create().ele('GenerateTokenRequestResponse');
 
+    const ses = req.session;
+
     const item = root.ele('success');
     item.txt('true');
 
-    const token = root.ele('token')
-    token.txt('developer')
+    if (ses.username) {
+        const token = root.ele('token')
+        token.txt(ses.username);
+    }
 
     const xml = root.end({prettyPrint: true});
     res.send(xml);
