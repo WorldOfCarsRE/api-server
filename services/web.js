@@ -51,11 +51,30 @@ server.app.get('/dxd/flashAPI/login', (req, res) => {
     res.send(xml);
 })
 
-server.app.post('/dxd/flashAPI/checkUsernameAvailability', (req, res) => {
-    status = db.isUsernameAvailable(req.body.username);
+server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
+    const status = await db.isUsernameAvailable(req.body.username);
 
     const root = create().ele('response');
     root.ele('success').txt(status);
+
+    const xml = root.end({prettyPrint: true});
+    res.send(xml);
+})
+
+server.app.post('/dxd/flashAPI/createAccount', async (req, res) => {
+    var status = await db.createAccount(req.body.username, req.body.password);
+
+    const root = create().ele('response');
+    root.ele('success').txt(status);
+
+    const xml = root.end({prettyPrint: true});
+    res.send(xml);
+})
+
+server.app.post('/carsds/api/AccountLoginRequest', (req, res) => {
+    const root = create().ele('AccountLoginResponse');
+    const item = root.ele('success');
+    item.txt('true');
 
     const xml = root.end({prettyPrint: true});
     res.send(xml);
