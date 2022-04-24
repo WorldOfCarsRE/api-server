@@ -12,6 +12,7 @@ class CatalogService extends libamf.Service {
     }
 
     getItemsByIds(itemIds) {
+        console.log('getItemsByIds:', [...itemIds]);
         const array = new ArrayCollection();
 
         for (const itemId of itemIds) {

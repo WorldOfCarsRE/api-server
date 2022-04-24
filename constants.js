@@ -10,9 +10,24 @@ const CatalogItemAnimation = global.CatalogItemAnimation;
 
 var clientData = {};
 
+clientData[5500] = {
+    'name': 'Stock',
+    'classObj': new CatalogItemChassis("stock")
+};
+
 clientData[5501] = {
     'name': 'Sports',
     'classObj': new CatalogItemChassis("sports")
+};
+
+clientData[5502] = {
+    'name': 'Mini',
+    'classObj': new CatalogItemChassis("mini")
+};
+
+clientData[5503] = {
+    'name': 'Stock',
+    'classObj': new CatalogItemChassis("stock")
 };
 
 clientData[20210] = {
@@ -28,6 +43,21 @@ clientData[15001] = {
 clientData[10101] = {
     'name': 'Eye Color',
     'classObj': new CatalogItemEyeColor(0)
+};
+
+clientData[10102] = {
+    'name': 'Blue',
+    'classObj': new CatalogItemEyeColor(7249143)
+};
+
+clientData[10103] = {
+    'name': 'Green',
+    'classObj': new CatalogItemEyeColor(7322195)
+};
+
+clientData[10104] = {
+    'name': 'Brown',
+    'classObj': new CatalogItemEyeColor(12414237)
 };
 
 clientData[30601] = {
