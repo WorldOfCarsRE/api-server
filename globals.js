@@ -18,6 +18,7 @@ global.CatalogCarItem = require('./catalog/CatalogCarItem');
 global.CatalogPlayerItem = require('./catalog/CatalogPlayerItem');
 global.CatalogPlayerStoreItem = require('./catalog/CatalogPlayerStoreItem');
 global.CatalogItemAnimation = require('./catalog/CatalogItemAnimation');
+global.CatalogItemSimpleAnimation = require('./catalog/CatalogItemSimpleAnimation')
 
 var cors = require('cors');
 
@@ -49,6 +50,7 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.CarItem', C
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.PlayerItem', CatalogPlayerItem);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.PlayerStoreItem', CatalogPlayerStoreItem);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.effects.Animation', CatalogItemAnimation);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.effects.SimpleAnimation', CatalogItemSimpleAnimation);
 
 libamf.registerClassAlias('com.disney.cars.domain.racecar.Racecar', Racecar);
 

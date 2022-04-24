@@ -7,6 +7,7 @@ const CatalogItemEyeColor = global.CatalogItemEyeColor;
 const CatalogItemWheel = global.CatalogItemWheel;
 const CatalogItemTire = global.CatalogItemTire;
 const CatalogItemAnimation = global.CatalogItemAnimation;
+const CatalogItemSimpleAnimation = global.CatalogItemSimpleAnimation;
 
 var clientData = {};
 
@@ -127,7 +128,7 @@ clientData[20205] = {
 
 clientData[33275] = {
     'name': '?',
-    'classObj': new CatalogItemAnimation()
+    'classObj': new CatalogItemSimpleAnimation()
 };
 
 module.exports = {clientData};
