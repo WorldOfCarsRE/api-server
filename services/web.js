@@ -5,16 +5,34 @@ server.app.get('/', (req, res) => {
     res.send('World of Cars API service.')
 })
 
-server.app.get('/carsds/api/WhoAmIRequest', (req, res) => {
+server.app.get('/carsds/api/WhoAmIRequest', async (req, res) => {
+    const ses = req.session;
+
+    var success = false;
+    var accountId = -1;
+
+    if (ses.success) {
+        success = true;
+    }
+
     const root = create().ele('WhoAmIResponse');
 
     const item = root.ele('success');
-    item.txt('true');
+    item.txt(success);
 
     const status = root.ele('status');
-    status.txt('not_logged_in');
+    const user = root.ele('username');
 
-    account = root.ele('account', {'account_id': '-1'})
+    if (ses.logged && ses.username && ses.userId) {
+        status.txt('logged_in_player');
+        user.txt(sess.username);
+
+        accountId = sess.userId;
+    } else {
+        status.txt('not_logged_in');
+    }
+
+    account = root.ele('account', {'account_id': accountId})
     account.ele('first_name');
     account.ele('dname');
     account.ele('age').txt(0);
@@ -29,26 +47,12 @@ server.app.get('/carsds/api/WhoAmIRequest', (req, res) => {
     res.send(xml);
 })
 
-server.app.get('/dxd/flashAPI/login', (req, res) => {
-    const root = create().ele('result');
+server.app.get('/dxd/flashAPI/login', async (req, res) => {
+    await db.handleFlashLogin(req, res);
+})
 
-    const success = root.ele('success');
-    success.txt('0');
-
-    const err = root.ele('error');
-    err.txt('PARAM_ERROR');
-
-    const input = root.ele('input');
-    input.ele('cookieValue');
-
-    input.ele('loginType').txt('hard');
-
-    root.ele('token');
-    root.ele('type').txt('hard');
-    root.ele('banURL');
-
-    const xml = root.end({prettyPrint: true});
-    res.send(xml);
+server.app.post('/dxd/flashAPI/login', async (req, res) => {
+    await db.handleFlashLogin(req, res);
 })
 
 server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
@@ -63,30 +67,24 @@ server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
 
 server.app.post('/dxd/flashAPI/createAccount', async (req, res) => {
     var status = await db.createAccount(req.body.username, req.body.password);
+    var accountId = await db.getAccountIdFromUser(req.body.username);
 
     const root = create().ele('response');
     root.ele('success').txt(status);
 
-    const xml = root.end({prettyPrint: true});
-    res.send(xml);
-})
-
-server.app.post('/carsds/api/AccountLoginRequest', (req, res) => {
-    const root = create().ele('AccountLoginResponse');
-    const item = root.ele('success');
-    item.txt('true');
+    const results = root.ele('results')
+    results.ele('userId').txt(accountId);
 
     const xml = root.end({prettyPrint: true});
     res.send(xml);
 })
 
-server.app.get('/carsds/api/AccountLoginRequest', (req, res) => {
-    const root = create().ele('AccountLoginResponse');
-    const item = root.ele('success');
-    item.txt('true');
+server.app.post('/carsds/api/AccountLoginRequest', async (req, res) => {
+   await db.handleAccountLogin(req, res);
+})
 
-    const xml = root.end({prettyPrint: true});
-    res.send(xml);
+server.app.get('/carsds/api/AccountLoginRequest', async (req, res) => {
+    await db.handleAccountLogin(req, res);
 })
 
 server.app.get('/carsds/api/GameEntranceRequest', (req, res) => {

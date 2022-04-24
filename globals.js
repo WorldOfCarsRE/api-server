@@ -82,5 +82,32 @@ server.app.use(express.urlencoded({extended: true}));
 
 server.app.use(cors());
 
-// Include our web routes.
+// Setup sessions and include our web routes.
+var crypto = require('crypto');
+var session = require('express-session');
+
+const redis = require('redis');
+const redisStore = require('connect-redis')(session);
+
+const redisClient = redis.createClient({
+    legacyMode: true
+});
+
+redisClient.connect();
+
+sess = {
+    secret: crypto.randomBytes(32).toString('base64'),
+    store: new redisStore({client: redisClient}),
+    resave: false,
+    saveUninitialized: true,
+
+    cookie: {
+        secure: false, // if true only transmit cookie over https
+        httpOnly: false, // if true prevent client side JS from reading the cookie
+        maxAge: 1000 * 60 * 10 // session max age in miliseconds
+    }
+}
+
+server.app.use(session(sess));
+
 require('./services/web');
