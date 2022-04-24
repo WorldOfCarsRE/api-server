@@ -12,7 +12,7 @@ var clientData = {};
 
 clientData[5501] = {
     'name': 'Sports',
-    'classObj': new CatalogItemChassis()
+    'classObj': new CatalogItemChassis("sports")
 };
 
 clientData[20210] = {
