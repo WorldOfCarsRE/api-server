@@ -1,4 +1,1 @@
 node_modules/*
-carsds/api/vendor/*
-carsds/api/composer.json
-carsds/api/composer.lock

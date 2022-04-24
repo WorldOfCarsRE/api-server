@@ -18,7 +18,14 @@ global.CatalogCarItem = require('./catalog/CatalogCarItem');
 global.CatalogPlayerItem = require('./catalog/CatalogPlayerItem');
 global.CatalogPlayerStoreItem = require('./catalog/CatalogPlayerStoreItem');
 global.CatalogItemAnimation = require('./catalog/CatalogItemAnimation');
-global.CatalogItemSimpleAnimation = require('./catalog/CatalogItemSimpleAnimation')
+global.CatalogItemSimpleAnimation = require('./catalog/CatalogItemSimpleAnimation');
+
+var express = require('express');
+
+global.mongoose = require('mongoose');
+
+Database = require('./db/database');
+global.db = new Database();
 
 var cors = require('cors');
 
@@ -69,6 +76,9 @@ let playerService = new PlayerService();
 server.registerService(catalogService);
 server.registerService(raceCarService);
 server.registerService(playerService);
+
+// for parsing application/x-www-form-urlencoded
+server.app.use(express.urlencoded({extended: true}));
 
 server.app.use(cors());
 
