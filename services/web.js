@@ -51,37 +51,11 @@ server.app.get('/dxd/flashAPI/login', (req, res) => {
     res.send(xml);
 })
 
-/*
-      public function onCheckUsernameAvailabilityResult(xml:XML, callback:Function) : void
-      {
-         log("xml = " + xml,"onCheckUsernameAvailability");
-         var suggestedUsernames:Array = null;
-         var error:String = RegUtilsError.NO_ERROR;
-         try
-         {
-            if(xml.success != "1" && xml.success != "true")
-            {
-               error = RegUtilsError.USERNAME_TAKEN;
-               suggestedUsernames = new Array();
-               suggestedUsernames.push(xml.results.suggestedUsername1);
-               suggestedUsernames.push(xml.results.suggestedUsername2);
-               suggestedUsernames.push(xml.results.suggestedUsername3);
-               suggestedUsernames.push(xml.results.suggestedUsername4);
-            }
-         }
-         catch(e:Error)
-         {
-            error = RegUtilsError.SERVER_UNAVAILABLE;
-         }
-         callback(error,suggestedUsernames);
-      }
-*/
-
 server.app.post('/dxd/flashAPI/checkUsernameAvailability', (req, res) => {
-    success = db.checkAccountExists(req.body.username);
+    status = db.isUsernameAvailable(req.body.username);
 
     const root = create().ele('response');
-    root.ele('success').txt('1' ? success : '0');
+    root.ele('success').txt(status);
 
     const xml = root.end({prettyPrint: true});
     res.send(xml);

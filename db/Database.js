@@ -12,13 +12,13 @@ class Database {
         this.db.on('error', console.error.bind(console, 'MongoDB connection error:'));
     }
 
-    checkAccountExists(username) {
-        Account.exists({name : username}, function (err, doc) {
+    isUsernameAvailable(username) {
+        Account.exists({username : username}, function (err, doc) {
             if (err) {
                 console.log(err);
                 return false;
             } else {
-                return doc;
+                return true;
             }
         });
 
