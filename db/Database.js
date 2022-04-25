@@ -83,7 +83,7 @@ class Database {
         const success = root.ele('success');
         success.txt(validCredentials);
 
-        const account = root.ele('account', {'account_id': accountId});
+        root.ele('account', {'account_id': accountId});
 
         const xml = root.end({prettyPrint: true});
         res.send(xml);
@@ -100,7 +100,7 @@ class Database {
     }
 
     async doesCarExist(accountId) {
-        var car = await Cars.findOne({accountId: accountId});
+        var car = await Cars.findOne({_id: accountId});
 
         if (car) {
             return true;
@@ -110,7 +110,7 @@ class Database {
     }
 
     async retrieveCar(accountId) {
-        var car = await Cars.findOne({accountId: accountId});
+        var car = await Cars.findOne({_id: accountId});
 
         if (car) {
             return car;
@@ -133,7 +133,7 @@ class Database {
        var account = await this.retrieveAccount(username);
 
        if (account) {
-           return account.accountId;
+           return account._id;
        }
 
        return -1;
@@ -168,7 +168,7 @@ class Database {
 
         // Store out car.
         var car = new Cars({
-            accountId: accountId,
+            _id: accountId,
             serializedData: serialized
         })
 
@@ -188,7 +188,7 @@ class Database {
 
         // Store the account object.
         var account = new Account({
-            accountId: accountId,
+            _id: accountId,
             username: username,
             password: hashedPassword
         });

@@ -1,7 +1,7 @@
 mongoose = global.mongoose;
 
 var Cars = new mongoose.model('Cars', {
-  accountId: {type: Number},
+  _id: {type: Number}, // This is the accountId
   serializedData: {type: Buffer},
 });
 
