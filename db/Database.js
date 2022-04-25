@@ -83,8 +83,7 @@ class Database {
         const success = root.ele('success');
         success.txt(validCredentials);
 
-        const account = root.ele('account');
-        account.ele('account_id').txt(accountId);
+        const account = root.ele('account', {'account_id': accountId});
 
         const xml = root.end({prettyPrint: true});
         res.send(xml);

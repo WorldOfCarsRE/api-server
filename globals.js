@@ -24,7 +24,7 @@ var express = require('express');
 
 global.mongoose = require('mongoose');
 
-Database = require('./db/database');
+Database = require('./db/Database');
 global.db = new Database();
 
 var cors = require('cors');
