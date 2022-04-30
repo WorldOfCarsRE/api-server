@@ -5,6 +5,8 @@ class CatalogItemWorldZone extends CatalogItem {
         super();
 
         this.visitedRuleId = 0;
+        this.outTransitionUrl = '';
+        this.titleUrl = 'car_g_gui_ttl_carburetorCounty_en_US.swf';
     }
 }
 

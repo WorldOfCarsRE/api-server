@@ -7,6 +7,8 @@ class CatalogPlayerStoreItem extends CatalogPlayerItem {
         super();
 
         this.sponsorIds = new ArrayCollection();
+        this.sponsorIds.push(1);
+
         this.storeThumbnail = '';
         this.membershipRequired = false;
         this.storeAvailabilityPeriods = new ArrayCollection();

@@ -1,5 +1,7 @@
 CatalogItemRaceSeries = global.CatalogItemRaceSeries;
 CatalogItemWorldZone = global.CatalogItemWorldZone;
+CatalogItemRaceLevel = global.CatalogItemRaceLevel;
+CatalogItemRaceTrack = global.CatalogItemRaceTrack;
 
 libamf = global.libamf;
 ArrayCollection = global.ArrayCollection;
@@ -18,9 +20,6 @@ class CatalogService extends libamf.Service {
         for (const itemId of itemIds) {
             var item = clientData[itemId]['classObj'];
             item.itemId = itemId;
-
-            console.log(item);
-
             array.push(item);
         }
 
@@ -31,7 +30,8 @@ class CatalogService extends libamf.Service {
         console.log('getTreeById:', id, depth);
 
         const resp = new ArrayCollection();
-        resp.push(new CatalogItemRaceSeries(44000));
+        resp.push(new CatalogItemRaceSeries(id));
+        resp.push(new CatalogItemRaceLevel(1));
         return resp;
     }
 
@@ -39,7 +39,6 @@ class CatalogService extends libamf.Service {
         console.log('getItemsByType:', itemType);
 
         const resp = new ArrayCollection();
-        resp.push(new CatalogItemWorldZone());
         return resp;
     }
 

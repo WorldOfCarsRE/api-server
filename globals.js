@@ -19,6 +19,10 @@ global.CatalogPlayerItem = require('./catalog/CatalogPlayerItem');
 global.CatalogPlayerStoreItem = require('./catalog/CatalogPlayerStoreItem');
 global.CatalogItemAnimation = require('./catalog/CatalogItemAnimation');
 global.CatalogItemSimpleAnimation = require('./catalog/CatalogItemSimpleAnimation');
+global.CatalogItemRaceLevel = require('./catalog/CatalogItemRaceLevel');
+global.CatalogItemWorldZone = require('./catalog/CatalogItemWorldZone');
+global.CatalogItemDungeon = require('./catalog/CatalogItemDungeon');
+global.CatalogItemRaceTrack = require('./catalog/CatalogItemRaceTrack');
 
 var express = require('express');
 
@@ -44,10 +48,10 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.racing.RaceSeries', Ca
 libamf.registerClassAlias('com.disney.cars.domain.catalog.world.WorldZone', CatalogItemWorldZone);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Paint', CatalogItemPaint);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Chassis', CatalogItemChassis);
-libamf.registerClassAlias("com.disney.cars.domain.catalog.player.car.ChassisJointDynamic", CatalogChassisJointDynamic);
-libamf.registerClassAlias("com.disney.cars.domain.catalog.player.car.ChassisJointStatic", CatalogChassisJointStatic);
-libamf.registerClassAlias("com.disney.cars.domain.catalog.player.car.ChassisOffset", CatalogChassisOffset);
-libamf.registerClassAlias("com.disney.cars.domain.catalog.player.car.ChassisSlot", CatalogChassisSlot);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.ChassisJointDynamic', CatalogChassisJointDynamic);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.ChassisJointStatic', CatalogChassisJointStatic);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.ChassisOffset', CatalogChassisOffset);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.ChassisSlot', CatalogChassisSlot);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.Npc', CatalogItemNPC);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Decal', CatalogItemDecal);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.EyeColor', CatalogItemEyeColor);
@@ -58,6 +62,9 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.player.PlayerItem', Ca
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.PlayerStoreItem', CatalogPlayerStoreItem);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.effects.Animation', CatalogItemAnimation);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.effects.SimpleAnimation', CatalogItemSimpleAnimation);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.racing.RaceTrack', CatalogItemRaceTrack);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.world.DungeonItem', CatalogItemDungeon);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.racing.RaceLevel', CatalogItemRaceLevel);
 
 libamf.registerClassAlias('com.disney.cars.domain.racecar.Racecar', Racecar);
 

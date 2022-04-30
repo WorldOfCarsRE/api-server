@@ -16,6 +16,10 @@ class PlayerService extends libamf.Service {
 
         return resp;
     }
+
+    getBlockUserIds() {
+        return new ArrayCollection();
+    }
 }
 
 module.exports = PlayerService;

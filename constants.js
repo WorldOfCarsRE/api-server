@@ -6,8 +6,8 @@ const CatalogItemDecal = global.CatalogItemDecal;
 const CatalogItemEyeColor = global.CatalogItemEyeColor;
 const CatalogItemWheel = global.CatalogItemWheel;
 const CatalogItemTire = global.CatalogItemTire;
-const CatalogItemAnimation = global.CatalogItemAnimation;
 const CatalogItemSimpleAnimation = global.CatalogItemSimpleAnimation;
+const CatalogItemDungeon = global.CatalogItemDungeon;
 
 var clientData = {};
 
@@ -139,6 +139,11 @@ clientData[33274] = {
 clientData[60025] = {
     'name': '?',
     'classObj': new CatalogItemSimpleAnimation()
+}
+
+clientData[1000] = {
+    'name': '?',
+    'classObj': new CatalogItemDungeon(1000)
 }
 
 module.exports = {clientData};
