@@ -10,7 +10,7 @@ class CatalogChassisJointStatic {
 
         this.sx = 0.0;
         this.sy = 0.0;
-        this.sz = 0.0; 
+        this.sz = 0.0;
     }
 }
 
