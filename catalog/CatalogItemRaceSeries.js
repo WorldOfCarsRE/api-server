@@ -21,7 +21,7 @@ class CatalogItemRaceSeries extends CatalogItem {
         this.milestoneQuestId = 0;
 
         this.sponsorChoosenRuleId = 0;
-        this.titleUrl = 0;
+        this.titleUrl = '';
 
         this.sponsorIds = new ArrayCollection();
         this.sponsorIds.push(0);
