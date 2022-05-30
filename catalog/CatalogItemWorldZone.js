@@ -6,7 +6,7 @@ class CatalogItemWorldZone extends CatalogItem {
 
         this.visitedRuleId = 0;
         this.outTransitionUrl = '';
-        this.titleUrl = 'car_g_rac_ban_mcQueensRacingSeries.ajpg';
+        this.titleUrl = 'car_g_gui_ttl_carburetorCounty_en_US.swf';
     }
 }
 
