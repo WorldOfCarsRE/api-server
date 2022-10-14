@@ -4,8 +4,8 @@
   "description": "Web API for The World of Cars Online.",
   "main": "app.js",
   "scripts": {
-    "flood": "pm2 start app.js",
-    "stop": " pm2 stop all"
+    "start": "pm2 start app.js && pm2 start xml.js",
+    "stop": "pm2 stop all"
   },
   "author": "",
   "license": "MIT",
