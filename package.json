@@ -4,7 +4,8 @@
   "description": "Web API for The World of Cars Online.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "flood": "pm2 start app.js",
+    "stop": " pm2 stop all"
   },
   "author": "",
   "license": "MIT",
@@ -17,6 +18,7 @@
     "fast-xml-parser": "^4.0.7",
     "libamf": "^1.4.1",
     "mongoose": "^6.3.1",
+    "pm2": "^5.2.2",
     "redis": "^4.0.6",
     "xmlbuilder2": "^3.0.2"
   }
