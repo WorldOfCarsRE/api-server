@@ -94,17 +94,14 @@ var crypto = require('crypto');
 var session = require('express-session');
 
 const redis = require('redis');
-const redisStore = require('connect-redis')(session);
+const RedisStore = require("connect-redis").default
 
-const redisClient = redis.createClient({
-    legacyMode: true
-});
-
+const redisClient = redis.createClient();
 redisClient.connect();
 
 sess = {
     secret: crypto.randomBytes(32).toString('base64'),
-    store: new redisStore({client: redisClient}),
+    store: new RedisStore({client: redisClient}),
     resave: false,
     saveUninitialized: true,
 

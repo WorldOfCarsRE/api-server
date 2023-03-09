@@ -6,7 +6,9 @@ class CatalogItemWorldZone extends CatalogItem {
 
         this.visitedRuleId = 0;
         this.outTransitionUrl = '';
-        this.titleUrl = 'car_g_gui_ttl_carburetorCounty_en_US.swf';
+        this.titleUrl = 'car_f_gui_ttl_radiatorSprings_en_US.swf';
+        this.mapUrl = 'car_w_env_rsp_RadiatorSprings';
+        this.miniMapUrl = 'car_f_gui_map_carburetorCounty_en_US.swf';
     }
 }
 
