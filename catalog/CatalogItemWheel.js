@@ -8,4 +8,4 @@ class CatalogItemWheel extends CatalogCarItem {
     }
 }
 
-module.exports = CatalogItemWheel
+module.exports = CatalogItemWheel;

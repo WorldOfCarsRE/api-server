@@ -8,8 +8,14 @@ const CatalogItemWheel = global.CatalogItemWheel;
 const CatalogItemTire = global.CatalogItemTire;
 const CatalogItemSimpleAnimation = global.CatalogItemSimpleAnimation;
 const CatalogItemDungeon = global.CatalogItemDungeon;
+const CatalogItemPhysics = global.CatalogItemPhysics;
 
 var clientData = {};
+
+clientData[100] = {
+    'name': '???',
+    'classObj': new CatalogItemPhysics()
+};
 
 clientData[5500] = {
     'name': 'Stock',

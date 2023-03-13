@@ -12,8 +12,6 @@ class CatalogItemRaceSeries extends CatalogItem {
 
         this.itemId = itemId;
 
-        console.log(itemId);
-
         this.raceLevelIds = new ArrayCollection();
         this.raceLevelIds.push(1);
 

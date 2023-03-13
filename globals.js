@@ -23,6 +23,8 @@ global.CatalogItemRaceLevel = require('./catalog/CatalogItemRaceLevel');
 global.CatalogItemWorldZone = require('./catalog/CatalogItemWorldZone');
 global.CatalogItemDungeon = require('./catalog/CatalogItemDungeon');
 global.CatalogItemRaceTrack = require('./catalog/CatalogItemRaceTrack');
+global.CatalogItemGear = require('./catalog/CatalogItemGear');
+global.CatalogItemPhysics = require('./catalog/CatalogItemPhysics');
 
 var express = require('express');
 
@@ -65,6 +67,8 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.effects.SimpleAnimatio
 libamf.registerClassAlias('com.disney.cars.domain.catalog.racing.RaceTrack', CatalogItemRaceTrack);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.world.DungeonItem', CatalogItemDungeon);
 libamf.registerClassAlias('com.disney.cars.domain.catalog.racing.RaceLevel', CatalogItemRaceLevel);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Gear', CatalogItemGear);
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Physics', CatalogItemPhysics);
 
 libamf.registerClassAlias('com.disney.cars.domain.racecar.Racecar', Racecar);
 
