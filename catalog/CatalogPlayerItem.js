@@ -15,4 +15,4 @@ class CatalogPlayerItem extends CatalogItem {
     }
 }
 
-module.exports = CatalogPlayerItem
+module.exports = CatalogPlayerItem;
