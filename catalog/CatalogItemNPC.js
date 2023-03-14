@@ -17,4 +17,4 @@ class CatalogItemNPC extends CatalogItem {
     }
 }
 
-module.exports = CatalogItemNPC
+module.exports = CatalogItemNPC;

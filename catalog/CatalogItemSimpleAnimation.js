@@ -5,8 +5,7 @@ class CatalogItemSimpleAnimation extends CatalogItemAnimation {
         super();
 
         this.sani = 'car_a_chr_avt_sports_idlescan.sani';
-        this.itemId = 33275;
     }
 }
 
-module.exports = CatalogItemSimpleAnimation
+module.exports = CatalogItemSimpleAnimation;

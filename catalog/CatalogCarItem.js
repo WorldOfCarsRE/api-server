@@ -11,4 +11,4 @@ class CatalogCarItem extends CatalogPlayerStoreItem {
     }
 }
 
-module.exports = CatalogCarItem
+module.exports = CatalogCarItem;

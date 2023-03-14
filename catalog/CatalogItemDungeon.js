@@ -10,4 +10,4 @@ class CatalogItemDungeon extends CatalogItemWorldZone {
     }
 }
 
-module.exports = CatalogItemDungeon
+module.exports = CatalogItemDungeon;
