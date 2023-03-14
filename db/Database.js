@@ -1,202 +1,202 @@
-mongoose = global.mongoose;
-create = global.create;
+mongoose = global.mongoose
+create = global.create
 
-var Account = require('./models/Account');
-var Cars = require('./models/Cars');
+const Account = require('./models/Account')
+const Cars = require('./models/Cars')
 
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt')
 
-const saltRounds = 12;
+const saltRounds = 12
 
 class Database {
-    constructor() {
-        mongoose.connect('mongodb://127.0.0.1:27017/woc');
+  constructor () {
+    mongoose.connect('mongodb://127.0.0.1:27017/woc')
 
-        console.log('Connected to MongoDB!');
+    console.log('Connected to MongoDB!')
 
-        this.db = mongoose.connection;
-        this.db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+    this.db = mongoose.connection
+    this.db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+  }
+
+  async handleFlashLogin (req, res) {
+    let username = req.body.username
+    let password = req.body.password
+
+    if (username == undefined && password == undefined) {
+      username = req.query.username
+      password = req.query.password
     }
 
-    async handleFlashLogin(req, res) {
-        var username = req.body.username;
-        var password = req.body.password;
+    const validCredentials = await this.verifyCredentials(username, password)
+    let errorResp = ''
 
-        if (username == undefined && password == undefined) {
-            username = req.query.username;
-            password = req.query.password;
-        }
+    const root = create().ele('result')
 
-        var validCredentials = await this.verifyCredentials(username, password);
-        var errorResp = '';
+    const success = root.ele('success')
+    success.txt(validCredentials)
 
-        const root = create().ele('result');
+    const err = root.ele('error')
 
-        const success = root.ele('success');
-        success.txt(validCredentials);
-
-        const err = root.ele('error');
-
-        if(!validCredentials) {
-            errorResp = 'PARAM_ERROR';
-        }
-
-        err.txt(errorResp);
-
-        const input = root.ele('input');
-        input.ele('cookieValue');
-
-        input.ele('loginType').txt('hard');
-
-        root.ele('token');
-        root.ele('type').txt('hard');
-        root.ele('banURL');
-
-        root.ele('username').txt(username);
-
-        const xml = root.end({prettyPrint: true});
-        res.send(xml);
+    if (!validCredentials) {
+      errorResp = 'PARAM_ERROR'
     }
 
-    async handleAccountLogin(req, res) {
-        var username = req.body.username;
-        var password = req.body.password;
+    err.txt(errorResp)
 
-        if (username == undefined && password == undefined) {
-            username = req.query.username;
-            password = req.query.password;
-        }
+    const input = root.ele('input')
+    input.ele('cookieValue')
 
-        var validCredentials = await this.verifyCredentials(username, password);
-        var accountId = await this.getAccountIdFromUser(username);
+    input.ele('loginType').txt('hard')
 
-        if (validCredentials) {
-            var ses = req.session;
-            ses.username = username;
-            ses.success = '1';
-            ses.status = 'logged_in_player';
-            ses.logged = true;
-            ses.userId = accountId;
-        }
+    root.ele('token')
+    root.ele('type').txt('hard')
+    root.ele('banURL')
 
-        const root = create().ele('AccountLoginResponse');
-        const success = root.ele('success');
-        success.txt(validCredentials);
+    root.ele('username').txt(username)
 
-        root.ele('account', {'account_id': accountId});
+    const xml = root.end({ prettyPrint: true })
+    res.send(xml)
+  }
 
-        const xml = root.end({prettyPrint: true});
-        res.send(xml);
+  async handleAccountLogin (req, res) {
+    let username = req.body.username
+    let password = req.body.password
+
+    if (username == undefined && password == undefined) {
+      username = req.query.username
+      password = req.query.password
     }
 
-   async isUsernameAvailable(username) {
-       var account = await Account.exists({username: username});
+    const validCredentials = await this.verifyCredentials(username, password)
+    const accountId = await this.getAccountIdFromUser(username)
 
-       if (account) {
-           return false;
-       }
-
-       return true;
+    if (validCredentials) {
+      const ses = req.session
+      ses.username = username
+      ses.success = '1'
+      ses.status = 'logged_in_player'
+      ses.logged = true
+      ses.userId = accountId
     }
 
-    async doesCarExist(accountId) {
-        var car = await Cars.findOne({_id: accountId});
+    const root = create().ele('AccountLoginResponse')
+    const success = root.ele('success')
+    success.txt(validCredentials)
 
-        if (car) {
-            return true;
-        }
+    root.ele('account', { account_id: accountId })
 
-        return false;
+    const xml = root.end({ prettyPrint: true })
+    res.send(xml)
+  }
+
+  async isUsernameAvailable (username) {
+    const account = await Account.exists({ username })
+
+    if (account) {
+      return false
     }
 
-    async retrieveCar(accountId) {
-        var car = await Cars.findOne({_id: accountId});
+    return true
+  }
 
-        if (car) {
-            return car;
-        }
+  async doesCarExist (accountId) {
+    const car = await Cars.findOne({ _id: accountId })
 
-        return false;
+    if (car) {
+      return true
     }
 
-    async retrieveCarData(accountId) {
-        var car = await this.retrieveCar(accountId);
+    return false
+  }
 
-        if (car) {
-            return car.serializedData;
-        }
+  async retrieveCar (accountId) {
+    const car = await Cars.findOne({ _id: accountId })
 
-        return false;
+    if (car) {
+      return car
     }
 
-   async getAccountIdFromUser(username) {
-       var account = await this.retrieveAccount(username);
+    return false
+  }
 
-       if (account) {
-           return account._id;
-       }
+  async retrieveCarData (accountId) {
+    const car = await this.retrieveCar(accountId)
 
-       return -1;
+    if (car) {
+      return car.serializedData
     }
 
-    async retrieveAccount(username) {
-        var account = await Account.findOne({username: username});
+    return false
+  }
 
-        return account;
+  async getAccountIdFromUser (username) {
+    const account = await this.retrieveAccount(username)
+
+    if (account) {
+      return account._id
     }
 
-    async verifyCredentials(username, password) {
-        var account = await this.retrieveAccount(username);
+    return -1
+  }
 
-        if(!account) {
-            return false;
-        }
+  async retrieveAccount (username) {
+    const account = await Account.findOne({ username })
 
-        return bcrypt.compareSync(password, account.password);
+    return account
+  }
+
+  async verifyCredentials (username, password) {
+    const account = await this.retrieveAccount(username)
+
+    if (!account) {
+      return false
     }
 
-    async createCar(accountId) {
-        const playerId = await Cars.countDocuments({}) + 1;
+    return bcrypt.compareSync(password, account.password)
+  }
 
-        car = new Racecar();
+  async createCar (accountId) {
+    const playerId = await Cars.countDocuments({}) + 1
 
-        car.userId = accountId;
-        car.playerId = playerId;
-        car.racecarId = playerId; // TODO: Is this okay?
+    car = new Racecar()
 
-        var serialized = libamf.serialize(car, libamf.ENCODING.AMF3);
+    car.userId = accountId
+    car.playerId = playerId
+    car.racecarId = playerId // TODO: Is this okay?
 
-        // Store out car.
-        var car = new Cars({
-            _id: accountId,
-            serializedData: serialized
-        })
+    const serialized = libamf.serialize(car, libamf.ENCODING.AMF3)
 
-        await car.save();
+    // Store out car.
+    var car = new Cars({
+      _id: accountId,
+      serializedData: serialized
+    })
 
-        return true;
+    await car.save()
+
+    return true
+  }
+
+  async createAccount (username, password) {
+    if (!await this.isUsernameAvailable(username)) {
+      // Sanity check
+      return false
     }
 
-    async createAccount(username, password) {
-        if (!await this.isUsernameAvailable(username)) {
-            // Sanity check
-            return false;
-        }
+    const accountId = await Account.countDocuments({}) + 1
+    const hashedPassword = bcrypt.hashSync(password, saltRounds)
 
-        const accountId = await Account.countDocuments({}) + 1;
-        const hashedPassword = bcrypt.hashSync(password, saltRounds);
+    // Store the account object.
+    const account = new Account({
+      _id: accountId,
+      username,
+      password: hashedPassword
+    })
 
-        // Store the account object.
-        var account = new Account({
-            _id: accountId,
-            username: username,
-            password: hashedPassword
-        });
+    await account.save()
 
-        await account.save();
-
-        return true;
-    }
+    return true
+  }
 }
 
 module.exports = Database

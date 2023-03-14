@@ -1,11 +1,11 @@
-const CatalogItemDungeon = require('./CatalogItemDungeon');
+const CatalogItemDungeon = require('./CatalogItemDungeon')
 
 class CatalogItemRaceTrack extends CatalogItemDungeon {
-    constructor(itemId) {
-        super();
+  constructor (itemId) {
+    super()
 
-        this.itemId = itemId;
-    }
+    this.itemId = itemId
+  }
 }
 
 module.exports = CatalogItemRaceTrack

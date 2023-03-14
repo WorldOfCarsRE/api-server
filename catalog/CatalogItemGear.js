@@ -1,15 +1,15 @@
-const CatalogCarItem = require('./CatalogCarItem');
+const CatalogCarItem = require('./CatalogCarItem')
 
 class CatalogItemGear extends CatalogCarItem {
-    constructor(itemId) {
-        super();
+  constructor (itemId) {
+    super()
 
-        this.itemId = itemId;
+    this.itemId = itemId
 
-        this.physicsId = 100;
-        this.tabButton = 'gear1Button';
-        this.gear = 1;
-    }
+    this.physicsId = 100
+    this.tabButton = 'gear1Button'
+    this.gear = 1
+  }
 }
 
-module.exports = CatalogItemGear;
+module.exports = CatalogItemGear

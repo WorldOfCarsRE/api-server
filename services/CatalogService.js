@@ -1,57 +1,57 @@
-CatalogItemRaceSeries = global.CatalogItemRaceSeries;
-CatalogItemWorldZone = global.CatalogItemWorldZone;
-CatalogItemRaceLevel = global.CatalogItemRaceLevel;
-CatalogItemRaceTrack = global.CatalogItemRaceTrack;
+CatalogItemRaceSeries = global.CatalogItemRaceSeries
+CatalogItemWorldZone = global.CatalogItemWorldZone
+CatalogItemRaceLevel = global.CatalogItemRaceLevel
+CatalogItemRaceTrack = global.CatalogItemRaceTrack
 
-libamf = global.libamf;
-ArrayCollection = global.ArrayCollection;
+libamf = global.libamf
+ArrayCollection = global.ArrayCollection
 
-const {clientData} = require('../constants');
+const { clientData } = require('../constants')
 
 class CatalogService extends libamf.Service {
-    constructor() {
-        super('catalog');
+  constructor () {
+    super('catalog')
+  }
+
+  getItemsByIds (itemIds) {
+    console.log('getItemsByIds:', [...itemIds])
+
+    const array = new ArrayCollection()
+
+    for (const itemId of itemIds) {
+      const item = clientData[itemId].classObj
+      item.itemId = itemId
+      array.push(item)
     }
 
-    getItemsByIds(itemIds) {
-        console.log('getItemsByIds:', [...itemIds]);
+    return array
+  }
 
-        const array = new ArrayCollection();
+  getTreeById (id, depth) {
+    console.log('getTreeById:', id, depth)
 
-        for (const itemId of itemIds) {
-            var item = clientData[itemId]['classObj'];
-            item.itemId = itemId;
-            array.push(item);
-        }
+    const resp = new ArrayCollection()
+    resp.push(new CatalogItemRaceSeries(id))
+    resp.push(new CatalogItemRaceLevel(1))
+    return resp
+  }
 
-        return array;
-    }
+  getItemsByType (itemType) {
+    console.log('getItemsByType:', itemType)
 
-    getTreeById(id, depth) {
-        console.log('getTreeById:', id, depth);
+    const resp = new ArrayCollection()
+    resp.push(new CatalogItemGear(1))
+    return resp
+  }
 
-        const resp = new ArrayCollection();
-        resp.push(new CatalogItemRaceSeries(id));
-        resp.push(new CatalogItemRaceLevel(1));
-        return resp;
-    }
+  getItem (itemId) {
+    console.log('getItem:', itemId)
 
-    getItemsByType(itemType) {
-        console.log('getItemsByType:', itemType);
+    const item = clientData[itemId].classObj
+    item.itemId = itemId
 
-        const resp = new ArrayCollection();
-        resp.push(new CatalogItemGear(1));
-        return resp;
-    }
-
-    getItem(itemId) {
-        console.log('getItem:', itemId);
-
-        var item = clientData[itemId]['classObj'];
-        item.itemId = itemId;
-
-        return item;
-    }
+    return item
+  }
 }
 
 module.exports = CatalogService

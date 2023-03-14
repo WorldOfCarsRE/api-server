@@ -1,11 +1,11 @@
-const CatalogCarItem = require('./CatalogCarItem');
+const CatalogCarItem = require('./CatalogCarItem')
 
 class CatalogItemTire extends CatalogCarItem {
-    constructor(image) {
-        super();
+  constructor (image) {
+    super()
 
-        this.image = image;
-    }
+    this.image = image
+  }
 }
 
 module.exports = CatalogItemTire

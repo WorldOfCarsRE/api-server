@@ -1,6 +1,6 @@
 class CatalogItemAnimation {
-    constructor() {
-    }
+  constructor () {
+  }
 }
 
 module.exports = CatalogItemAnimation

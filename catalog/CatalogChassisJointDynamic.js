@@ -1,16 +1,16 @@
-ArrayCollection = global.ArrayCollection;
+ArrayCollection = global.ArrayCollection
 
 class CatalogChassisJointDynamic {
-    constructor() {
-        this.name = '';
+  constructor () {
+    this.name = ''
 
-        this.value = 0.0;
-        this.max = 0.0;
-        this.min = 0.0;
-        this.type = '';
+    this.value = 0.0
+    this.max = 0.0
+    this.min = 0.0
+    this.type = ''
 
-        this.linked = new ArrayCollection();
-    }
+    this.linked = new ArrayCollection()
+  }
 }
 
-module.exports = CatalogChassisJointDynamic;
+module.exports = CatalogChassisJointDynamic
