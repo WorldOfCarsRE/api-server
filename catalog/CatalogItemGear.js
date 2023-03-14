@@ -8,7 +8,7 @@ class CatalogItemGear extends CatalogCarItem {
 
         this.physicsId = 100;
         this.tabButton = 'gear1Button';
-        this.gear = 0;
+        this.gear = 1;
     }
 }
 

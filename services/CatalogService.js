@@ -40,7 +40,7 @@ class CatalogService extends libamf.Service {
         console.log('getItemsByType:', itemType);
 
         const resp = new ArrayCollection();
-        resp.push(new CatalogItemGear(2));
+        resp.push(new CatalogItemGear(1));
         return resp;
     }
 
