@@ -10,6 +10,7 @@ server.app.get('/carsds/api/WhoAmIRequest', async (req, res) => {
 
   let success = false
   let accountId = -1
+  let userName = ''
 
   if (ses.success) {
     success = true
@@ -28,13 +29,14 @@ server.app.get('/carsds/api/WhoAmIRequest', async (req, res) => {
     user.txt(ses.username)
 
     accountId = ses.userId
+    userName = ses.username
   } else {
     status.txt('not_logged_in')
   }
 
   account = root.ele('account', { account_id: accountId })
   account.ele('first_name')
-  account.ele('dname')
+  account.ele('dname').txt(userName)
   account.ele('age').txt(0)
   account.ele('touAccepted').txt('basic')
   account.ele('access').txt('true')
