@@ -1,5 +1,6 @@
 mongoose = global.mongoose
 create = global.create
+libamf = global.libamf
 
 const Account = require('./models/Account')
 const Cars = require('./models/Cars')
@@ -123,14 +124,14 @@ class Database {
     const car = await this.retrieveCar(accountId)
 
     if (car) {
-      return car.serializedData
+      return car.carData
     }
 
     return false
   }
 
   async getAccountIdFromUser (username) {
-    const account = await this.retrieveAccount(username)
+    const account = await this.retrieveAccountFromUser(username)
 
     if (account) {
       return account._id
@@ -139,14 +140,26 @@ class Database {
     return -1
   }
 
-  async retrieveAccount (username) {
-    const account = await Account.findOne({ username })
+  async getUserNameFromAccountId (accountId) {
+    const account = await this.retrieveAccountFromIdentifier(accountId)
 
-    return account
+    if (account) {
+      return account.username
+    }
+
+    return ''
+  }
+
+  async retrieveAccountFromIdentifier (identifier) {
+    return await Account.findById({ _id: identifier })
+  }
+
+  async retrieveAccountFromUser (username) {
+    return await Account.findOne({ username })
   }
 
   async verifyCredentials (username, password) {
-    const account = await this.retrieveAccount(username)
+    const account = await this.retrieveAccountFromUser(username)
 
     if (!account) {
       return false
@@ -165,11 +178,13 @@ class Database {
     car.racecarId = playerId // TODO: Is this okay?
 
     const serialized = libamf.serialize(car, libamf.ENCODING.AMF3)
+    const data = libamf.deserialize(serialized, libamf.ENCODING.AMF3)
 
-    // Store out car.
+    // Store our car.
     var car = new Cars({
       _id: accountId,
-      serializedData: serialized
+      carData: data,
+      ownerAccount: await this.getUserNameFromAccountId(accountId)
     })
 
     await car.save()

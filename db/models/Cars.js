@@ -2,7 +2,8 @@ mongoose = global.mongoose
 
 const Cars = new mongoose.model('Cars', {
   _id: { type: Number }, // This is the accountId
-  serializedData: { type: Buffer }
+  carData: { type: Object },
+  ownerAccount: {type: String}
 })
 
 module.exports = Cars

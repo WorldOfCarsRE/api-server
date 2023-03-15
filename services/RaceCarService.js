@@ -8,12 +8,19 @@ class RaceCarService extends libamf.Service {
     super('racecar')
   }
 
+  async createSerializedRaceCar (carData) {
+    const car = new Racecar()
+    Object.assign(car, carData)
+
+    return libamf.serialize(car, libamf.ENCODING.AMF3)
+  }
+
   async updateRacecar (carObj) {
+    const serialized = libamf.serialize(carObj, libamf.ENCODING.AMF3)
     const car = await db.retrieveCar(carObj.playerId)
 
     if (car) {
-      const serialized = libamf.serialize(carObj, libamf.ENCODING.AMF3)
-      car.serializedData = serialized
+      car.carData = libamf.deserialize(serialized, libamf.ENCODING.AMF3)
       car.save()
     }
 
@@ -21,11 +28,12 @@ class RaceCarService extends libamf.Service {
   }
 
   async insertCustomItems (carObj) {
+    console.log(carObj)
+    const serialized = libamf.serialize(carObj, libamf.ENCODING.AMF3)
     const car = await db.retrieveCar(carObj.playerId)
 
     if (car) {
-      const serialized = libamf.serialize(carObj, libamf.ENCODING.AMF3)
-      car.serializedData = serialized
+      car.carData = libamf.deserialize(serialized, libamf.ENCODING.AMF3)
       car.save()
     }
 
@@ -35,10 +43,7 @@ class RaceCarService extends libamf.Service {
   async getRacecarIdsByUserId (accountId) {
     console.log('getRacecarIdsByUserId: ', accountId)
 
-    const serializedData = await db.retrieveCarData(accountId)
-
-    const car = libamf.deserialize(serializedData, libamf.ENCODING.AMF3)
-
+    const car = await db.retrieveCarData(accountId)
     const carId = car.playerId
 
     const resp = new ArrayCollection()
@@ -52,8 +57,8 @@ class RaceCarService extends libamf.Service {
     const dbCar = await db.retrieveCar(racecarId)
 
     if (dbCar) {
-      const car = libamf.deserialize(dbCar.serializedData, libamf.ENCODING.AMF3)
-      return car
+      const serialized = await this.createSerializedRaceCar(dbCar)
+      return libamf.deserialize(serialized, libamf.ENCODING.AMF3)
     }
   }
 
@@ -64,10 +69,10 @@ class RaceCarService extends libamf.Service {
       await db.createCar(accountId)
     }
 
-    const serializedData = await db.retrieveCarData(accountId)
+    const carData = await db.retrieveCarData(accountId)
+    const serialized = await this.createSerializedRaceCar(carData)
 
-    const car = libamf.deserialize(serializedData, libamf.ENCODING.AMF3)
-    return car
+    return libamf.deserialize(serialized, libamf.ENCODING.AMF3)
   }
 }
 
