@@ -28,7 +28,6 @@ class RaceCarService extends libamf.Service {
   }
 
   async insertCustomItems (carObj) {
-    console.log(carObj)
     const serialized = libamf.serialize(carObj, libamf.ENCODING.AMF3)
     const car = await db.retrieveCar(carObj.playerId)
 
