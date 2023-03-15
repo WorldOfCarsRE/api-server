@@ -44,8 +44,8 @@ clientData[20210] = {
 }
 
 clientData[15001] = {
-  name: 'Downtown',
-  classObj: new CatalogItemWorldZone()
+  name: 'Downtown Radiator Springs',
+  classObj: new CatalogItemWorldZone('Downtown Radiator Springs', 100, "car_f_gui_ttl_radiatorSprings_en_US.swf", 'car_w_env_rsp_RadiatorSprings', 'car_g_map_env_radiatorSprings.swf')
 }
 
 clientData[10101] = {

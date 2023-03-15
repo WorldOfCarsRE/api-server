@@ -11,7 +11,7 @@ class PlayerService extends libamf.Service {
 
     const resp = new ArrayCollection()
 
-    // Having a empty array means autoLogin is true.
+    // Having a empty array means autoLogin is true (go to tutorial).
     resp.push(1)
 
     return resp

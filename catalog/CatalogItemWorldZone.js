@@ -1,16 +1,17 @@
 const CatalogItem = require('./CatalogItem')
 
 class CatalogItemWorldZone extends CatalogItem {
-  constructor () {
+  constructor (name, visitedRuleId, titleUrl, mapUrl, miniMapUrl, scriptUrl = 'scripts/isoworld/radiator_springs.lua') {
     super()
 
-    this.visitedRuleId = 0
+    this.name = name
+    this.visitedRuleId = visitedRuleId
     this.outTransitionUrl = 'car_f_trn_gam_loaderTransition.swf'
-    this.titleUrl = 'car_f_evt_rsn_newPlayerRsnBackStory_en_US.swf'
-    this.mapUrl = 'car_w_env_rsp_NewPlayer' // car_w_env_rsp_NewPlayer?
-    this.miniMapUrl = 'car_f_gui_map_carburetorCounty_en_US.swf'
+    this.titleUrl = titleUrl
+    this.mapUrl = mapUrl
+    this.miniMapUrl = miniMapUrl
 
-    this.scriptUrl = 'scripts/dungeon/new_player_tutorial'
+    this.scriptUrl = scriptUrl
   }
 }
 
