@@ -7,6 +7,7 @@ const CatalogItemEyeColor = global.CatalogItemEyeColor
 const CatalogItemWheel = global.CatalogItemWheel
 const CatalogItemTire = global.CatalogItemTire
 const CatalogItemSimpleAnimation = global.CatalogItemSimpleAnimation
+const CatalogItemSimpleSound = global.CatalogItemSimpleSound
 const CatalogItemDungeon = global.CatalogItemDungeon
 const CatalogItemPhysics = global.CatalogItemPhysics
 
@@ -133,22 +134,52 @@ clientData[20205] = {
 }
 
 clientData[33275] = {
-  name: '?',
-  classObj: new CatalogItemSimpleAnimation()
+  name: 'Idle Scan Animation',
+  classObj: new CatalogItemSimpleAnimation('idlescan')
+}
+
+clientData[33273] = {
+  name: 'Horn Animation',
+  classObj: new CatalogItemSimpleAnimation('horn')
 }
 
 clientData[33274] = {
-  name: '?',
-  classObj: new CatalogItemSimpleAnimation()
+  name: 'Idle Animation',
+  classObj: new CatalogItemSimpleAnimation('idleBlink')
+}
+
+clientData[54019] = {
+  name: 'Medium Horn',
+  classObj: new CatalogItemSimpleSound('ui', 'HonkMedium')
 }
 
 clientData[60025] = {
-  name: '?',
-  classObj: new CatalogItemSimpleAnimation()
+  name: 'Wave Animation',
+  classObj: new CatalogItemSimpleAnimation('wave')
+}
+
+clientData[60021] = {
+  name: 'Smile Animation',
+  classObj: new CatalogItemSimpleAnimation('smile')
+}
+
+clientData[60001] = {
+  name: 'Bored Animation',
+  classObj: new CatalogItemSimpleAnimation('bored')
+}
+
+clientData[60022] = {
+  name: 'Stretch Animation',
+  classObj: new CatalogItemSimpleAnimation('stretch')
+}
+
+clientData[60030] = {
+  name: 'Racing Closed Eyes Animation',
+  classObj: new CatalogItemSimpleAnimation('racingClosedEyes')
 }
 
 clientData[1000] = {
-  name: '?',
+  name: 'New Player Tutorial',
   classObj: new CatalogItemDungeon(1000)
 }
 

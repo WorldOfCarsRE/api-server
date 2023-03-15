@@ -4,10 +4,11 @@ class CatalogItemPhysics extends CatalogItem {
   constructor () {
     super()
 
-    this.drag = new Number()
-    this.power = new Number()
-    this.drift = new Number()
-    this.mass = new Number()
+    // TODO: Figure out actual physics data.
+    this.drag = 100
+    this.power = 1000
+    this.drift = 100
+    this.mass = 100
   }
 }
 
