@@ -2,6 +2,7 @@ CatalogItemRaceSeries = global.CatalogItemRaceSeries
 CatalogItemWorldZone = global.CatalogItemWorldZone
 CatalogItemRaceLevel = global.CatalogItemRaceLevel
 CatalogItemRaceTrack = global.CatalogItemRaceTrack
+CatalogItemSponsor = global.CatalogItemSponsor
 
 libamf = global.libamf
 ArrayCollection = global.ArrayCollection
@@ -40,7 +41,13 @@ class CatalogService extends libamf.Service {
     console.log('getItemsByType:', itemType)
 
     const resp = new ArrayCollection()
-    resp.push(new CatalogItemGear(1))
+
+    if (itemType == 'gear') {
+      resp.push(new CatalogItemGear(1))
+    } else if (itemType == 'sponsor') {
+      resp.push(new CatalogItemSponsor())
+    }
+
     return resp
   }
 
