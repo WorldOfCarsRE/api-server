@@ -1,7 +1,8 @@
 const CatalogItem = require('./CatalogItem')
 
 class CatalogItemWorldZone extends CatalogItem {
-  constructor (name, visitedRuleId, titleUrl, mapUrl, miniMapUrl, scriptUrl = 'scripts/isoworld/radiator_springs.lua') {
+  constructor (name, visitedRuleId, titleUrl, mapUrl, miniMapUrl, scriptUrl,
+               group = "", alias = "") {
     super()
 
     this.name = name
@@ -10,8 +11,9 @@ class CatalogItemWorldZone extends CatalogItem {
     this.titleUrl = titleUrl
     this.mapUrl = mapUrl
     this.miniMapUrl = miniMapUrl
-
     this.scriptUrl = scriptUrl
+    this.group = group
+    this.alias = alias
   }
 }
 
