@@ -4,7 +4,7 @@ class CatalogItemNPC extends CatalogItem {
   constructor () {
     super()
 
-    this.packName = ''
+    this.packName = 'car_k_chr_frn_materLow.dpak'
     this.defaultSaniId = 0
     this.shadowScaleY = new Number()
     this.logoUrl = ''

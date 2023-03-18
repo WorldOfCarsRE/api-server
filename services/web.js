@@ -5,7 +5,7 @@ server.app.get('/', (req, res) => {
   res.send('World of Cars API service.')
 })
 
-server.app.get('/carsds/api/WhoAmIRequest', async (req, res) => {
+async function handleWhoAmIRequest (req, res) {
   const ses = req.session
 
   let success = false
@@ -47,6 +47,14 @@ server.app.get('/carsds/api/WhoAmIRequest', async (req, res) => {
 
   const xml = root.end({ prettyPrint: true })
   res.send(xml)
+}
+
+server.app.get('/carsds/api/WhoAmIRequest', async (req, res) => {
+  await handleWhoAmIRequest(req, res)
+})
+
+server.app.post('/carsds/api/WhoAmIRequest', async (req, res) => {
+  await handleWhoAmIRequest(req, res)
 })
 
 server.app.get('/dxd/flashAPI/login', async (req, res) => {

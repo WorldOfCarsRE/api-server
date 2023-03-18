@@ -2,7 +2,7 @@ const CatalogItem = require('./CatalogItem')
 
 class CatalogItemWorldZone extends CatalogItem {
   constructor (name, visitedRuleId, titleUrl, mapUrl, miniMapUrl, scriptUrl,
-               group = "", alias = "") {
+    group = '', alias = '') {
     super()
 
     this.name = name

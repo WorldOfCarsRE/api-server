@@ -8,9 +8,40 @@ class RaceCarService extends libamf.Service {
     super('racecar')
   }
 
-  async createSerializedRaceCar (carData) {
+  async createRaceCar (carData) {
     const car = new Racecar()
     Object.assign(car, carData)
+
+    // Some attribute types are wrong from DB, causing client errors.
+    // TODO: Better way of solving this?
+    // Example: TypeError: Error #1034: Type Coercion failed: cannot convert []@2e3c5de8161 to com.disney.net.amfObjects.ServerArray.
+
+    const decalSlots = new ArrayCollection(car.decalSlots)
+    car.decalSlots = decalSlots
+
+    const trophyItemList = car.trophyItemList.length == 0 ? new ArrayCollection() : new ArrayCollection(car.trophyItemList)
+    car.trophyItemList = trophyItemList
+
+    const animationList = car.animationList.length == 0 ? new ArrayCollection() : new ArrayCollection(car.animationList)
+    car.animationList = animationList
+
+    const addonItemList = car.addonItemList.length == 0 ? new ArrayCollection() : new ArrayCollection(car.addonItemList)
+    car.addonItemList = addonItemList
+
+    const sponsorList = car.sponsorList.length == 0 ? new ArrayCollection() : new ArrayCollection(car.sponsorList)
+    car.sponsorList = sponsorList
+
+    const danceSequenceList = car.danceSequenceList.length == 0 ? new ArrayCollection() : new ArrayCollection(car.danceSequenceList)
+    car.danceSequenceList = danceSequenceList
+
+    const customItemList = car.customItemList.length == 0 ? new ArrayCollection() : new ArrayCollection(car.customItemList)
+    car.customItemList = customItemList
+
+    const stretches = car.stretches.length == 0 ? new ArrayCollection() : new ArrayCollection(car.stretches)
+    car.stretches = stretches
+
+    const consumableItemList = car.consumableItemList.length == 0 ? new ArrayCollection() : new ArrayCollection(car.consumableItemList)
+    car.consumableItemList = consumableItemList
 
     return libamf.serialize(car, libamf.ENCODING.AMF3)
   }
@@ -53,10 +84,10 @@ class RaceCarService extends libamf.Service {
   async getRacecarOnLogin (racecarId) {
     console.log('getRacecarOnLogin: ', racecarId)
 
-    const dbCar = await db.retrieveCar(racecarId)
+    const dbCar = await db.retrieveCarData(racecarId)
 
     if (dbCar) {
-      const serialized = await this.createSerializedRaceCar(dbCar)
+      const serialized = await this.createRaceCar(dbCar)
       return libamf.deserialize(serialized, libamf.ENCODING.AMF3)
     }
   }
@@ -69,7 +100,7 @@ class RaceCarService extends libamf.Service {
     }
 
     const carData = await db.retrieveCarData(accountId)
-    const serialized = await this.createSerializedRaceCar(carData)
+    const serialized = await this.createRaceCar(carData)
 
     return libamf.deserialize(serialized, libamf.ENCODING.AMF3)
   }

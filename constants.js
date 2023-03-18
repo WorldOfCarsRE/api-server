@@ -45,7 +45,12 @@ clientData[20210] = {
 
 clientData[15001] = {
   name: 'Downtown Radiator Springs',
-  classObj: new CatalogItemWorldZone('Downtown Radiator Springs', 100, 'car_f_gui_ttl_radiatorSprings_en_US.swf', 'car_w_env_rsp_RadiatorSprings', 'car_g_map_env_radiatorSprings.swf', "scripts/isoworld/radiator_springs.lua", "Music", "radiatorSprings")
+  classObj: new CatalogItemWorldZone('Downtown Radiator Springs', 100, 'car_f_gui_ttl_radiatorSprings_en_US.swf', 'car_w_env_rsp_RadiatorSprings', 'car_g_map_env_radiatorSprings.swf', 'scripts/isoworld/radiator_springs.lua', 'Music', 'radiatorSprings')
+}
+
+clientData[15002] = {
+  name: "Fillmore's Fields",
+  classObj: new CatalogItemWorldZone("Fillmore's Fields", 100, 'car_f_gui_ttl_fillmoresFields_en_US.swf', 'car_w_env_frm_fillmore_fields', 'car_g_map_env_farmGrounds.swf', 'scripts/isoworld/fillmores_fields.lua', 'Music', 'zoneFillmoresFields')
 }
 
 clientData[10101] = {
@@ -181,6 +186,11 @@ clientData[60030] = {
 clientData[1000] = {
   name: 'New Player Tutorial',
   classObj: new CatalogItemDungeon(1000)
+}
+
+clientData[31009] = {
+  name: 'Mater',
+  classObj: new CatalogItemNPC()
 }
 
 module.exports = { clientData }

@@ -39,6 +39,8 @@ class Racecar {
     this.activeSponsorId = 0
     this.logoFontColor = 0
     this.customItemList = new ArrayCollection()
+    this.stretches = new ArrayCollection()
+    this.consumableItemList = new ArrayCollection()
     this.tire = 0
     this.createTime = new Date()
     this.carName = ''
