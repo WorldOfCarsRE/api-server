@@ -103,11 +103,6 @@ clientData[20207] = {
   classObj: new CatalogItemPaint(15033856)
 }
 
-clientData[15002] = {
-  name: 'FillmoresFields',
-  classObj: new CatalogItemWorldZone()
-}
-
 clientData[15003] = {
   name: 'RedhoodValley',
   classObj: new CatalogItemWorldZone()
