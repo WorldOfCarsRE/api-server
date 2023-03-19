@@ -50,7 +50,7 @@ clientData[15001] = {
 
 clientData[15002] = {
   name: "Fillmore's Fields",
-  classObj: new CatalogItemWorldZone("Fillmore's Fields", 100, 'car_f_gui_ttl_fillmoresFields_en_US.swf', 'car_w_env_frm_fillmore_fields', 'car_g_map_env_farmGrounds.swf', 'scripts/isoworld/fillmores_fields.lua', 'Music', 'zoneFillmoresFields')
+  classObj: new CatalogItemWorldZone("Fillmore's Fields", 100, 'car_f_gui_ttl_fillmoresFields_en_US.swf', 'car_w_env_frm_FillmoresFields_haul', 'car_g_map_env_farmGrounds.swf', 'scripts/isoworld/fillmores_fields.lua', 'Music', 'zoneFillmoresFields')
 }
 
 clientData[10101] = {
@@ -186,6 +186,11 @@ clientData[1000] = {
 clientData[31009] = {
   name: 'Mater',
   classObj: new CatalogItemNPC()
+}
+
+clientData[15006] = {
+  name: "Willy's Butte",
+  classObj: new CatalogItemWorldZone("Willy's Butte", 100, 'car_f_gui_ttl_willysButte_en_US.swf', 'car_w_env_wil_WillysButte_design', 'car_g_map_env_willysButte.swf', 'scripts/isoworld/willys_butte.lua', 'Music', 'zoneWilliesButte')
 }
 
 module.exports = { clientData }
