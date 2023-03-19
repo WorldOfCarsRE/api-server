@@ -180,7 +180,7 @@ clientData[60030] = {
 
 clientData[1000] = {
   name: 'New Player Tutorial',
-  classObj: new CatalogItemDungeon(1000)
+  classObj: new CatalogItemDungeon('New Player Tutorial', 0, 'car_f_evt_rsn_newPlayerRsnBackStory_en_US.swf', 'car_w_env_rsp_NewPlayer', 'car_g_map_env_newPlayer.swf', 'new_player_tutorial')
 }
 
 clientData[31009] = {
@@ -191,6 +191,13 @@ clientData[31009] = {
 clientData[15006] = {
   name: "Willy's Butte",
   classObj: new CatalogItemWorldZone("Willy's Butte", 100, 'car_f_gui_ttl_willysButte_en_US.swf', 'car_w_env_wil_WillysButte_design', 'car_g_map_env_willysButte.swf', 'scripts/isoworld/willys_butte.lua', 'Music', 'zoneWilliesButte')
+}
+
+clientData[10001] = {
+  name: 'Home',
+
+  // TODO FIXME: Find correct titleUrl
+  classObj: new CatalogItemDungeon('Home', 0, 'car_f_evt_rsn_newPlayerRsnBackStory_en_US.swf', 'car_w_yar_own_non_member_yard', 'car_g_map_env_yardNonMember.swf', 'scripts/yard/small.lua')
 }
 
 module.exports = { clientData }
