@@ -102,8 +102,9 @@ class Database {
 
   async doesCarExist (accountId) {
     const car = await Cars.findOne({ _id: accountId })
+    const carByDislId = await Cars.findOne({ dislId: accountId })
 
-    if (car) {
+    if (car || carByDislId) {
       return true
     }
 
@@ -112,9 +113,12 @@ class Database {
 
   async retrieveCar (accountId) {
     const car = await Cars.findOne({ _id: accountId })
+    const carByDislId = await Cars.findOne({ dislId: accountId })
 
     if (car) {
       return car
+    } else if (carByDislId) {
+      return carByDislId
     }
 
     return false
@@ -184,7 +188,8 @@ class Database {
     var car = new Cars({
       _id: accountId,
       carData: data,
-      ownerAccount: await this.getUserNameFromAccountId(accountId)
+      ownerAccount: await this.getUserNameFromAccountId(accountId),
+      dislId: 0
     })
 
     await car.save()
