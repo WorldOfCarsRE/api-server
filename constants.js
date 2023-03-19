@@ -53,6 +53,23 @@ clientData[15002] = {
   classObj: new CatalogItemWorldZone("Fillmore's Fields", 100, 'car_f_gui_ttl_fillmoresFields_en_US.swf', 'car_w_env_frm_FillmoresFields_haul', 'car_g_map_env_farmGrounds.swf', 'scripts/isoworld/fillmores_fields.lua', 'Music', 'zoneFillmoresFields')
 }
 
+clientData[15003] = {
+  name: 'Redhood Valley',
+  classObj: new CatalogItemWorldZone()
+}
+
+clientData[15006] = {
+  name: "Willy's Butte",
+  classObj: new CatalogItemWorldZone("Willy's Butte", 100, 'car_f_gui_ttl_willysButte_en_US.swf', 'car_w_env_wil_WillysButte_design', 'car_g_map_env_willysButte.swf', 'scripts/isoworld/willys_butte.lua', 'Music', 'zoneWilliesButte')
+}
+
+clientData[10001] = {
+  name: 'Home',
+
+  // TODO FIXME: Find correct titleUrl
+  classObj: new CatalogItemDungeon('Home', 0, 'car_f_evt_rsn_newPlayerRsnBackStory_en_US.swf', 'car_w_yar_own_non_member_yard', 'car_g_map_env_yardNonMember.swf', 'scripts/yard/small.lua')
+}
+
 clientData[10101] = {
   name: 'Eye Color',
   classObj: new CatalogItemEyeColor(0)
@@ -103,19 +120,9 @@ clientData[20207] = {
   classObj: new CatalogItemPaint(15033856)
 }
 
-clientData[15003] = {
-  name: 'RedhoodValley',
-  classObj: new CatalogItemWorldZone()
-}
-
 clientData[31010] = {
   name: '?',
   classObj: new CatalogItemNPC()
-}
-
-clientData[15006] = {
-  name: 'WillysButte',
-  classObj: new CatalogItemWorldZone()
 }
 
 clientData[20209] = {
@@ -186,18 +193,6 @@ clientData[1000] = {
 clientData[31009] = {
   name: 'Mater',
   classObj: new CatalogItemNPC()
-}
-
-clientData[15006] = {
-  name: "Willy's Butte",
-  classObj: new CatalogItemWorldZone("Willy's Butte", 100, 'car_f_gui_ttl_willysButte_en_US.swf', 'car_w_env_wil_WillysButte_design', 'car_g_map_env_willysButte.swf', 'scripts/isoworld/willys_butte.lua', 'Music', 'zoneWilliesButte')
-}
-
-clientData[10001] = {
-  name: 'Home',
-
-  // TODO FIXME: Find correct titleUrl
-  classObj: new CatalogItemDungeon('Home', 0, 'car_f_evt_rsn_newPlayerRsnBackStory_en_US.swf', 'car_w_yar_own_non_member_yard', 'car_g_map_env_yardNonMember.swf', 'scripts/yard/small.lua')
 }
 
 module.exports = { clientData }
