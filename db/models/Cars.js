@@ -8,4 +8,3 @@ const Cars = new mongoose.model('Cars', {
 })
 
 module.exports = Cars
-
