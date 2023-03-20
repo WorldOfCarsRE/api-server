@@ -11,7 +11,7 @@ class CatalogItemNPC extends CatalogItem {
     this.swfUrl = ''
     this.shadowScaleX = 0
     this.portraitUrl = ''
-    this.smod = 'car_r_chr_avt_stock.smod'
+    this.smod = 'car_r_chr_frn_materLow.smod'
     this.spriteStripUrl = ''
     this.logoColor = 0
     this.name = name
