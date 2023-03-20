@@ -101,12 +101,9 @@ class Database {
   }
 
   async doesCarExist (identifier) {
-    // TODO: Messy, find better way of handling?
-    const car = await Cars.findOne({ _id: identifier })
-    const carByDislId = await Cars.findOne({ dislId: identifier })
-    const carByPlayerId = await Cars.findOne({ playerId: identifier })
+    const car = await Cars.findOne({ $or: [{ _id: identifier }, { dislId: identifier }, { playerId: identifier }] })
 
-    if (car || carByDislId || carByPlayerId) {
+    if (car) {
       return true
     }
 
@@ -114,17 +111,10 @@ class Database {
   }
 
   async retrieveCar (identifier) {
-    // TODO: Same as above function.
-    const car = await Cars.findOne({ _id: identifier })
-    const carByDislId = await Cars.findOne({ dislId: identifier })
-    const carByPlayerId = await Cars.findOne({ playerId: identifier })
+    const car = await Cars.findOne({ $or: [{ _id: identifier }, { dislId: identifier }, { playerId: identifier }] })
 
     if (car) {
       return car
-    } else if (carByDislId) {
-      return carByDislId
-    } else if (carByPlayerId) {
-      return carByPlayerId
     }
 
     return false
