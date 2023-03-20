@@ -92,14 +92,20 @@ class RaceCarService extends libamf.Service {
     }
   }
 
-  async getRacecarByUserId (accountId) {
-    console.log('getRacecarByUserId: ', accountId)
+  async getRacecars (identifier) {
+    const resp = new ArrayCollection()
+    resp.push(await this.getRacecarByUserId(identifier))
+    return resp
+  }
 
-    if (!await db.doesCarExist(accountId)) {
-      await db.createCar(accountId)
+  async getRacecarByUserId (identifier) {
+    console.log('getRacecarByUserId: ', identifier)
+
+    if (!await db.doesCarExist(identifier)) {
+      await db.createCar(identifier)
     }
 
-    const carData = await db.retrieveCarData(accountId)
+    const carData = await db.retrieveCarData(identifier)
     const serialized = await this.createRaceCar(carData)
 
     return libamf.deserialize(serialized, libamf.ENCODING.AMF3)

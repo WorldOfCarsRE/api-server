@@ -100,32 +100,38 @@ class Database {
     return true
   }
 
-  async doesCarExist (accountId) {
-    const car = await Cars.findOne({ _id: accountId })
-    const carByDislId = await Cars.findOne({ dislId: accountId })
+  async doesCarExist (identifier) {
+    // TODO: Messy, find better way of handling?
+    const car = await Cars.findOne({ _id: identifier })
+    const carByDislId = await Cars.findOne({ dislId: identifier })
+    const carByPlayerId = await Cars.findOne({ playerId: identifier })
 
-    if (car || carByDislId) {
+    if (car || carByDislId || carByPlayerId) {
       return true
     }
 
     return false
   }
 
-  async retrieveCar (accountId) {
-    const car = await Cars.findOne({ _id: accountId })
-    const carByDislId = await Cars.findOne({ dislId: accountId })
+  async retrieveCar (identifier) {
+    // TODO: Same as above function.
+    const car = await Cars.findOne({ _id: identifier })
+    const carByDislId = await Cars.findOne({ dislId: identifier })
+    const carByPlayerId = await Cars.findOne({ playerId: identifier })
 
     if (car) {
       return car
     } else if (carByDislId) {
       return carByDislId
+    } else if (carByPlayerId) {
+      return carByPlayerId
     }
 
     return false
   }
 
-  async retrieveCarData (accountId) {
-    const car = await this.retrieveCar(accountId)
+  async retrieveCarData (identifier) {
+    const car = await this.retrieveCar(identifier)
 
     if (car) {
       return car.carData
@@ -189,7 +195,9 @@ class Database {
       _id: accountId,
       carData: data,
       ownerAccount: await this.getUserNameFromAccountId(accountId),
-      dislId: 0
+      dislId: 0,
+      playerId: 0,
+      racecarId: 0
     })
 
     await car.save()
