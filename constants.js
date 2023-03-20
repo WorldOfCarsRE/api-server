@@ -14,7 +14,7 @@ const CatalogItemPhysics = global.CatalogItemPhysics
 const clientData = {}
 
 clientData[100] = {
-  name: '???',
+  name: 'Player Physics',
   classObj: new CatalogItemPhysics()
 }
 
@@ -125,6 +125,11 @@ clientData[31010] = {
   classObj: new CatalogItemNPC()
 }
 
+clientData[31011] = {
+  name: 'Mater Animation Test',
+  classObj: new CatalogItemSimpleAnimation('idlescan')
+}
+
 clientData[20209] = {
   name: 'Powerhouse Purple',
   classObj: new CatalogItemPaint(10571765)
@@ -192,7 +197,7 @@ clientData[1000] = {
 
 clientData[31009] = {
   name: 'Mater',
-  classObj: new CatalogItemNPC()
+  classObj: new CatalogItemNPC('Mater')
 }
 
 module.exports = { clientData }

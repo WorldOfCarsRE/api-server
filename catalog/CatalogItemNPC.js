@@ -1,19 +1,20 @@
 const CatalogItem = require('./CatalogItem')
 
 class CatalogItemNPC extends CatalogItem {
-  constructor () {
+  constructor (name) {
     super()
 
     this.packName = 'car_k_chr_frn_materLow.dpak'
-    this.defaultSaniId = 0
-    this.shadowScaleY = new Number()
+    this.defaultSaniId = 31011
+    this.shadowScaleY = 0
     this.logoUrl = ''
     this.swfUrl = ''
-    this.shadowScaleX = new Number()
+    this.shadowScaleX = 0
     this.portraitUrl = ''
     this.smod = 'car_r_chr_avt_stock.smod'
     this.spriteStripUrl = ''
     this.logoColor = 0
+    this.name = name
   }
 }
 
