@@ -130,6 +130,11 @@ clientData[31011] = {
   classObj: new CatalogItemSimpleAnimation('idlescan')
 }
 
+clientData[31012] = {
+  name: 'Mater Shop Test',
+  classObj: new CatalogItemStore()
+}
+
 clientData[20209] = {
   name: 'Powerhouse Purple',
   classObj: new CatalogItemPaint(10571765)

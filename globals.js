@@ -28,6 +28,7 @@ global.CatalogItemGear = require('./catalog/CatalogItemGear')
 global.CatalogItemPhysics = require('./catalog/CatalogItemPhysics')
 global.CatalogItemSponsor = require('./catalog/CatalogItemSponsor')
 global.CatalogItemYardZone = require('./catalog/CatalogItemYardZone')
+global.CatalogItemStore = require('./catalog/CatalogItemStore')
 
 const express = require('express')
 
@@ -75,6 +76,7 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Gear', Cata
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Physics', CatalogItemPhysics)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.progression.Sponsor', CatalogItemSponsor)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.yard.YardZone', CatalogItemYardZone)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.store.Store', CatalogItemStore)
 
 libamf.registerClassAlias('com.disney.cars.domain.racecar.Racecar', Racecar)
 
