@@ -1,7 +1,7 @@
 /* global CatalogPlayerItem: writeable */
 /* global ArrayCollection: writeable */
 
-CatalogPlayerItem = global.CatalogPlayerItem
+CatalogPlayerItem = require('./CatalogPlayerItem')
 ArrayCollection = global.ArrayCollection
 
 class CatalogPlayerStoreItem extends CatalogPlayerItem {

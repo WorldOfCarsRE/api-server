@@ -1,16 +1,15 @@
 /* global ArrayCollection: writeable */
 /* global CatalogChassisJointDynamic: writeable */
 /* global CatalogChassisJointStatic: writeable */
+/* global CatalogChassisOffset, CatalogChassisSlot */
 
-const CatalogCarItem = global.CatalogCarItem
+const CatalogCarItem = require('./CatalogCarItem')
 const fs = require('fs')
 const { XMLParser } = require('fast-xml-parser')
 
 ArrayCollection = global.ArrayCollection
 CatalogChassisJointDynamic = global.CatalogChassisJointDynamic
 CatalogChassisJointStatic = global.CatalogChassisJointStatic
-const CatalogChassisOffset = global.CatalogChassisOffset
-const CatalogChassisSlot = global.CatalogChassisSlot
 
 class CatalogItemChassis extends CatalogCarItem {
   constructor (name) {

@@ -1,4 +1,4 @@
-const CatalogCarItem = global.CatalogCarItem
+const CatalogCarItem = require('./CatalogCarItem')
 
 class CatalogItemEyeColor extends CatalogCarItem {
   constructor (color) {
