@@ -5,6 +5,10 @@ server.app.get('/', (req, res) => {
   res.send('World of Cars API service.')
 })
 
+function generateRandomNumber () {
+  return Math.floor(Math.random() * 101)
+}
+
 async function handleWhoAmIRequest (req, res) {
   const ses = req.session
 
@@ -66,10 +70,28 @@ server.app.post('/dxd/flashAPI/login', async (req, res) => {
 })
 
 server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
-  const status = await db.isUsernameAvailable(req.body.username)
+  const username = req.body.username
+  const status = await db.isUsernameAvailable(username)
 
   const root = create().ele('response')
   root.ele('success').txt(status)
+
+  if (!status) {
+    const results = root.ele('results')
+
+    const words = [
+      'Amazing',
+      'Cool',
+      'Super',
+      'Fantastic'
+    ]
+
+    const randomIndex = Math.floor(Math.random() * words.length)
+
+    results.ele('suggestedUsername1').txt(`${username}${generateRandomNumber()}`)
+    results.ele('suggestedUsername2').txt(`${username}${generateRandomNumber()}`)
+    results.ele('suggestedUsername3').txt(`${username}${words[randomIndex]}`)
+  }
 
   const xml = root.end({ prettyPrint: true })
   res.send(xml)
