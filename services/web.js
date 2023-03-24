@@ -77,6 +77,7 @@ server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
   root.ele('success').txt(status)
 
   if (!status) {
+    // Specified username is taken, give some suggestions to choose from.
     const results = root.ele('results')
 
     const words = [
