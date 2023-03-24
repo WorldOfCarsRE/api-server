@@ -90,7 +90,7 @@ server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
 
     results.ele('suggestedUsername1').txt(`${username}${generateRandomNumber()}`)
     results.ele('suggestedUsername2').txt(`${username}${generateRandomNumber()}`)
-    results.ele('suggestedUsername3').txt(`${username}${words[randomIndex]}`)
+    results.ele('suggestedUsername3').txt(`${words[randomIndex]}${username}`)
   }
 
   const xml = root.end({ prettyPrint: true })
