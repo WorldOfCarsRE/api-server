@@ -1,10 +1,8 @@
-const CatalogItem = require('./CatalogItem')
+const CatalogItem = global.CatalogItem
 
-Vector = global.libamf.Vector
+/* global ArrayCollection: writeable */
+
 ArrayCollection = global.ArrayCollection
-
-CatalogItemRaceTrack = global.CatalogItemRaceTrack
-CatalogItemRaceLevel = global.CatalogItemRaceLevel
 
 class CatalogItemRaceSeries extends CatalogItem {
   constructor (itemId) {

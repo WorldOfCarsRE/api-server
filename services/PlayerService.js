@@ -1,3 +1,5 @@
+/* global libamf:writeable, ArrayCollection:writeable */
+
 libamf = global.libamf
 ArrayCollection = global.ArrayCollection
 

@@ -10,6 +10,7 @@ const CatalogItemSimpleAnimation = global.CatalogItemSimpleAnimation
 const CatalogItemSimpleSound = global.CatalogItemSimpleSound
 const CatalogItemDungeon = global.CatalogItemDungeon
 const CatalogItemPhysics = global.CatalogItemPhysics
+const CatalogItemStore = global.CatalogItemStore
 
 const clientData = {}
 

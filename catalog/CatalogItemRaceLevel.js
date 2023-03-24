@@ -1,5 +1,7 @@
 const CatalogItem = require('./CatalogItem')
 
+/* global ArrayCollection: writeable */
+
 ArrayCollection = global.ArrayCollection
 
 class CatalogItemRaceLevel extends CatalogItem {

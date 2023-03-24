@@ -1,5 +1,3 @@
-ArrayCollection = global.ArrayCollection
-
 class CatalogChassisSlot {
   constructor () {
     this.pos = ''

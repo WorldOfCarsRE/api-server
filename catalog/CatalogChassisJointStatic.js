@@ -1,5 +1,3 @@
-ArrayCollection = global.ArrayCollection
-
 class CatalogChassisJointStatic {
   constructor () {
     this.name = ''

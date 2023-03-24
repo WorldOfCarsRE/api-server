@@ -1,4 +1,6 @@
-const CatalogCarItem = require('./CatalogCarItem')
+const CatalogCarItem = global.CatalogCarItem
+
+/* global ArrayCollection: writeable */
 
 ArrayCollection = global.ArrayCollection
 

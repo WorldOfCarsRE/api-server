@@ -1,8 +1,14 @@
+/* global CatalogItemRaceSeries: writeable */
+/* global CatalogItemRaceLevel: writeable */
+/* global CatalogItemSponsor: writeable */
+/* global CatalogItemGear: writeable */
+
+/* global libamf:writeable, ArrayCollection:writeable */
+
 CatalogItemRaceSeries = global.CatalogItemRaceSeries
-CatalogItemWorldZone = global.CatalogItemWorldZone
 CatalogItemRaceLevel = global.CatalogItemRaceLevel
-CatalogItemRaceTrack = global.CatalogItemRaceTrack
 CatalogItemSponsor = global.CatalogItemSponsor
+CatalogItemGear = global.CatalogItemGear
 
 libamf = global.libamf
 ArrayCollection = global.ArrayCollection
@@ -42,9 +48,9 @@ class CatalogService extends libamf.Service {
 
     const resp = new ArrayCollection()
 
-    if (itemType == 'gear') {
+    if (itemType === 'gear') {
       resp.push(new CatalogItemGear(1))
-    } else if (itemType == 'sponsor') {
+    } else if (itemType === 'sponsor') {
       resp.push(new CatalogItemSponsor())
     }
 

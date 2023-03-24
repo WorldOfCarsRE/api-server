@@ -1,12 +1,16 @@
-const CatalogCarItem = require('./CatalogCarItem')
+/* global ArrayCollection: writeable */
+/* global CatalogChassisJointDynamic: writeable */
+/* global CatalogChassisJointStatic: writeable */
+
+const CatalogCarItem = global.CatalogCarItem
 const fs = require('fs')
 const { XMLParser } = require('fast-xml-parser')
 
 ArrayCollection = global.ArrayCollection
 CatalogChassisJointDynamic = global.CatalogChassisJointDynamic
 CatalogChassisJointStatic = global.CatalogChassisJointStatic
-CatalogItemChassisJointOffset = global.CatalogItemChassisJointOffset
-CatalogItemChassisJointSlot = global.CatalogItemChassisJointSlot
+const CatalogChassisOffset = global.CatalogChassisOffset
+const CatalogChassisSlot = global.CatalogChassisSlot
 
 class CatalogItemChassis extends CatalogCarItem {
   constructor (name) {
@@ -14,7 +18,7 @@ class CatalogItemChassis extends CatalogCarItem {
 
     // The base properties are the same throughout all chassis'.
     // They don't need changing.
-    this.baseProperties = new Object()
+    this.baseProperties = {}
     this.baseProperties.body_main = 'body'
     this.baseProperties.eye_left = 'eye_left'
     this.baseProperties.eye_right = 'eye_right'

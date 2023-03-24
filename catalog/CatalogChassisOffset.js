@@ -1,5 +1,3 @@
-ArrayCollection = global.ArrayCollection
-
 class CatalogChassisOffset {
   constructor () {
     this.name = ''

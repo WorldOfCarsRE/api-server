@@ -1,3 +1,5 @@
+/* global mongoose: writeable */
+
 mongoose = global.mongoose
 
 const Cars = new mongoose.model('Cars', {

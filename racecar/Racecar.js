@@ -1,3 +1,5 @@
+/* global ArrayCollection: writeable */
+
 ArrayCollection = global.ArrayCollection
 
 class Racecar {

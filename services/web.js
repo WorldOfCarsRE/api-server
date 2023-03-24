@@ -1,3 +1,6 @@
+/* global server:writable, create:writable */
+/* global db, account:writeable */
+
 server = global.server
 create = global.create
 

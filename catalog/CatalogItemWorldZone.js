@@ -1,4 +1,4 @@
-const CatalogItem = require('./CatalogItem')
+const CatalogItem = global.CatalogItem
 
 class CatalogItemWorldZone extends CatalogItem {
   constructor (name, visitedRuleId, titleUrl, mapUrl, miniMapUrl, scriptUrl,

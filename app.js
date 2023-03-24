@@ -3,6 +3,8 @@ require('./globals')
 
 server = global.server
 
+/* global server: writeable */
+
 server.on('data', packet => {
   console.log(packet)
 })

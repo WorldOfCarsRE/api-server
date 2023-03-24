@@ -1,3 +1,6 @@
+/* global ArrayCollection: writeable */
+/* global CatalogItem: writeable */
+
 ArrayCollection = global.ArrayCollection
 CatalogItem = global.CatalogItem
 

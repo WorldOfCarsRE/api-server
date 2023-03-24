@@ -1,4 +1,4 @@
-const CatalogItem = require('./CatalogItem')
+const CatalogItem = global.CatalogItem
 
 class CatalogItemDialogue extends CatalogItem {
   constructor () {

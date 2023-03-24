@@ -1,3 +1,5 @@
+/* global CatalogItem: writeable */
+
 CatalogItem = global.CatalogItem
 
 class CatalogItemSponsor extends CatalogItem {

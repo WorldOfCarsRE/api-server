@@ -1,3 +1,5 @@
+/* global mongoose: writeable */
+
 mongoose = global.mongoose
 
 const Account = new mongoose.model('Account', {

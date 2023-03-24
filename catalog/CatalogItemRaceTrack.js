@@ -1,4 +1,4 @@
-const CatalogItemDungeon = require('./CatalogItemDungeon')
+const CatalogItemDungeon = global.CatalogItemDungeon
 
 class CatalogItemRaceTrack extends CatalogItemDungeon {
   constructor (itemId) {

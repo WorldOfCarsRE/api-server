@@ -1,4 +1,4 @@
-const CatalogCarItem = require('./CatalogCarItem')
+const CatalogCarItem = global.CatalogCarItem
 
 class CatalogItemWheel extends CatalogCarItem {
   constructor (image) {

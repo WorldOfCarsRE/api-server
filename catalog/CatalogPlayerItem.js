@@ -1,6 +1,4 @@
-const CatalogItem = require('./CatalogItem')
-
-ArrayCollection = global.ArrayCollection
+const CatalogItem = global.CatalogItem
 
 class CatalogPlayerItem extends CatalogItem {
   constructor () {

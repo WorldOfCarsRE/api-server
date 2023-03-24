@@ -1,5 +1,6 @@
-const CatalogPlayerStoreItem = require('./CatalogPlayerStoreItem')
+/* global ArrayCollection: writeable */
 
+const CatalogPlayerStoreItem = global.CatalogPlayerStoreItem
 ArrayCollection = global.ArrayCollection
 
 class CatalogCarItem extends CatalogPlayerStoreItem {

@@ -1,6 +1,11 @@
+/* global mongoose: writeable */
+/* global create: writeable */
+/* global libamf: writeable */
+
 mongoose = global.mongoose
 create = global.create
 libamf = global.libamf
+const Racecar = global.Racecar
 
 const Account = require('./models/Account')
 const Cars = require('./models/Cars')
@@ -23,7 +28,7 @@ class Database {
     let username = req.body.username
     let password = req.body.password
 
-    if (username == undefined && password == undefined) {
+    if (username === undefined && password === undefined) {
       username = req.query.username
       password = req.query.password
     }
@@ -63,7 +68,7 @@ class Database {
     let username = req.body.username
     let password = req.body.password
 
-    if (username == undefined && password == undefined) {
+    if (username === undefined && password === undefined) {
       username = req.query.username
       password = req.query.password
     }
@@ -171,17 +176,17 @@ class Database {
   async createCar (accountId) {
     const playerId = await Cars.countDocuments({}) + 1
 
-    car = new Racecar()
+    const carObj = new Racecar()
 
-    car.userId = accountId
-    car.playerId = playerId
-    car.racecarId = playerId // TODO: Is this okay?
+    carObj.userId = accountId
+    carObj.playerId = playerId
+    carObj.racecarId = playerId // TODO: Is this okay?
 
-    const serialized = libamf.serialize(car, libamf.ENCODING.AMF3)
+    const serialized = libamf.serialize(carObj, libamf.ENCODING.AMF3)
     const data = libamf.deserialize(serialized, libamf.ENCODING.AMF3)
 
     // Store our car.
-    var car = new Cars({
+    const car = new Cars({
       _id: accountId,
       carData: data,
       ownerAccount: await this.getUserNameFromAccountId(accountId),

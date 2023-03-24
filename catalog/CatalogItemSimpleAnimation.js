@@ -1,3 +1,5 @@
+/* global CatalogItemAnimation: writeable */
+
 CatalogItemAnimation = global.CatalogItemAnimation
 
 class CatalogItemSimpleAnimation extends CatalogItemAnimation {

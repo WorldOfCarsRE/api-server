@@ -1,4 +1,36 @@
+/* global libamf: writeable */
+
 global.libamf = require('libamf')
+
+/* global CatalogItem */
+/* global CatalogItemRaceSeries */
+/* global CatalogItemWorldZone */
+/* global CatalogItemPaint */
+/* global CatalogItemChassis */
+/* global CatalogChassisJointDynamic */
+/* global CatalogChassisJointStatic */
+/* global CatalogChassisOffset */
+/* global CatalogChassisSlot */
+/* global CatalogItemNPC */
+/* global CatalogItemDecal */
+/* global CatalogItemEyeColor */
+/* global CatalogItemWheel */
+/* global CatalogItemTire */
+/* global CatalogCarItem */
+/* global CatalogPlayerItem */
+/* global CatalogPlayerStoreItem */
+/* global CatalogItemAnimation */
+/* global CatalogItemSimpleAnimation */
+/* global CatalogItemSimpleSound */
+/* global CatalogItemRaceLevel */
+/* global CatalogItemDungeon */
+/* global CatalogItemRaceTrack */
+/* global CatalogItemGear */
+/* global CatalogItemPhysics */
+/* global CatalogItemSponsor */
+/* global CatalogItemYardZone */
+/* global CatalogItemStore */
+/* global CatalogItemDialogue */
 
 global.CatalogItem = require('./catalog/CatalogItem')
 global.CatalogItemRaceSeries = require('./catalog/CatalogItemRaceSeries')
@@ -21,7 +53,6 @@ global.CatalogItemAnimation = require('./catalog/CatalogItemAnimation')
 global.CatalogItemSimpleAnimation = require('./catalog/CatalogItemSimpleAnimation')
 global.CatalogItemSimpleSound = require('./catalog/CatalogItemSimpleSound')
 global.CatalogItemRaceLevel = require('./catalog/CatalogItemRaceLevel')
-global.CatalogItemWorldZone = require('./catalog/CatalogItemWorldZone')
 global.CatalogItemDungeon = require('./catalog/CatalogItemDungeon')
 global.CatalogItemRaceTrack = require('./catalog/CatalogItemRaceTrack')
 global.CatalogItemGear = require('./catalog/CatalogItemGear')
@@ -38,12 +69,18 @@ global.mongoose = require('mongoose')
 Database = require('./db/Database')
 global.db = new Database()
 
+/* global Database: writeable */
+
 const cors = require('cors')
+
+/* global Racecar */
 
 global.Racecar = require('./racecar/Racecar')
 
 _create = require('xmlbuilder2')
 global.create = _create.create
+
+/* global _create: writeable */
 
 global.ArrayCollection = require('libamf/src/amf/flash/flex/ArrayCollection')
 
@@ -82,6 +119,8 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.Dialogue',
 
 libamf.registerClassAlias('com.disney.cars.domain.racecar.Racecar', Racecar)
 
+/* global server */
+
 global.server = new libamf.Server({
   path: '/carsds/messagebroker/amf'
 })
@@ -112,6 +151,8 @@ const RedisStore = require('connect-redis').default
 
 const redisClient = redis.createClient()
 redisClient.connect()
+
+/* global sess: writeable */
 
 sess = {
   secret: crypto.randomBytes(32).toString('base64'),

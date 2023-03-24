@@ -1,3 +1,6 @@
+/* global libamf:writeable, ArrayCollection:writeable */
+/* global db, Racecar:writeable */
+
 libamf = global.libamf
 ArrayCollection = global.ArrayCollection
 
@@ -19,28 +22,28 @@ class RaceCarService extends libamf.Service {
     const decalSlots = new ArrayCollection(car.decalSlots)
     car.decalSlots = decalSlots
 
-    const trophyItemList = car.trophyItemList.length == 0 ? new ArrayCollection() : new ArrayCollection(car.trophyItemList)
+    const trophyItemList = car.trophyItemList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.trophyItemList)
     car.trophyItemList = trophyItemList
 
-    const animationList = car.animationList.length == 0 ? new ArrayCollection() : new ArrayCollection(car.animationList)
+    const animationList = car.animationList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.animationList)
     car.animationList = animationList
 
-    const addonItemList = car.addonItemList.length == 0 ? new ArrayCollection() : new ArrayCollection(car.addonItemList)
+    const addonItemList = car.addonItemList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.addonItemList)
     car.addonItemList = addonItemList
 
-    const sponsorList = car.sponsorList.length == 0 ? new ArrayCollection() : new ArrayCollection(car.sponsorList)
+    const sponsorList = car.sponsorList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.sponsorList)
     car.sponsorList = sponsorList
 
-    const danceSequenceList = car.danceSequenceList.length == 0 ? new ArrayCollection() : new ArrayCollection(car.danceSequenceList)
+    const danceSequenceList = car.danceSequenceList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.danceSequenceList)
     car.danceSequenceList = danceSequenceList
 
-    const customItemList = car.customItemList.length == 0 ? new ArrayCollection() : new ArrayCollection(car.customItemList)
+    const customItemList = car.customItemList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.customItemList)
     car.customItemList = customItemList
 
-    const stretches = car.stretches.length == 0 ? new ArrayCollection() : new ArrayCollection(car.stretches)
+    const stretches = car.stretches.length === 0 ? new ArrayCollection() : new ArrayCollection(car.stretches)
     car.stretches = stretches
 
-    const consumableItemList = car.consumableItemList.length == 0 ? new ArrayCollection() : new ArrayCollection(car.consumableItemList)
+    const consumableItemList = car.consumableItemList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.consumableItemList)
     car.consumableItemList = consumableItemList
 
     return libamf.serialize(car, libamf.ENCODING.AMF3)
