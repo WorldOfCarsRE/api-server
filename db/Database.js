@@ -1,6 +1,7 @@
 /* global mongoose: writeable */
 /* global create: writeable */
 /* global libamf: writeable */
+/* global Racecar: writeable */
 
 mongoose = global.mongoose
 create = global.create
