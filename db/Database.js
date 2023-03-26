@@ -5,7 +5,7 @@
 mongoose = global.mongoose
 create = global.create
 libamf = global.libamf
-const Racecar = global.Racecar
+Racecar = global.Racecar
 
 const Account = require('./models/Account')
 const Cars = require('./models/Cars')
