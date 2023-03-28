@@ -11,6 +11,7 @@ const CatalogItemSimpleSound = global.CatalogItemSimpleSound
 const CatalogItemDungeon = global.CatalogItemDungeon
 const CatalogItemPhysics = global.CatalogItemPhysics
 const CatalogItemStore = global.CatalogItemStore
+const CatalogItemRaceTrack = global.CatalogItemRaceTrack
 
 const clientData = {}
 
@@ -127,7 +128,7 @@ clientData[31010] = {
 }
 
 clientData[31011] = {
-  name: 'Mater Animation Test',
+  name: 'NPC Animation Test',
   classObj: new CatalogItemSimpleAnimation('idlescan')
 }
 
@@ -203,7 +204,22 @@ clientData[1000] = {
 
 clientData[31009] = {
   name: 'Mater',
-  classObj: new CatalogItemNPC('Mater')
+  classObj: new CatalogItemNPC()
 }
+
+clientData[42001] = {
+  name: 'spRace_ccs',
+  classObj: new CatalogItemRaceTrack()
+}
+
+clientData[31016] = {
+  name: 'Racing NPC',
+  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boostLow.smod', 'car_g_ico_npc_boost.swf')
+}
+
+// TODO: Fill these out
+clientData[31017] = clientData[31016]
+clientData[31018] = clientData[31016]
+clientData[31019] = clientData[31016]
 
 module.exports = { clientData }
