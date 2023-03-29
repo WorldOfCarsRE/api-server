@@ -1,3 +1,6 @@
+// Include our configuration info.
+require('dotenv').config()
+
 // Include our globals.
 require('./globals')
 
