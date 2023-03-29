@@ -31,6 +31,7 @@ global.libamf = require('libamf')
 /* global CatalogItemYardZone */
 /* global CatalogItemStore */
 /* global CatalogItemDialogue */
+/* global CatalogItemMinigame */
 
 global.CatalogItem = require('./catalog/CatalogItem')
 global.CatalogItemRaceSeries = require('./catalog/CatalogItemRaceSeries')
@@ -61,6 +62,7 @@ global.CatalogItemSponsor = require('./catalog/CatalogItemSponsor')
 global.CatalogItemYardZone = require('./catalog/CatalogItemYardZone')
 global.CatalogItemStore = require('./catalog/CatalogItemStore')
 global.CatalogItemDialogue = require('./catalog/CatalogItemDialogue')
+global.CatalogItemMinigame = require('./catalog/CatalogItemMinigame')
 
 const express = require('express')
 
@@ -116,6 +118,7 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.progression.Sponsor', 
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.yard.YardZone', CatalogItemYardZone)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.store.Store', CatalogItemStore)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.Dialogue', CatalogItemDialogue)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.minigame.Minigame', CatalogItemMinigame)
 
 libamf.registerClassAlias('com.disney.cars.domain.racecar.Racecar', Racecar)
 

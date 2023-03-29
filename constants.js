@@ -12,6 +12,7 @@ const CatalogItemDungeon = global.CatalogItemDungeon
 const CatalogItemPhysics = global.CatalogItemPhysics
 const CatalogItemStore = global.CatalogItemStore
 const CatalogItemRaceTrack = global.CatalogItemRaceTrack
+const CatalogItemMinigame = global.CatalogItemMinigame
 
 const clientData = {}
 
@@ -221,5 +222,10 @@ clientData[31016] = {
 clientData[31017] = clientData[31016]
 clientData[31018] = clientData[31016]
 clientData[31019] = clientData[31016]
+
+clientData[61000] = {
+  name: "Ramone's Paint Blaster",
+  classObj: new CatalogItemMinigame('car_spl_puz_ramonepaint', "Ramone's Paint Blast")
+}
 
 module.exports = { clientData }
