@@ -228,4 +228,9 @@ clientData[61000] = {
   classObj: new CatalogItemMinigame('car_spl_puz_ramonepaint', "Ramone's Paint Blast")
 }
 
+clientData[61002] = {
+  name: 'Lightning Storm Space Assault',
+  classObj: new CatalogItemMinigame('car_spl_act_lightningstorm', 'Lightning Storm Space Assault')
+}
+
 module.exports = { clientData }
