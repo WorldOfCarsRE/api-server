@@ -164,7 +164,6 @@ server.app.get('/carsds/api/GenerateTokenRequest', (req, res) => {
   if (ses.username) {
     const token = root.ele('token')
     token.txt(process.env.LOCALHOST_INSTANCE == 'true' ? ses.username : generateToken(ses.username))
-    console.log(token)
   }
 
   const xml = root.end({ prettyPrint: true })
