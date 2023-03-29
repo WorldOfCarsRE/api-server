@@ -4,7 +4,7 @@
 server = global.server
 create = global.create
 
-var CryptoJS = require('crypto-js')
+const CryptoJS = require('crypto-js')
 
 server.app.get('/', (req, res) => {
   res.send('World of Cars API service.')
@@ -14,17 +14,17 @@ function generateRandomNumber () {
   return Math.floor(Math.random() * 101)
 }
 
-function generateToken(username) {
-  let password = process.env.PASS
-  let salt = process.env.SALT
+function generateToken (username) {
+  const password = process.env.PASS
+  const salt = process.env.SALT
 
-  let iterations = 128
+  const iterations = 128
 
-  let bytes = CryptoJS.PBKDF2(password, salt, { keySize: 48, iterations: iterations })
-  let iv = CryptoJS.enc.Hex.parse(bytes.toString().slice(0, 32))
-  let key = CryptoJS.enc.Hex.parse(bytes.toString().slice(32, 96))
+  const bytes = CryptoJS.PBKDF2(password, salt, { keySize: 48, iterations })
+  const iv = CryptoJS.enc.Hex.parse(bytes.toString().slice(0, 32))
+  const key = CryptoJS.enc.Hex.parse(bytes.toString().slice(32, 96))
 
-  let ciphertext = CryptoJS.AES.encrypt(username, key, { iv: iv })
+  const ciphertext = CryptoJS.AES.encrypt(username, key, { iv })
 
   return ciphertext.toString()
 }
@@ -163,7 +163,7 @@ server.app.get('/carsds/api/GenerateTokenRequest', (req, res) => {
 
   if (ses.username) {
     const token = root.ele('token')
-    token.txt(process.env.LOCALHOST_INSTANCE == 'true' ? ses.username : generateToken(ses.username))
+    token.txt(process.env.LOCALHOST_INSTANCE === 'true' ? ses.username : generateToken(ses.username))
   }
 
   const xml = root.end({ prettyPrint: true })
