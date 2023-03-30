@@ -58,7 +58,7 @@ clientData[15002] = {
 
 clientData[15003] = {
   name: 'Redhood Valley',
-  classObj: new CatalogItemWorldZone()
+  classObj: new CatalogItemWorldZone('Redhood Valley', 100, 'car_f_gui_ttl_tailfinPass_en_US.swf', 'car_w_env_tfn_RedhoodValley', 'car_g_map_env_redhoodValley.swf', 'scripts/isoworld/tailfin_pass.lua', 'Music', 'zoneRedHood')
 }
 
 clientData[15006] = {
