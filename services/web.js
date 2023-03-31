@@ -24,7 +24,7 @@ function generateToken (username) {
   const iv = CryptoJS.enc.Hex.parse(bytes.toString().slice(0, 32))
   const key = CryptoJS.enc.Hex.parse(bytes.toString().slice(32, 96))
 
-  var data = {
+  const data = {
     user: username,
     expiry: Math.floor(new Date().getTime() / 1000) + 10 * 60
   }
