@@ -13,6 +13,7 @@ const CatalogItemPhysics = global.CatalogItemPhysics
 const CatalogItemStore = global.CatalogItemStore
 const CatalogItemRaceTrack = global.CatalogItemRaceTrack
 const CatalogItemMinigame = global.CatalogItemMinigame
+const CatalogItemProfileTheme = global.CatalogItemProfileTheme
 
 const clientData = {}
 
@@ -232,5 +233,17 @@ clientData[61002] = {
   name: 'Lightning Storm Space Assault',
   classObj: new CatalogItemMinigame('car_spl_act_lightningstorm', 'Lightning Storm Space Assault')
 }
+
+clientData[59000] = {
+  name: 'Default Profile Background',
+  classObj: new CatalogItemProfileTheme('car_g_bcg_pfl_checkeredFlag.swf')
+}
+
+/*
+clientData[60502] = {
+  name: 'Default Printable Background',
+  classObj: new CatalogItemPrintableTheme()
+}
+*/
 
 module.exports = { clientData }

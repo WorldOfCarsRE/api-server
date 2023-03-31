@@ -8,18 +8,28 @@ class PlayerService extends libamf.Service {
     super('player')
   }
 
-  getRuleStates (playerId, __, tutorialRuleId) {
-    console.log('getRuleStates: ', playerId + ' ' + __ + ' ' + tutorialRuleId)
+  getRuleStates (playerId, carId, ruleIds) {
+    console.log(`getRuleStates: ${playerId} - ${carId} - ${ruleIds}`)
 
     const resp = new ArrayCollection()
 
-    // Having a empty array means autoLogin is true (go to tutorial).
-    resp.push(1)
+    if (carId === 0) {
+      // Having a empty array means autoLogin is true (go to tutorial).
+      resp.push(1)
+    } else {
+      // TODO: Profile view case
+    }
 
     return resp
   }
 
   getBlockUserIds () {
+    return new ArrayCollection()
+  }
+
+  getBadgesByPlayerId (playerId) {
+    console.log(`getBadgesByPlayerId: ${playerId}`)
+
     return new ArrayCollection()
   }
 }
