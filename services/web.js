@@ -24,7 +24,12 @@ function generateToken (username) {
   const iv = CryptoJS.enc.Hex.parse(bytes.toString().slice(0, 32))
   const key = CryptoJS.enc.Hex.parse(bytes.toString().slice(32, 96))
 
-  const ciphertext = CryptoJS.AES.encrypt(username, key, { iv })
+  var data = {
+    user: username,
+    expiry: Math.floor(new Date().getTime() / 1000) + 10 * 60
+  }
+
+  const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(data), key, { iv })
 
   return ciphertext.toString()
 }
