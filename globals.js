@@ -32,6 +32,8 @@ global.libamf = require('libamf')
 /* global CatalogItemStore */
 /* global CatalogItemDialogue */
 /* global CatalogItemMinigame */
+/* global CatalogItemProfileTheme */
+/* global RuleStateAMF */
 
 global.CatalogItem = require('./catalog/CatalogItem')
 global.CatalogItemRaceSeries = require('./catalog/CatalogItemRaceSeries')
@@ -63,6 +65,8 @@ global.CatalogItemYardZone = require('./catalog/CatalogItemYardZone')
 global.CatalogItemStore = require('./catalog/CatalogItemStore')
 global.CatalogItemDialogue = require('./catalog/CatalogItemDialogue')
 global.CatalogItemMinigame = require('./catalog/CatalogItemMinigame')
+global.CatalogItemProfileTheme = require('./catalog/CatalogItemProfileTheme')
+global.RuleStateAMF = require('./amf/RuleStateAMF')
 
 const express = require('express')
 
@@ -119,7 +123,8 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.player.yard.YardZone',
 libamf.registerClassAlias('com.disney.cars.domain.catalog.store.Store', CatalogItemStore)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.Dialogue', CatalogItemDialogue)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.minigame.Minigame', CatalogItemMinigame)
-
+libamf.registerClassAlias('com.disney.cars.domain.player.RuleState', RuleStateAMF)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.ProfileBackground', CatalogItemProfileTheme)
 libamf.registerClassAlias('com.disney.cars.domain.racecar.Racecar', Racecar)
 
 /* global server */

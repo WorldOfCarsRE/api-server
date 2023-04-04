@@ -17,7 +17,7 @@ class CatalogItemRaceSeries extends CatalogItem {
     this.milestoneQuestId = 0
 
     this.sponsorChoosenRuleId = 0
-    this.titleUrl = ''
+    this.titleUrl = 'car_g_rac_ttl_docsTrainingSeries.swf'
 
     this.sponsorIds = new ArrayCollection()
     this.sponsorIds.push(0)
