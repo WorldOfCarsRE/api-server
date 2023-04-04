@@ -74,18 +74,22 @@ class RaceCarService extends libamf.Service {
   }
 
   async getRacecarIdsByUserId (accountId) {
-    console.log('getRacecarIdsByUserId: ', accountId)
+    console.log(`getRacecarIdsByUserId: ${accountId}`)
 
     const car = await db.retrieveCarData(accountId)
     const carId = car.playerId
 
     const resp = new ArrayCollection()
-    resp.push(carId)
+
+    if (carId !== undefined) {
+      resp.push(carId)
+    }
+
     return resp
   }
 
   async getRacecarOnLogin (racecarId) {
-    console.log('getRacecarOnLogin: ', racecarId)
+    console.log(`getRacecarOnLogin: ${racecarId}`)
 
     const dbCar = await db.retrieveCarData(racecarId)
 
@@ -102,7 +106,7 @@ class RaceCarService extends libamf.Service {
   }
 
   async getRacecarByUserId (identifier) {
-    console.log('getRacecarByUserId: ', identifier)
+    console.log(`getRacecarByUserId: ${identifier}`)
 
     if (!await db.doesCarExist(identifier)) {
       await db.createCar(identifier)

@@ -13,6 +13,8 @@ const Cars = require('./models/Cars')
 
 const bcrypt = require('bcrypt')
 
+const axios = require('axios').default
+
 const saltRounds = 12
 
 class Database {
@@ -32,6 +34,10 @@ class Database {
     if (username === undefined && password === undefined) {
       username = req.query.username
       password = req.query.password
+    }
+
+    if (username !== undefined) {
+      username = username.toLowerCase()
     }
 
     const validCredentials = await this.verifyCredentials(username, password)
@@ -72,6 +78,10 @@ class Database {
     if (username === undefined && password === undefined) {
       username = req.query.username
       password = req.query.password
+    }
+
+    if (username !== undefined) {
+      username = username.toLowerCase()
     }
 
     const validCredentials = await this.verifyCredentials(username, password)
@@ -156,6 +166,20 @@ class Database {
     return ''
   }
 
+  async checkLogin (username, password) {
+    const data = new URLSearchParams()
+
+    data.append('username', username)
+    data.append('password', password)
+    data.append('serverType', 'WoCo')
+
+    return await axios.post('https://sunrise.games/api/login/alt/', data, {
+      headers: {
+        'Accept-Encoding': 'application/json'
+      }
+    })
+  }
+
   async retrieveAccountFromIdentifier (identifier) {
     return await Account.findById({ _id: identifier })
   }
@@ -165,13 +189,41 @@ class Database {
   }
 
   async verifyCredentials (username, password) {
-    const account = await this.retrieveAccountFromUser(username)
+    let account = await this.retrieveAccountFromUser(username)
 
     if (!account) {
-      return false
+      // Check if its in the Sunrise Games database.
+      const res = await this.checkLogin(username, password)
+      const errorCode = res.data.errorCode
+
+      if (errorCode === 0) {
+        // Create a brand new account
+        await this.createAccount(username, password)
+
+        account = await this.retrieveAccountFromUser(username)
+      } else {
+        return false
+      }
     }
 
-    return bcrypt.compareSync(password, account.password)
+    const match = bcrypt.compareSync(password, account.password)
+
+    if (!match) {
+      // Check if its in the Sunrise Games database.
+      const res = await this.checkLogin(username, password)
+      const errorCode = res.data.errorCode
+
+      if (errorCode === 0) {
+        // Our main Sunrise Games password changed, the one in the database is outdated.
+        // Generate new hash for bcrypt
+        account.password = bcrypt.hashSync(password, saltRounds)
+        account.save()
+      } else {
+        return false
+      }
+    }
+
+    return match
   }
 
   async createCar (accountId) {
@@ -207,14 +259,11 @@ class Database {
       return false
     }
 
-    const accountId = await Account.countDocuments({}) + 1
-    const hashedPassword = bcrypt.hashSync(password, saltRounds)
-
     // Store the account object.
     const account = new Account({
-      _id: accountId,
+      _id: await Account.countDocuments({}) + 1,
       username,
-      password: hashedPassword
+      password: bcrypt.hashSync(password, saltRounds)
     })
 
     await account.save()

@@ -124,7 +124,7 @@ server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
 })
 
 server.app.post('/dxd/flashAPI/createAccount', async (req, res) => {
-  const status = await db.createAccount(req.body.username, req.body.password)
+  const status = await db.createAccount(req.body.username.toLowerCase(), req.body.password)
   const accountId = await db.getAccountIdFromUser(req.body.username)
 
   const root = create().ele('response')
