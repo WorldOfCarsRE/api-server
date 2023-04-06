@@ -153,18 +153,13 @@ server.app.use(cors())
 // Setup sessions and include our web routes.
 const crypto = require('crypto')
 const session = require('express-session')
-
-const redis = require('redis')
-const RedisStore = require('connect-redis').default
-
-const redisClient = redis.createClient()
-redisClient.connect()
+const MongoStore = require('connect-mongo')
 
 /* global sess: writeable */
 
 sess = {
   secret: crypto.randomBytes(32).toString('base64'),
-  store: new RedisStore({ client: redisClient }),
+  store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1:27017/woc' }),
   resave: false,
   saveUninitialized: true,
 

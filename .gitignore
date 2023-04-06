@@ -1,5 +1,4 @@
 node_modules/*
-*.rdb
 
 # JetBrains IDE:
 .idea/
