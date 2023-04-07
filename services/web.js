@@ -75,6 +75,7 @@ async function handleWhoAmIRequest (req, res) {
   root.ele('testUser').txt('false')
 
   const xml = root.end({ prettyPrint: true })
+  res.setHeader('content-type', 'text/xml')
   res.send(xml)
 }
 
@@ -120,6 +121,7 @@ server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
   }
 
   const xml = root.end({ prettyPrint: true })
+  res.setHeader('content-type', 'text/xml')
   res.send(xml)
 })
 
@@ -134,6 +136,7 @@ server.app.post('/dxd/flashAPI/createAccount', async (req, res) => {
   results.ele('userId').txt(accountId)
 
   const xml = root.end({ prettyPrint: true })
+  res.setHeader('content-type', 'text/xml')
   res.send(xml)
 })
 
@@ -155,6 +158,7 @@ server.app.get('/carsds/api/GameEntranceRequest', (req, res) => {
   canEnter.txt('true')
 
   const xml = root.end({ prettyPrint: true })
+  res.setHeader('content-type', 'text/xml')
   res.send(xml)
 })
 
@@ -172,5 +176,6 @@ server.app.get('/carsds/api/GenerateTokenRequest', (req, res) => {
   }
 
   const xml = root.end({ prettyPrint: true })
+  res.setHeader('content-type', 'text/xml')
   res.send(xml)
 })
