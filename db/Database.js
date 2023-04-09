@@ -68,6 +68,7 @@ class Database {
     root.ele('username').txt(username)
 
     const xml = root.end({ prettyPrint: true })
+    res.setHeader('content-type', 'text/xml')
     res.send(xml)
   }
 
@@ -103,6 +104,7 @@ class Database {
     root.ele('account', { account_id: accountId })
 
     const xml = root.end({ prettyPrint: true })
+    res.setHeader('content-type', 'text/xml')
     res.send(xml)
   }
 
