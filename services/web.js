@@ -74,8 +74,6 @@ async function handleWhoAmIRequest (req, res) {
   root.ele('userTestAccessAllowed').txt('false')
   root.ele('testUser').txt('false')
 
-  res.header('Content-Type', 'text/xml')
-
   const xml = root.end({ prettyPrint: true })
   res.setHeader('content-type', 'text/xml')
   res.send(xml)
