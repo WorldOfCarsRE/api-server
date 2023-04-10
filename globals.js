@@ -160,7 +160,7 @@ const MongoStore = require('connect-mongo')
 /* global sess: writeable */
 
 sess = {
-  secret: 'tN4yY3G6Qm4TEP6uSSecsGslEt2rwHP/Mp4KRbqmhbs=',
+  secret: process.env.SESSION_SECRET || "woc_secret",
   store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1:27017/woc' }),
   resave: false,
   saveUninitialized: true,
