@@ -150,6 +150,8 @@ server.app.use(express.urlencoded({ extended: true }))
 
 server.app.use(cors())
 
+server.app.set('trust proxy', 1);
+
 // Setup sessions and include our web routes.
 const crypto = require('crypto')
 const session = require('express-session')
@@ -158,7 +160,7 @@ const MongoStore = require('connect-mongo')
 /* global sess: writeable */
 
 sess = {
-  secret: crypto.randomBytes(32).toString('base64'),
+  secret: 'tN4yY3G6Qm4TEP6uSSecsGslEt2rwHP/Mp4KRbqmhbs=',
   store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1:27017/woc' }),
   resave: false,
   saveUninitialized: true,
@@ -166,8 +168,9 @@ sess = {
   cookie: {
     secure: false, // if true only transmit cookie over https
     httpOnly: false, // if true prevent client side JS from reading the cookie
-    maxAge: 1000 * 60 * 10 // session max age in miliseconds
-  }
+    maxAge: 1000 * 60 * 10, // session max age in miliseconds
+  },
+  rolling: true // reset the cookie Max-Age on every request
 }
 
 server.app.use(session(sess))
