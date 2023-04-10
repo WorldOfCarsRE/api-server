@@ -41,6 +41,7 @@ class Database {
     }
 
     const validCredentials = await this.verifyCredentials(username, password)
+    const accountId = await this.getAccountIdFromUser(username)
     let errorResp = ''
 
     const root = create().ele('result')
@@ -66,6 +67,7 @@ class Database {
     root.ele('banURL')
 
     root.ele('username').txt(username)
+    root.ele('userId').txt(accountId)
 
     const xml = root.end({ prettyPrint: true })
     res.setHeader('content-type', 'text/xml')
