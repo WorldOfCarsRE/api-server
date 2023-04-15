@@ -14,12 +14,18 @@ const CatalogItemStore = global.CatalogItemStore
 const CatalogItemRaceTrack = global.CatalogItemRaceTrack
 const CatalogItemMinigame = global.CatalogItemMinigame
 const CatalogItemProfileTheme = global.CatalogItemProfileTheme
+const CatalogItemPuppet = global.CatalogItemPuppet
 
 const clientData = {}
 
 clientData[100] = {
   name: 'Player Physics',
   classObj: new CatalogItemPhysics()
+}
+
+clientData[101] = {
+  name: 'Mater Puppet',
+  classObj: new CatalogItemPuppet(31009, 'Mater') // Mater npcId
 }
 
 clientData[5500] = {

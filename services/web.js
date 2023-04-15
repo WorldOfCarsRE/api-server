@@ -46,6 +46,7 @@ async function handleWhoAmIRequest (req, res) {
   }
 
   const root = create().ele('WhoAmIResponse')
+  // root.ele('puppet_id').txt(101) // Mater Puppet
 
   const item = root.ele('success')
   item.txt(success)

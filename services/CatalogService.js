@@ -9,6 +9,8 @@ CatalogItemRaceSeries = global.CatalogItemRaceSeries
 CatalogItemRaceLevel = global.CatalogItemRaceLevel
 CatalogItemSponsor = global.CatalogItemSponsor
 CatalogItemGear = global.CatalogItemGear
+const CatalogItemPuppet = global.CatalogItemPuppet
+const CatalogItemNPC = global.CatalogItemNPC
 
 libamf = global.libamf
 ArrayCollection = global.ArrayCollection
@@ -38,8 +40,21 @@ class CatalogService extends libamf.Service {
     console.log('getTreeById:', id, depth)
 
     const resp = new ArrayCollection()
-    resp.push(new CatalogItemRaceSeries(id))
-    resp.push(new CatalogItemRaceLevel(1))
+
+    if (depth === 2) {
+      // Puppet case
+      const puppetItem = new CatalogItemPuppet(31009, 'Mater') // Mater npcId
+      puppetItem.itemId = 101 // Mater Puppet
+      resp.push(puppetItem)
+
+      const npcItem = new CatalogItemNPC()
+      npcItem.itemId = 31009 // Mater npcId
+      resp.push(npcItem)
+    } else {
+      resp.push(new CatalogItemRaceSeries(id))
+      resp.push(new CatalogItemRaceLevel(1))
+    }
+
     return resp
   }
 

@@ -33,6 +33,7 @@ global.libamf = require('libamf')
 /* global CatalogItemDialogue */
 /* global CatalogItemMinigame */
 /* global CatalogItemProfileTheme */
+/* global CatalogItemPuppet */
 /* global RuleStateAMF */
 
 global.CatalogItem = require('./catalog/CatalogItem')
@@ -66,6 +67,7 @@ global.CatalogItemStore = require('./catalog/CatalogItemStore')
 global.CatalogItemDialogue = require('./catalog/CatalogItemDialogue')
 global.CatalogItemMinigame = require('./catalog/CatalogItemMinigame')
 global.CatalogItemProfileTheme = require('./catalog/CatalogItemProfileTheme')
+global.CatalogItemPuppet = require('./catalog/CatalogItemPuppet')
 global.RuleStateAMF = require('./amf/RuleStateAMF')
 
 const express = require('express')
@@ -125,6 +127,7 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.Dialogue',
 libamf.registerClassAlias('com.disney.cars.domain.catalog.minigame.Minigame', CatalogItemMinigame)
 libamf.registerClassAlias('com.disney.cars.domain.player.RuleState', RuleStateAMF)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.ProfileBackground', CatalogItemProfileTheme)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.gm.Puppet', CatalogItemPuppet)
 libamf.registerClassAlias('com.disney.cars.domain.racecar.Racecar', Racecar)
 
 /* global server */
@@ -153,7 +156,6 @@ server.app.use(cors())
 server.app.set('trust proxy', 1)
 
 // Setup sessions and include our web routes.
-const crypto = require('crypto')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
 
