@@ -21,9 +21,9 @@
     "express-session": "^1.17.3",
     "fast-xml-parser": "^4.2.2",
     "libamf": "^1.4.2",
-    "mongoose": "^7.1.0",
+    "mongoose": "^7.1.1",
     "pm2": "^5.3.0",
-    "xmlbuilder2": "^3.1.0"
+    "xmlbuilder2": "^3.1.1"
   },
   "devDependencies": {
     "eslint": "^8.40.0",
