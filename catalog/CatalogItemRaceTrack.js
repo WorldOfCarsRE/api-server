@@ -18,6 +18,8 @@ class CatalogItemRaceTrack extends CatalogItemDungeon {
     this.miniMapUrl = miniMapUrl
     this.photoFinishTrackUrl = 'car_f_gui_gam_photoFinish.swf'
     this.physicsUrl = 'car_w_trk_tfn_twistinTailfin_SS_V1_phys.xml'
+    this.startingTrackSegment = 1
+    this.lapsToWin = 1
   }
 }
 
