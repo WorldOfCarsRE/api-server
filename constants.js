@@ -75,9 +75,7 @@ clientData[15006] = {
 
 clientData[10001] = {
   name: 'Home',
-
-  // TODO FIXME: Find correct titleUrl
-  classObj: new CatalogItemDungeon('Home', 0, 'car_f_evt_rsn_newPlayerRsnBackStory_en_US.swf', 'car_w_yar_own_non_member_yard', 'car_g_map_env_yardNonMember.swf', 'scripts/yard/small.lua')
+  classObj: new CatalogItemDungeon('Home', 0, 'car_f_gui_ldr_generic_en_US.swf', 'car_w_yar_own_non_member_yard', 'car_g_map_env_yardNonMember.swf', 'scripts/yard/small.lua', 'Music', 'radiatorSprings', 'dp_default_45')
 }
 
 clientData[10101] = {
