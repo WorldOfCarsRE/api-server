@@ -60,7 +60,7 @@ clientData[15001] = {
 
 clientData[15002] = {
   name: "Fillmore's Fields",
-  classObj: new CatalogItemWorldZone("Fillmore's Fields", 100, 'car_f_gui_ttl_fillmoresFields_en_US.swf', 'car_w_env_frm_FillmoresFields_haul', 'car_g_map_env_farmGrounds.swf', 'scripts/isoworld/fillmores_fields.lua', 'Music', 'zoneFillmoresFields', 'dp_default_45')
+  classObj: new CatalogItemWorldZone("Fillmore's Fields", 100, 'car_f_gui_ttl_fillmoresFields_en_US.swf', 'car_w_env_frm_FillmoresFields_design', 'car_g_map_env_farmGrounds.swf', 'scripts/isoworld/fillmores_fields.lua', 'Music', 'zoneFillmoresFields', 'dp_default_45')
 }
 
 clientData[15003] = {
@@ -235,8 +235,17 @@ clientData[61000] = {
 
 clientData[61002] = {
   name: 'Lightning Storm Space Assault',
-  classObj: new CatalogItemMinigame('car_spl_act_lightningstorm', 'Lightning Storm Space Assault')
+  classObj: null
 }
+
+clientData[61002].classObj = new CatalogItemMinigame('car_spl_act_lightningstorm', clientData[61002].name)
+
+clientData[61003] = {
+  name: "Fillmore's Fuel Mixin' Area, Man",
+  classObj: null
+}
+
+clientData[61003].classObj = new CatalogItemMinigame('car_spl_puz_fillmoresfuelmix', clientData[61003].name)
 
 clientData[59000] = {
   name: 'Default Profile Background',
