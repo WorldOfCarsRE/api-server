@@ -2,7 +2,7 @@ const CatalogItem = global.CatalogItem
 
 class CatalogItemWorldZone extends CatalogItem {
   constructor (name, visitedRuleId, titleUrl, mapUrl, miniMapUrl, scriptUrl,
-    group = '', alias = '') {
+    group = '', alias = '', spawn = '') {
     super()
 
     this.name = name
@@ -14,6 +14,9 @@ class CatalogItemWorldZone extends CatalogItem {
     this.scriptUrl = scriptUrl
     this.group = group
     this.alias = alias
+
+    this.dropPoints = {}
+    this.dropPoints.default = spawn
   }
 }
 
