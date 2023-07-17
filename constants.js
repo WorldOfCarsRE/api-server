@@ -233,12 +233,15 @@ clientData[61000] = {
   classObj: new CatalogItemMinigame('car_spl_puz_ramonepaint', "Ramone's Paint Blast")
 }
 
+clientData[61000].classObj.eventId = 61000
+
 clientData[61002] = {
   name: 'Lightning Storm Space Assault',
   classObj: null
 }
 
 clientData[61002].classObj = new CatalogItemMinigame('car_spl_act_lightningstorm', clientData[61002].name)
+clientData[61002].classObj.eventId = 61002
 
 clientData[61003] = {
   name: "Fillmore's Fuel Mixin' Area, Man",
@@ -246,6 +249,7 @@ clientData[61003] = {
 }
 
 clientData[61003].classObj = new CatalogItemMinigame('car_spl_puz_fillmoresfuelmix', clientData[61003].name)
+clientData[61003].classObj.eventId = 61003
 
 clientData[59000] = {
   name: 'Default Profile Background',
