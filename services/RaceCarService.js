@@ -105,6 +105,16 @@ class RaceCarService extends libamf.Service {
     return resp
   }
 
+  async getRacecarsByUserIds (userIds) {
+    const resp = new ArrayCollection()
+
+    for (const userId of userIds) {
+      resp.push(await this.getRacecarByUserId(userId))
+    }
+
+    return resp
+  }
+
   async getRacecarByUserId (identifier) {
     console.log(`getRacecarByUserId: ${identifier}`)
 
