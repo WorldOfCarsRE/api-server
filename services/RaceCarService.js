@@ -46,6 +46,8 @@ class RaceCarService extends libamf.Service {
     const consumableItemList = car.consumableItemList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.consumableItemList)
     car.consumableItemList = consumableItemList
 
+    // delete car.carDna
+
     return libamf.serialize(car, libamf.ENCODING.AMF3)
   }
 
