@@ -13,7 +13,7 @@
   "dependencies": {
     "axios": "^1.5.1",
     "bcrypt": "^5.1.1",
-    "connect-mongo": "^5.0.0",
+    "connect-mongo": "^5.1.0",
     "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.3.1",
@@ -21,15 +21,15 @@
     "express-session": "^1.17.3",
     "fast-xml-parser": "^4.3.2",
     "libamf": "^1.4.2",
-    "mongoose": "^7.6.1",
+    "mongoose": "^7.6.3",
     "pm2": "^5.3.0",
     "xmlbuilder2": "^3.1.1"
   },
   "devDependencies": {
-    "eslint": "^8.51.0",
+    "eslint": "^8.52.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-n": "^16.1.0",
+    "eslint-plugin-n": "^16.2.0",
     "eslint-plugin-promise": "^6.1.1"
   }
 }

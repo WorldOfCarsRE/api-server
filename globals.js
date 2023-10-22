@@ -83,7 +83,7 @@ const cors = require('cors')
 
 /* global Racecar */
 
-global.Racecar = require('./racecar/Racecar')
+global.Racecar = require('./amf/Racecar')
 
 _create = require('xmlbuilder2')
 global.create = _create.create
