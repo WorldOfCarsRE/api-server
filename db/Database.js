@@ -192,6 +192,10 @@ class Database {
     return await Account.findOne({ username })
   }
 
+  async retrieveCarFromUser (username) {
+    return await Cars.findOne({ ownerAccount: username })
+  }
+
   async verifyCredentials (username, password) {
     let account = await this.retrieveAccountFromUser(username)
 

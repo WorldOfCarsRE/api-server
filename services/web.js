@@ -10,6 +10,10 @@ server.app.get('/', (req, res) => {
   res.send('World of Cars API service.')
 })
 
+function verifyAuthorization (token) {
+  return token === process.env.API_TOKEN
+}
+
 function generateRandomNumber () {
   return Math.floor(Math.random() * 101)
 }
@@ -179,4 +183,34 @@ server.app.get('/carsds/api/GenerateTokenRequest', (req, res) => {
   const xml = root.end({ prettyPrint: true })
   res.setHeader('content-type', 'text/xml')
   res.send(xml)
+})
+
+server.app.post('/carsds/api/internal/setCarData', async (req, res) => {
+  if (!verifyAuthorization(req.headers.authorization)) {
+    return res.status(401).send('Authorization failed.')
+  }
+
+  const data = req.body
+
+  if (data.playToken && data.fieldData) {
+    const car = await db.retrieveCar(data.playToken)
+    Object.assign(car, data.fieldData)
+    car.save()
+    return res.status(200).send({ success: true, message: 'Success.' })
+  }
+
+  return res.status(501).send({ success: false, message: 'Something went wrong.' })
+})
+
+server.app.get('/carsds/api/internal/retrieveCar', async (req, res) => {
+  if (!verifyAuthorization(req.headers.authorization)) {
+    return res.status(401).send('Authorization failed.')
+  }
+
+  res.setHeader('content-type', 'application/json')
+  res.end(JSON.stringify(
+    await db.retrieveCarFromUser(req.query.playToken),
+    null,
+    3)
+  )
 })
