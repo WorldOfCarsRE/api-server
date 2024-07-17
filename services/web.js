@@ -4,6 +4,8 @@
 server = global.server
 create = global.create
 
+const express = require('express');
+
 const CryptoJS = require('crypto-js')
 
 server.app.get('/', (req, res) => {
@@ -185,6 +187,8 @@ server.app.get('/carsds/api/GenerateTokenRequest', (req, res) => {
   res.send(xml)
 })
 
+server.app.use(express.json())
+
 server.app.post('/carsds/api/internal/setCarData', async (req, res) => {
   if (!verifyAuthorization(req.headers.authorization)) {
     return res.status(401).send('Authorization failed.')
@@ -193,7 +197,7 @@ server.app.post('/carsds/api/internal/setCarData', async (req, res) => {
   const data = req.body
 
   if (data.playToken && data.fieldData) {
-    const car = await db.retrieveCar(data.playToken)
+    const car = await db.retrieveCarByOwnerAccount(data.playToken)
     Object.assign(car, data.fieldData)
     car.save()
     return res.status(200).send({ success: true, message: 'Success.' })

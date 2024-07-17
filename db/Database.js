@@ -140,6 +140,16 @@ class Database {
     return false
   }
 
+  async retrieveCarByOwnerAccount (owner) {
+    const car = await Cars.findOne({ ownerAccount: owner })
+
+    if (car) {
+      return car
+    }
+
+    return false
+  }
+
   async retrieveCarData (identifier) {
     const car = await this.retrieveCar(identifier)
 
