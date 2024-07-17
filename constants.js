@@ -15,6 +15,7 @@ const CatalogItemRaceTrack = global.CatalogItemRaceTrack
 const CatalogItemMinigame = global.CatalogItemMinigame
 const CatalogItemProfileTheme = global.CatalogItemProfileTheme
 const CatalogItemPuppet = global.CatalogItemPuppet
+const CatalogItemEffect = global.CatalogItemEffect
 
 const clientData = {}
 
@@ -141,6 +142,11 @@ clientData[31011] = {
 clientData[31012] = {
   name: 'Mater Shop Test',
   classObj: new CatalogItemStore()
+}
+
+clientData[32012] = {
+  name: 'Sleep ZZZ Effect',
+  classObj: new CatalogItemEffect(["car_f_evt_efx_zzzEffect.swf"])
 }
 
 clientData[20209] = {
