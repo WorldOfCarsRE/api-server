@@ -200,11 +200,12 @@ class Database {
     data.append('password', password)
     data.append('serverType', 'WoCo')
 
-    return await axios.post('https://sunrise.games/api/login/alt/', data, {
+    const request = await axios.post('https://sunrise.games/api/login/alt/', data, {
       headers: {
         'Accept-Encoding': 'application/json'
       }
     })
+    return request.data
   }
 
   async retrieveAccountFromIdentifier (identifier) {
