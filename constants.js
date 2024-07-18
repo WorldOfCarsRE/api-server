@@ -144,8 +144,11 @@ clientData[31011] = {
 
 clientData[31012] = {
   name: 'Mater Shop Test',
-  classObj: new CatalogItemStore()
+  classObj: null
 }
+
+// Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.materStore)
+clientData[31012].classObj = new CatalogItemStore(clientData[31012].name, 'voStoreMaterEnter', 'car_f_gui_str_materStore.swf', '33274,60002,60021,60022,33274,33274,33274,33274,33274,33274', 'car_f_gui_str_avatarEditor.swf', 'voStoreMaterExit')
 
 clientData[32012] = {
   name: 'Sleep ZZZ Effect',
@@ -276,6 +279,13 @@ clientData[22002].classObj = new CatalogItemStore(clientData[22002].name, 'voSto
 // TODO: Figure out proper animation for these ids?
 clientData[60010] = clientData[31011]
 clientData[60020] = clientData[31011]
+
+clientData[22004] = {
+  name: "Ramone's House of Body Art",
+  classObj: null
+}
+
+clientData[22004].classObj = new CatalogItemStore(clientData[22004].name, 'voStoreRamoneEnter', 'car_f_gui_str_ramoneStore.swf', '33274,60022,60021,60026,60010,33274,33274,33274,33274,33274', 'car_f_gui_str_bodyShaping.swf', 'voStoreRamoneExit')
 
 /*
 clientData[60502] = {
