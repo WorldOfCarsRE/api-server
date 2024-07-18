@@ -298,6 +298,6 @@ const shopData = {}
 
 // Lightning McQueen's Pro-Race Shop
 shopData[22002] = new ArrayCollection()
-shopData[22002].push(new CatalogPlayerStoreItem(102, 'Test Item', 'Test Description'))
+shopData[22002].push(new CatalogPlayerStoreItem(102, 'Test Item', 'Test Description', 'car_g_ico_clr_flamingoPink.swf'))
 
 module.exports = { clientData, shopData }

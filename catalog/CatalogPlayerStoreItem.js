@@ -5,7 +5,7 @@ CatalogPlayerItem = require('./CatalogPlayerItem')
 ArrayCollection = global.ArrayCollection
 
 class CatalogPlayerStoreItem extends CatalogPlayerItem {
-  constructor (itemId, name, description) {
+  constructor (itemId, name, description, storeThumbnail) {
     super()
 
     this.itemId = itemId
@@ -15,7 +15,7 @@ class CatalogPlayerStoreItem extends CatalogPlayerItem {
     this.sponsorIds = new ArrayCollection()
     this.sponsorIds.push(1)
 
-    this.storeThumbnail = ''
+    this.storeThumbnail = storeThumbnail
     this.membershipRequired = false
     this.storeAvailabilityPeriods = new ArrayCollection()
     this.storeAvailabilityEnd = new Date()
