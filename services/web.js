@@ -38,7 +38,7 @@ async function generateToken (username) {
   const key = CryptoJS.enc.Hex.parse(process.env.TOKEN_KEY)
   const iv = CryptoJS.lib.WordArray.random(16) // Generate random IV (16 bytes)
 
-  const encrypted = CryptoJS.AES.encrypt(data, key, {
+  const encrypted = CryptoJS.AES.encrypt(JSON.stringify(data), key, {
     iv,
     mode: CryptoJS.mode.CBC,
     padding: CryptoJS.pad.Pkcs7
