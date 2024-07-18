@@ -21,15 +21,15 @@
     "express-session": "^1.18.0",
     "fast-xml-parser": "^4.4.0",
     "libamf": "^1.4.2",
-    "mongoose": "^8.4.4",
-    "pm2": "^5.4.1",
+    "mongoose": "^8.5.1",
+    "pm2": "^5.4.2",
     "xmlbuilder2": "^3.1.1"
   },
   "devDependencies": {
-    "eslint": "^9.5.0",
+    "eslint": "^9.7.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^17.9.0",
-    "eslint-plugin-promise": "^6.2.0"
+    "eslint-plugin-promise": "^6.4.0"
   }
 }
