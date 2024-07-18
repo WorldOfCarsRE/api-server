@@ -21,7 +21,7 @@ function generateRandomNumber () {
 }
 
 async function generateToken (username) {
-  const accData = await db.retrieveAccountData(username).data
+  const accData = await db.retrieveAccountData(username)
 
   const data = {
     playToken: username,

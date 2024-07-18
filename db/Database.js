@@ -190,7 +190,7 @@ class Database {
       headers: {
         'Accept-Encoding': 'application/json'
       }
-    })
+    }).data
   }
 
   async checkLogin (username, password) {
