@@ -28,7 +28,13 @@ class CatalogService extends libamf.Service {
     const array = new ArrayCollection()
 
     for (const itemId of itemIds) {
-      const item = clientData[itemId].classObj
+      let item = clientData[itemId]
+      if (item != undefined) {
+        item = item.classObj
+      } else {
+        console.log("MISSING ITEM:", itemId)
+        item = new CatalogItem()
+      }
       item.itemId = itemId
       array.push(item)
     }
@@ -75,10 +81,14 @@ class CatalogService extends libamf.Service {
   getItem (itemId) {
     console.log('getItem:', itemId)
 
-    const item = clientData[itemId].classObj
-    item.itemId = itemId
+    const item = clientData[itemId]
+    if (item == undefined) {
+      console.log('MISSING ITEM:', itemId)
+      return new CatalogItem()
+    }
+    item.classObj.itemId = itemId
 
-    return item
+    return item.classObj
   }
 }
 
