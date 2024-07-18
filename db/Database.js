@@ -186,11 +186,12 @@ class Database {
     data.append('username', username)
     data.append('secretKey', process.env.API_TOKEN)
 
-    return await axios.post('https://sunrise.games/api/internal/Account.php', data, {
+    const request = await axios.post('https://sunrise.games/api/internal/Account.php', data, {
       headers: {
         'Accept-Encoding': 'application/json'
       }
-    }).data
+    })
+    return request.data
   }
 
   async checkLogin (username, password) {
@@ -200,12 +201,11 @@ class Database {
     data.append('password', password)
     data.append('serverType', 'WoCo')
 
-    const request = await axios.post('https://sunrise.games/api/login/alt/', data, {
+    return await axios.post('https://sunrise.games/api/login/alt/', data, {
       headers: {
         'Accept-Encoding': 'application/json'
       }
     })
-    return request.data
   }
 
   async retrieveAccountFromIdentifier (identifier) {
