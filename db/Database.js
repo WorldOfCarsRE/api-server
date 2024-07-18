@@ -180,6 +180,17 @@ class Database {
     return ''
   }
 
+  async retrieveAccountData (username) {
+    const data = new URLSearchParams()
+    data.append('secretKey', process.env.API_TOKEN)
+
+    return await axios.post('https://sunrise.games/api/internal/Account.php', data, {
+      headers: {
+        'Accept-Encoding': 'application/json'
+      }
+    })
+  }
+
   async checkLogin (username, password) {
     const data = new URLSearchParams()
 

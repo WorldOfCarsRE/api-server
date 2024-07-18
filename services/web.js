@@ -20,24 +20,37 @@ function generateRandomNumber () {
   return Math.floor(Math.random() * 101)
 }
 
-function generateToken (username) {
-  const password = process.env.PASS
-  const salt = process.env.SALT
-
-  const iterations = 128
-
-  const bytes = CryptoJS.PBKDF2(password, salt, { keySize: 48, iterations })
-  const iv = CryptoJS.enc.Hex.parse(bytes.toString().slice(0, 32))
-  const key = CryptoJS.enc.Hex.parse(bytes.toString().slice(32, 96))
+async function generateToken (username) {
+  const accData = await db.retrieveAccountData(username).data
 
   const data = {
-    user: username,
-    expiry: Math.floor(new Date().getTime() / 1000) + 10 * 60
+    playToken: username,
+    SpeedChatPlus: accData.SpeedChatPlus,
+    OpenChat: accData.OpenChat,
+    Member: accData.Member,
+    Timestamp: Math.floor(new Date().getTime() / 1000) + 10 * 60,
+    dislId: accData.dislId,
+    accountType: accData.accountType,
+    LinkedToParent: accData.LinkedToParent,
+    token: ''
   }
 
-  const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(data), key, { iv })
+  const key = CryptoJS.enc.Hex.parse(process.env.TOKEN_KEY)
+  const iv = CryptoJS.lib.WordArray.random(16) // Generate random IV (16 bytes)
 
-  return ciphertext.toString()
+  const encrypted = CryptoJS.AES.encrypt(data, key, {
+    iv,
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.Pkcs7
+  })
+
+  const ivBase64 = CryptoJS.enc.Base64.stringify(iv)
+  const encryptedBase64 = encrypted.toString()
+
+  return btoa(JSON.stringify({
+    iv: ivBase64,
+    data: encryptedBase64
+  }))
 }
 
 async function handleWhoAmIRequest (req, res) {
@@ -169,7 +182,7 @@ server.app.get('/carsds/api/GameEntranceRequest', (req, res) => {
   res.send(xml)
 })
 
-server.app.get('/carsds/api/GenerateTokenRequest', (req, res) => {
+server.app.get('/carsds/api/GenerateTokenRequest', async (req, res) => {
   const root = create().ele('GenerateTokenRequestResponse')
 
   const ses = req.session
@@ -179,7 +192,7 @@ server.app.get('/carsds/api/GenerateTokenRequest', (req, res) => {
 
   if (ses.username) {
     const token = root.ele('token')
-    token.txt(process.env.LOCALHOST_INSTANCE === 'true' ? ses.username : generateToken(ses.username))
+    token.txt(process.env.LOCALHOST_INSTANCE === 'true' ? ses.username : await generateToken(ses.username))
   }
 
   const xml = root.end({ prettyPrint: true })
