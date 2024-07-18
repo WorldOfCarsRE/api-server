@@ -16,6 +16,9 @@ const CatalogItemMinigame = global.CatalogItemMinigame
 const CatalogItemProfileTheme = global.CatalogItemProfileTheme
 const CatalogItemPuppet = global.CatalogItemPuppet
 const CatalogItemEffect = global.CatalogItemEffect
+const CatalogPlayerStoreItem = global.CatalogPlayerStoreItem
+
+const ArrayCollection = global.ArrayCollection
 
 const clientData = {}
 
@@ -281,4 +284,10 @@ clientData[60502] = {
 }
 */
 
-module.exports = { clientData }
+const shopData = {}
+
+// Lightning McQueen's Pro-Race Shop
+shopData[22002] = new ArrayCollection()
+shopData[22002].push(new CatalogPlayerStoreItem(102, 'Test Item', 'Test Description'))
+
+module.exports = { clientData, shopData }

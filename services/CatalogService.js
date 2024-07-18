@@ -16,11 +16,22 @@ const CatalogItemNPC = global.CatalogItemNPC
 libamf = global.libamf
 ArrayCollection = global.ArrayCollection
 
-const { clientData } = require('../constants')
+const { clientData, shopData } = require('../constants')
 
 class CatalogService extends libamf.Service {
   constructor () {
     super('catalog')
+  }
+
+  getAvailableItemsForStore (shopId) {
+    const items = shopData[shopId]
+
+    if (items === undefined) {
+      console.log('SHOP HAS NO ITEMS:', shopId)
+      return new ArrayCollection()
+    }
+
+    return items
   }
 
   getItemsByIds (itemIds) {

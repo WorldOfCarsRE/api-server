@@ -5,8 +5,12 @@ CatalogPlayerItem = require('./CatalogPlayerItem')
 ArrayCollection = global.ArrayCollection
 
 class CatalogPlayerStoreItem extends CatalogPlayerItem {
-  constructor () {
+  constructor (itemId, name, description) {
     super()
+
+    this.itemId = itemId
+    this.name = name
+    this.description = description
 
     this.sponsorIds = new ArrayCollection()
     this.sponsorIds.push(1)
