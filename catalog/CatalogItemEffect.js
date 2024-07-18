@@ -1,3 +1,5 @@
+/* global ArrayCollection:writeable */
+
 const CatalogItem = global.CatalogItem
 ArrayCollection = global.ArrayCollection
 

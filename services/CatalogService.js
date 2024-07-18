@@ -2,6 +2,7 @@
 /* global CatalogItemRaceLevel: writeable */
 /* global CatalogItemSponsor: writeable */
 /* global CatalogItemGear: writeable */
+/* global CatalogItem: writeable */
 
 /* global libamf:writeable, ArrayCollection:writeable */
 
@@ -29,10 +30,10 @@ class CatalogService extends libamf.Service {
 
     for (const itemId of itemIds) {
       let item = clientData[itemId]
-      if (item != undefined) {
+      if (item !== undefined) {
         item = item.classObj
       } else {
-        console.log("MISSING ITEM:", itemId)
+        console.log('MISSING ITEM:', itemId)
         item = new CatalogItem()
       }
       item.itemId = itemId
@@ -82,7 +83,7 @@ class CatalogService extends libamf.Service {
     console.log('getItem:', itemId)
 
     const item = clientData[itemId]
-    if (item == undefined) {
+    if (item === undefined) {
       console.log('MISSING ITEM:', itemId)
       return new CatalogItem()
     }

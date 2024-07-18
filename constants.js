@@ -146,7 +146,7 @@ clientData[31012] = {
 
 clientData[32012] = {
   name: 'Sleep ZZZ Effect',
-  classObj: new CatalogItemEffect(["car_f_evt_efx_zzzEffect.swf"])
+  classObj: new CatalogItemEffect(['car_f_evt_efx_zzzEffect.swf'])
 }
 
 clientData[20209] = {
@@ -261,6 +261,18 @@ clientData[59000] = {
   name: 'Default Profile Background',
   classObj: new CatalogItemProfileTheme('car_g_bcg_pfl_checkeredFlag.swf')
 }
+
+clientData[22002] = {
+  name: "Lightning McQueen's Pro-Race Shop",
+  classObj: null
+}
+
+// Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.mcQueenStore)
+clientData[22002].classObj = new CatalogItemStore(clientData[22002].name, 'voStoreLightningEnter', 'car_f_gui_str_mcQueenStore.swf', '33274,60020,60021,60022,60020,60010,33274,33274,33274,33274', 'car_f_gui_str_avatarEditor.swf', 'voStoreLightningExit')
+
+// TODO: Figure out proper animation for these ids?
+clientData[60010] = clientData[31011]
+clientData[60020] = clientData[31011]
 
 /*
 clientData[60502] = {

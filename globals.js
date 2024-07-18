@@ -34,6 +34,7 @@ global.libamf = require('libamf')
 /* global CatalogItemMinigame */
 /* global CatalogItemProfileTheme */
 /* global CatalogItemPuppet */
+/* global CatalogItemEffect */
 /* global RuleStateAMF */
 
 global.CatalogItem = require('./catalog/CatalogItem')

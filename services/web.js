@@ -4,7 +4,7 @@
 server = global.server
 create = global.create
 
-const express = require('express');
+const express = require('express')
 
 const CryptoJS = require('crypto-js')
 
