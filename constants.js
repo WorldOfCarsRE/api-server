@@ -17,6 +17,7 @@ const CatalogItemProfileTheme = global.CatalogItemProfileTheme
 const CatalogItemPuppet = global.CatalogItemPuppet
 const CatalogItemEffect = global.CatalogItemEffect
 const CatalogPlayerStoreItem = global.CatalogPlayerStoreItem
+const CatalogItemQuest = global.CatalogItemQuest
 
 const ArrayCollection = global.ArrayCollection
 
@@ -288,6 +289,15 @@ clientData[22004] = {
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.ramoneStore)
 clientData[22004].classObj = new CatalogItemStore(clientData[22004].name, 'voStoreRamoneEnter', 'car_f_gui_str_ramoneStore.swf', '33274,60022,60021,60026,60010,33274,33274,33274,33274,33274', 'car_f_gui_str_bodyShaping.swf', 'voStoreRamoneExit')
 
+// TODO: Figure out proper animation for this id?
+clientData[60026] = clientData[31011]
+
+// Ramone
+clientData[25010] = {
+  name: 'Free Body Work',
+  classObj: new CatalogItemQuest()
+}
+
 /*
 clientData[60502] = {
   name: 'Default Printable Background',
@@ -300,5 +310,8 @@ const shopData = {}
 // Lightning McQueen's Pro-Race Shop
 shopData[22002] = new ArrayCollection()
 shopData[22002].push(new CatalogPlayerStoreItem(102, 'Test Item', 'Test Description', 'car_g_ico_clr_flamingoPink.swf'))
+
+// Ramone's House of Body Art
+shopData[22004] = shopData[22002]
 
 module.exports = { clientData, shopData }

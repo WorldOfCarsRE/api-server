@@ -35,6 +35,7 @@ global.libamf = require('libamf')
 /* global CatalogItemProfileTheme */
 /* global CatalogItemPuppet */
 /* global CatalogItemEffect */
+/* global CatalogItemQuest */
 /* global RuleStateAMF */
 
 global.CatalogItem = require('./catalog/CatalogItem')
@@ -70,6 +71,7 @@ global.CatalogItemEffect = require('./catalog/CatalogItemEffect')
 global.CatalogItemMinigame = require('./catalog/CatalogItemMinigame')
 global.CatalogItemProfileTheme = require('./catalog/CatalogItemProfileTheme')
 global.CatalogItemPuppet = require('./catalog/CatalogItemPuppet')
+global.CatalogItemQuest = require('./catalog/CatalogItemQuest')
 global.RuleStateAMF = require('./amf/RuleStateAMF')
 
 const express = require('express')
@@ -132,6 +134,7 @@ libamf.registerClassAlias('com.disney.cars.domain.player.RuleState', RuleStateAM
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.ProfileBackground', CatalogItemProfileTheme)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.gm.Puppet', CatalogItemPuppet)
 libamf.registerClassAlias('com.disney.cars.domain.racecar.Racecar', Racecar)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.progression.Quest', CatalogItemQuest)
 
 /* global server */
 
