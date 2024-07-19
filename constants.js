@@ -18,6 +18,7 @@ const CatalogItemPuppet = global.CatalogItemPuppet
 const CatalogItemEffect = global.CatalogItemEffect
 const CatalogPlayerStoreItem = global.CatalogPlayerStoreItem
 const CatalogItemQuest = global.CatalogItemQuest
+const CatalogItemMapEffect = global.CatalogItemMapEffect
 
 const ArrayCollection = global.ArrayCollection
 
@@ -150,6 +151,11 @@ clientData[31012] = {
 
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.materStore)
 clientData[31012].classObj = new CatalogItemStore(clientData[31012].name, 'voStoreMaterEnter', 'car_f_gui_str_materStore.swf', '33274,60002,60021,60022,33274,33274,33274,33274,33274,33274', 'car_f_gui_str_avatarEditor.swf', 'voStoreMaterExit')
+
+clientData[102] = {
+  name: "Doc's Clinic (InteractiveObject)",
+  classObj: new CatalogItemMapEffect(103)
+}
 
 clientData[32012] = {
   name: 'Sleep ZZZ Effect',
@@ -297,6 +303,15 @@ clientData[25010] = {
   name: 'Free Body Work',
   classObj: new CatalogItemQuest()
 }
+
+// Doc's Clinic game
+clientData[103] = {
+  name: "Doc's Clinic",
+  classObj: null
+}
+
+clientData[103].classObj = new CatalogItemMinigame('car_spl_puz_docsclinic', clientData[103].name)
+clientData[103].classObj.eventId = 103
 
 /*
 clientData[60502] = {
