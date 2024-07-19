@@ -225,9 +225,19 @@ server.app.get('/carsds/api/internal/retrieveCar', async (req, res) => {
   }
 
   res.setHeader('content-type', 'application/json')
-  res.end(JSON.stringify(
-    await db.retrieveCarFromUser(req.query.playToken),
-    null,
-    3)
-  )
+  if (req.query.identifier) {
+    res.end(JSON.stringify(
+      await db.retrieveCar(req.query.identifier))
+    )
+    return
+  }
+
+  if (req.query.playToken) {
+    res.end(JSON.stringify(
+      await db.retrieveCarFromUser(req.query.playToken))
+    )
+    return
+  }
+
+  return res.status(400).send({})
 })
