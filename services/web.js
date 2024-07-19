@@ -83,13 +83,15 @@ async function handleWhoAmIRequest (req, res) {
     status.txt('not_logged_in')
   }
 
+  const accData = await db.retrieveAccountData(userName)
+
   account = root.ele('account', { account_id: accountId })
   account.ele('first_name')
   account.ele('dname').txt(userName)
   account.ele('age').txt(0)
   account.ele('touAccepted').txt('basic')
   account.ele('access').txt('true')
-  account.ele('speed_chat_prompt').txt('false')
+  account.ele('speed_chat_prompt').txt(Boolean(accData.SpeedChatPlus))
 
   root.ele('userTestAccessAllowed').txt('false')
   root.ele('testUser').txt('false')
