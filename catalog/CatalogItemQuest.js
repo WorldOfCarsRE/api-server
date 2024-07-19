@@ -14,8 +14,8 @@ class CatalogItemQuest extends CatalogItem {
     this.backgroundImage = ''
     this.thumbnailImage = ''
     this.stepIds = new ArrayCollection()
-    // public var fullRewards:Vector.<CatalogItemQuestReward>;
-    // public var fullSteps:Vector.<CatalogItemQuestStep>;
+    // TODO: public var fullRewards:Vector.<CatalogItemQuestReward>;
+    // TODO: public var fullSteps:Vector.<CatalogItemQuestStep>;
     this.turnInRuleId = 0
     this.membersOnly = false
     this.resetRuleId = 0
