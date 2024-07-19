@@ -3,7 +3,7 @@ const CatalogItem = global.CatalogItem
 class CatalogItemMapEffect extends CatalogItem {
   constructor (minigameID) {
     super()
-    
+
     this.spinoutDuration = 0
     this.boostPowerIncrease = 0
     this.blastAnimID = 0
@@ -18,7 +18,7 @@ class CatalogItemMapEffect extends CatalogItem {
     this.slipperyDragScale = 0
     this.minigameID = minigameID
     this.dustDevilForce = 0
-    this.minigameDropPoint = "landmark_docsclinic"
+    this.minigameDropPoint = 'landmark_docsclinic'
     this.slipperyPowerScale = 0
     this.slipperyMaxSteerAngle = 0
     this.geyserBarrelRolls = 0
