@@ -47,7 +47,7 @@ class Database {
 
     let validCredentials
     let accountId
-    if (loginType == "swid") {
+    if (loginType === 'swid') {
       const ses = req.session
       if (ses.logged && ses.username && ses.userId) {
         validCredentials = true
