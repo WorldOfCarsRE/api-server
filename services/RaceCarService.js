@@ -129,6 +129,15 @@ class RaceCarService extends libamf.Service {
 
     return libamf.deserialize(serialized, libamf.ENCODING.AMF3)
   }
+
+  async getRacecar (identifier) {
+    console.log(`getRacecar: ${identifier}`)
+    const car = await db.retrieveCarData(identifier)
+    if (car) {
+      const serialized = await this.createRaceCar(car)
+      return libamf.deserialize(serialized, libamf.ENCODING.AMF3)
+    }
+  }
 }
 
 module.exports = RaceCarService

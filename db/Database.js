@@ -30,6 +30,7 @@ class Database {
   async handleFlashLogin (req, res) {
     let username = req.body.username
     let password = req.body.password
+    let loginType = req.body.loginType
 
     if (username === undefined && password === undefined) {
       username = req.query.username
@@ -40,8 +41,23 @@ class Database {
       username = username.toLowerCase()
     }
 
-    const validCredentials = await this.verifyCredentials(username, password)
-    const accountId = await this.getAccountIdFromUser(username)
+    if (loginType === undefined) {
+      loginType = req.query.loginType
+    }
+
+    let validCredentials
+    let accountId
+    if (loginType == "swid") {
+      const ses = req.session
+      if (ses.logged && ses.username && ses.userId) {
+        validCredentials = true
+        accountId = ses.userId
+        username = ses.username
+      }
+    } else {
+      validCredentials = await this.verifyCredentials(username, password)
+      accountId = await this.getAccountIdFromUser(username)
+    }
     let errorResp = ''
 
     const root = create().ele('result')
@@ -66,8 +82,9 @@ class Database {
     root.ele('type').txt('hard')
     root.ele('banURL')
 
-    root.ele('username').txt(username)
-    root.ele('userId').txt(accountId)
+    const results = root.ele('results')
+    results.ele('username').txt(username)
+    results.ele('userId').txt(accountId)
 
     const xml = root.end({ prettyPrint: true })
     res.setHeader('content-type', 'text/xml')
