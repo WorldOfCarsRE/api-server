@@ -61,10 +61,6 @@ clientData[20210] = {
 
 clientData[15001] = {
   name: 'Downtown Radiator Springs',
-  // FIXME: using the "radiatorSprings" subgroup from game_audio.xml
-  // causes the client to play the music indefinitely, maybe figure out
-  // how to randomize between zoneRadiatorSprings01 and zoneRadiatorSprings02
-  // when someone requests this item?
   classObj: new CatalogItemWorldZone('Downtown Radiator Springs', 100, 'car_f_gui_ttl_radiatorSprings_en_US.swf', 'car_w_env_rsp_RadiatorSprings', 'car_g_map_env_radiatorSprings.swf', 'scripts/isoworld/radiator_springs.lua', 'Music', 'zoneRadiatorSprings02', 'dp_npt_315')
 }
 
