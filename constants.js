@@ -245,10 +245,20 @@ clientData[31016] = {
   classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boostLow.smod', 'car_g_ico_npc_boost.swf')
 }
 
-// TODO: Fill these out
-clientData[31017] = clientData[31016]
-clientData[31018] = clientData[31016]
-clientData[31019] = clientData[31016]
+clientData[31017] = {
+  name: 'Racing NPC 2',
+  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boostLow.smod', 'car_g_ico_npc_boost.swf')
+}
+
+clientData[31018] = {
+  name: 'Racing NPC 3',
+  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boostLow.smod', 'car_g_ico_npc_boost.swf')
+}
+
+clientData[31019] = {
+  name: 'Racing NPC 4',
+  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boostLow.smod', 'car_g_ico_npc_boost.swf')
+}
 
 clientData[61000] = {
   name: "Ramone's Paint Blaster",

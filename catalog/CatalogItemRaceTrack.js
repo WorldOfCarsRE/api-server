@@ -14,6 +14,8 @@ class CatalogItemRaceTrack extends CatalogItemDungeon {
     this.spClientScriptUrl = spClientScriptUrl
     this.racers = new ArrayCollection()
     this.racers.push(31016) // Boost
+    this.racers.push(31017) // Boost
+    this.racers.push(31018) // Boost
     this.titleUrl = titleUrl
     this.scriptUrl = scriptUrl
     this.mapUrl = mapUrl
