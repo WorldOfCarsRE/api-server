@@ -5,14 +5,12 @@ const CatalogCarItem = require('./CatalogCarItem')
 ArrayCollection = global.ArrayCollection
 
 class CatalogItemDecal extends CatalogCarItem {
-  constructor () {
+  constructor (assetUrls, decalType) {
     super()
 
-    this.type = 1
+    this.type = decalType
 
-    this.assets = new ArrayCollection()
-    this.assets.push('car_t_chr_avt_stock_sideWindows.jpg')
-
+    this.assets = new ArrayCollection(...assetUrls)
     this.slots = new ArrayCollection()
   }
 }

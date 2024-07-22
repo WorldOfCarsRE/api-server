@@ -118,13 +118,13 @@ clientData[30502] = {
 }
 
 clientData[51103] = {
-  name: 'Car Decal',
-  classObj: new CatalogItemDecal()
+  name: 'Car Decal (Headlights)',
+  classObj: new CatalogItemDecal(['car_t_cst_lit_headLight01.swf'], 1)
 }
 
 clientData[51104] = {
-  name: 'Car Decal',
-  classObj: new CatalogItemDecal()
+  name: 'Car Decal (Tail Lights)',
+  classObj: new CatalogItemDecal(['car_g_ico_lit_taillight02.png'], 2)
 }
 
 clientData[20206] = {
