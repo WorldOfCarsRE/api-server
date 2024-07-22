@@ -4,10 +4,7 @@ const CatalogItemDungeon = global.CatalogItemDungeon
 ArrayCollection = global.ArrayCollection
 
 class CatalogItemRaceTrack extends CatalogItemDungeon {
-  // FIXME: This race track doesn't seem to load at the moment, for now we will use another map for experimenting.
-  // constructor (proTrack = false, spClientScriptUrl = 'sp_ccs', titleUrl = 'car_f_gui_ttl_carburetorCounty_en_US.swf', scriptUrl = 'sp_ccs', mapUrl = 'car_w_trk_rsp_CarburetorCountySpeedway') {
-  constructor (proTrack = false, spClientScriptUrl = 'sp_ccs', titleUrl = 'car_f_gui_ttl_twistinTailfinTrk_en_US.swf', scriptUrl = 'sp_ccs', mapUrl = 'car_w_trk_tfn_TwistinTailfinTrails', miniMapUrl = 'car_g_map_trk_twistinTailfin.swf',
-    group = 'Music', alias = 'TwistinTailfinTrack') {
+  constructor (proTrack, spClientScriptUrl, titleUrl, scriptUrl, mapUrl, miniMapUrl, group, alias, physicsUrl) {
     super()
 
     this.proTrack = proTrack
