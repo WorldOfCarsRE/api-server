@@ -202,6 +202,27 @@ server.app.get('/carsds/api/GenerateTokenRequest', async (req, res) => {
   res.send(xml)
 })
 
+server.app.post('/carsds/api/RedeemPromoCodeRequest', async (req, res) => {
+  const root = create().ele('RedeemPromoCodeRequestResponse')
+  const valid = req.body.code === 'launch'
+  const ses = req.session
+
+  const item = root.ele('success')
+  item.txt(valid ? 'true' : 'false')
+
+  if (ses.username && valid) {
+    const reward = root.ele('reward')
+    reward.ele('description').txt('car coins')
+    reward.ele('quantity').txt(1000)
+
+    // TODO: RPC to OTP server database and add coins.
+  }
+
+  const xml = root.end({ prettyPrint: true })
+  res.setHeader('content-type', 'text/xml')
+  res.send(xml)
+})
+
 server.app.use(express.json())
 
 server.app.post('/carsds/api/internal/setCarData', async (req, res) => {
