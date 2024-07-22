@@ -246,23 +246,23 @@ clientData[42002] = {
 }
 
 clientData[31016] = {
-  name: 'Racing NPC',
+  name: 'Racing NPC (Boost)',
   classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boostLow.smod', 'car_g_ico_npc_boost.swf')
 }
 
 clientData[31017] = {
-  name: 'Racing NPC 2',
-  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boostLow.smod', 'car_g_ico_npc_boost.swf')
+  name: 'Racing NPC 2 (DJ)',
+  classObj: new CatalogItemNPC('car_k_chr_frn_djLow.dpak', 'DJ', 'car_r_chr_frn_djLow.smod', 'car_g_ico_npc_dj.swf')
 }
 
 clientData[31018] = {
-  name: 'Racing NPC 3',
-  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boostLow.smod', 'car_g_ico_npc_boost.swf')
+  name: 'Racing NPC 3 (Wingo)',
+  classObj: new CatalogItemNPC('car_k_chr_frn_wingoLow.dpak', 'Wingo', 'car_r_chr_frn_wingoLow.smod', 'car_g_ico_npc_wingo.swf')
 }
 
 clientData[31019] = {
-  name: 'Racing NPC 4',
-  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boostLow.smod', 'car_g_ico_npc_boost.swf')
+  name: 'Racing NPC 4 (Snot Rod)',
+  classObj: new CatalogItemNPC('car_k_chr_frn_snotrodLow.dpak', 'Snot Rod', 'car_r_chr_frn_snotrodLow.smod', 'car_g_ico_npc_snotRod.swf')
 }
 
 clientData[61000] = {

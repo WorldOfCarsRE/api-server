@@ -11,14 +11,15 @@ class CatalogItemRaceTrack extends CatalogItemDungeon {
     this.spClientScriptUrl = spClientScriptUrl
     this.racers = new ArrayCollection()
     this.racers.push(31016) // Boost
-    this.racers.push(31017) // Boost
-    this.racers.push(31018) // Boost
+    this.racers.push(31017) // DJ
+    this.racers.push(31018) // Wingo
+    this.racers.push(31019) // Snot Rod
     this.titleUrl = titleUrl
     this.scriptUrl = scriptUrl
     this.mapUrl = mapUrl
     this.miniMapUrl = miniMapUrl
     this.photoFinishTrackUrl = 'car_f_gui_gam_photoFinish.swf'
-    this.physicsUrl = 'car_w_trk_tfn_twistinTailfin_SS_V1_phys.xml'
+    this.physicsUrl = physicsUrl
     this.startingTrackSegment = 1
     this.lapsToWin = 3
     this.group = group
