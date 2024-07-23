@@ -91,7 +91,8 @@ async function handleWhoAmIRequest (req, res) {
   account.ele('age').txt(0)
   account.ele('touAccepted').txt('basic')
   account.ele('access').txt('true')
-  account.ele('speed_chat_prompt').txt(`${Boolean(!accData.SpeedChatPlus)}`)
+  // TODO: A way to toggle SpeedChat Plus, re-enable when ready
+  account.ele('speed_chat_prompt').txt(`${Boolean(false)}`) // !accData.SpeedChatPlus
 
   root.ele('userTestAccessAllowed').txt('false')
   root.ele('testUser').txt('false')
