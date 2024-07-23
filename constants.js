@@ -64,6 +64,16 @@ clientData[15001] = {
   classObj: new CatalogItemWorldZone('Downtown Radiator Springs', 100, 'car_f_gui_ttl_radiatorSprings_en_US.swf', 'car_w_env_rsp_RadiatorSprings', 'car_g_map_env_radiatorSprings.swf', 'scripts/isoworld/radiator_springs.lua', 'Music', 'zoneRadiatorSprings02', 'dp_npt_315')
 }
 
+// Fillmore's Fields
+clientData[15001].classObj.dropPoints['15002'] = 'dp_ff_225'
+// Willy's Butte
+clientData[15001].classObj.dropPoints['15006'] = 'dp_wb_225'
+// Redhood Valley
+clientData[15001].classObj.dropPoints['15003'] = 'dp_rhv_180'
+// Race tracks
+clientData[15001].classObj.dropPoints['sp'] = 'dp_sp_225'
+clientData[15001].classObj.dropPoints['mp'] = 'dp_mp_225'
+
 // Lightning McQueen's Pro-Race Shop
 clientData[15001].classObj.dropPoints['22002'] = 'dp_lightning_225'
 
@@ -71,16 +81,29 @@ clientData[15002] = {
   name: "Fillmore's Fields",
   classObj: new CatalogItemWorldZone("Fillmore's Fields", 100, 'car_f_gui_ttl_fillmoresFields_en_US.swf', 'car_w_env_frm_FillmoresFields_design', 'car_g_map_env_farmGrounds.swf', 'scripts/isoworld/fillmores_fields.lua', 'Music', 'zoneFillmoresFields', 'dp_default_45')
 }
+// Willy's Buttle
+clientData[15002].classObj.dropPoints['15006'] = 'dp_wb_135'
+// Race tracks
+clientData[15002].classObj.dropPoints['sp'] = 'dp_sp_225'
+clientData[15002].classObj.dropPoints['mp'] = 'dp_mp_225'
 
 clientData[15003] = {
   name: 'Redhood Valley',
   classObj: new CatalogItemWorldZone('Redhood Valley', 100, 'car_f_gui_ttl_tailfinPass_en_US.swf', 'car_w_env_tfn_RedhoodValley', 'car_g_map_env_redhoodValley.swf', 'scripts/isoworld/tailfin_pass.lua', 'Music', 'zoneRedHood', 'dp_default_270')
 }
+// Race tracks
+clientData[15003].classObj.dropPoints['sp'] = "dp_sp_225"
+clientData[15003].classObj.dropPoints['mp'] = "dp_mp_225"
 
 clientData[15006] = {
   name: "Willy's Butte",
   classObj: new CatalogItemWorldZone("Willy's Butte", 100, 'car_f_gui_ttl_willysButte_en_US.swf', 'car_w_env_wil_WillysButte_design', 'car_g_map_env_willysButte.swf', 'scripts/isoworld/willys_butte.lua', 'Music', 'zoneWilliesButte', 'dp_default_315')
 }
+// Fillmore's Fields
+clientData[15006].classObj.dropPoints['15002'] = 'dp_ff_200'
+// Race tracks
+clientData[15006].classObj.dropPoints['sp'] = "dp_sp_180"
+clientData[15006].classObj.dropPoints['mp'] = "dp_mp_225"
 
 clientData[10001] = {
   name: 'Home',
