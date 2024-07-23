@@ -4,7 +4,7 @@ const CatalogItemDungeon = global.CatalogItemDungeon
 ArrayCollection = global.ArrayCollection
 
 class CatalogItemRaceTrack extends CatalogItemDungeon {
-  constructor (proTrack, spClientScriptUrl, titleUrl, scriptUrl, mapUrl, miniMapUrl, group, alias, physicsUrl, exitMapId) {
+  constructor (proTrack, spClientScriptUrl, titleUrl, scriptUrl, mapUrl, miniMapUrl, group, alias, physicsUrl, exitMapId, logoUrl, sceneryUrl) {
     super()
 
     this.proTrack = proTrack
@@ -25,6 +25,8 @@ class CatalogItemRaceTrack extends CatalogItemDungeon {
     this.exitMapId = exitMapId
     this.group = group
     this.alias = alias
+    this.logoUrl = logoUrl
+    this.sceneryUrl = sceneryUrl
   }
 }
 
