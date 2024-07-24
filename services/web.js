@@ -236,7 +236,7 @@ server.app.post('/carsds/api/internal/setCarData', async (req, res) => {
   if (data.playToken && data.fieldData) {
     const car = await db.retrieveCarByOwnerAccount(data.playToken)
     Object.assign(car, data.fieldData)
-    car.save()
+    await car.save()
     return res.status(200).send({ success: true, message: 'Success.' })
   }
 
@@ -254,7 +254,7 @@ server.app.post('/carsds/api/internal/setCarFields', async (req, res) => {
     const car = await db.retrieveCarByOwnerAccount(data.playToken)
     console.log(car.carData, data.fieldData)
     Object.assign(car.carData, data.fieldData)
-    car.save()
+    await car.save()
     return res.status(200).send({ success: true, message: 'Success.' })
   }
 

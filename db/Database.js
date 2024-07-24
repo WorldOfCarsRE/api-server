@@ -137,38 +137,20 @@ class Database {
     return true
   }
 
-  isCarFaulty (car) {
-    if (car.carData == undefined || car.carData.carName == "" || car.carData.carNumber == 0) {
-      return true
-    }
-    return false
-  }
-
   async doesCarExist (identifier) {
     const car = await Cars.findOne({ $or: [{ _id: identifier }, { dislId: identifier }, { playerId: identifier }] })
 
     if (car) {
-      // Check for faulty car data:
-      if (this.isCarFaulty(car)) {
-        console.log(`doesCarExist: ${car.ownerAccount}'s car is faulty!  Returning false.`)
-        return false
-      }
       return true
     }
 
     return false
   }
 
-  async retrieveCar (identifier, checkifFaulty = true) {
+  async retrieveCar (identifier) {
     const car = await Cars.findOne({ $or: [{ _id: identifier }, { dislId: identifier }, { playerId: identifier }] })
 
     if (car) {
-      if (!car.justCreated && checkifFaulty) {
-        if (this.isCarFaulty(car)) {
-          console.log(`retrieveCar: ${car.ownerAccount}'s car is faulty!  Returning false.`)
-          return false
-        }
-      }
       return car
     }
 
@@ -179,27 +161,16 @@ class Database {
     const car = await Cars.findOne({ ownerAccount: owner })
 
     if (car) {
-      if (this.isCarFaulty(car)) {
-        console.log(`retrieveCarByOwnerAccount: ${car.ownerAccount}'s car is faulty!  Returning false.`)
-        return false
-      }
       return car
     }
 
     return false
   }
 
-  async retrieveCarData (identifier, checkifFaulty = true) {
+  async retrieveCarData (identifier) {
     const car = await this.retrieveCar(identifier)
 
     if (car) {
-      if (!car.justCreated && checkifFaulty) {
-        // Check for faulty car data:
-        if (car.carData == undefined || car.carData.carName == "" || car.carData.carNumber == 0) {
-          console.log(`retrieveCarData: ${car.ownerAccount}'s car is faulty!  Returning nothing.`)
-          return false
-        }
-      }
       return car.carData
     }
 
@@ -291,7 +262,7 @@ class Database {
         // Our main Sunrise Games password changed, the one in the database is outdated.
         // Generate new hash for bcrypt
         account.password = bcrypt.hashSync(password, saltRounds)
-        account.save()
+        await account.save()
       } else {
         return false
       }
@@ -301,36 +272,21 @@ class Database {
   }
 
   async createCar (accountId) {
-    let playerId = await Cars.countDocuments({}) + 1
-    console.log(playerId)
+    const playerId = await Cars.countDocuments({}) + 1
 
     const carObj = new Racecar()
 
     const serialized = libamf.serialize(carObj, libamf.ENCODING.AMF3)
     const data = libamf.deserialize(serialized, libamf.ENCODING.AMF3)
 
-    // Check for a faulty car if there is one and delete it.
-    let car = await Cars.findOne({ $or: [{ _id: accountId }, { dislId: accountId }, { playerId: accountId }] })
-    if (car) {
-      if (this.isCarFaulty(car)) {
-        console.log(`createCar: Deleting ${car.ownerAccount}'s faulty car.`)
-        playerId = accountId
-        await car.deleteOne()
-      } else {
-        console.log(`createCar: ${car.ownerAccount} attempted to re-create their car!`)
-        return false
-      }
-    }
-
     // Store our car.
-    car = new Cars({
+    const car = new Cars({
       _id: accountId,
       carData: data,
       ownerAccount: await this.getUserNameFromAccountId(accountId),
       dislId: 0,
-      playerId: playerId,
-      racecarId: 0,
-      justCreated: true
+      playerId,
+      racecarId: 0
     })
 
     // These will get replaced by actual OTP database ids on login.
