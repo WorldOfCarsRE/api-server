@@ -285,7 +285,7 @@ class Database {
       carData: data,
       ownerAccount: await this.getUserNameFromAccountId(accountId),
       dislId: 0,
-      playerId,
+      playerId: playerId,
       racecarId: 0
     })
 
