@@ -9,7 +9,8 @@ const Cars = new mongoose.model('Cars', {
   dislId: { type: Number }, // OTP server Account object id
   playerId: { type: Number }, // OTP server DistributedCarPlayer object id
   racecarId: { type: Number }, // OTP server DistributedRaceCar object id
-  friends: { type: Array } // Friends list (of Account object ids)
+  friends: { type: Array }, // Friends list (of Account object ids)
+  justCreated: { type: Boolean }
 })
 
 module.exports = Cars

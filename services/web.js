@@ -243,6 +243,24 @@ server.app.post('/carsds/api/internal/setCarData', async (req, res) => {
   return res.status(501).send({ success: false, message: 'Something went wrong.' })
 })
 
+server.app.post('/carsds/api/internal/setCarFields', async (req, res) => {
+  if (!verifyAuthorization(req.headers.authorization)) {
+    return res.status(401).send('Authorization failed.')
+  }
+
+  const data = req.body
+
+  if (data.playToken && data.fieldData) {
+    const car = await db.retrieveCarByOwnerAccount(data.playToken)
+    console.log(car.carData, data.fieldData)
+    Object.assign(car.carData, data.fieldData)
+    car.save()
+    return res.status(200).send({ success: true, message: 'Success.' })
+  }
+
+  return res.status(501).send({ success: false, message: 'Something went wrong.' })
+})
+
 server.app.get('/carsds/api/internal/retrieveCar', async (req, res) => {
   if (!verifyAuthorization(req.headers.authorization)) {
     return res.status(401).send('Authorization failed.')
@@ -258,7 +276,7 @@ server.app.get('/carsds/api/internal/retrieveCar', async (req, res) => {
 
   if (req.query.playToken) {
     res.end(JSON.stringify(
-      await db.retrieveCarFromUser(req.query.playToken))
+      await db.retrieveCarByOwnerAccount(req.query.playToken))
     )
     return
   }

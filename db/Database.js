@@ -137,20 +137,38 @@ class Database {
     return true
   }
 
+  isCarFaulty (car) {
+    if (car.carData == undefined || car.carData.carName == "" || car.carData.carNumber == 0) {
+      return true
+    }
+    return false
+  }
+
   async doesCarExist (identifier) {
     const car = await Cars.findOne({ $or: [{ _id: identifier }, { dislId: identifier }, { playerId: identifier }] })
 
     if (car) {
+      // Check for faulty car data:
+      if (this.isCarFaulty(car)) {
+        console.log(`doesCarExist: ${car.ownerAccount}'s car is faulty!  Returning false.`)
+        return false
+      }
       return true
     }
 
     return false
   }
 
-  async retrieveCar (identifier) {
+  async retrieveCar (identifier, checkifFaulty = true) {
     const car = await Cars.findOne({ $or: [{ _id: identifier }, { dislId: identifier }, { playerId: identifier }] })
 
     if (car) {
+      if (!car.justCreated && checkifFaulty) {
+        if (this.isCarFaulty(car)) {
+          console.log(`retrieveCar: ${car.ownerAccount}'s car is faulty!  Returning false.`)
+          return false
+        }
+      }
       return car
     }
 
@@ -161,16 +179,27 @@ class Database {
     const car = await Cars.findOne({ ownerAccount: owner })
 
     if (car) {
+      if (this.isCarFaulty(car)) {
+        console.log(`retrieveCarByOwnerAccount: ${car.ownerAccount}'s car is faulty!  Returning false.`)
+        return false
+      }
       return car
     }
 
     return false
   }
 
-  async retrieveCarData (identifier) {
+  async retrieveCarData (identifier, checkifFaulty = true) {
     const car = await this.retrieveCar(identifier)
 
     if (car) {
+      if (!car.justCreated && checkifFaulty) {
+        // Check for faulty car data:
+        if (car.carData == undefined || car.carData.carName == "" || car.carData.carNumber == 0) {
+          console.log(`retrieveCarData: ${car.ownerAccount}'s car is faulty!  Returning nothing.`)
+          return false
+        }
+      }
       return car.carData
     }
 
@@ -233,10 +262,6 @@ class Database {
     return await Account.findOne({ username })
   }
 
-  async retrieveCarFromUser (username) {
-    return await Cars.findOne({ ownerAccount: username })
-  }
-
   async verifyCredentials (username, password) {
     let account = await this.retrieveAccountFromUser(username)
 
@@ -276,26 +301,42 @@ class Database {
   }
 
   async createCar (accountId) {
-    const playerId = await Cars.countDocuments({}) + 1
+    let playerId = await Cars.countDocuments({}) + 1
+    console.log(playerId)
 
     const carObj = new Racecar()
-
-    carObj.userId = accountId
-    carObj.playerId = playerId
-    carObj.racecarId = playerId // TODO: Is this okay?
 
     const serialized = libamf.serialize(carObj, libamf.ENCODING.AMF3)
     const data = libamf.deserialize(serialized, libamf.ENCODING.AMF3)
 
+    // Check for a faulty car if there is one and delete it.
+    let car = await Cars.findOne({ $or: [{ _id: accountId }, { dislId: accountId }, { playerId: accountId }] })
+    if (car) {
+      if (this.isCarFaulty(car)) {
+        console.log(`createCar: Deleting ${car.ownerAccount}'s faulty car.`)
+        playerId = accountId
+        await car.deleteOne()
+      } else {
+        console.log(`createCar: ${car.ownerAccount} attempted to re-create their car!`)
+        return false
+      }
+    }
+
     // Store our car.
-    const car = new Cars({
+    car = new Cars({
       _id: accountId,
       carData: data,
       ownerAccount: await this.getUserNameFromAccountId(accountId),
       dislId: 0,
-      playerId: 0,
-      racecarId: 0
+      playerId: playerId,
+      racecarId: 0,
+      justCreated: true
     })
+
+    // These will get replaced by actual OTP database ids on login.
+    car.carData.userId = accountId
+    car.carData.playerId = playerId
+    car.carData.racecarId = playerId // TODO: Is this okay?
 
     await car.save()
 
