@@ -245,7 +245,7 @@ class Database {
 
     data.append('username', username)
     data.append('password', password)
-    data.append('serverType', 'WoCo')
+    data.append('serverType', 'World of Cars Online')
 
     return await axios.post('https://sunrise.games/api/login/alt/', data, {
       headers: {
