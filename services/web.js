@@ -59,6 +59,7 @@ async function handleWhoAmIRequest (req, res) {
   let success = false
   let accountId = -1
   let userName = ''
+  let speedChatPlusPrompt = 'false'
 
   if (ses.success) {
     success = true
@@ -79,11 +80,12 @@ async function handleWhoAmIRequest (req, res) {
 
     accountId = ses.userId
     userName = ses.username
+
+    const accData = await db.retrieveAccountData(userName)
+    speedChatPlusPrompt = `${Boolean(!accData.SpeedChatPlus)}`
   } else {
     status.txt('not_logged_in')
   }
-
-  const accData = await db.retrieveAccountData(userName)
 
   account = root.ele('account', { account_id: accountId })
   account.ele('first_name')
@@ -91,8 +93,9 @@ async function handleWhoAmIRequest (req, res) {
   account.ele('age').txt(0)
   account.ele('touAccepted').txt('basic')
   account.ele('access').txt('true')
+
   // TODO: A way to toggle SpeedChat Plus, re-enable when ready
-  account.ele('speed_chat_prompt').txt(`${Boolean(false)}`) // !accData.SpeedChatPlus
+  account.ele('speed_chat_prompt').txt(speedChatPlusPrompt)
 
   root.ele('userTestAccessAllowed').txt('false')
   root.ele('testUser').txt('false')
@@ -235,6 +238,7 @@ server.app.post('/carsds/api/internal/setCarData', async (req, res) => {
 
   if (data.playToken && data.fieldData) {
     const car = await db.retrieveCarByOwnerAccount(data.playToken)
+    console.log(car, data.fieldData)
     Object.assign(car, data.fieldData)
     await car.save()
     return res.status(200).send({ success: true, message: 'Success.' })
