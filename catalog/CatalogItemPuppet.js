@@ -5,14 +5,14 @@ const CatalogItem = global.CatalogItem
 ArrayCollection = global.ArrayCollection
 
 class CatalogItemPuppet extends CatalogItem {
-  constructor (npcId, name) {
+  constructor (npcId, name, idleAnimationId = 33274) {
     super()
 
     this.npcId = npcId
     this.name = name
     this.repelRadius = 0
     this.chatBubbleColor = 0
-    this.idleAnimationId = 33274 // From media/game/config/game.xml
+    this.idleAnimationId = idleAnimationId
     this.textOutlineColor = 0
     this.nameHeight = 120 // Currently set to CarSprite default
     this.animationIds = new ArrayCollection()

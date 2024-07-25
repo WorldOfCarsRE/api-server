@@ -34,6 +34,16 @@ clientData[101] = {
   classObj: new CatalogItemPuppet(31009, 'Mater') // Mater npcId
 }
 
+clientData[104] = {
+  name: "McQueen Puppet",
+  classObj: new CatalogItemPuppet(31010, "Lightning McQueen", idleAnimationId = 105)
+}
+
+clientData[105] = {
+  name: "McQueen Idle Animation",
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_mcqueen_idleBlink.sani')
+}
+
 clientData[5500] = {
   name: 'Stock',
   classObj: new CatalogItemChassis('stock')
@@ -168,11 +178,6 @@ clientData[20207] = {
   classObj: new CatalogItemPaint(15033856)
 }
 
-clientData[31010] = {
-  name: '?',
-  classObj: new CatalogItemNPC()
-}
-
 clientData[31011] = {
   name: 'NPC Animation Test',
   classObj: new CatalogItemSimpleAnimation('idlescan')
@@ -264,6 +269,11 @@ clientData[1000] = {
 clientData[31009] = {
   name: 'Mater',
   classObj: new CatalogItemNPC()
+}
+
+clientData[31010] = {
+  name: 'Lightning McQueen',
+  classObj: new CatalogItemNPC("car_k_chr_frn_mcqueenLow.dpak", "Lightning McQueen", "car_r_chr_frn_mcqueenLow.smod", '', 105)
 }
 
 clientData[42001] = {

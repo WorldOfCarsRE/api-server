@@ -61,18 +61,28 @@ class CatalogService extends libamf.Service {
 
     if (depth === 2) {
       // Puppet case
-      const puppetItem = new CatalogItemPuppet(31009, 'Mater') // Mater npcId
-      puppetItem.itemId = 101 // Mater Puppet
-      resp.push(puppetItem)
-
-      const npcItem = new CatalogItemNPC()
-      npcItem.itemId = 31009 // Mater npcId
-      resp.push(npcItem)
+      let puppetItem = clientData[id]
+      if (puppetItem !== undefined) {
+        puppetItem = puppetItem.classObj
+        puppetItem.itemId = id
+        resp.push(puppetItem)
+        let npcItem = clientData[puppetItem.npcId]
+        if (npcItem !== undefined) {
+          npcItem.classObj.itemId = puppetItem.npcId
+          resp.push(npcItem.classObj)
+        } else {
+          console.log('MISSING NPC ITEM:', puppetItem.npcId)
+        }
+      } else {
+        console.log('MISSING PUPPET ITEM:', id)
+        resp.push(new CatalogItem())
+      }
     } else {
       resp.push(new CatalogItemRaceSeries(id))
       resp.push(new CatalogItemRaceLevel(1))
     }
 
+    console.log(resp)
     return resp
   }
 

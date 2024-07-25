@@ -68,7 +68,6 @@ async function handleWhoAmIRequest (req, res) {
   }
 
   const root = create().ele('WhoAmIResponse')
-  // root.ele('puppet_id').txt(101) // Mater Puppet
 
   const item = root.ele('success')
   item.txt(success)
@@ -101,6 +100,10 @@ async function handleWhoAmIRequest (req, res) {
 
   root.ele('userTestAccessAllowed').txt('false')
   root.ele('testUser').txt('false')
+
+  if (ses.puppetId) {
+    root.ele('puppet_id').txt(ses.puppetId)
+  }
 
   const xml = root.end({ prettyPrint: true })
   res.setHeader('content-type', 'text/xml')
@@ -278,6 +281,29 @@ server.app.post('/carsds/api/internal/setCarFields', async (req, res) => {
   }
 
   return res.status(501).send({ success: false, message: 'Something went wrong.' })
+})
+
+server.app.get('/carsds/api/internal/retrieveAccount', async (req, res) => {
+  if (!verifyAuthorization(req.headers.authorization)) {
+    return res.status(401).send('Authorization failed.')
+  }
+
+  res.setHeader('content-type', 'application/json')
+  if (req.query.userName) {
+    const accountId = await db.getAccountIdFromUser(req.query.userName)
+    if (accountId) {
+      const userName = await db.getUserNameFromAccountId(accountId)
+      const puppetId = await db.getPuppetFromAccountId(accountId)
+
+      res.end(JSON.stringify({
+        userName: userName,
+        puppetId: puppetId
+      }))
+      return
+    }
+  }
+
+  return res.status(400).send({})
 })
 
 server.app.get('/carsds/api/internal/retrieveCar', async (req, res) => {

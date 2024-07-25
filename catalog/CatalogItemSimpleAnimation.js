@@ -3,10 +3,13 @@
 CatalogItemAnimation = global.CatalogItemAnimation
 
 class CatalogItemSimpleAnimation extends CatalogItemAnimation {
-  constructor (saniName) {
+  constructor (saniName, fullName = '') {
     super()
-
-    this.sani = `car_a_chr_avt_sports_${saniName || 'idlescan'}.sani`
+    if (fullName) {
+      this.sani = fullName
+    } else {
+      this.sani = `car_a_chr_avt_sports_${saniName || 'idlescan'}.sani`
+    }
   }
 }
 
