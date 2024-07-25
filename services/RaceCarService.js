@@ -81,7 +81,6 @@ class RaceCarService extends libamf.Service {
 
     const car = await db.retrieveCarData(accountId)
     const carId = car.playerId
-    console.log(car, carId)
 
     const resp = new ArrayCollection()
 
@@ -122,13 +121,15 @@ class RaceCarService extends libamf.Service {
   async getRacecarByUserId (identifier) {
     console.log(`getRacecarByUserId: ${identifier}`)
 
+    let carData
+
     if (!await db.doesCarExist(identifier)) {
-      await db.createCar(identifier)
+      carData = await db.createCar(identifier)
+    } else {
+      carData = await db.retrieveCarData(identifier)
     }
 
-    const carData = await db.retrieveCarData(identifier)
     const serialized = await this.createRaceCar(carData)
-
     return libamf.deserialize(serialized, libamf.ENCODING.AMF3)
   }
 

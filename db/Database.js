@@ -247,9 +247,7 @@ class Database {
 
       if (errorCode === 0) {
         // Create a brand new account
-        await this.createAccount(username, password)
-
-        account = await this.retrieveAccountFromUser(username)
+        account = await this.createAccount(username, password)
       } else {
         return false
       }
@@ -298,9 +296,7 @@ class Database {
     car.carData.playerId = playerId
     car.carData.racecarId = playerId // TODO: Is this okay?
 
-    await car.save()
-
-    return true
+    return await car.save()
   }
 
   async createAccount (username, password) {
@@ -316,9 +312,7 @@ class Database {
       password: bcrypt.hashSync(password, saltRounds)
     })
 
-    await account.save()
-
-    return true
+    return await account.save()
   }
 }
 
