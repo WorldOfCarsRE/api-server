@@ -208,7 +208,7 @@ class Database {
     const request = await axios.post('https://sunrise.games/api/internal/Account.php', data, {
       headers: {
         'Accept-Encoding': 'application/json',
-        "User-Agent": userAgent
+        'User-Agent': userAgent
       }
     })
     return request.data
@@ -224,7 +224,7 @@ class Database {
     return await axios.post('https://sunrise.games/api/login/alt/', data, {
       headers: {
         'Accept-Encoding': 'application/json',
-        "User-Agent": userAgent
+        'User-Agent': userAgent
       }
     })
   }
@@ -289,7 +289,7 @@ class Database {
       carData: data,
       ownerAccount: await this.getUserNameFromAccountId(accountId),
       dislId: 0,
-      playerId: playerId,
+      playerId,
       racecarId: 0
     })
 
