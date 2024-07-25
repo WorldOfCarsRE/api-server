@@ -8,6 +8,8 @@ const express = require('express')
 
 const CryptoJS = require('crypto-js')
 
+const loginQueue = []
+
 server.app.get('/', (req, res) => {
   res.send('World of Cars API service.')
 })
@@ -59,7 +61,7 @@ async function handleWhoAmIRequest (req, res) {
   let success = false
   let accountId = -1
   let userName = ''
-  let speedChatPlusPrompt = 'false'
+  let speedChatPrompt = 'false'
 
   if (ses.success) {
     success = true
@@ -82,7 +84,7 @@ async function handleWhoAmIRequest (req, res) {
     userName = ses.username
 
     const accData = await db.retrieveAccountData(userName)
-    speedChatPlusPrompt = `${Boolean(!accData.SpeedChatPlus)}`
+    speedChatPrompt = `${Boolean(!accData.SpeedChatPlus)}`
   } else {
     status.txt('not_logged_in')
   }
@@ -95,7 +97,7 @@ async function handleWhoAmIRequest (req, res) {
   account.ele('access').txt('true')
 
   // TODO: A way to toggle SpeedChat Plus, re-enable when ready
-  account.ele('speed_chat_prompt').txt(speedChatPlusPrompt)
+  account.ele('speed_chat_prompt').txt(speedChatPrompt)
 
   root.ele('userTestAccessAllowed').txt('false')
   root.ele('testUser').txt('false')
@@ -181,7 +183,20 @@ server.app.get('/carsds/api/GameEntranceRequest', (req, res) => {
 
   const queue = root.ele('queue')
   const canEnter = queue.ele('can_enter_game')
-  canEnter.txt('true')
+  canEnter.txt(loginQueue.length > 0 ? 'false' : 'true')
+
+  const xml = root.end({ prettyPrint: true })
+  res.setHeader('content-type', 'text/xml')
+  res.send(xml)
+})
+
+server.app.get('/carsds/api/QueueStatsRequest', (req, res) => {
+  const root = create().ele('QueueStatsRequestResponse')
+
+  const queue = root.ele('queue')
+
+  // TODO: Implement queue
+  queue.ele('est_queue_before_you').txt(0)
 
   const xml = root.end({ prettyPrint: true })
   res.setHeader('content-type', 'text/xml')
