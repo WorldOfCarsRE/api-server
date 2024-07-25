@@ -17,6 +17,8 @@ const axios = require('axios').default
 
 const saltRounds = 12
 
+const userAgent = 'Sunrise Games - World of Cars Online API'
+
 class Database {
   constructor () {
     mongoose.connect('mongodb://127.0.0.1:27017/woc')
@@ -205,7 +207,8 @@ class Database {
 
     const request = await axios.post('https://sunrise.games/api/internal/Account.php', data, {
       headers: {
-        'Accept-Encoding': 'application/json'
+        'Accept-Encoding': 'application/json',
+        "User-Agent": userAgent
       }
     })
     return request.data
@@ -220,7 +223,8 @@ class Database {
 
     return await axios.post('https://sunrise.games/api/login/alt/', data, {
       headers: {
-        'Accept-Encoding': 'application/json'
+        'Accept-Encoding': 'application/json',
+        "User-Agent": userAgent
       }
     })
   }
