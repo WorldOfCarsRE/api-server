@@ -35,12 +35,12 @@ clientData[101] = {
 }
 
 clientData[104] = {
-  name: "McQueen Puppet",
-  classObj: new CatalogItemPuppet(31010, "Lightning McQueen", idleAnimationId = 105)
+  name: 'McQueen Puppet',
+  classObj: new CatalogItemPuppet(31010, 'Lightning McQueen', 105)
 }
 
 clientData[105] = {
-  name: "McQueen Idle Animation",
+  name: 'McQueen Idle Animation',
   classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_mcqueen_idleBlink.sani')
 }
 
@@ -273,7 +273,7 @@ clientData[31009] = {
 
 clientData[31010] = {
   name: 'Lightning McQueen',
-  classObj: new CatalogItemNPC("car_k_chr_frn_mcqueenLow.dpak", "Lightning McQueen", "car_r_chr_frn_mcqueenLow.smod", '', 105)
+  classObj: new CatalogItemNPC('car_k_chr_frn_mcqueenLow.dpak', 'Lightning McQueen', 'car_r_chr_frn_mcqueenLow.smod', '', 105)
 }
 
 clientData[42001] = {
@@ -383,10 +383,10 @@ const shopData = {}
 
 // Lightning McQueen's Pro-Race Shop
 shopData[22002] = new ArrayCollection()
-shopData[22002].push(new CatalogPlayerStoreItem(104, 'Motor Speedway Exclusive Costume', 'Available only to Motor Speedway of the South Champions!', 'car_g_ico_pjb_motorspeedway.ajpg', 5000))
-shopData[22002].push(new CatalogPlayerStoreItem(105, 'AV-RAGE Racing Fin', '', 'car_g_ico_spo_avrageRacingFin.ajpg', 1000))
-shopData[22002].push(new CatalogPlayerStoreItem(106, 'RZN-TEK Ninja XL', '', 'car_g_ico_spo_RZNTEKNinjaXL.ajpg', 8000))
-shopData[22002].push(new CatalogPlayerStoreItem(107, 'SKY-LITE Drop Wing', '', 'car_g_ico_spo_skyLiteDropWing.ajpg', 6000))
+shopData[22002].push(new CatalogPlayerStoreItem(200, 'Motor Speedway Exclusive Costume', 'Available only to Motor Speedway of the South Champions!', 'car_g_ico_pjb_motorspeedway.ajpg', 5000))
+shopData[22002].push(new CatalogPlayerStoreItem(201, 'AV-RAGE Racing Fin', '', 'car_g_ico_spo_avrageRacingFin.ajpg', 1000))
+shopData[22002].push(new CatalogPlayerStoreItem(202, 'RZN-TEK Ninja XL', '', 'car_g_ico_spo_RZNTEKNinjaXL.ajpg', 8000))
+shopData[22002].push(new CatalogPlayerStoreItem(203, 'SKY-LITE Drop Wing', '', 'car_g_ico_spo_skyLiteDropWing.ajpg', 6000))
 
 // Ramone's House of Body Art
 shopData[22004] = shopData[22002]

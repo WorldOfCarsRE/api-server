@@ -124,7 +124,7 @@ class RaceCarService extends libamf.Service {
     let carData
 
     if (!await db.doesCarExist(identifier)) {
-      carData = await db.createCar(identifier).carData
+      carData = await db.createCar(identifier)
     } else {
       carData = await db.retrieveCarData(identifier)
     }

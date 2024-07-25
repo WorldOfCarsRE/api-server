@@ -299,7 +299,7 @@ class Database {
       carData: data,
       ownerAccount: await this.getUserNameFromAccountId(accountId),
       dislId: 0,
-      playerId: playerId,
+      playerId,
       racecarId: 0
     })
 
@@ -308,7 +308,8 @@ class Database {
     car.carData.playerId = playerId
     car.carData.racecarId = playerId // TODO: Is this okay?
 
-    return await car.save()
+    const saved = await car.save()
+    return saved.carData
   }
 
   async createAccount (username, password) {

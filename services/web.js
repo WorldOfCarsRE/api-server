@@ -296,8 +296,8 @@ server.app.get('/carsds/api/internal/retrieveAccount', async (req, res) => {
       const puppetId = await db.getPuppetFromAccountId(accountId)
 
       res.end(JSON.stringify({
-        userName: userName,
-        puppetId: puppetId
+        userName,
+        puppetId
       }))
       return
     }

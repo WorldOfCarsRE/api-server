@@ -10,8 +10,6 @@ CatalogItemRaceSeries = global.CatalogItemRaceSeries
 CatalogItemRaceLevel = global.CatalogItemRaceLevel
 CatalogItemSponsor = global.CatalogItemSponsor
 CatalogItemGear = global.CatalogItemGear
-const CatalogItemPuppet = global.CatalogItemPuppet
-const CatalogItemNPC = global.CatalogItemNPC
 
 libamf = global.libamf
 ArrayCollection = global.ArrayCollection
@@ -66,7 +64,7 @@ class CatalogService extends libamf.Service {
         puppetItem = puppetItem.classObj
         puppetItem.itemId = id
         resp.push(puppetItem)
-        let npcItem = clientData[puppetItem.npcId]
+        const npcItem = clientData[puppetItem.npcId]
         if (npcItem !== undefined) {
           npcItem.classObj.itemId = puppetItem.npcId
           resp.push(npcItem.classObj)
