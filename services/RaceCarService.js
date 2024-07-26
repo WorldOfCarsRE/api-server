@@ -52,12 +52,11 @@ class RaceCarService extends libamf.Service {
   }
 
   async updateRacecar (carObj) {
-    const serialized = libamf.serialize(carObj, libamf.ENCODING.AMF3)
     const car = await db.retrieveCar(carObj.playerId)
     console.log('updateRacecar: ', carObj.playerId, car)
 
     if (car) {
-      car.carData = libamf.deserialize(serialized, libamf.ENCODING.AMF3)
+      car.carData = carObj
       await car.save()
     }
 
@@ -65,11 +64,10 @@ class RaceCarService extends libamf.Service {
   }
 
   async insertCustomItems (carObj) {
-    const serialized = libamf.serialize(carObj, libamf.ENCODING.AMF3)
     const car = await db.retrieveCar(carObj.playerId)
 
     if (car) {
-      car.carData = libamf.deserialize(serialized, libamf.ENCODING.AMF3)
+      car.carData = carObj
       await car.save()
     }
 
