@@ -61,7 +61,7 @@ async function handleWhoAmIRequest (req, res) {
   let success = false
   let accountId = -1
   let userName = ''
-  let speedChatPrompt = 'false'
+  const speedChatPrompt = 'false'
 
   if (ses.success) {
     success = true
@@ -82,8 +82,9 @@ async function handleWhoAmIRequest (req, res) {
     accountId = ses.userId
     userName = ses.username
 
-    const accData = await db.retrieveAccountData(userName)
-    speedChatPrompt = `${Boolean(!accData.SpeedChatPlus)}`
+    // TODO: A way to toggle SpeedChat Plus, re-enable when ready
+    // const accData = await db.retrieveAccountData(userName)
+    // speedChatPrompt = `${Boolean(!accData.SpeedChatPlus)}`
   } else {
     status.txt('not_logged_in')
   }
@@ -94,8 +95,6 @@ async function handleWhoAmIRequest (req, res) {
   account.ele('age').txt(0)
   account.ele('touAccepted').txt('basic')
   account.ele('access').txt('true')
-
-  // TODO: A way to toggle SpeedChat Plus, re-enable when ready
   account.ele('speed_chat_prompt').txt(speedChatPrompt)
 
   root.ele('userTestAccessAllowed').txt('false')
