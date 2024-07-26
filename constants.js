@@ -388,7 +388,12 @@ shopData[22002].push(new CatalogPlayerStoreItem(201, 'AV-RAGE Racing Fin', '', '
 shopData[22002].push(new CatalogPlayerStoreItem(202, 'RZN-TEK Ninja XL', '', 'car_g_ico_spo_RZNTEKNinjaXL.ajpg', 8000))
 shopData[22002].push(new CatalogPlayerStoreItem(203, 'SKY-LITE Drop Wing', '', 'car_g_ico_spo_skyLiteDropWing.ajpg', 6000))
 
-// Ramone's House of Body Art
-shopData[22004] = shopData[22002]
+// Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.luigiStore)
+clientData[22003] = {
+  name: "Luigi's Casa Della Tires",
+  classObj: null
+}
+
+clientData[22003].classObj = new CatalogItemStore(clientData[22003].name, 'voStoreLuigiEnter', 'car_f_gui_str_luigiStore.swf', '33274,60010,60011,60022,60010,60010,33274,33274,33274,33274', null, 'voStoreLuigiExit')
 
 module.exports = { clientData, shopData }
