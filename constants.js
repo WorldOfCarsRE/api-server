@@ -287,8 +287,8 @@ clientData[42002] = {
 }
 
 clientData[31016] = {
-  name: 'Racing NPC (Boost)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boostLow.smod', 'car_g_ico_npc_boost.swf')
+  name: 'Racing NPC (Snot Rod)',
+  classObj: new CatalogItemNPC('car_k_chr_frn_snotrodLow.dpak', 'Snot Rod', 'car_r_chr_frn_snotrodLow.smod', 'car_g_ico_npc_snotRod.swf')
 }
 
 clientData[31017] = {
@@ -297,13 +297,13 @@ clientData[31017] = {
 }
 
 clientData[31018] = {
-  name: 'Racing NPC 3 (Wingo)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_wingoLow.dpak', 'Wingo', 'car_r_chr_frn_wingoLow.smod', 'car_g_ico_npc_wingo.swf')
+  name: 'Racing NPC 3 (Boost)',
+  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boostLow.smod', 'car_g_ico_npc_boost.swf')
 }
 
 clientData[31019] = {
-  name: 'Racing NPC 4 (Snot Rod)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_snotrodLow.dpak', 'Snot Rod', 'car_r_chr_frn_snotrodLow.smod', 'car_g_ico_npc_snotRod.swf')
+  name: 'Racing NPC 4 (Wingo)',
+  classObj: new CatalogItemNPC('car_k_chr_frn_wingoLow.dpak', 'Wingo', 'car_r_chr_frn_wingoLow.smod', 'car_g_ico_npc_wingo.swf')
 }
 
 clientData[61000] = {
@@ -395,5 +395,10 @@ clientData[22003] = {
 }
 
 clientData[22003].classObj = new CatalogItemStore(clientData[22003].name, 'voStoreLuigiEnter', 'car_f_gui_str_luigiStore.swf', '33274,60010,60011,60022,60010,60010,33274,33274,33274,33274', null, 'voStoreLuigiExit')
+
+clientData[31024] = {
+  name: 'New Player Tutorial (Truck)',
+  classObj: new CatalogItemNPC('car_a_chr_frn_semi_tut1_sc1.sani', 'Truck', 'car_r_chr_avt_semi.smod', '')
+}
 
 module.exports = { clientData, shopData }

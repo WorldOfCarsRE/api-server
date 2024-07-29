@@ -10,10 +10,10 @@ class CatalogItemRaceTrack extends CatalogItemDungeon {
     this.proTrack = proTrack
     this.spClientScriptUrl = spClientScriptUrl
     this.racers = new ArrayCollection()
-    this.racers.push(31016) // Boost
+    this.racers.push(31016) // Snot Rod
     this.racers.push(31017) // DJ
-    this.racers.push(31018) // Wingo
-    this.racers.push(31019) // Snot Rod
+    this.racers.push(31018) // Boost
+    this.racers.push(31019) // Wingo
     this.titleUrl = titleUrl
     this.scriptUrl = scriptUrl
     this.mapUrl = mapUrl
