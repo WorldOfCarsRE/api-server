@@ -15,7 +15,7 @@ class PlayerService extends libamf.Service {
 
     if (carId === 0) {
       // Having a empty array means autoLogin is true (go to tutorial).
-      resp.push(1)
+      // resp.push(1)
     } else {
       // TODO: Profile view case
     }
