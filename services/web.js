@@ -273,7 +273,6 @@ server.app.post('/carsds/api/internal/setCarFields', async (req, res) => {
 
   if (data.playToken && data.fieldData) {
     const car = await db.retrieveCarByOwnerAccount(data.playToken)
-    console.log(car.carData, data.fieldData)
     Object.assign(car.carData, data.fieldData)
     await car.save()
     return res.status(200).send({ success: true, message: 'Success.' })
@@ -289,20 +288,17 @@ server.app.get('/carsds/api/internal/retrieveAccount', async (req, res) => {
 
   res.setHeader('content-type', 'application/json')
   if (req.query.userName) {
-    const accountId = await db.getAccountIdFromUser(req.query.userName)
-    if (accountId) {
-      const userName = await db.getUserNameFromAccountId(accountId)
-      const puppetId = await db.getPuppetFromAccountId(accountId)
-
-      res.end(JSON.stringify({
-        userName,
-        puppetId
-      }))
-      return
+    let account = await db.retrieveAccountFromUser(req.query.userName)
+    if (account) {
+      account = account.toObject()
+      delete account.password
+      return res.end(JSON.stringify(
+        account
+      ))
     }
   }
 
-  return res.status(400).send({})
+  return res.status(404).send({message: `Could not find account from username ${req.query.userName}`})
 })
 
 server.app.get('/carsds/api/internal/retrieveCar', async (req, res) => {
@@ -326,4 +322,105 @@ server.app.get('/carsds/api/internal/retrieveCar', async (req, res) => {
   }
 
   return res.status(400).send({})
+})
+
+server.app.get('/carsds/api/internal/retrieveObject/:identifier', async (req, res) => {
+  if (!verifyAuthorization(req.headers.authorization)) {
+    return res.status(401).send('Authorization failed.')
+  }
+
+  res.setHeader('content-type', 'application/json')
+  if (req.params.identifier) {
+    // Check for account
+    let account = await db.retrieveAccountFromIdentifier(req.params.identifier)
+    if (account) {
+      // Convert Mongoose docs to JS objects so we can make
+      // changes to it.
+      account = account.toObject()
+      // Don't send the account's hashed password
+      delete account.password
+
+      account.objectName = "Account"
+      return res.end(JSON.stringify(
+        account
+      ))
+    }
+
+    // Check for Car
+    let car = await db.retrieveCar(req.params.identifier)
+    if (car) {
+      car = car.toObject()
+
+      if (car._id == req.params.identifier) {
+        car.objectName = "DistributedCarPlayer"
+      } else if (car.racecarId == req.params.identifier) {
+        car.objectName = "DistributedRaceCar"
+      } else {
+        car.objectName = "Unknown"
+      }
+
+      return res.end(JSON.stringify(
+        car
+      ))
+    }
+
+    // Check for CarPlayerStatus
+    let status = await db.retrieveCarPlayerStatus(req.params.identifier)
+    if (status) {
+      status = status.toObject()
+
+      status.objectName = "CarPlayerStatus"
+      return res.end(JSON.stringify(
+        status
+      ))
+    }
+
+    return res.status(404).send({message: `Object ${req.params.identifier} not found!`})
+  }
+})
+
+server.app.post('/carsds/api/internal/updateObject/:identifier', async (req, res) => {
+  if (!verifyAuthorization(req.headers.authorization)) {
+    return res.status(401).send('Authorization failed.')
+  }
+
+  const data = req.body
+
+  let updated = false
+  if (req.params.identifier) {
+    // Check for account
+    let account = await db.retrieveAccountFromIdentifier(req.params.identifier)
+    if (account) {
+      Object.assign(account, data)
+      await account.save()
+      updated = true
+    }
+
+    if (!updated) {
+      let car = await db.retrieveCar(req.params.identifier)
+      if (car) {
+        let carData = car.toObject().carData
+        Object.assign(carData, data)
+        car.carData = carData
+        await car.save()
+        updated = true
+      }
+    }
+
+    if (!updated) {
+      let status = await db.retrieveCarPlayerStatus(req.params.identifier)
+      if (status) {
+        Object.assign(status, data)
+        await status.save()
+        updated = true
+      }
+    }
+
+    if (updated) {
+      return res.send({message: "Updated successfully!"})
+    } else {
+      return res.status(404).send({message: `Could not update ${req.params.identifier}`})
+    }
+
+  }
 })
