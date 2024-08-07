@@ -34,7 +34,9 @@ async function generateToken (username) {
     dislId: accData.dislId,
     accountType: accData.accountType,
     LinkedToParent: accData.LinkedToParent,
-    token: ''
+    token: '',
+    Banned: accData.Banned,
+    Terminated: accData.Terminated
   }
 
   const key = CryptoJS.enc.Hex.parse(process.env.TOKEN_KEY)
@@ -232,11 +234,21 @@ server.app.post('/carsds/api/RedeemPromoCodeRequest', async (req, res) => {
   item.txt(valid ? 'true' : 'false')
 
   if (ses.username && valid) {
+    // TODO: Dynamic codes and items
+    const coins = 1000
+
     const reward = root.ele('reward')
     reward.ele('description').txt('car coins')
-    reward.ele('quantity').txt(1000)
+    reward.ele('quantity').txt(coins)
 
-    // TODO: RPC to OTP server database and add coins.
+    const car = await db.retrieveCarByOwnerAccount(ses.username)
+
+    if (car) {
+      const carData = car.toObject().carData
+      carData.carCoins += coins
+      car.carData = carData
+      await car.save()
+    }
   }
 
   const xml = root.end({ prettyPrint: true })
