@@ -233,7 +233,9 @@ server.app.post('/carsds/api/RedeemPromoCodeRequest', async (req, res) => {
   const item = root.ele('success')
   item.txt(valid ? 'true' : 'false')
 
-  if (ses.username && valid) {
+  const redeemed = await db.checkCodeRedeemedByUser(ses.username, req.body.code)
+
+  if (ses.username && valid && !redeemed) {
     // TODO: Dynamic codes and items
     const coins = 1000
 
@@ -248,6 +250,7 @@ server.app.post('/carsds/api/RedeemPromoCodeRequest', async (req, res) => {
       carData.carCoins += coins
       car.carData = carData
       await car.save()
+      await db.setCodeAsRedeemedByUser(ses.username, req.body.code)
     }
   }
 
@@ -293,7 +296,7 @@ server.app.get('/carsds/api/internal/retrieveAccount', async (req, res) => {
     }
   }
 
-  return res.status(404).send({message: `Could not find account from username ${req.query.userName}`})
+  return res.status(404).send({ message: `Could not find account from username ${req.query.userName}` })
 })
 
 server.app.get('/carsds/api/internal/retrieveCar', async (req, res) => {
@@ -335,7 +338,7 @@ server.app.get('/carsds/api/internal/retrieveObject/:identifier', async (req, re
       // Don't send the account's hashed password
       delete account.password
 
-      account.objectName = "Account"
+      account.objectName = 'Account'
       return res.end(JSON.stringify(
         account
       ))
@@ -346,12 +349,12 @@ server.app.get('/carsds/api/internal/retrieveObject/:identifier', async (req, re
     if (car) {
       car = car.toObject()
 
-      if (car._id == req.params.identifier) {
-        car.objectName = "DistributedCarPlayer"
-      } else if (car.racecarId == req.params.identifier) {
-        car.objectName = "DistributedRaceCar"
+      if (car._id === req.params.identifier) {
+        car.objectName = 'DistributedCarPlayer'
+      } else if (car.racecarId === req.params.identifier) {
+        car.objectName = 'DistributedRaceCar'
       } else {
-        car.objectName = "Unknown"
+        car.objectName = 'Unknown'
       }
 
       return res.end(JSON.stringify(
@@ -364,13 +367,13 @@ server.app.get('/carsds/api/internal/retrieveObject/:identifier', async (req, re
     if (status) {
       status = status.toObject()
 
-      status.objectName = "CarPlayerStatus"
+      status.objectName = 'CarPlayerStatus'
       return res.end(JSON.stringify(
         status
       ))
     }
 
-    return res.status(404).send({message: `Object ${req.params.identifier} not found!`})
+    return res.status(404).send({ message: `Object ${req.params.identifier} not found!` })
   }
 })
 
@@ -384,7 +387,7 @@ server.app.post('/carsds/api/internal/updateObject/:identifier', async (req, res
   let updated = false
   if (req.params.identifier) {
     // Check for account
-    let account = await db.retrieveAccountFromIdentifier(req.params.identifier)
+    const account = await db.retrieveAccountFromIdentifier(req.params.identifier)
     if (account) {
       Object.assign(account, data)
       await account.save()
@@ -392,9 +395,9 @@ server.app.post('/carsds/api/internal/updateObject/:identifier', async (req, res
     }
 
     if (!updated) {
-      let car = await db.retrieveCar(req.params.identifier)
+      const car = await db.retrieveCar(req.params.identifier)
       if (car) {
-        let carData = car.toObject().carData
+        const carData = car.toObject().carData
         Object.assign(carData, data)
         car.carData = carData
         await car.save()
@@ -403,7 +406,7 @@ server.app.post('/carsds/api/internal/updateObject/:identifier', async (req, res
     }
 
     if (!updated) {
-      let status = await db.retrieveCarPlayerStatus(req.params.identifier)
+      const status = await db.retrieveCarPlayerStatus(req.params.identifier)
       if (status) {
         Object.assign(status, data)
         await status.save()
@@ -412,10 +415,9 @@ server.app.post('/carsds/api/internal/updateObject/:identifier', async (req, res
     }
 
     if (updated) {
-      return res.send({message: "Updated successfully!"})
+      return res.send({ message: 'Updated successfully!' })
     } else {
-      return res.status(404).send({message: `Could not update ${req.params.identifier}`})
+      return res.status(404).send({ message: `Could not update ${req.params.identifier}` })
     }
-
   }
 })

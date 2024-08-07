@@ -10,7 +10,8 @@ const Account = new mongoose.model('Account', {
   racecarId: { type: Number }, // DistributedRaceCar object id
   statusId: { type: Number }, // CarPlayerStatus object id
   puppet: { type: Number },
-  lastLogin: { type: String }
+  lastLogin: { type: String },
+  codesRedeemed: { type: Array }
 })
 
 module.exports = Account

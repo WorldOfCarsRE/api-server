@@ -7,7 +7,7 @@ const CarPlayerStatus = new mongoose.model('CarPlayerStatus', {
   setLocationType: { type: Number, default: 0 },
   setPrivacySettings: { type: Number, default: 0 },
   ownerAccount: { type: String },
-  accountId: { type: Number }, //  Account object id
+  accountId: { type: Number } //  Account object id
 })
 
 module.exports = CarPlayerStatus
