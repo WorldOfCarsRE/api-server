@@ -387,6 +387,7 @@ class Database {
 
     if (account) {
       if (account.codesRedeemed === undefined) {
+        // Add code redemption array to Account object
         account.codesRedeemed = {}
         await account.save()
       }
