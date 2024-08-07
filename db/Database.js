@@ -25,7 +25,7 @@ class Database {
     this.connect()
   }
 
-  async connect() {
+  async connect () {
     await mongoose.connect('mongodb://127.0.0.1:27017/woc')
 
     console.log('Connected to MongoDB!')
@@ -33,23 +33,23 @@ class Database {
     this.db = mongoose.connection
 
     // Create id sequence
-    const doIdSequence = await this.db.collection("globals").findOne({"_id": "doid"})
+    const doIdSequence = await this.db.collection('globals').findOne({ _id: 'doid' })
     if (!doIdSequence) {
-        console.log("Creating doid sequence...");
-        this.db.collection("globals").insertOne({
-            '_id': "doid",
-            'seq': 100000000
-        });
+      console.log('Creating doid sequence...')
+      this.db.collection('globals').insertOne({
+        _id: 'doid',
+        seq: 100000000
+      })
     }
 
     this.db.on('error', console.error.bind(console, 'MongoDB connection error:'))
   }
 
-  async getNextDoId() {
-    const ret = await this.db.collection("globals").findOneAndUpdate(
-      {'_id': 'doid'}, // filter
-      {'$inc': {'seq': 1} }, // update
-      {'returnOriginal': true} // options
+  async getNextDoId () {
+    const ret = await this.db.collection('globals').findOneAndUpdate(
+      { _id: 'doid' }, // filter
+      { $inc: { seq: 1 } }, // update
+      { returnOriginal: true } // options
     )
     console.log(ret)
     return ret.seq
@@ -337,7 +337,7 @@ class Database {
       _id: await this.getNextDoId(),
       carData: data,
       ownerAccount: await this.getUserNameFromAccountId(accountId),
-      accountId: accountId,
+      accountId,
       racecarId: await this.getNextDoId()
     })
 
@@ -352,7 +352,7 @@ class Database {
     const status = new CarPlayerStatus({
       _id: await this.getNextDoId(),
       ownerAccount: car.ownerAccount,
-      accountId: accountId
+      accountId
     })
     await status.save()
 
@@ -380,6 +380,30 @@ class Database {
     })
 
     return await account.save()
+  }
+
+  async checkCodeRedeemedByUser (username, code) {
+    const account = await this.retrieveAccountFromUser(username)
+
+    if (account) {
+      if (account.codesRedeemed === undefined) {
+        account.codesRedeemed = {}
+        await account.save()
+      }
+
+      return account.codesRedeemed.includes(code)
+    }
+
+    return false
+  }
+
+  async setCodeAsRedeemedByUser (username, code) {
+    const account = await this.retrieveAccountFromUser(username)
+
+    if (account) {
+      account.codesRedeemed.push(code)
+      await account.save()
+    }
   }
 }
 
