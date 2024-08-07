@@ -349,9 +349,9 @@ server.app.get('/carsds/api/internal/retrieveObject/:identifier', async (req, re
     if (car) {
       car = car.toObject()
 
-      if (car._id === req.params.identifier) {
+      if (car._id === Number(req.params.identifier)) {
         car.objectName = 'DistributedCarPlayer'
-      } else if (car.racecarId === req.params.identifier) {
+      } else if (car.racecarId === Number(req.params.identifier)) {
         car.objectName = 'DistributedRaceCar'
       } else {
         car.objectName = 'Unknown'
