@@ -1,7 +1,7 @@
 const CatalogItem = global.CatalogItem
 
 class CatalogItemNPC extends CatalogItem {
-  constructor (packName = 'car_k_chr_frn_materLow.dpak', name = 'Mater', smod = 'car_r_chr_frn_materLow.smod', logoUrl = '', defaultSaniId = 31011) {
+  constructor (packName = 'car_k_chr_frn_materLow.dpak', name = 'Mater', smod = 'car_r_chr_frn_mater.smod', logoUrl = '', defaultSaniId = 31011) {
     super()
 
     this.packName = packName
