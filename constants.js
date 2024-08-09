@@ -273,7 +273,7 @@ clientData[31009] = {
 
 clientData[31010] = {
   name: 'Lightning McQueen',
-  classObj: new CatalogItemNPC('car_k_chr_frn_mcqueenLow.dpak', 'Lightning McQueen', 'car_r_chr_frn_mcqueenLow.smod', '', 105)
+  classObj: new CatalogItemNPC('car_k_chr_frn_mcqueenLow.dpak', 'Lightning McQueen', 'car_r_chr_frn_mcqueen.smod', '', 105)
 }
 
 clientData[42001] = {
@@ -288,22 +288,22 @@ clientData[42002] = {
 
 clientData[31016] = {
   name: 'Racing NPC (Snot Rod)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_snotrodLow.dpak', 'Snot Rod', 'car_r_chr_frn_snotrodLow.smod', 'car_g_ico_npc_snotRod.swf')
+  classObj: new CatalogItemNPC('car_k_chr_frn_snotrodLow.dpak', 'Snot Rod', 'car_r_chr_frn_snotrod.smod', 'car_g_ico_npc_snotRod.swf')
 }
 
 clientData[31017] = {
   name: 'Racing NPC 2 (DJ)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_djLow.dpak', 'DJ', 'car_r_chr_frn_djLow.smod', 'car_g_ico_npc_dj.swf')
+  classObj: new CatalogItemNPC('car_k_chr_frn_djLow.dpak', 'DJ', 'car_r_chr_frn_dj.smod', 'car_g_ico_npc_dj.swf')
 }
 
 clientData[31018] = {
   name: 'Racing NPC 3 (Boost)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boostLow.smod', 'car_g_ico_npc_boost.swf')
+  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boost.smod', 'car_g_ico_npc_boost.swf')
 }
 
 clientData[31019] = {
   name: 'Racing NPC 4 (Wingo)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_wingoLow.dpak', 'Wingo', 'car_r_chr_frn_wingoLow.smod', 'car_g_ico_npc_wingo.swf')
+  classObj: new CatalogItemNPC('car_k_chr_frn_wingoLow.dpak', 'Wingo', 'car_r_chr_frn_wingo.smod', 'car_g_ico_npc_wingo.swf')
 }
 
 clientData[61000] = {
