@@ -404,49 +404,49 @@ clientData[31024] = {
 
 // Emotes
 clientData[21001] = {
-  name: "Laugh",
+  name: 'Laugh',
   classObj: null
 }
 
 clientData[21001].classObj = new CatalogItemEmote(clientData[21001].name, 'car_g_ico_emo_laugh.swf', 'car_a_chr_avt_sports_laugh.sani', '')
 
 clientData[21002] = {
-  name: "Rev Engine",
+  name: 'Rev Engine',
   classObj: null
 }
 
 clientData[21002].classObj = new CatalogItemEmote(clientData[21002].name, 'car_g_ico_emo_revEngine.swf', 'car_a_chr_avt_sports_revEngine.sani', '')
 
 clientData[21003] = {
-  name: "Smile",
+  name: 'Smile',
   classObj: null
 }
 
 clientData[21003].classObj = new CatalogItemEmote(clientData[21003].name, 'car_g_ico_emo_smile.swf', 'car_a_chr_avt_sports_smile.sani', '')
 
 clientData[21004] = {
-  name: "The Ramone",
+  name: 'The Ramone',
   classObj: null
 }
 
 clientData[21004].classObj = new CatalogItemEmote(clientData[21004].name, 'car_g_ico_emo_theRamone.swf', 'car_a_chr_avt_sports_kewl.sani', '')
 
 clientData[21005] = {
-  name: "Wave",
+  name: 'Wave',
   classObj: null
 }
 
 clientData[21005].classObj = new CatalogItemEmote(clientData[21005].name, 'car_g_ico_emo_wave.swf', 'car_a_chr_avt_sports_wave.sani', '')
 
 clientData[21006] = {
-  name: "Wink",
+  name: 'Wink',
   classObj: null
 }
 
 clientData[21006].classObj = new CatalogItemEmote(clientData[21006].name, 'car_g_ico_emo_wink.swf', 'car_a_chr_avt_sports_wink.sani', '')
 
 clientData[21007] = {
-  name: "Yuck!",
+  name: 'Yuck!',
   classObj: null
 }
 
