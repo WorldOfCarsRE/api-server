@@ -403,53 +403,53 @@ clientData[31024] = {
 }
 
 // Emotes
-clientData[10001] = {
+clientData[21001] = {
   name: "Laugh",
   classObj: null
 }
 
-clientData[10001].classObj = new CatalogItemEmote(clientData[10001].name, 'car_g_ico_emo_laugh.swf', 'car_a_chr_avt_sports_laugh.sani', '')
+clientData[21001].classObj = new CatalogItemEmote(clientData[21001].name, 'car_g_ico_emo_laugh.swf', 'car_a_chr_avt_sports_laugh.sani', '')
 
-clientData[10002] = {
+clientData[21002] = {
   name: "Rev Engine",
   classObj: null
 }
 
-clientData[10002].classObj = new CatalogItemEmote(clientData[10002].name, 'car_g_ico_emo_revEngine.swf', 'car_a_chr_avt_sports_revEngine.sani', '')
+clientData[21002].classObj = new CatalogItemEmote(clientData[21002].name, 'car_g_ico_emo_revEngine.swf', 'car_a_chr_avt_sports_revEngine.sani', '')
 
-clientData[10003] = {
+clientData[21003] = {
   name: "Smile",
   classObj: null
 }
 
-clientData[10003].classObj = new CatalogItemEmote(clientData[10003].name, 'car_g_ico_emo_smile.swf', 'car_a_chr_avt_sports_smile.sani', '')
+clientData[21003].classObj = new CatalogItemEmote(clientData[21003].name, 'car_g_ico_emo_smile.swf', 'car_a_chr_avt_sports_smile.sani', '')
 
-clientData[10004] = {
+clientData[20004] = {
   name: "The Ramone",
   classObj: null
 }
 
-clientData[10004].classObj = new CatalogItemEmote(clientData[10004].name, 'car_g_ico_emo_theRamone.swf', 'car_a_chr_avt_sports_kewl.sani', '')
+clientData[20004].classObj = new CatalogItemEmote(clientData[20004].name, 'car_g_ico_emo_theRamone.swf', 'car_a_chr_avt_sports_kewl.sani', '')
 
-clientData[10005] = {
+clientData[20005] = {
   name: "Wave",
   classObj: null
 }
 
-clientData[10005].classObj = new CatalogItemEmote(clientData[10005].name, 'car_g_ico_emo_wave.swf', 'car_a_chr_avt_sports_wave.sani', '')
+clientData[20005].classObj = new CatalogItemEmote(clientData[20005].name, 'car_g_ico_emo_wave.swf', 'car_a_chr_avt_sports_wave.sani', '')
 
-clientData[10006] = {
+clientData[20006] = {
   name: "Wink",
   classObj: null
 }
 
-clientData[10006].classObj = new CatalogItemEmote(clientData[10006].name, 'car_g_ico_emo_wink.swf', 'car_a_chr_avt_sports_wink.sani', '')
+clientData[20006].classObj = new CatalogItemEmote(clientData[20006].name, 'car_g_ico_emo_wink.swf', 'car_a_chr_avt_sports_wink.sani', '')
 
-clientData[10007] = {
+clientData[20007] = {
   name: "Yuck!",
   classObj: null
 }
 
-clientData[10007].classObj = new CatalogItemEmote(clientData[10007].name, 'car_g_ico_emo_yuck.swf', 'car_a_chr_avt_sports_yuck.sani', '')
+clientData[20007].classObj = new CatalogItemEmote(clientData[20007].name, 'car_g_ico_emo_yuck.swf', 'car_a_chr_avt_sports_yuck.sani', '')
 
 module.exports = { clientData, shopData }
