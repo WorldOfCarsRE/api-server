@@ -19,6 +19,7 @@ const CatalogItemEffect = global.CatalogItemEffect
 const CatalogPlayerStoreItem = global.CatalogPlayerStoreItem
 const CatalogItemQuest = global.CatalogItemQuest
 const CatalogItemMapEffect = global.CatalogItemMapEffect
+const CatalogItemEmote = global.CatalogItemEmote
 
 const ArrayCollection = global.ArrayCollection
 
@@ -400,5 +401,55 @@ clientData[31024] = {
   name: 'New Player Tutorial (Truck)',
   classObj: new CatalogItemNPC('car_a_chr_frn_semi_tut1_sc1.sani', 'Truck', 'car_r_chr_avt_semi.smod', '')
 }
+
+// Emotes
+clientData[10001] = {
+  name: "Laugh",
+  classObj: null
+}
+
+clientData[10001].classObj = new CatalogItemEmote(clientData[10001].name, 'car_g_ico_emo_laugh.swf', 'car_a_chr_avt_sports_laugh.sani', '')
+
+clientData[10002] = {
+  name: "Rev Engine",
+  classObj: null
+}
+
+clientData[10002].classObj = new CatalogItemEmote(clientData[10002].name, 'car_g_ico_emo_revEngine.swf', 'car_a_chr_avt_sports_revEngine.sani', '')
+
+clientData[10003] = {
+  name: "Smile",
+  classObj: null
+}
+
+clientData[10003].classObj = new CatalogItemEmote(clientData[10003].name, 'car_g_ico_emo_smile.swf', 'car_a_chr_avt_sports_smile.sani', '')
+
+clientData[10004] = {
+  name: "The Ramone",
+  classObj: null
+}
+
+clientData[10004].classObj = new CatalogItemEmote(clientData[10004].name, 'car_g_ico_emo_theRamone.swf', 'car_a_chr_avt_sports_kewl.sani', '')
+
+clientData[10005] = {
+  name: "Wave",
+  classObj: null
+}
+
+clientData[10005].classObj = new CatalogItemEmote(clientData[10005].name, 'car_g_ico_emo_wave.swf', 'car_a_chr_avt_sports_wave.sani', '')
+
+clientData[10006] = {
+  name: "Wink",
+  classObj: null
+}
+
+clientData[10006].classObj = new CatalogItemEmote(clientData[10006].name, 'car_g_ico_emo_wink.swf', 'car_a_chr_avt_sports_wink.sani', '')
+
+clientData[10007] = {
+  name: "Yuck!",
+  classObj: null
+}
+
+clientData[10007].classObj = new CatalogItemEmote(clientData[10007].name, 'car_g_ico_emo_yuck.swf', 'car_a_chr_avt_sports_yuck.sani', '')
 
 module.exports = { clientData, shopData }
