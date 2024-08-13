@@ -144,7 +144,7 @@ clientData[15008].classObj.dropPoints.mp = 'dp_mp_225'
 
 clientData[15009] = {
   name: "Backfire Canyon Speedway",
-  classObj: new CatalogItemWorldZone("Backfire Canyon Speedway", 100, 'car_f_gui_ttl_backfireCanyonSpeedwayZone_en_US.swf', 'car_w_trk_prf_BackfireCanyonZone', 'car_g_map_env_backfireCanyonSpeedway.swf', 'scripts/isoworld/bfc_proTrack.lua', 'Music', 'zoneBFC', 'dp_default_45')
+  classObj: new CatalogItemWorldZone("Backfire Canyon Speedway", 100, 'car_f_gui_ttl_backfireCanyonSpeedwayZone_en_US.swf', 'car_w_trk_prf_BackFireCanyonZone', 'car_g_map_env_backfireCanyonSpeedway.swf', 'scripts/isoworld/bfc_proTrack.lua', 'Music', 'zoneBFC', 'dp_default_45')
 }
 
 // Race tracks
