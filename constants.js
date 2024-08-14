@@ -113,8 +113,8 @@ clientData[15003].classObj.dropPoints.sp = 'dp_sp_225'
 clientData[15003].classObj.dropPoints.mp = 'dp_mp_225'
 
 clientData[15005] = {
-  name: "Tailgator Speedway",
-  classObj: new CatalogItemWorldZone("Tailgator Speedway", 100, 'car_f_gui_ttl_tailGatorSpeedwayZone_en_US.swf', 'car_w_trk_prf_TailgatorZone', 'car_g_map_env_tailgatorSpeedway.swf', 'scripts/isoworld/tgs_proTrack.lua', '', '', 'dp_default_45')
+  name: 'Tailgator Speedway',
+  classObj: new CatalogItemWorldZone('Tailgator Speedway', 100, 'car_f_gui_ttl_tailGatorSpeedwayZone_en_US.swf', 'car_w_trk_prf_TailgatorZone', 'car_g_map_env_tailgatorSpeedway.swf', 'scripts/isoworld/tgs_proTrack.lua', '', '', 'dp_default_45')
 }
 
 // Race tracks
@@ -134,8 +134,8 @@ clientData[15006].classObj.dropPoints.sp = 'dp_sp_180'
 clientData[15006].classObj.dropPoints.mp = 'dp_mp_225'
 
 clientData[15008] = {
-  name: "Big Heartland Speedway",
-  classObj: new CatalogItemWorldZone("Big Heartland Speedway", 100, 'car_f_gui_ttl_bigHeartlandSpeedwayZone_en_US.swf', 'car_w_trk_prf_BigHeartlandZone', 'car_g_map_env_bigHeartlandSpeedway.swf', 'scripts/isoworld/bhs_proTrack.lua', 'Music', 'zoneBigHeartland', 'dp_default_45')
+  name: 'Big Heartland Speedway',
+  classObj: new CatalogItemWorldZone('Big Heartland Speedway', 100, 'car_f_gui_ttl_bigHeartlandSpeedwayZone_en_US.swf', 'car_w_trk_prf_BigHeartlandZone', 'car_g_map_env_bigHeartlandSpeedway.swf', 'scripts/isoworld/bhs_proTrack.lua', 'Music', 'zoneBigHeartland', 'dp_default_45')
 }
 
 // Race tracks
@@ -143,8 +143,8 @@ clientData[15008].classObj.dropPoints.sp = 'dp_sp_225'
 clientData[15008].classObj.dropPoints.mp = 'dp_mp_225'
 
 clientData[15009] = {
-  name: "Backfire Canyon Speedway",
-  classObj: new CatalogItemWorldZone("Backfire Canyon Speedway", 100, 'car_f_gui_ttl_backfireCanyonSpeedwayZone_en_US.swf', 'car_w_trk_prf_BackFireCanyonZone', 'car_g_map_env_backfireCanyonSpeedway.swf', 'scripts/isoworld/bfc_proTrack.lua', 'Music', 'zoneBFC', 'dp_default_45')
+  name: 'Backfire Canyon Speedway',
+  classObj: new CatalogItemWorldZone('Backfire Canyon Speedway', 100, 'car_f_gui_ttl_backfireCanyonSpeedwayZone_en_US.swf', 'car_w_trk_prf_BackFireCanyonZone', 'car_g_map_env_backfireCanyonSpeedway.swf', 'scripts/isoworld/bfc_proTrack.lua', 'Music', 'zoneBFC', 'dp_default_45')
 }
 
 // Race tracks
@@ -152,8 +152,8 @@ clientData[15009].classObj.dropPoints.sp = 'dp_sp_225'
 clientData[15009].classObj.dropPoints.mp = 'dp_mp_225'
 
 clientData[15010] = {
-  name: "Petroleum City Super Speedway",
-  classObj: new CatalogItemWorldZone("Petroleum City Super Speedway", 100, 'car_f_gui_ttl_petroCitySpeedwayZone_en_US.swf', 'car_w_trk_prf_PetroleumCityZone', 'car_g_map_env_petroleumCitySuperSpeedway.swf', 'scripts/isoworld/pc_proTrack.lua', 'Music', 'Petroleum', 'dp_default_45')
+  name: 'Petroleum City Super Speedway',
+  classObj: new CatalogItemWorldZone('Petroleum City Super Speedway', 100, 'car_f_gui_ttl_petroCitySpeedwayZone_en_US.swf', 'car_w_trk_prf_PetroleumCityZone', 'car_g_map_env_petroleumCitySuperSpeedway.swf', 'scripts/isoworld/pc_proTrack.lua', 'Music', 'Petroleum', 'dp_default_45')
 }
 
 // Race tracks
@@ -161,8 +161,8 @@ clientData[15010].classObj.dropPoints.sp = 'dp_sp_225'
 clientData[15010].classObj.dropPoints.mp = 'dp_mp_225'
 
 clientData[15011] = {
-  name: "Motor Speedway of the South",
-  classObj: new CatalogItemWorldZone("Motor Speedway of the South", 100, 'car_f_gui_ttl_motorCitySpeedwayZone_en_US.swf', 'car_w_trk_prf_MotorSpeedwaySouthZone', 'car_g_map_env_motorSpeedway.swf', 'scripts/isoworld/mss_proTrack.lua', '', '', 'dp_default_45')
+  name: 'Motor Speedway of the South',
+  classObj: new CatalogItemWorldZone('Motor Speedway of the South', 100, 'car_f_gui_ttl_motorCitySpeedwayZone_en_US.swf', 'car_w_trk_prf_MotorSpeedwaySouthZone', 'car_g_map_env_motorSpeedway.swf', 'scripts/isoworld/mss_proTrack.lua', '', '', 'dp_default_45')
 }
 
 // Race tracks
@@ -170,8 +170,8 @@ clientData[15011].classObj.dropPoints.sp = 'dp_sp_225'
 clientData[15011].classObj.dropPoints.mp = 'dp_mp_225'
 
 clientData[15012] = {
-  name: "Los Angeles International Speedway",
-  classObj: new CatalogItemWorldZone("Los Angeles International Speedway", 100, 'car_f_gui_ttl_laSpeedwayZone_en_US.swf', 'car_w_trk_prf_LASpeedwayZone', 'car_g_map_env_laSpeedway.swf', 'scripts/isoworld/las_proTrack.lua', 'Music', 'zoneLASpeedway', 'dp_default_45')
+  name: 'Los Angeles International Speedway',
+  classObj: new CatalogItemWorldZone('Los Angeles International Speedway', 100, 'car_f_gui_ttl_laSpeedwayZone_en_US.swf', 'car_w_trk_prf_LASpeedwayZone', 'car_g_map_env_laSpeedway.swf', 'scripts/isoworld/las_proTrack.lua', 'Music', 'zoneLASpeedway', 'dp_default_45')
 }
 
 // Race tracks
