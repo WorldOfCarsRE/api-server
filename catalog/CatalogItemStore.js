@@ -10,7 +10,7 @@ class CatalogItemStore extends CatalogItem {
 
     this.name = name
     this.openVO = openVO
-    this.canRotateCar = false
+    this.canRotateCar = true
     this.viewURL = viewURL
     this.inventoryIds = new ArrayCollection()
     this.expansionCustomPrice = ''
