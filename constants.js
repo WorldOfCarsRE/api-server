@@ -88,9 +88,6 @@ clientData[15001].classObj.dropPoints['15003'] = 'dp_rhv_180'
 clientData[15001].classObj.dropPoints.sp = 'dp_sp_225'
 clientData[15001].classObj.dropPoints.mp = 'dp_mp_225'
 
-// Lightning McQueen's Pro-Race Shop
-clientData[15001].classObj.dropPoints['22002'] = 'dp_lightning_225'
-
 clientData[15002] = {
   name: "Fillmore's Fields",
   classObj: new CatalogItemWorldZone("Fillmore's Fields", 100, 'car_f_gui_ttl_fillmoresFields_en_US.swf', 'car_w_env_frm_FillmoresFields_design', 'car_g_map_env_farmGrounds.swf', 'scripts/isoworld/fillmores_fields.lua', 'Music', 'zoneFillmoresFields', 'dp_default_45')
@@ -245,6 +242,7 @@ clientData[31012] = {
 
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.materStore)
 clientData[31012].classObj = new CatalogItemStore(clientData[31012].name, 'voStoreMaterEnter', 'car_f_gui_str_materStore.swf', '33274,60002,60021,60022,33274,33274,33274,33274,33274,33274', 'car_f_gui_str_avatarEditor.swf', 'voStoreMaterExit')
+clientData[15001].classObj.dropPoints['31012'] = 'dp_mater_315'
 
 clientData[102] = {
   name: "Doc's Clinic (InteractiveObject)",
@@ -406,6 +404,7 @@ clientData[22002] = {
 
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.mcQueenStore)
 clientData[22002].classObj = new CatalogItemStore(clientData[22002].name, 'voStoreLightningEnter', 'car_f_gui_str_mcQueenStore.swf', '33274,60020,60021,60022,60020,60010,33274,33274,33274,33274', 'car_f_gui_str_avatarEditor.swf', 'voStoreLightningExit')
+clientData[15001].classObj.dropPoints['22002'] = 'dp_lightning_225'
 
 // TODO: Figure out proper animation for these ids?
 clientData[60010] = clientData[31011]
@@ -418,6 +417,7 @@ clientData[22004] = {
 
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.ramoneStore)
 clientData[22004].classObj = new CatalogItemStore(clientData[22004].name, 'voStoreRamoneEnter', 'car_f_gui_str_ramoneStore.swf', '33274,60022,60021,60026,60010,33274,33274,33274,33274,33274', 'car_f_gui_str_bodyShaping.swf', 'voStoreRamoneExit')
+clientData[15001].classObj.dropPoints['22004'] = 'dp_ramone_180'
 
 // TODO: Figure out proper animation for this id?
 clientData[60026] = clientData[31011]
@@ -460,6 +460,7 @@ clientData[22003] = {
 }
 
 clientData[22003].classObj = new CatalogItemStore(clientData[22003].name, 'voStoreLuigiEnter', 'car_f_gui_str_luigiStore.swf', '33274,60010,60011,60022,60010,60010,33274,33274,33274,33274', null, 'voStoreLuigiExit')
+clientData[15001].classObj.dropPoints['22003'] = 'dp_luigi_135 '
 
 clientData[31024] = {
   name: 'New Player Tutorial (Truck)',
