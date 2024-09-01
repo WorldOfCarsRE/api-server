@@ -13,7 +13,7 @@
   "dependencies": {
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.9.1",
-    "axios": "^1.7.5",
+    "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
     "connect-mongo": "^5.1.0",
     "cors": "^2.8.5",
@@ -24,7 +24,7 @@
     "fast-xml-parser": "^4.4.1",
     "globals": "^15.9.0",
     "libamf": "^1.4.2",
-    "mongoose": "^8.5.4",
+    "mongoose": "^8.6.0",
     "pm2": "^5.4.2",
     "xmlbuilder2": "^3.1.1"
   },
