@@ -421,3 +421,87 @@ server.app.post('/carsds/api/internal/updateObject/:identifier', async (req, res
     }
   }
 })
+
+server.app.post('/dxd/flashAPI/getFamilyStructure', (req, res) => {
+  // TODO: Implement parent accounts
+  const root = create().ele('response')
+  root.ele('success').txt(0)
+
+  const xml = root.end({ prettyPrint: true })
+  res.setHeader('content-type', 'text/xml')
+  res.send(xml)
+})
+
+server.app.post('/dxd/flashAPI/lookupAccount', async (req, res) => {
+  const root = create().ele('response')
+
+  if (req.body.userId) {
+    const account = await db.retrieveAccountFromIdentifier(Number(req.body.userId))
+
+    if (account) {
+      root.ele('success').txt(1)
+
+      root.ele('acceptedTOU').txt(true) // TODO: Does not seem we have the TOU text, so we auto accept for now
+
+      const results = root.ele('results')
+
+      const accData = await db.retrieveAccountData(account.username)
+
+      results.ele('firstName').txt(accData.FirstName)
+      results.ele('lastName').txt(accData.LastName)
+      results.ele('email').txt(accData.Email)
+      results.ele('username').txt(account.username)
+      results.ele('swid').txt(accData.dislId)
+      results.ele('age').txt(accData.Age)
+      results.ele('userId').txt(Number(req.body.userId))
+
+      if (accData.Age >= 18) {
+        results.ele('hoh').txt(true)
+      }
+
+      if (accData.SpeedChatPlus == 1) {
+        results.ele('canWhitelistChat').txt(true)
+        results.ele('canWhitelistChatValidationType').txt(0)
+      } else {
+        results.ele('canWhitelistChat').txt(false)
+      }
+
+      if (accData.OpenChat == 1) {
+        results.ele('chatLevel').txt(3) // TODO: Implement the chat types
+        results.ele('chatLevelValidationType').txt(0)
+      } else {
+        results.ele('chatLevel').txt(0)
+      }
+    }
+  }
+
+  const xml = root.end({ prettyPrint: true })
+  res.setHeader('content-type', 'text/xml')
+  console.log(xml)
+  res.send(xml)
+})
+
+server.app.post('/commerce/flashapi/lookupOffers', async (req, res) => {
+  // TODO: Implement me
+  const root = create().ele('response')
+  root.ele('success').txt(1)
+
+  root.ele('offers')
+
+  const xml = root.end({ prettyPrint: true })
+  res.setHeader('content-type', 'text/xml')
+  res.send(xml)
+})
+
+server.app.get('/dxd/flashAPI/getTermsOfUseText', async (req, res) => {
+  // TODO: Same as above
+  const root = create().ele('response')
+  root.ele('success').txt(1)
+
+  const results = root.ele('results')
+  results.ele('tou')
+
+  const xml = root.end({ prettyPrint: true })
+  res.setHeader('content-type', 'text/xml')
+  res.send(xml)
+})
