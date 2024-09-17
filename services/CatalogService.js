@@ -92,7 +92,7 @@ class CatalogService extends libamf.Service {
     if (itemType === 'gear') {
       resp.push(new CatalogItemGear(1))
     } else if (itemType === 'sponsor') {
-      resp.push(new CatalogItemSponsor())
+      return this.getItemsByIds([9995, 9999, 9998, 9997, 9996, 10000, 9994, 9993, 9992, 9991, 9990, 9989, 9988, 9987, 9986, 9985, 9984, 9983, 9982, 9981, 9980])
     }
 
     return resp

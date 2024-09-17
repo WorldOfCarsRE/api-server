@@ -78,6 +78,7 @@ global.CatalogItemQuest = require('./catalog/CatalogItemQuest')
 global.CatalogItemMapEffect = require('./catalog/CatalogItemMapEffect')
 global.CatalogItemGPSIcon = require('./catalog/CatalogItemGPSIcon')
 global.CatalogItemEmote = require('./catalog/CatalogItemEmote')
+global.CatalogItemCarDNA = require('./catalog/CatalogItemCarDNA')
 global.RuleStateAMF = require('./amf/RuleStateAMF')
 
 const express = require('express')
@@ -144,6 +145,7 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.progression.Quest', Ca
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.MapEffect', CatalogItemMapEffect)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.GPSIcon', CatalogItemGPSIcon)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.Emote', CatalogItemEmote)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Dna', CatalogItemCarDNA)
 
 /* global server */
 
