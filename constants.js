@@ -88,9 +88,6 @@ clientData[15001].classObj.dropPoints['15003'] = 'dp_rhv_180'
 clientData[15001].classObj.dropPoints.sp = 'dp_sp_225'
 clientData[15001].classObj.dropPoints.mp = 'dp_mp_225'
 
-// Lightning McQueen's Pro-Race Shop
-clientData[15001].classObj.dropPoints['22002'] = 'dp_lightning_225'
-
 clientData[15002] = {
   name: "Fillmore's Fields",
   classObj: new CatalogItemWorldZone("Fillmore's Fields", 100, 'car_f_gui_ttl_fillmoresFields_en_US.swf', 'car_w_env_frm_FillmoresFields_design', 'car_g_map_env_farmGrounds.swf', 'scripts/isoworld/fillmores_fields.lua', 'Music', 'zoneFillmoresFields', 'dp_default_45')
@@ -112,6 +109,15 @@ clientData[15003] = {
 clientData[15003].classObj.dropPoints.sp = 'dp_sp_225'
 clientData[15003].classObj.dropPoints.mp = 'dp_mp_225'
 
+clientData[15005] = {
+  name: 'Tailgator Speedway',
+  classObj: new CatalogItemWorldZone('Tailgator Speedway', 100, 'car_f_gui_ttl_tailGatorSpeedwayZone_en_US.swf', 'car_w_trk_prf_TailgatorZone', 'car_g_map_env_tailgatorSpeedway.swf', 'scripts/isoworld/tgs_proTrack.lua', '', '', 'dp_default_45')
+}
+
+// Race tracks
+clientData[15005].classObj.dropPoints.sp = 'dp_sp_225'
+clientData[15005].classObj.dropPoints.mp = 'dp_mp_225'
+
 clientData[15006] = {
   name: "Willy's Butte",
   classObj: new CatalogItemWorldZone("Willy's Butte", 100, 'car_f_gui_ttl_willysButte_en_US.swf', 'car_w_env_wil_WillysButte_design', 'car_g_map_env_willysButte.swf', 'scripts/isoworld/willys_butte.lua', 'Music', 'zoneWilliesButte', 'dp_default_315')
@@ -123,6 +129,51 @@ clientData[15006].classObj.dropPoints['15002'] = 'dp_ff_200'
 // Race tracks
 clientData[15006].classObj.dropPoints.sp = 'dp_sp_180'
 clientData[15006].classObj.dropPoints.mp = 'dp_mp_225'
+
+clientData[15008] = {
+  name: 'Big Heartland Speedway',
+  classObj: new CatalogItemWorldZone('Big Heartland Speedway', 100, 'car_f_gui_ttl_bigHeartlandSpeedwayZone_en_US.swf', 'car_w_trk_prf_BigHeartlandZone', 'car_g_map_env_bigHeartlandSpeedway.swf', 'scripts/isoworld/bhs_proTrack.lua', 'Music', 'zoneBigHeartland', 'dp_default_45')
+}
+
+// Race tracks
+clientData[15008].classObj.dropPoints.sp = 'dp_sp_225'
+clientData[15008].classObj.dropPoints.mp = 'dp_mp_225'
+
+clientData[15009] = {
+  name: 'Backfire Canyon Speedway',
+  classObj: new CatalogItemWorldZone('Backfire Canyon Speedway', 100, 'car_f_gui_ttl_backfireCanyonSpeedwayZone_en_US.swf', 'car_w_trk_prf_BackFireCanyonZone', 'car_g_map_env_backfireCanyonSpeedway.swf', 'scripts/isoworld/bfc_proTrack.lua', 'Music', 'zoneBFC', 'dp_default_45')
+}
+
+// Race tracks
+clientData[15009].classObj.dropPoints.sp = 'dp_sp_225'
+clientData[15009].classObj.dropPoints.mp = 'dp_mp_225'
+
+clientData[15010] = {
+  name: 'Petroleum City Super Speedway',
+  classObj: new CatalogItemWorldZone('Petroleum City Super Speedway', 100, 'car_f_gui_ttl_petroCitySpeedwayZone_en_US.swf', 'car_w_trk_prf_PetroleumCityZone', 'car_g_map_env_petroleumCitySuperSpeedway.swf', 'scripts/isoworld/pc_proTrack.lua', 'Music', 'Petroleum', 'dp_default_45')
+}
+
+// Race tracks
+clientData[15010].classObj.dropPoints.sp = 'dp_sp_225'
+clientData[15010].classObj.dropPoints.mp = 'dp_mp_225'
+
+clientData[15011] = {
+  name: 'Motor Speedway of the South',
+  classObj: new CatalogItemWorldZone('Motor Speedway of the South', 100, 'car_f_gui_ttl_motorCitySpeedwayZone_en_US.swf', 'car_w_trk_prf_MotorSpeedwaySouthZone', 'car_g_map_env_motorSpeedway.swf', 'scripts/isoworld/mss_proTrack.lua', '', '', 'dp_default_45')
+}
+
+// Race tracks
+clientData[15011].classObj.dropPoints.sp = 'dp_sp_225'
+clientData[15011].classObj.dropPoints.mp = 'dp_mp_225'
+
+clientData[15012] = {
+  name: 'Los Angeles International Speedway',
+  classObj: new CatalogItemWorldZone('Los Angeles International Speedway', 100, 'car_f_gui_ttl_laSpeedwayZone_en_US.swf', 'car_w_trk_prf_LASpeedwayZone', 'car_g_map_env_laSpeedway.swf', 'scripts/isoworld/las_proTrack.lua', 'Music', 'zoneLASpeedway', 'dp_default_45')
+}
+
+// Race tracks
+clientData[15012].classObj.dropPoints.sp = 'dp_sp_225'
+clientData[15012].classObj.dropPoints.mp = 'dp_mp_225'
 
 clientData[10001] = {
   name: 'Home',
@@ -191,6 +242,7 @@ clientData[31012] = {
 
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.materStore)
 clientData[31012].classObj = new CatalogItemStore(clientData[31012].name, 'voStoreMaterEnter', 'car_f_gui_str_materStore.swf', '33274,60002,60021,60022,33274,33274,33274,33274,33274,33274', 'car_f_gui_str_avatarEditor.swf', 'voStoreMaterExit')
+clientData[15001].classObj.dropPoints['31012'] = 'dp_mater_315'
 
 clientData[102] = {
   name: "Doc's Clinic (InteractiveObject)",
@@ -287,6 +339,16 @@ clientData[42002] = {
   classObj: new CatalogItemRaceTrack(false, 'sp_ttf', 'car_f_gui_ttl_twistinTailfinTrk_en_US.swf', 'sp_ttf', 'car_w_trk_tfn_TwistinTailfinTrails', 'car_g_map_trk_twistinTailfin.swf', 'Music', 'TwistinTailfinTrack', 'car_w_trk_tfn_twistinTailfin_SS_V1_phys.xml', 15003, 'car_g_lgo_trk_twistinTailfinTrk_en_US.swf', 'car_g_rac_scn_TwistinTailfinTrack.jpg')
 }
 
+clientData[42003] = {
+  name: 'spRace_ffr',
+  classObj: new CatalogItemRaceTrack(false, 'sp_ffr', 'car_f_gui_ttl_fillmoresFieldsRally_en_US.swf', 'sp_ffr', 'car_w_trk_frm_FillmoresFieldsRally', 'car_g_map_trk_fillmoreFieldsRally.swf', 'Music', 'raceFillmoresFieldsRally', 'car_w_trk_frm_ffRally_SS_phys.xml', 15002, 'car_g_lgo_trk_fillmoresFieldsRally_en_US.swf', 'car_g_rac_scn_FillmoresFieldsRally.jpg')
+}
+
+clientData[42005] = {
+  name: 'spRace_wb',
+  classObj: new CatalogItemRaceTrack(false, 'sp_wbr', 'car_f_gui_ttl_willysButteRally_en_US.swf', 'sp_wbr', 'car_w_trk_wil_WillysButteRally', 'car_g_map_trk_willysButte.swf', 'Music', 'raceWilliesButteRally', 'car_w_trk_wil_WillysButte_SS_phys.xml', 15006, 'car_g_lgo_trk_willysButte_en_US.swf', 'car_g_rac_scn_WillysButte.jpg')
+}
+
 clientData[31016] = {
   name: 'Racing NPC (Snot Rod)',
   classObj: new CatalogItemNPC('car_k_chr_frn_snotrodLow.dpak', 'Snot Rod', 'car_r_chr_frn_snotrod.smod', 'car_g_ico_npc_snotRod.swf')
@@ -342,6 +404,7 @@ clientData[22002] = {
 
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.mcQueenStore)
 clientData[22002].classObj = new CatalogItemStore(clientData[22002].name, 'voStoreLightningEnter', 'car_f_gui_str_mcQueenStore.swf', '33274,60020,60021,60022,60020,60010,33274,33274,33274,33274', 'car_f_gui_str_avatarEditor.swf', 'voStoreLightningExit')
+clientData[15001].classObj.dropPoints['22002'] = 'dp_lightning_225'
 
 // TODO: Figure out proper animation for these ids?
 clientData[60010] = clientData[31011]
@@ -354,6 +417,7 @@ clientData[22004] = {
 
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.ramoneStore)
 clientData[22004].classObj = new CatalogItemStore(clientData[22004].name, 'voStoreRamoneEnter', 'car_f_gui_str_ramoneStore.swf', '33274,60022,60021,60026,60010,33274,33274,33274,33274,33274', 'car_f_gui_str_bodyShaping.swf', 'voStoreRamoneExit')
+clientData[15001].classObj.dropPoints['22004'] = 'dp_ramone_180'
 
 // TODO: Figure out proper animation for this id?
 clientData[60026] = clientData[31011]
@@ -396,6 +460,7 @@ clientData[22003] = {
 }
 
 clientData[22003].classObj = new CatalogItemStore(clientData[22003].name, 'voStoreLuigiEnter', 'car_f_gui_str_luigiStore.swf', '33274,60010,60011,60022,60010,60010,33274,33274,33274,33274', null, 'voStoreLuigiExit')
+clientData[15001].classObj.dropPoints['22003'] = 'dp_luigi_135 '
 
 clientData[31024] = {
   name: 'New Player Tutorial (Truck)',
