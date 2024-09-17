@@ -459,14 +459,14 @@ server.app.post('/dxd/flashAPI/lookupAccount', async (req, res) => {
         results.ele('hoh').txt(true)
       }
 
-      if (accData.SpeedChatPlus == 1) {
+      if (accData.SpeedChatPlus === 1) {
         results.ele('canWhitelistChat').txt(true)
         results.ele('canWhitelistChatValidationType').txt(0)
       } else {
         results.ele('canWhitelistChat').txt(false)
       }
 
-      if (accData.OpenChat == 1) {
+      if (accData.OpenChat === 1) {
         results.ele('chatLevel').txt(3) // TODO: Implement the chat types
         results.ele('chatLevelValidationType').txt(0)
       } else {
