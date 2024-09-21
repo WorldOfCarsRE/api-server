@@ -434,9 +434,11 @@ server.app.post('/dxd/flashAPI/getFamilyStructure', (req, res) => {
 
 server.app.post('/dxd/flashAPI/lookupAccount', async (req, res) => {
   const root = create().ele('response')
+  const ses = req.session
 
-  if (req.body.userId) {
-    const account = await db.retrieveAccountFromIdentifier(Number(req.body.userId))
+  if (ses && ses.userId) {
+    const userId = ses.userId
+    const account = await db.retrieveAccountFromIdentifier(userId)
 
     if (account) {
       root.ele('success').txt(1)
@@ -453,7 +455,7 @@ server.app.post('/dxd/flashAPI/lookupAccount', async (req, res) => {
       results.ele('username').txt(account.username)
       results.ele('swid').txt(accData.dislId)
       results.ele('age').txt(accData.Age)
-      results.ele('userId').txt(Number(req.body.userId))
+      results.ele('userId').txt(ses.userId)
 
       if (accData.Age >= 18) {
         results.ele('hoh').txt(true)
