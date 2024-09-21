@@ -455,7 +455,7 @@ server.app.post('/dxd/flashAPI/lookupAccount', async (req, res) => {
       results.ele('username').txt(account.username)
       results.ele('swid').txt(accData.dislId)
       results.ele('age').txt(accData.Age)
-      results.ele('userId').txt(ses.userId)
+      results.ele('userId').txt(userId)
 
       if (accData.Age >= 18) {
         results.ele('hoh').txt(true)
