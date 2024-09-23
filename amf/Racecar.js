@@ -23,7 +23,7 @@ class Racecar {
     this.fans = 0
     this.gender = 0
     this.animationList = new ArrayCollection()
-    this.profileBackgroundId = 0
+    this.profileBackgroundId = 59000
     this.userId = 0
     this.addonItemList = new ArrayCollection()
     this.logoFontId = 0
