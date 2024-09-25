@@ -327,7 +327,7 @@ clientData[31009] = {
 
 clientData[31010] = {
   name: 'Lightning McQueen',
-  classObj: new CatalogItemNPC('car_k_chr_frn_mcqueenLow.dpak', 'Lightning McQueen', 'car_r_chr_frn_mcqueen.smod', '', 105)
+  classObj: new CatalogItemNPC('car_k_chr_frn_mcqueenLow.dpak', 'Lightning McQueen', 'car_r_chr_frn_mcqueen.smod', '', '', 105)
 }
 
 clientData[42001] = {
@@ -352,22 +352,22 @@ clientData[42005] = {
 
 clientData[31016] = {
   name: 'Racing NPC (Snot Rod)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_snotrodLow.dpak', 'Snot Rod', 'car_r_chr_frn_snotrod.smod', 'car_g_ico_npc_snotRod.swf')
+  classObj: new CatalogItemNPC('car_k_chr_frn_snotrodLow.dpak', 'Snot Rod', 'car_r_chr_frn_snotrod.smod', 'car_g_ico_npc_snotRod.swf', 'car_g_ico_chr_snotRod.jpg')
 }
 
 clientData[31017] = {
   name: 'Racing NPC 2 (DJ)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_djLow.dpak', 'DJ', 'car_r_chr_frn_dj.smod', 'car_g_ico_npc_dj.swf')
+  classObj: new CatalogItemNPC('car_k_chr_frn_djLow.dpak', 'DJ', 'car_r_chr_frn_dj.smod', 'car_g_ico_npc_dj.swf', 'car_g_ico_chr_dj.jpg')
 }
 
 clientData[31018] = {
   name: 'Racing NPC 3 (Boost)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boost.smod', 'car_g_ico_npc_boost.swf')
+  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boost.smod', 'car_g_ico_npc_boost.swf', 'car_g_ico_chr_boost.jpg')
 }
 
 clientData[31019] = {
   name: 'Racing NPC 4 (Wingo)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_wingoLow.dpak', 'Wingo', 'car_r_chr_frn_wingo.smod', 'car_g_ico_npc_wingo.swf')
+  classObj: new CatalogItemNPC('car_k_chr_frn_wingoLow.dpak', 'Wingo', 'car_r_chr_frn_wingo.smod', 'car_g_ico_npc_wingo.swf', 'car_g_ico_chr_wingo.jpg')
 }
 
 clientData[61000] = {
@@ -465,7 +465,7 @@ clientData[15001].classObj.dropPoints['22003'] = 'dp_luigi_135 '
 
 clientData[31024] = {
   name: 'New Player Tutorial (Truck)',
-  classObj: new CatalogItemNPC('car_a_chr_frn_semi_tut1_sc1.sani', 'Truck', 'car_r_chr_avt_semi.smod', '')
+  classObj: new CatalogItemNPC('car_a_chr_frn_semi_tut1_sc1.sani', 'Truck', 'car_r_chr_avt_semi.smod', '', '')
 }
 
 // Sponsors
