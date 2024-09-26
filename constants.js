@@ -20,10 +20,15 @@ const CatalogPlayerStoreItem = global.CatalogPlayerStoreItem
 const CatalogItemQuest = global.CatalogItemQuest
 const CatalogItemMapEffect = global.CatalogItemMapEffect
 const CatalogItemEmote = global.CatalogItemEmote
+const Asset = global.Asset
 
 const ArrayCollection = global.ArrayCollection
 
+const fs = require('fs')
+const { XMLParser } = require('fast-xml-parser')
+
 const clientData = {}
+const assetData = {}
 
 clientData[100] = {
   name: 'Player Physics',
@@ -74,6 +79,23 @@ clientData[15001] = {
   name: 'Downtown Radiator Springs',
   classObj: new CatalogItemWorldZone('Downtown Radiator Springs', 100, 'car_f_gui_ttl_radiatorSprings_en_US.swf', 'car_w_env_rsp_RadiatorSprings', 'car_g_map_env_radiatorSprings.swf', 'scripts/isoworld/radiator_springs.lua', 'Music', 'zoneRadiatorSprings02', 'dp_npt_315')
 }
+
+// Asset service
+function parseAssetData (filename) {
+  const results = new ArrayCollection()
+
+  const xmlData = fs.readFileSync(`assets/maps/${filename}`, 'utf-8')
+  const parser = new XMLParser({ ignoreAttributes: false })
+  const assets = parser.parse(xmlData).assets
+
+  for (const asset of assets.asset) {
+    results.push(new Asset(asset.layerId, asset.offsetX, asset.width, asset.filename, asset.assetId, asset.offsetY, asset.solid, asset.height))
+  }
+
+  return results
+}
+
+assetData[15001] = parseAssetData('car_w_env_rsp_RadiatorSprings_assets.xml')
 
 // Fillmore's Fields
 clientData[15001].classObj.dropPoints['15002'] = 'dp_ff_225'
@@ -517,4 +539,4 @@ clientData[21007] = {
 
 clientData[21007].classObj = new CatalogItemEmote(clientData[21007].name, 'car_g_ico_emo_yuck.swf', 'car_a_chr_avt_sports_yuck.sani', '')
 
-module.exports = { clientData, shopData }
+module.exports = { clientData, shopData, assetData }
