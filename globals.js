@@ -40,6 +40,7 @@ global.libamf = require('libamf')
 /* global CatalogItemGPSIcon */
 /* global CatalogItemEmote */
 /* global RuleStateAMF */
+/* global Asset */
 
 global.CatalogItem = require('./catalog/CatalogItem')
 global.CatalogItemRaceSeries = require('./catalog/CatalogItemRaceSeries')
@@ -80,6 +81,7 @@ global.CatalogItemGPSIcon = require('./catalog/CatalogItemGPSIcon')
 global.CatalogItemEmote = require('./catalog/CatalogItemEmote')
 global.CatalogItemCarDNA = require('./catalog/CatalogItemCarDNA')
 global.RuleStateAMF = require('./amf/RuleStateAMF')
+global.Asset = require('./amf/Asset')
 
 const express = require('express')
 
@@ -146,6 +148,7 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.MapEffect'
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.GPSIcon', CatalogItemGPSIcon)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.Emote', CatalogItemEmote)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Dna', CatalogItemCarDNA)
+libamf.registerClassAlias('com.disney.cars.domain.asset.Asset', Asset)
 
 /* global server */
 
@@ -156,14 +159,17 @@ global.server = new libamf.Server({
 const CatalogService = require('./services/CatalogService')
 const PlayerService = require('./services/PlayerService')
 const RaceCarService = require('./services/RaceCarService')
+const AssetService = require('./services/AssetService')
 
 const catalogService = new CatalogService()
 const raceCarService = new RaceCarService()
 const playerService = new PlayerService()
+const assetService = new AssetService()
 
 server.registerService(catalogService)
 server.registerService(raceCarService)
 server.registerService(playerService)
+server.registerService(assetService)
 
 // for parsing application/x-www-form-urlencoded
 server.app.use(express.urlencoded({ extended: true }))
