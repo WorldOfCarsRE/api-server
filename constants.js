@@ -18,6 +18,8 @@ const CatalogItemPuppet = global.CatalogItemPuppet
 const CatalogItemEffect = global.CatalogItemEffect
 const CatalogPlayerStoreItem = global.CatalogPlayerStoreItem
 const CatalogItemQuest = global.CatalogItemQuest
+const CatalogItemQuestStep = global.CatalogItemQuestStep
+const CatalogItemQuestReward = global.CatalogItemQuestReward
 const CatalogItemMapEffect = global.CatalogItemMapEffect
 const CatalogItemEmote = global.CatalogItemEmote
 const Asset = global.Asset
@@ -446,9 +448,39 @@ clientData[60026] = clientData[31011]
 
 // Ramone
 clientData[25010] = {
-  name: 'Free Body Work',
-  classObj: new CatalogItemQuest()
+  name: 'Free Body Work!',
+  classObj: null
 }
+
+clientData[25010].classObj = new CatalogItemQuest(clientData[25010].name, "You look pretty stock to Ramone.\nSo he's making you a one-time offer of some FREE BODY WORK!\nDrive inside and see what you can make of yourself!", 'car_g_qst_adv_ramoneFreeCustomization.jpg', 'car_g_ico_adv_ramone.ajpg')
+
+clientData[22223] = {
+  name: "Enter Ramone's shop and get a free body customization.",
+  classObj: null
+}
+
+clientData[22223].classObj = new CatalogItemQuestStep(clientData[22223].name)
+
+clientData[22224] = {
+  name: "Return to Ramone.",
+  classObj: null
+}
+
+clientData[22224].classObj = new CatalogItemQuestStep(clientData[22224].name, 'return_npc')
+
+clientData[22229] = {
+  name: 'Quest 25010 Coin Reward',
+  classObj: null
+}
+
+clientData[22229].classObj = new CatalogItemQuestReward(clientData[22229].name, 3, 10)
+
+clientData[22230] = {
+  name: "Medallion Bronze Paint",
+  classObj: null
+}
+
+clientData[22230].classObj = new CatalogItemQuestReward(clientData[22230].name, 0, 1, 'car_g_ico_clr_blinginBronze.swf', 0)
 
 // Doc's Clinic game
 clientData[103] = {
