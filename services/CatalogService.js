@@ -75,6 +75,15 @@ class CatalogService extends libamf.Service {
         console.log('MISSING PUPPET ITEM:', id)
         resp.push(new CatalogItem())
       }
+    // TODO: Add list with questIds
+    } else if (depth === -1 && id === 25010) {
+      resp.push(this.getItem(id))
+      // Steps
+      resp.push(this.getItem(22223))
+      resp.push(this.getItem(22224))
+      // Rewards
+      resp.push(this.getItem(22229))
+      resp.push(this.getItem(22230))
     } else {
       resp.push(new CatalogItemRaceSeries(id))
       resp.push(new CatalogItemRaceLevel(1))
