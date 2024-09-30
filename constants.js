@@ -241,7 +241,7 @@ clientData[51103] = {
 
 clientData[51104] = {
   name: 'Car Decal (Tail Lights)',
-  classObj: new CatalogItemDecal(['car_g_ico_lit_taillight02.png'], 2)
+  classObj: new CatalogItemDecal(['car_t_cst_lit_tailLight02.swf'], 2)
 }
 
 clientData[20206] = {
