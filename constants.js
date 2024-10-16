@@ -241,7 +241,7 @@ clientData[51103] = {
 
 clientData[51104] = {
   name: 'Car Decal (Tail Lights)',
-  classObj: new CatalogItemDecal(['car_g_ico_lit_taillight02.png'], 2)
+  classObj: new CatalogItemDecal(['car_t_cst_lit_tailLight02.swf'], 2)
 }
 
 clientData[20206] = {
@@ -341,6 +341,11 @@ clientData[60030] = {
 clientData[1000] = {
   name: 'New Player Tutorial',
   classObj: new CatalogItemDungeon('New Player Tutorial', 0, 'car_f_evt_rsn_newPlayerRsnBackStory_en_US.swf', 'car_w_env_rsp_NewPlayer', 'car_g_map_env_newPlayer.swf', 'new_player_tutorial')
+}
+
+clientData[31008] = {
+  name: 'Ramone',
+  classObj: new CatalogItemNPC('car_k_chr_frn_ramoneLow.dpak', 'Ramone', 'car_r_chr_frn_ramone.smod', '')
 }
 
 clientData[31009] = {
