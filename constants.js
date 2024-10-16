@@ -191,8 +191,8 @@ clientData[15011].classObj.dropPoints.sp = 'dp_sp_225'
 clientData[15011].classObj.dropPoints.mp = 'dp_mp_225'
 
 clientData[15012] = {
-  name: 'Los Angeles International Speedway',
-  classObj: new CatalogItemWorldZone('Los Angeles International Speedway', 100, 'car_f_gui_ttl_laSpeedwayZone_en_US.swf', 'car_w_trk_prf_LASpeedwayZone', 'car_g_map_env_laSpeedway.swf', 'scripts/isoworld/las_proTrack.lua', 'Music', 'zoneLASpeedway', 'dp_default_45')
+  name: 'LA International Speedway',
+  classObj: new CatalogItemWorldZone('LA International Speedway', 100, 'car_f_gui_ttl_laSpeedwayZone_en_US.swf', 'car_w_trk_prf_LASpeedwayZone', 'car_g_map_env_laSpeedway.swf', 'scripts/isoworld/las_proTrack.lua', 'Music', 'zoneLASpeedway', 'dp_default_45')
 }
 
 // Race tracks
