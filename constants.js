@@ -343,6 +343,11 @@ clientData[1000] = {
   classObj: new CatalogItemDungeon('New Player Tutorial', 0, 'car_f_evt_rsn_newPlayerRsnBackStory_en_US.swf', 'car_w_env_rsp_NewPlayer', 'car_g_map_env_newPlayer.swf', 'new_player_tutorial')
 }
 
+clientData[31008] = {
+  name: 'Ramone',
+  classObj: new CatalogItemNPC('car_k_chr_frn_ramoneLow.dpak', 'Ramone', 'car_r_chr_frn_ramone.smod', '')
+}
+
 clientData[31009] = {
   name: 'Mater',
   classObj: new CatalogItemNPC()
