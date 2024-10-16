@@ -19,7 +19,7 @@ class RaceCarService extends libamf.Service {
     // TODO: Better way of solving this?
     // Example: TypeError: Error #1034: Type Coercion failed: cannot convert []@2e3c5de8161 to com.disney.net.amfObjects.ServerArray.
 
-    const decalSlots = new ArrayCollection(car.decalSlots)
+    const decalSlots = new ArrayCollection(...car.decalSlots)
     car.decalSlots = decalSlots
 
     const trophyItemList = car.trophyItemList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.trophyItemList)
