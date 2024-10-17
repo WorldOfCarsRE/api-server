@@ -338,6 +338,11 @@ clientData[60030] = {
   classObj: new CatalogItemSimpleAnimation('racingClosedEyes')
 }
 
+clientData[33205] = {
+  name: 'Ramone Idle Scan Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_ramone_idleScan.sani')
+}
+
 clientData[1000] = {
   name: 'New Player Tutorial',
   classObj: new CatalogItemDungeon('New Player Tutorial', 0, 'car_f_evt_rsn_newPlayerRsnBackStory_en_US.swf', 'car_w_env_rsp_NewPlayer', 'car_g_map_env_newPlayer.swf', 'new_player_tutorial')
@@ -345,7 +350,7 @@ clientData[1000] = {
 
 clientData[31008] = {
   name: 'Ramone',
-  classObj: new CatalogItemNPC('car_k_chr_frn_ramoneLow.dpak', 'Ramone', 'car_r_chr_frn_ramone.smod', '')
+  classObj: new CatalogItemNPC('car_k_chr_frn_ramoneLow.dpak', 'Ramone', 'car_r_chr_frn_ramone.smod', '', '', 33205)
 }
 
 clientData[31009] = {
