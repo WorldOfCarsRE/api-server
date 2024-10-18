@@ -23,6 +23,7 @@ const CatalogItemQuestReward = global.CatalogItemQuestReward
 const CatalogItemMapEffect = global.CatalogItemMapEffect
 const CatalogItemEmote = global.CatalogItemEmote
 const Asset = global.Asset
+const CatalogItemMapSprite = global.CatalogItemMapSprite
 
 const ArrayCollection = global.ArrayCollection
 
@@ -580,5 +581,10 @@ clientData[21007] = {
 }
 
 clientData[21007].classObj = new CatalogItemEmote(clientData[21007].name, 'car_g_ico_emo_yuck.swf', 'car_a_chr_avt_sports_yuck.sani', '')
+
+clientData[5000] = {
+  name: 'Map Sprite Test (InteractiveObject)',
+  classObj: new CatalogItemMapSprite()
+}
 
 module.exports = { clientData, shopData, assetData }
