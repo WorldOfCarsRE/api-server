@@ -10,7 +10,7 @@ class CatalogItemMapEffect extends CatalogItem {
     this.teleportMapID = 0
     this.geyserTorque = 0
     this.boostRadius = 0
-    this.multiPlayerRaceName = 0
+    this.multiPlayerRaceName = ''
     this.geyserRadius = 0
     this.dustDevilRadius = 0
     this.dustDevilDuration = 0
