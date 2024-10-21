@@ -1,10 +1,10 @@
 const CatalogItem = global.CatalogItem
 
 class CatalogItemMinigame extends CatalogItem {
-  constructor (gameName, name) {
+  constructor (gameName, name, eventId) {
     super()
 
-    this.eventId = 0
+    this.eventId = eventId
     this.gatingURL = ''
     this.gameName = gameName
     this.name = name

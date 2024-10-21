@@ -25,6 +25,8 @@ const CatalogItemEmote = global.CatalogItemEmote
 const CatalogItemSponsor = global.CatalogItemSponsor
 const Asset = global.Asset
 const CatalogItemMapSprite = global.CatalogItemMapSprite
+const CatalogItemDialogItem = global.CatalogItemDialogItem
+const CatalogItemMicrogame = global.CatalogItemMicrogame
 
 const ArrayCollection = global.ArrayCollection
 
@@ -82,6 +84,11 @@ clientData[20210] = {
 clientData[15001] = {
   name: 'Downtown Radiator Springs',
   classObj: new CatalogItemWorldZone('Downtown Radiator Springs', 100, 'car_f_gui_ttl_radiatorSprings_en_US.swf', 'car_w_env_rsp_RadiatorSprings', 'car_g_map_env_radiatorSprings.swf', 'scripts/isoworld/radiator_springs.lua', 'Music', 'zoneRadiatorSprings02', 'dp_npt_315')
+}
+
+clientData[106] = {
+  name: 'Docs Clinic Test (CatalogItemDialogItem)',
+  classObj: new CatalogItemDialogItem()
 }
 
 // Asset service
@@ -413,26 +420,22 @@ clientData[31019] = {
 
 clientData[61000] = {
   name: "Ramone's Paint Blaster",
-  classObj: new CatalogItemMinigame('car_spl_puz_ramonepaint', "Ramone's Paint Blast")
+  classObj: new CatalogItemMinigame('car_spl_puz_ramonepaint', "Ramone's Paint Blast", 61000)
 }
-
-clientData[61000].classObj.eventId = 61000
 
 clientData[61002] = {
   name: 'Lightning Storm Space Assault',
   classObj: null
 }
 
-clientData[61002].classObj = new CatalogItemMinigame('car_spl_act_lightningstorm', clientData[61002].name)
-clientData[61002].classObj.eventId = 61002
+clientData[61002].classObj = new CatalogItemMinigame('car_spl_act_lightningstorm', clientData[61002].name, 61002)
 
 clientData[61003] = {
   name: "Fillmore's Fuel Mixin' Area, Man",
   classObj: null
 }
 
-clientData[61003].classObj = new CatalogItemMinigame('car_spl_puz_fillmoresfuelmix', clientData[61003].name)
-clientData[61003].classObj.eventId = 61003
+clientData[61003].classObj = new CatalogItemMinigame('car_spl_puz_fillmoresfuelmix', clientData[61003].name, 61003)
 
 clientData[59000] = {
   name: 'Default Profile Background',
@@ -506,8 +509,7 @@ clientData[103] = {
   classObj: null
 }
 
-clientData[103].classObj = new CatalogItemMinigame('car_spl_puz_docsclinic', clientData[103].name)
-clientData[103].classObj.eventId = 103
+clientData[103].classObj = new CatalogItemMicrogame('car_spl_puz_docsclinic', clientData[103].name, 103)
 
 /*
 clientData[60502] = {
