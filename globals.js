@@ -83,6 +83,7 @@ global.CatalogItemGPSIcon = require('./catalog/CatalogItemGPSIcon')
 global.CatalogItemEmote = require('./catalog/CatalogItemEmote')
 global.RuleStateAMF = require('./amf/RuleStateAMF')
 global.Asset = require('./amf/Asset')
+global.CatalogItemMapSprite = require('./catalog/CatalogItemMapSprite')
 
 const express = require('express')
 
@@ -151,6 +152,7 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.MapEffect'
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.GPSIcon', CatalogItemGPSIcon)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.Emote', CatalogItemEmote)
 libamf.registerClassAlias('com.disney.cars.domain.asset.Asset', Asset)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.MapSprite', CatalogItemMapSprite)
 
 /* global server */
 
