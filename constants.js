@@ -345,6 +345,12 @@ clientData[33205] = {
   classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_ramone_idleScan.sani')
 }
 
+// TODO: Is this id correct? (car_s_int_chr_mater_anims_RS.swf)
+clientData[33052] = {
+  name: 'Mater Idle Scan Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_mater_idleScan.sani')
+}
+
 clientData[1000] = {
   name: 'New Player Tutorial',
   classObj: new CatalogItemDungeon('New Player Tutorial', 0, 'car_f_evt_rsn_newPlayerRsnBackStory_en_US.swf', 'car_w_env_rsp_NewPlayer', 'car_g_map_env_newPlayer.swf', 'new_player_tutorial')
@@ -357,7 +363,7 @@ clientData[31008] = {
 
 clientData[31009] = {
   name: 'Mater',
-  classObj: new CatalogItemNPC()
+  classObj: new CatalogItemNPC('car_k_chr_frn_materLow.dpak', 'Mater', 'car_r_chr_frn_mater.smod', '', 'car_g_ico_chr_mater.jpg', 33052)
 }
 
 clientData[31010] = {
