@@ -3,8 +3,8 @@
 CatalogItem = require('./CatalogItem')
 
 const TYPE_MODAL = 'Modal'
-const TYPE_NON_MODAL = 'Non Modal'
-const TYPE_AGGREGATABLE = 'Aggregateable'
+// const TYPE_NON_MODAL = 'Non Modal'
+// const TYPE_AGGREGATABLE = 'Aggregateable'
 
 class CatalogItemDialogItem extends CatalogItem {
   constructor () {
@@ -17,4 +17,3 @@ class CatalogItemDialogItem extends CatalogItem {
 }
 
 module.exports = CatalogItemDialogItem
-
