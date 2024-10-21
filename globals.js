@@ -41,6 +41,10 @@ global.libamf = require('libamf')
 /* global CatalogItemEmote */
 /* global RuleStateAMF */
 /* global Asset */
+/* global CatalogItemQuestStep */
+/* global CatalogItemQuestReward */
+/* global CatalogItemMapSprite */
+/* global CatalogItemMicrogame */
 
 global.CatalogItem = require('./catalog/CatalogItem')
 global.CatalogItemRaceSeries = require('./catalog/CatalogItemRaceSeries')
@@ -84,6 +88,7 @@ global.CatalogItemEmote = require('./catalog/CatalogItemEmote')
 global.RuleStateAMF = require('./amf/RuleStateAMF')
 global.Asset = require('./amf/Asset')
 global.CatalogItemMapSprite = require('./catalog/CatalogItemMapSprite')
+global.CatalogItemMicrogame = require('./catalog/CatalogItemMicrogame')
 
 const express = require('express')
 
@@ -153,6 +158,7 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.GPSIcon', 
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.Emote', CatalogItemEmote)
 libamf.registerClassAlias('com.disney.cars.domain.asset.Asset', Asset)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.MapSprite', CatalogItemMapSprite)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.microgame.Microgame', CatalogItemMicrogame)
 
 /* global server */
 
