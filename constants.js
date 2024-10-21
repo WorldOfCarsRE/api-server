@@ -480,7 +480,7 @@ clientData[22223] = {
 clientData[22223].classObj = new CatalogItemQuestStep(clientData[22223].name)
 
 clientData[22224] = {
-  name: "Return to Ramone.",
+  name: 'Return to Ramone.',
   classObj: null
 }
 
@@ -494,7 +494,7 @@ clientData[22229] = {
 clientData[22229].classObj = new CatalogItemQuestReward(clientData[22229].name, 3, 10)
 
 clientData[22230] = {
-  name: "Medallion Bronze Paint",
+  name: 'Medallion Bronze Paint',
   classObj: null
 }
 

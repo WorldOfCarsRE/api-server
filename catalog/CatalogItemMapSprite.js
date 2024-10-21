@@ -13,5 +13,5 @@ class CatalogItemMapSprite extends CatalogItem {
     this.frameNames = []
   }
 }
-  
+
 module.exports = CatalogItemMapSprite
