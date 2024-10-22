@@ -4,12 +4,13 @@ CatalogCarItem = global.CatalogCarItem
 ArrayCollection = global.ArrayCollection
 
 class CatalogItemCarDNA extends CatalogCarItem {
-  constructor () {
+  constructor (decalSlots = [], profileBackgroundId = 0) {
     super()
 
     this.gender = 0
     this.stretchValues = new ArrayCollection()
     this.decalSlots = new ArrayCollection()
+    this.decalSlots.push(...decalSlots)
     this.type = 0
     this.logoFontId = 0
     this.wheel = 0
@@ -24,7 +25,7 @@ class CatalogItemCarDNA extends CatalogCarItem {
     this.logoBackgroundId = 0
     this.appliedAddonIds = new ArrayCollection()
     this.detailing = 0
-    this.profileBackgroundId = 0
+    this.profileBackgroundId = profileBackgroundId
     this.carNumber = 0
   }
 }

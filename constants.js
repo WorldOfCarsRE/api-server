@@ -27,6 +27,7 @@ const Asset = global.Asset
 const CatalogItemMapSprite = global.CatalogItemMapSprite
 const CatalogItemDialogItem = global.CatalogItemDialogItem
 const CatalogItemMicrogame = global.CatalogItemMicrogame
+const CatalogItemCarDNA = global.CatalogItemCarDNA
 
 const ArrayCollection = global.ArrayCollection
 
@@ -261,6 +262,15 @@ clientData[51103] = {
 clientData[51104] = {
   name: 'Car Decal (Tail Lights)',
   classObj: new CatalogItemDecal(['car_t_cst_lit_tailLight02.swf'], 2)
+}
+
+clientData[51105] = {
+  name: 'Car Decal Rear (Shiny Wax)',
+  classObj: new CatalogItemDecal(['car_t_cst_dec_shinyWax_rear.swf', 2])
+}
+clientData[51106] = {
+  name: 'Car Decal Hood (Shiny Wax)',
+  classObj: new CatalogItemDecal(['car_t_cst_dec_shinyWax_topFront.swf', 0])
 }
 
 clientData[20206] = {
@@ -506,6 +516,11 @@ clientData[59000] = {
   classObj: new CatalogItemProfileTheme('car_g_bcg_pfl_checkeredFlag.swf')
 }
 
+clientData[59001] = {
+  name: 'Shiny Wax Profile Background',
+  classObj: new CatalogItemProfileTheme('car_g_bcg_spr_shinyWax.swf')
+}
+
 clientData[22002] = {
   name: "Lightning McQueen's Pro-Race Shop",
   classObj: null
@@ -627,7 +642,12 @@ clientData[9980] = {
   classObj: null
 }
 
-clientData[9980].classObj = new CatalogItemSponsor(clientData[9980].name, 1, 'car_g_bcg_spr_shinyWax.swf', 'car_g_bcg_spr_shinyWaxTent_en_US.swf', 'car_t_cst_dec_shinyWax.swf', '')
+clientData[9980].classObj = new CatalogItemSponsor(clientData[9980].name, 1, 'car_g_bcg_spr_shinyWax.swf', 'car_g_bcg_spr_shinyWaxTent_en_US.swf', 'car_t_cst_dec_shinyWax.swf', '', 5001, 59001)
+
+clientData[5001] = {
+  name: 'Shiny Wax (CatalogItemCarDNA)',
+  classObj: new CatalogItemCarDNA([51105, 51106], 59001)
+}
 
 clientData[9981] = {
   name: 'Leak Less',
