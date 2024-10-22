@@ -539,20 +539,20 @@ clientData[22230] = {
 clientData[22230].classObj = new CatalogItemQuestReward(clientData[22230].name, 0, 1, 'car_g_ico_clr_blinginBronze.swf', 0)
 
 // Doc's Clinic game
-clientData[103] = {
+clientData[61004] = {
   name: "Doc's Clinic",
   classObj: null
 }
 
-clientData[103].classObj = new CatalogItemMicrogame('car_spl_puz_docsclinic', clientData[103].name, 103)
+clientData[61004].classObj = new CatalogItemMicrogame('car_spl_puz_docsclinic', clientData[61004].name, 61004)
 
 // Luigi's Casa Della Tires game
-clientData[108] = {
+clientData[61005] = {
   name: "Luigi's Casa Della Tires",
   classObj: null
 }
 
-clientData[108].classObj = new CatalogItemMicrogame('car_spl_act_luigistiretoss', clientData[108].name, 108)
+clientData[61005].classObj = new CatalogItemMicrogame('car_spl_act_luigistiretoss', clientData[61005].name, 61005)
 
 /*
 clientData[60502] = {
