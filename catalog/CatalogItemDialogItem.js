@@ -7,12 +7,12 @@ const TYPE_MODAL = 'Modal'
 // const TYPE_AGGREGATABLE = 'Aggregateable'
 
 class CatalogItemDialogItem extends CatalogItem {
-  constructor () {
+  constructor (optionalClassName, dialogSwfUrl) {
     super()
 
     this.type = TYPE_MODAL
-    this.optionalClassName = 'com.disney.cars.ui.dialogs.microgames.DocsSplashDialog'
-    this.dialogSwfUrl = 'car_f_gui_dia_mmgDocsClinic.swf'
+    this.optionalClassName = optionalClassName
+    this.dialogSwfUrl = dialogSwfUrl
   }
 }
 
