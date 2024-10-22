@@ -46,6 +46,7 @@ global.libamf = require('libamf')
 /* global CatalogItemMapSprite */
 /* global CatalogItemMicrogame */
 /* global CatalogItemDialogItem */
+/* global CatalogItemCarDNA */
 
 global.CatalogItem = require('./catalog/CatalogItem')
 global.CatalogItemRaceSeries = require('./catalog/CatalogItemRaceSeries')

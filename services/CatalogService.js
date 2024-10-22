@@ -1,6 +1,5 @@
 /* global CatalogItemRaceSeries: writeable */
 /* global CatalogItemRaceLevel: writeable */
-/* global CatalogItemSponsor: writeable */
 /* global CatalogItemGear: writeable */
 /* global CatalogItem: writeable */
 
@@ -8,7 +7,6 @@
 
 CatalogItemRaceSeries = global.CatalogItemRaceSeries
 CatalogItemRaceLevel = global.CatalogItemRaceLevel
-CatalogItemSponsor = global.CatalogItemSponsor
 CatalogItemGear = global.CatalogItemGear
 
 libamf = global.libamf
