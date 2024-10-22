@@ -86,7 +86,23 @@ class CatalogService extends libamf.Service {
       resp.push(this.getItem(22230))
     } else {
       resp.push(new CatalogItemRaceSeries(id))
-      resp.push(new CatalogItemRaceLevel(1))
+      resp.push(
+        new CatalogItemRaceLevel(41001, 42004, 60000, [9980, 9981, 9982, 9983, 9984]),
+        new CatalogItemRaceLevel(41002, 42006, 200000, [9980, 9981, 9982, 9983, 9984, 9985, 9986]),
+        new CatalogItemRaceLevel(41003, 42007, 380000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988]),
+        new CatalogItemRaceLevel(41004, 42008, 640000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990]),
+        new CatalogItemRaceLevel(41005, 42009, 1000000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990, 9991, 9992]),
+        new CatalogItemRaceLevel(41006, 42010, 1000001, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990, 9991, 9992, 9993, 9994, 9995, 9996, 9997, 9998, 9999, 10000])
+      )
+      // Pro race tracks
+      resp.push(
+        this.getItem(42004),
+        this.getItem(42006),
+        this.getItem(42007),
+        this.getItem(42008),
+        this.getItem(42009),
+        this.getItem(42010)
+      )
     }
 
     console.log(resp)

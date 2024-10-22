@@ -5,7 +5,7 @@ const CatalogItem = require('./CatalogItem')
 ArrayCollection = global.ArrayCollection
 
 class CatalogItemRaceLevel extends CatalogItem {
-  constructor (itemId) {
+  constructor (itemId, proTrackId, racingPoints, sponsorsIds = []) {
     super()
 
     this.itemId = itemId
@@ -13,15 +13,15 @@ class CatalogItemRaceLevel extends CatalogItem {
     this.nameUrl = ''
     this.victoryPapparazziSoundIds = new ArrayCollection()
 
-    this.proTrackItemId = 1
+    this.proTrackItemId = proTrackId
     this.milestoneQuestId = 0
     this.victoryFlashCount = 0
     this.sponsorChoosenRuleId = 0
     this.unlockedItemId = 0
-    this.racingPointsMinimum = 0
+    this.racingPointsMinimum = racingPoints
 
     this.sponsorIds = new ArrayCollection()
-    this.sponsorIds.push(1)
+    this.sponsorIds.push(...sponsorsIds)
   }
 }
 

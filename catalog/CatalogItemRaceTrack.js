@@ -4,11 +4,15 @@ const CatalogItemDungeon = global.CatalogItemDungeon
 ArrayCollection = global.ArrayCollection
 
 class CatalogItemRaceTrack extends CatalogItemDungeon {
-  constructor (proTrack, spClientScriptUrl, titleUrl, mpClientScriptUrl, mapUrl, miniMapUrl, group, alias, physicsUrl, exitMapId, logoUrl, sceneryUrl) {
+  constructor (name, description, proTrack, spClientScriptUrl, mpClientScriptUrl, titleUrl, scriptUrl, mapUrl, miniMapUrl, group, alias, physicsUrl, exitMapId, logoUrl, sceneryUrl) {
     super()
+
+    this.name = name
+    this.description = description
 
     this.proTrack = proTrack
     this.spClientScriptUrl = spClientScriptUrl
+    this.mpClientScriptUrl = mpClientScriptUrl
     this.racers = new ArrayCollection()
     this.racers.push(31018) // Boost
     this.racers.push(31016) // Snot Rod
