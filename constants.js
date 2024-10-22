@@ -380,22 +380,52 @@ clientData[31010] = {
 
 clientData[42001] = {
   name: 'spRace_ccs',
-  classObj: new CatalogItemRaceTrack(false, 'sp_ccs', 'car_f_gui_ttl_carburetorCounty_en_US.swf', 'sp_ccs', 'car_w_trk_rsp_CarburetorCountySpeedway', 'car_g_map_trk_carburetorCounty.swf', 'Music', 'CarburetorCountySpeedway', 'car_w_trk_rsp_ccSpeedway_SS_phys.xml', 15001, 'car_g_lgo_trk_carburetorCountySpeedway_en_US.swf', 'car_g_rac_scn_CarbCountySpeedway.jpg')
+  classObj: new CatalogItemRaceTrack('Carburetor County Speedway', 'Local track where the showdown is downtown!', false, 'sp_ccs', '', 'car_f_gui_ttl_carburetorCounty_en_US.swf', 'sp_ccs', 'car_w_trk_rsp_CarburetorCountySpeedway', 'car_g_map_trk_carburetorCounty.swf', 'Music', 'CarburetorCountySpeedway', 'car_w_trk_rsp_ccSpeedway_SS_phys.xml', 15001, 'car_g_lgo_trk_carburetorCountySpeedway_en_US.swf', 'car_g_rac_scn_CarbCountySpeedway.jpg')
 }
 
 clientData[42002] = {
   name: 'spRace_rh',
-  classObj: new CatalogItemRaceTrack(false, 'sp_ttf', 'car_f_gui_ttl_twistinTailfinTrk_en_US.swf', 'sp_ttf', 'car_w_trk_tfn_TwistinTailfinTrails', 'car_g_map_trk_twistinTailfin.swf', 'Music', 'TwistinTailfinTrack', 'car_w_trk_tfn_twistinTailfin_SS_V1_phys.xml', 15003, 'car_g_lgo_trk_twistinTailfinTrk_en_US.swf', 'car_g_rac_scn_TwistinTailfinTrack.jpg')
+  classObj: new CatalogItemRaceTrack("Twistin' Tailfin Trails", "Test tons of turns on Twistin' Tailfin Trails!", false, 'sp_ttf', '', 'car_f_gui_ttl_twistinTailfinTrk_en_US.swf', 'sp_ttf', 'car_w_trk_tfn_TwistinTailfinTrails', 'car_g_map_trk_twistinTailfin.swf', 'Music', 'TwistinTailfinTrack', 'car_w_trk_tfn_twistinTailfin_SS_V1_phys.xml', 15003, 'car_g_lgo_trk_twistinTailfinTrk_en_US.swf', 'car_g_rac_scn_TwistinTailfinTrack.jpg')
 }
 
 clientData[42003] = {
   name: 'spRace_ffr',
-  classObj: new CatalogItemRaceTrack(false, 'sp_ffr', 'car_f_gui_ttl_fillmoresFieldsRally_en_US.swf', 'sp_ffr', 'car_w_trk_frm_FillmoresFieldsRally', 'car_g_map_trk_fillmoreFieldsRally.swf', 'Music', 'raceFillmoresFieldsRally', 'car_w_trk_frm_ffRally_SS_phys.xml', 15002, 'car_g_lgo_trk_fillmoresFieldsRally_en_US.swf', 'car_g_rac_scn_FillmoresFieldsRally.jpg')
+  classObj: new CatalogItemRaceTrack("Fillmore's Fields Rally", "Farm-tastic fun track that's totally organic!", false, 'sp_ffr', '', 'car_f_gui_ttl_fillmoresFieldsRally_en_US.swf', 'sp_ffr', 'car_w_trk_frm_FillmoresFieldsRally', 'car_g_map_trk_fillmoreFieldsRally.swf', 'Music', 'raceFillmoresFieldsRally', 'car_w_trk_frm_ffRally_SS_phys.xml', 15002, 'car_g_lgo_trk_fillmoresFieldsRally_en_US.swf', 'car_g_rac_scn_FillmoresFieldsRally.jpg')
+}
+
+clientData[42004] = {
+  name: 'race_tgs',
+  classObj: new CatalogItemRaceTrack('Tailgator Speedway', 'Piston Cup Series Grand Challenge No. 1', true, 'sp_bhl', 'mp_bhl', 'car_f_gui_ttl_tailGatorSpeedway_en_US.swf', '', 'car_w_trk_prf_TailgatorSpeedway', 'car_g_map_trk_tailgatorSpeedway.swf', 'Music', 'raceTailGatorSpeedway', 'car_w_trk_prf_tailgator_SS_phys.xml', 15005, 'car_g_lgo_trk_tailGatorSpeedway_en_US.swf', 'car_g_rac_scn_tailgatorSpeedwayTrack.jpg')
 }
 
 clientData[42005] = {
   name: 'spRace_wb',
-  classObj: new CatalogItemRaceTrack(false, 'sp_wbr', 'car_f_gui_ttl_willysButteRally_en_US.swf', 'sp_wbr', 'car_w_trk_wil_WillysButteRally', 'car_g_map_trk_willysButte.swf', 'Music', 'raceWilliesButteRally', 'car_w_trk_wil_WillysButte_SS_phys.xml', 15006, 'car_g_lgo_trk_willysButte_en_US.swf', 'car_g_rac_scn_WillysButte.jpg')
+  classObj: new CatalogItemRaceTrack('Willys Butte Rally', "Doc Hudson's old stomping grounds sizzle with speed!", false, 'sp_wbr', '', 'car_f_gui_ttl_willysButteRally_en_US.swf', 'sp_wbr', 'car_w_trk_wil_WillysButteRally', 'car_g_map_trk_willysButte.swf', 'Music', 'raceWilliesButteRally', 'car_w_trk_wil_WillysButte_SS_phys.xml', 15006, 'car_g_lgo_trk_willysButte_en_US.swf', 'car_g_rac_scn_WillysButte.jpg')
+}
+
+clientData[42006] = {
+  name: 'race_bhl',
+  classObj: new CatalogItemRaceTrack('Big Heartland Speedway', 'Piston Cup Series Grand Challenge No. 2', true, 'sp_bhl', 'mp_bhl', 'car_f_gui_ttl_bigHeartlandSpeedway_en_US.swf', '', 'car_w_trk_prf_BigHeartlandSpeedway', 'car_g_map_trk_bigHeartlandSpeedway.swf', 'Music', 'raceBigHeartland', 'car_w_trk_prf_BigHeartland_SS_phys.xml', 15006, 'car_g_lgo_trk_bigHeartlandSpeedway_en_US.swf', 'car_g_rac_scn_bigHeartlandSpeedwayTrack.jpg')
+}
+
+clientData[42007] = {
+  name: 'race_bfc',
+  classObj: new CatalogItemRaceTrack('Backfire Canyon Speedway', 'Piston Cup Series Grand Challenge No. 3', true, 'sp_bfc', 'mp_bfc', 'car_f_gui_ttl_backfireCanyonSpeedway_en_US.swf', '', 'car_w_trk_prf_BackfireCanyon', 'car_g_map_trk_backfireCanyon.swf', 'Music', 'raceBFC', 'car_w_trk_prf_BackfireCanyon_SS_phys.xml', 15009, 'car_g_lgo_trk_backfireCanyonSpeedway_en_US.swf', 'car_g_rac_scn_backfireCanyonSpeedwayTrack.jpg')
+}
+
+clientData[42008] = {
+  name: 'race_pc',
+  classObj: new CatalogItemRaceTrack('Petroleum City Super Speedway', 'Piston Cup Series Grand Challenge No. 4', true, 'sp_pc', 'mp_pc', 'car_f_gui_ttl_petroCitySpeedway_en_US.swf', '', 'car_w_trk_prf_PetroleumCityRaceway', 'car_g_map_trk_petroCitySpeedway.swf', 'Music', 'racePetroleum', 'car_w_trk_prf_PetroleumCityRace_SS_phys.xml', 15010, 'car_g_lgo_trk_petroCitySpeedway_en_US.swf', 'car_g_rac_scn_petroCitySpeedwayTrack.jpg')
+}
+
+clientData[42009] = {
+  name: 'race_mss',
+  classObj: new CatalogItemRaceTrack('Motor Speedway of the South', 'Piston Cup Series Grand Challenge No. 5', true, 'sp_mss', 'mp_mss', 'car_f_gui_ttl_motorCitySpeedway_en_US.swf', '', 'car_w_trk_prf_MotorSpeedwaySouth', 'car_g_map_trk_motorCitySpeedway.swf', 'Music', 'raceMSS', 'car_w_trk_prf_MotorSpeedwaySouth_SS_phys.xml', 15011, 'car_g_lgo_trk_motorSpeedway_en_US.swf', 'car_g_rac_scn_motorSpeedwayTrack.jpg')
+}
+
+clientData[42010] = {
+  name: 'race_las',
+  classObj: new CatalogItemRaceTrack('LA International Speedway', 'Piston Cup Series Grand Challenge No. 6', true, 'sp_las', 'mp_las', 'car_f_gui_ttl_laSpeedway_en_US.swf', '', 'car_w_trk_prf_LASpeedway', 'car_g_map_trk_laSpeedway.swf', 'Music', 'raceLASpeedway', 'car_w_trk_prf_LASpeedway_SS_phys.xml', 15012, 'car_g_lgo_trk_laSpeedway_en_US.swf', 'car_g_rac_scn_laSpeedwayTrack.jpg')
 }
 
 clientData[31016] = {
