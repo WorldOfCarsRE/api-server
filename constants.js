@@ -86,8 +86,13 @@ clientData[15001] = {
 }
 
 clientData[106] = {
-  name: 'Docs Clinic Test (CatalogItemDialogItem)',
-  classObj: new CatalogItemDialogItem()
+  name: "Doc's Clinic (CatalogeItemDialogItem)",
+  classObj: new CatalogItemDialogItem('com.disney.cars.ui.dialogs.microgames.DocsSplashDialog', 'car_f_gui_dia_mmgDocsClinic.swf')
+}
+
+clientData[107] = {
+  name: "Luigi's Casa Della Tires (CatalogeItemDialogItem)",
+  classObj: new CatalogItemDialogItem('com.disney.cars.ui.dialogs.microgames.LuigisSplashDialog', 'car_f_gui_dia_mmgLuigisTireToss.swf')
 }
 
 // Asset service
@@ -509,6 +514,14 @@ clientData[103] = {
 }
 
 clientData[103].classObj = new CatalogItemMicrogame('car_spl_puz_docsclinic', clientData[103].name, 103)
+
+// Luigi's Casa Della Tires game
+clientData[108] = {
+  name: "Luigi's Casa Della Tires",
+  classObj: null
+}
+
+clientData[108].classObj = new CatalogItemMicrogame('car_spl_act_luigistiretoss', clientData[108].name, 108)
 
 /*
 clientData[60502] = {
