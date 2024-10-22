@@ -86,13 +86,18 @@ clientData[15001] = {
 }
 
 clientData[106] = {
-  name: "Doc's Clinic (CatalogeItemDialogItem)",
+  name: "Doc's Clinic (CatalogItemDialogItem)",
   classObj: new CatalogItemDialogItem('com.disney.cars.ui.dialogs.microgames.DocsSplashDialog', 'car_f_gui_dia_mmgDocsClinic.swf')
 }
 
 clientData[107] = {
-  name: "Luigi's Casa Della Tires (CatalogeItemDialogItem)",
+  name: "Luigi's Casa Della Tires (CatalogItemDialogItem)",
   classObj: new CatalogItemDialogItem('com.disney.cars.ui.dialogs.microgames.LuigisSplashDialog', 'car_f_gui_dia_mmgLuigisTireToss.swf')
+}
+
+clientData[108] = {
+  name: "Mater's Sling Shoot (CatalogItemDialogItem)",
+  classObj: new CatalogItemDialogItem('com.disney.cars.ui.dialogs.microgames.MatersSplashDialog', 'car_f_gui_dia_mmgMatersPlayground.swf')
 }
 
 // Asset service
@@ -522,6 +527,14 @@ clientData[61005] = {
 }
 
 clientData[61005].classObj = new CatalogItemMicrogame('car_spl_act_luigistiretoss', clientData[61005].name, 61005)
+
+// Mater's Sling Shoot game
+clientData[61006] = {
+  name: "Mater's Sling Shoot",
+  classObj: null
+}
+
+clientData[61006].classObj = new CatalogItemMicrogame('car_spl_act_matersplayground', clientData[61006].name, 61006)
 
 /*
 clientData[60502] = {
