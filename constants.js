@@ -362,6 +362,30 @@ clientData[33205] = {
   classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_ramone_idleScan.sani')
 }
 
+// TODO: Find correct id?
+clientData[33206] = {
+  name: 'Snot Rod Idle Scan Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_snotrod_idleScan.sani')
+}
+
+// TODO: Same as above
+clientData[33207] = {
+  name: 'DJ Idle Scan Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_dj_idleScan.sani')
+}
+
+// TODO: Same as above
+clientData[33208] = {
+  name: 'Boost Idle Scan Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_boost_idleScan.sani')
+}
+
+// TODO: Same as above
+clientData[33209] = {
+  name: 'Wingo Idle Scan Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_wingo_idleScan.sani')
+}
+
 // TODO: Is this id correct? (car_s_int_chr_mater_anims_RS.swf)
 clientData[33052] = {
   name: 'Mater Idle Scan Animation',
@@ -440,22 +464,22 @@ clientData[42010] = {
 
 clientData[31016] = {
   name: 'Racing NPC (Snot Rod)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_snotrodLow.dpak', 'Snot Rod', 'car_r_chr_frn_snotrod.smod', 'car_g_ico_npc_snotRod.swf', 'car_g_ico_chr_snotRod.jpg')
+  classObj: new CatalogItemNPC('car_k_chr_frn_snotrodLow.dpak', 'Snot Rod', 'car_r_chr_frn_snotrod.smod', 'car_g_ico_npc_snotRod.swf', 'car_g_ico_chr_snotRod.jpg', 33206)
 }
 
 clientData[31017] = {
   name: 'Racing NPC 2 (DJ)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_djLow.dpak', 'DJ', 'car_r_chr_frn_dj.smod', 'car_g_ico_npc_dj.swf', 'car_g_ico_chr_dj.jpg')
+  classObj: new CatalogItemNPC('car_k_chr_frn_djLow.dpak', 'DJ', 'car_r_chr_frn_dj.smod', 'car_g_ico_npc_dj.swf', 'car_g_ico_chr_dj.jpg', 33207)
 }
 
 clientData[31018] = {
   name: 'Racing NPC 3 (Boost)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boost.smod', 'car_g_ico_npc_boost.swf', 'car_g_ico_chr_boost.jpg')
+  classObj: new CatalogItemNPC('car_k_chr_frn_boostLow.dpak', 'Boost', 'car_r_chr_frn_boost.smod', 'car_g_ico_npc_boost.swf', 'car_g_ico_chr_boost.jpg', 33208)
 }
 
 clientData[31019] = {
   name: 'Racing NPC 4 (Wingo)',
-  classObj: new CatalogItemNPC('car_k_chr_frn_wingoLow.dpak', 'Wingo', 'car_r_chr_frn_wingo.smod', 'car_g_ico_npc_wingo.swf', 'car_g_ico_chr_wingo.jpg')
+  classObj: new CatalogItemNPC('car_k_chr_frn_wingoLow.dpak', 'Wingo', 'car_r_chr_frn_wingo.smod', 'car_g_ico_npc_wingo.swf', 'car_g_ico_chr_wingo.jpg', 33209)
 }
 
 clientData[61000] = {
