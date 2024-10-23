@@ -1,13 +1,13 @@
 const CatalogItem = global.CatalogItem
 
 class CatalogItemMapEffect extends CatalogItem {
-  constructor (minigameID) {
+  constructor (teleportMapID) {
     super()
 
     this.spinoutDuration = 0
     this.boostPowerIncrease = 0
     this.blastAnimID = 0
-    this.teleportMapID = 0
+    this.teleportMapID = teleportMapID
     this.geyserTorque = 0
     this.boostRadius = 0
     this.multiPlayerRaceName = ''
@@ -16,9 +16,9 @@ class CatalogItemMapEffect extends CatalogItem {
     this.dustDevilDuration = 0
     this.teleportRadius = 0
     this.slipperyDragScale = 0
-    this.minigameID = minigameID
+    this.minigameID = 0
     this.dustDevilForce = 0
-    this.minigameDropPoint = 'landmark_docsclinic'
+    this.minigameDropPoint = ''
     this.slipperyPowerScale = 0
     this.slipperyMaxSteerAngle = 0
     this.geyserBarrelRolls = 0

@@ -85,6 +85,11 @@ clientData[15001] = {
   classObj: new CatalogItemWorldZone('Downtown Radiator Springs', 100, 'car_f_gui_ttl_radiatorSprings_en_US.swf', 'car_w_env_rsp_RadiatorSprings', 'car_g_map_env_radiatorSprings.swf', 'scripts/isoworld/radiator_springs.lua', 'Music', 'zoneRadiatorSprings02', 'dp_npt_315')
 }
 
+clientData[102] = {
+  name: 'Redhood Valley (CatalogItemMapEffect)',
+  classObj: new CatalogItemMapEffect(15003)
+}
+
 clientData[106] = {
   name: "Doc's Clinic (CatalogItemDialogItem)",
   classObj: new CatalogItemDialogItem('com.disney.cars.ui.dialogs.microgames.DocsSplashDialog', 'car_f_gui_dia_mmgDocsClinic.swf')
@@ -285,11 +290,6 @@ clientData[31012] = {
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.materStore)
 clientData[31012].classObj = new CatalogItemStore(clientData[31012].name, 'voStoreMaterEnter', 'car_f_gui_str_materStore.swf', '33274,60002,60021,60022,33274,33274,33274,33274,33274,33274', 'car_f_gui_str_avatarEditor.swf', 'voStoreMaterExit')
 clientData[15001].classObj.dropPoints['31012'] = 'dp_mater_315'
-
-clientData[102] = {
-  name: "Doc's Clinic (InteractiveObject)",
-  classObj: new CatalogItemMapEffect(103)
-}
 
 clientData[32012] = {
   name: 'Sleep ZZZ Effect',
