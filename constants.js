@@ -28,6 +28,7 @@ const CatalogItemDialogItem = global.CatalogItemDialogItem
 const CatalogItemMicrogame = global.CatalogItemMicrogame
 const CatalogItemFizzyFuel = global.CatalogItemFizzyFuel
 const CatalogItemGear = global.CatalogItemGear
+const CatalogItemYardItem = global.CatalogItemYardItem
 
 const ArrayCollection = global.ArrayCollection
 
@@ -106,8 +107,6 @@ clientData[108] = {
   name: "Mater's Sling Shoot (CatalogItemDialogItem)",
   classObj: new CatalogItemDialogItem('com.disney.cars.ui.dialogs.microgames.MatersSplashDialog', 'car_f_gui_dia_mmgMatersPlayground.swf')
 }
-
-
 
 // Asset service
 function parseAssetData (filename) {

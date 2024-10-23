@@ -1,8 +1,10 @@
+/* global CatalogPlayerStoreItem: writeable */
+
 CatalogPlayerStoreItem = global.CatalogPlayerStoreItem
 
 class CatalogItemFizzyFuel extends CatalogPlayerStoreItem {
   constructor (itemId, name, description, storeThumbnail, storePrice, maxOwnable = 10) {
-    super (itemId, name, description, storeThumbnail, storePrice)
+    super(itemId, name, description, storeThumbnail, storePrice)
 
     this.color = 0
     this.emoteIconImage = ''
