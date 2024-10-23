@@ -512,6 +512,15 @@ clientData[15001].classObj.dropPoints['22004'] = 'dp_ramone_180'
 // TODO: Figure out proper animation for this id?
 clientData[60026] = clientData[31011]
 
+clientData[22005] = {
+  name: "Sally's Cozy Cone Gift Shop",
+  classObj: null
+}
+
+// Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.sallyStore)
+clientData[22005].classObj = new CatalogItemStore(clientData[22005].name, 'voStoreSallyEnter', 'car_f_gui_str_sallyStore.swf', '33274,60026,60021,60022,33274,33274,33274,33274,33274,33274', '', 'voStoreSallyExit')
+clientData[15001].classObj.dropPoints['22005'] = 'dp_sally_135'
+
 // Ramone
 clientData[25010] = {
   name: 'Free Body Work!',
@@ -606,6 +615,12 @@ clientData[22003] = {
 
 clientData[22003].classObj = new CatalogItemStore(clientData[22003].name, 'voStoreLuigiEnter', 'car_f_gui_str_luigiStore.swf', '33274,60010,60011,60022,60010,60010,33274,33274,33274,33274', null, 'voStoreLuigiExit')
 clientData[15001].classObj.dropPoints['22003'] = 'dp_luigi_135 '
+
+// Sally's Cozy Cone Gift Shop
+shopData[22005] = new ArrayCollection()
+shopData[22005].push(new CatalogItemYardItem(211, 'Tail Light Bouquet', '', 'car_g_ico_yar_tireSmallFlowerPot.ajpg', 300, 100))
+shopData[22005].push(new CatalogItemYardItem(212, 'Cozy Tail Light Cone', '', 'car_g_ico_yar_coneFlowerPot.ajpg', 500, 100))
+shopData[22005].push(new CatalogItemYardItem(213, 'Cozy Cone Fountain', '', 'car_g_ico_yar_cozyConeFountain.ajpg', 4000, 101))
 
 clientData[31024] = {
   name: 'New Player Tutorial (Truck)',
