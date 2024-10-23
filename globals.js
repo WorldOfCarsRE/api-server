@@ -91,6 +91,7 @@ global.Asset = require('./amf/Asset')
 global.CatalogItemMapSprite = require('./catalog/CatalogItemMapSprite')
 global.CatalogItemMicrogame = require('./catalog/CatalogItemMicrogame')
 global.CatalogItemDialogItem = require('./catalog/CatalogItemDialogItem')
+global.CatalogItemFizzyFuel = require('./catalog/CatalogItemFizzyFuel')
 
 const express = require('express')
 
@@ -162,6 +163,7 @@ libamf.registerClassAlias('com.disney.cars.domain.asset.Asset', Asset)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.MapSprite', CatalogItemMapSprite)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.microgame.Microgame', CatalogItemMicrogame)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.ui.DialogItem', CatalogItemDialogItem)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.FizzyFuel', CatalogItemFizzyFuel)
 
 /* global server */
 

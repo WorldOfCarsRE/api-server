@@ -26,6 +26,7 @@ const Asset = global.Asset
 const CatalogItemMapSprite = global.CatalogItemMapSprite
 const CatalogItemDialogItem = global.CatalogItemDialogItem
 const CatalogItemMicrogame = global.CatalogItemMicrogame
+const CatalogItemFizzyFuel = global.CatalogItemFizzyFuel
 
 const ArrayCollection = global.ArrayCollection
 
@@ -104,6 +105,8 @@ clientData[108] = {
   name: "Mater's Sling Shoot (CatalogItemDialogItem)",
   classObj: new CatalogItemDialogItem('com.disney.cars.ui.dialogs.microgames.MatersSplashDialog', 'car_f_gui_dia_mmgMatersPlayground.swf')
 }
+
+
 
 // Asset service
 function parseAssetData (filename) {
@@ -475,6 +478,15 @@ clientData[59000] = {
   classObj: new CatalogItemProfileTheme('car_g_bcg_pfl_checkeredFlag.swf')
 }
 
+clientData[22001] = {
+  name: "Fillmore's Organic Fuels",
+  classObj: null
+}
+
+// Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.fillmoreStore)
+clientData[22001].classObj = new CatalogItemStore(clientData[22001].name, 'voStoreFillmoreEnter', 'car_f_gui_str_fillmoreStore.swf', '33274,60002,60021,60022,33274,33274,33274,33274,33274,33274', '', 'voStoreFillmoreExit')
+clientData[15001].classObj.dropPoints['22001'] = 'dp_fillmore_225 '
+
 clientData[22002] = {
   name: "Lightning McQueen's Pro-Race Shop",
   classObj: null
@@ -568,6 +580,16 @@ clientData[60502] = {
 */
 
 const shopData = {}
+
+// Fillmore's Organic Fuels
+shopData[22001] = new ArrayCollection()
+shopData[22001].push(new CatalogItemFizzyFuel(204, 'Flakey Flake', '', 'car_g_ico_cns_flakeyFlake.png', 200))
+shopData[22001].push(new CatalogItemFizzyFuel(205, 'Spray Ray', 'Help other Cars cool off in the hot sun! Or just surprise them with a blast to the grill!', 'car_g_ico_cns_superSpray.png', 200))
+shopData[22001].push(new CatalogItemFizzyFuel(206, 'Glubble', '', 'car_g_ico_cns_glubble.png', 200))
+shopData[22001].push(new CatalogItemFizzyFuel(207, 'Party Blast', 'Make every party a blast by backfiring organic confetti!', 'car_g_ico_cns_partyBlast.png', 200))
+shopData[22001].push(new CatalogItemFizzyFuel(208, 'Flurrrp', '', 'car_g_ico_cns_flurrrp.ajpg', 100))
+shopData[22001].push(new CatalogItemFizzyFuel(209, 'Gastro Blasto', '', 'car_g_ico_cns_gastroBlastro.ajpg', 200))
+shopData[22001].push(new CatalogItemFizzyFuel(210, 'Flurp', '', 'car_g_ico_cns_flurp.ajpg', 200))
 
 // Lightning McQueen's Pro-Race Shop
 shopData[22002] = new ArrayCollection()
