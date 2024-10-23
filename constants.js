@@ -646,7 +646,7 @@ clientData[9980].classObj = new CatalogItemSponsor(clientData[9980].name, 1, 'ca
 
 clientData[5001] = {
   name: 'Shiny Wax (CatalogItemCarDNA)',
-  classObj: new CatalogItemCarDNA([51105, 51106], 59001)
+  classObj: new CatalogItemCarDNA([51105, 51106], 59001, 5001)
 }
 
 clientData[9981] = {
