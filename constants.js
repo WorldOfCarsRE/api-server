@@ -105,8 +105,6 @@ clientData[108] = {
   classObj: new CatalogItemDialogItem('com.disney.cars.ui.dialogs.microgames.MatersSplashDialog', 'car_f_gui_dia_mmgMatersPlayground.swf')
 }
 
-
-
 // Asset service
 function parseAssetData (filename) {
   const results = new ArrayCollection()
