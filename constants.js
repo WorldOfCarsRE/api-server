@@ -27,6 +27,7 @@ const CatalogItemMapSprite = global.CatalogItemMapSprite
 const CatalogItemDialogItem = global.CatalogItemDialogItem
 const CatalogItemMicrogame = global.CatalogItemMicrogame
 const CatalogItemFizzyFuel = global.CatalogItemFizzyFuel
+const CatalogItemGear = global.CatalogItemGear
 
 const ArrayCollection = global.ArrayCollection
 
@@ -521,6 +522,15 @@ clientData[22005] = {
 clientData[22005].classObj = new CatalogItemStore(clientData[22005].name, 'voStoreSallyEnter', 'car_f_gui_str_sallyStore.swf', '33274,60026,60021,60022,33274,33274,33274,33274,33274,33274', '', 'voStoreSallyExit')
 clientData[15001].classObj.dropPoints['22005'] = 'dp_sally_135'
 
+clientData[22006] = {
+  name: "Sarge's Surplus Hut",
+  classObj: null
+}
+
+// Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.sargeStore)
+clientData[22006].classObj = new CatalogItemStore(clientData[22006].name, 'voStoreSargeEnter', 'car_f_gui_str_sargeStore.swf', '33274,33274,60022,60022,33274,33274,33274,33274,33274,33274', '', 'voStoreSargeExit')
+clientData[15001].classObj.dropPoints['22006'] = 'dp_sarge_225'
+
 // Ramone
 clientData[25010] = {
   name: 'Free Body Work!',
@@ -621,6 +631,14 @@ shopData[22005] = new ArrayCollection()
 shopData[22005].push(new CatalogItemYardItem(211, 'Tail Light Bouquet', '', 'car_g_ico_yar_tireSmallFlowerPot.ajpg', 300, 100))
 shopData[22005].push(new CatalogItemYardItem(212, 'Cozy Tail Light Cone', '', 'car_g_ico_yar_coneFlowerPot.ajpg', 500, 100))
 shopData[22005].push(new CatalogItemYardItem(213, 'Cozy Cone Fountain', '', 'car_g_ico_yar_cozyConeFountain.ajpg', 4000, 101))
+
+// Sarge's Surplus Hut
+shopData[22006] = new ArrayCollection()
+shopData[22006].push(new CatalogItemGear(214, 'Oil Slick 6-Pack', '', 'car_g_ico_ger_oilSlick6x.png', 595))
+shopData[22006].push(new CatalogItemGear(215, 'Smoke Screen 6-Pack', '', 'car_g_ico_ger_smokeScreen6x.png', 595))
+shopData[22006].push(new CatalogItemGear(216, 'Hay Bale Boom! 3-Pack', '', 'car_g_ico_ger_hayBaleBomb3x.png', 400))
+shopData[22006].push(new CatalogItemGear(217, 'Oil Slick 3-Pack', '', 'car_g_ico_ger_oilSlick3x.png', 200))
+shopData[22006].push(new CatalogItemGear(218, 'Smoke Screen 3-Pack', '', 'car_g_ico_ger_smokeScreen3x.png', 200))
 
 clientData[31024] = {
   name: 'New Player Tutorial (Truck)',
