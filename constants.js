@@ -530,6 +530,15 @@ clientData[22008] = {
 clientData[22008].classObj = new CatalogItemStore(clientData[22008].name, 'voStoreMaterEnter', 'car_f_gui_str_materStore.swf', '33274,60002,60021,60022,33274,33274,33274,33274,33274,33274', '', 'voStoreMaterExit')
 clientData[15001].classObj.dropPoints['22008'] = 'dp_mater_315'
 
+clientData[22009] = {
+  name: "The Great Outdoors",
+  classObj: null
+}
+
+// Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.landscapeStore)
+clientData[22009].classObj = new CatalogItemStore(clientData[22009].name, '', 'car_f_gui_str_greatOutdoorsStore.swf', '', '', '')
+clientData[15001].classObj.dropPoints['22009'] = 'dp_greatoutdoors_180'
+
 // Ramone
 clientData[25010] = {
   name: 'Free Body Work!',
@@ -650,6 +659,19 @@ shopData[22008].push(new CatalogItemYardItem(224, 'Medium Tire Stack', '', 'car_
 shopData[22008].push(new CatalogItemYardItem(225, 'Gear Fountain', 'A little fountain for your yard. Gearific!', 'car_g_ico_yar_fountainGear.ajpg', 3000, 101))
 shopData[22008].push(new CatalogItemYardItem(226, 'Cafe Gas Tank', '', 'car_g_ico_yar_gasTank.ajpg', 1000, 104))
 shopData[22008].push(new CatalogItemYardItem(227, "Mater's Oil Pan Fountain", '', 'car_g_ico_yar_junkFountainA.ajpg', 3000, 101))
+
+// The Great Outdoors
+shopData[22009] = new ArrayCollection()
+shopData[22009].push(new CatalogItemYardItem(228, 'Funny Car Mailbox', '', 'car_g_ico_yar_mailboxFunnyCar.ajpg', 3000, 50))
+shopData[22009].push(new CatalogItemYardItem(229, 'Covered Wagon Mailbox', '', 'car_g_ico_yar_mailboxCoverWagon.ajpg', 3000, 50))
+shopData[22009].push(new CatalogItemYardItem(230, "Fillmore's Windmill", 'Now you can always know which way the wind blows.', '', 5000, 50))
+shopData[22009].push(new CatalogItemYardItem(231, 'Big Camp Fire', '', 'car_g_ico_ger_hayBaleBomb.ajpg', 100, 50))
+shopData[22009].push(new CatalogItemYardItem(232, 'Car Show-Off Home Version Wall Right', '', 'car_g_ico_yar_CarShowOffBanner_090.png', 200, 50))
+shopData[22009].push(new CatalogItemYardItem(233, 'Car Show-Off Home Version Wall Left', '', 'car_g_ico_yar_CarShowOffBanner_000.png', 200, 50))
+shopData[22009].push(new CatalogItemYardItem(234, 'Petroleum City Pipe Wall Left', '', 'car_g_ico_yar_petroFence_000.png', 800, 102))
+shopData[22009].push(new CatalogItemYardItem(235, 'Wiggly Ahead Sign', '', 'car_g_ico_yar_wiggleAheadSign.ajpg', 1000, 103))
+shopData[22009].push(new CatalogItemYardItem(236, 'Danger Sign', '', 'car_g_ico_yar_dangerSign.png', 1000, 103))
+shopData[22009].push(new CatalogItemYardItem(237, 'Race Sign', '', 'car_g_ico_yar_raceArrowSignWithPole.png', 1000, 103))
 
 clientData[31024] = {
   name: 'New Player Tutorial (Truck)',
