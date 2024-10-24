@@ -285,15 +285,6 @@ clientData[31011] = {
   classObj: new CatalogItemSimpleAnimation('idlescan')
 }
 
-clientData[31012] = {
-  name: 'Mater Shop Test',
-  classObj: null
-}
-
-// Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.materStore)
-clientData[31012].classObj = new CatalogItemStore(clientData[31012].name, 'voStoreMaterEnter', 'car_f_gui_str_materStore.swf', '33274,60002,60021,60022,33274,33274,33274,33274,33274,33274', 'car_f_gui_str_avatarEditor.swf', 'voStoreMaterExit')
-clientData[15001].classObj.dropPoints['31012'] = 'dp_mater_315'
-
 clientData[32012] = {
   name: 'Sleep ZZZ Effect',
   classObj: new CatalogItemEffect(['car_f_evt_efx_zzzEffect.swf'])
@@ -530,6 +521,15 @@ clientData[22006] = {
 clientData[22006].classObj = new CatalogItemStore(clientData[22006].name, 'voStoreSargeEnter', 'car_f_gui_str_sargeStore.swf', '33274,33274,60022,60022,33274,33274,33274,33274,33274,33274', '', 'voStoreSargeExit')
 clientData[15001].classObj.dropPoints['22006'] = 'dp_sarge_225'
 
+clientData[22008] = {
+  name: "Mater's Junk Yard",
+  classObj: null
+}
+
+// Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.materStore)
+clientData[22008].classObj = new CatalogItemStore(clientData[22008].name, 'voStoreMaterEnter', 'car_f_gui_str_materStore.swf', '33274,60002,60021,60022,33274,33274,33274,33274,33274,33274', '', 'voStoreMaterExit')
+clientData[15001].classObj.dropPoints['22008'] = 'dp_mater_315'
+
 // Ramone
 clientData[25010] = {
   name: 'Free Body Work!',
@@ -638,6 +638,18 @@ shopData[22006].push(new CatalogItemGear(215, 'Smoke Screen 6-Pack', '', 'car_g_
 shopData[22006].push(new CatalogItemGear(216, 'Hay Bale Boom! 3-Pack', '', 'car_g_ico_ger_hayBaleBomb3x.png', 400))
 shopData[22006].push(new CatalogItemGear(217, 'Oil Slick 3-Pack', '', 'car_g_ico_ger_oilSlick3x.png', 200))
 shopData[22006].push(new CatalogItemGear(218, 'Smoke Screen 3-Pack', '', 'car_g_ico_ger_smokeScreen3x.png', 200))
+
+// Mater's Junk Yard
+shopData[22008] = new ArrayCollection()
+shopData[22008].push(new CatalogItemYardItem(219, 'Foolish Sign', 'Let Cars know that you are a sucker!', 'car_g_ico_yar_freeSign.png', 9999, 103))
+shopData[22008].push(new CatalogItemYardItem(220, "Mater's Windmill", '', 'car_g_ico_yar_junkBarrelWindmill.ajpg', 5000, 100))
+shopData[22008].push(new CatalogItemYardItem(221, 'Giant Gas Tank', '', 'car_g_ico_yar_gasTankLarge.ajpg', 3000, 104))
+shopData[22008].push(new CatalogItemYardItem(222, 'Large Tire Stack', '', 'car_g_ico_yar_tireStackTruckBig.ajpg', 500))
+shopData[22008].push(new CatalogItemYardItem(223, 'Oil Drum', '', 'car_g_ico_yar_oilDrumB.ajpg', 300, 102))
+shopData[22008].push(new CatalogItemYardItem(224, 'Medium Tire Stack', '', 'car_g_ico_yar_tireStackTruckMed.ajpg', 300))
+shopData[22008].push(new CatalogItemYardItem(225, 'Gear Fountain', 'A little fountain for your yard. Gearific!', 'car_g_ico_yar_fountainGear.ajpg', 3000, 101))
+shopData[22008].push(new CatalogItemYardItem(226, 'Cafe Gas Tank', '', 'car_g_ico_yar_gasTank.ajpg', 1000, 104))
+shopData[22008].push(new CatalogItemYardItem(227, "Mater's Oil Pan Fountain", '', 'car_g_ico_yar_junkFountainA.ajpg', 3000, 101))
 
 clientData[31024] = {
   name: 'New Player Tutorial (Truck)',
