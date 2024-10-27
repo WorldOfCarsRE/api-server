@@ -47,6 +47,8 @@ global.libamf = require('libamf')
 /* global CatalogItemMicrogame */
 /* global CatalogItemDialogItem */
 /* global CatalogItemCarDNA */
+/* global CatalogItemFizzyFuel */
+/* global CatalogItemYardItem */
 
 global.CatalogItem = require('./catalog/CatalogItem')
 global.CatalogItemRaceSeries = require('./catalog/CatalogItemRaceSeries')
@@ -93,6 +95,8 @@ global.Asset = require('./amf/Asset')
 global.CatalogItemMapSprite = require('./catalog/CatalogItemMapSprite')
 global.CatalogItemMicrogame = require('./catalog/CatalogItemMicrogame')
 global.CatalogItemDialogItem = require('./catalog/CatalogItemDialogItem')
+global.CatalogItemFizzyFuel = require('./catalog/CatalogItemFizzyFuel')
+global.CatalogItemYardItem = require('./catalog/CatalogItemYardItem')
 
 const express = require('express')
 
@@ -165,6 +169,8 @@ libamf.registerClassAlias('com.disney.cars.domain.asset.Asset', Asset)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.MapSprite', CatalogItemMapSprite)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.microgame.Microgame', CatalogItemMicrogame)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.ui.DialogItem', CatalogItemDialogItem)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.FizzyFuel', CatalogItemFizzyFuel)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.yard.YardItem', CatalogItemYardItem)
 
 /* global server */
 
