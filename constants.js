@@ -531,7 +531,7 @@ clientData[22008].classObj = new CatalogItemStore(clientData[22008].name, 'voSto
 clientData[15001].classObj.dropPoints['22008'] = 'dp_mater_315'
 
 clientData[22009] = {
-  name: "The Great Outdoors",
+  name: 'The Great Outdoors',
   classObj: null
 }
 
