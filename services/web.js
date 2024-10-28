@@ -111,6 +111,17 @@ async function handleWhoAmIRequest (req, res) {
   res.send(xml)
 }
 
+server.app.get('/carsds/api/AccountLogoutRequest', async (req, res) => {
+  req.session.destroy()
+
+  const root = create().ele('AccountLogoutResponse')
+  root.ele('success').txt('true')
+
+  const xml = root.end({ prettyPrint: true })
+  res.setHeader('content-type', 'text/xml')
+  res.send(xml)
+})
+
 server.app.get('/carsds/api/WhoAmIRequest', async (req, res) => {
   await handleWhoAmIRequest(req, res)
 })
