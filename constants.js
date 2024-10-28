@@ -93,6 +93,11 @@ clientData[102] = {
   classObj: new CatalogItemMapEffect(15003)
 }
 
+clientData[103] = {
+  name: 'Downtown Radiator Springs Cones (CatalogItemMapEffect)',
+  classObj: new CatalogItemMapEffect(0)
+}
+
 clientData[106] = {
   name: "Doc's Clinic (CatalogItemDialogItem)",
   classObj: new CatalogItemDialogItem('com.disney.cars.ui.dialogs.microgames.DocsSplashDialog', 'car_f_gui_dia_mmgDocsClinic.swf')
