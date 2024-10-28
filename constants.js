@@ -90,7 +90,12 @@ clientData[15001] = {
 
 clientData[102] = {
   name: 'Redhood Valley (CatalogItemMapEffect)',
-  classObj: new CatalogItemMapEffect(15003)
+  classObj: new CatalogItemMapEffect(15003, 0)
+}
+
+clientData[103] = {
+  name: 'Downtown Radiator Springs Cones (CatalogItemMapEffect)',
+  classObj: new CatalogItemMapEffect(0, 0)
 }
 
 clientData[106] = {
@@ -449,6 +454,7 @@ clientData[61000] = {
   name: "Ramone's Paint Blaster",
   classObj: new CatalogItemMinigame('car_spl_puz_ramonepaint', "Ramone's Paint Blast", 61000)
 }
+clientData[15001].classObj.dropPoints['61000'] = 'dp_ramone_180'
 
 clientData[61002] = {
   name: 'Lightning Storm Space Assault',
@@ -456,6 +462,7 @@ clientData[61002] = {
 }
 
 clientData[61002].classObj = new CatalogItemMinigame('car_spl_act_lightningstorm', clientData[61002].name, 61002)
+clientData[15001].classObj.dropPoints['61002'] = 'dp_lightning_crib_225'
 
 clientData[61003] = {
   name: "Fillmore's Fuel Mixin' Area, Man",
@@ -463,6 +470,7 @@ clientData[61003] = {
 }
 
 clientData[61003].classObj = new CatalogItemMinigame('car_spl_puz_fillmoresfuelmix', clientData[61003].name, 61003)
+clientData[15002].classObj.dropPoints['61003'] = 'dp_fillmoremix_225'
 
 clientData[59000] = {
   name: 'Default Profile Background',
