@@ -1,7 +1,7 @@
 const CatalogItem = global.CatalogItem
 
 class CatalogItemMapEffect extends CatalogItem {
-  constructor (teleportMapID) {
+  constructor (teleportMapID = 0, minigameRadius = 59 * 0.7) {
     super()
 
     this.spinoutDuration = 0
@@ -36,7 +36,7 @@ class CatalogItemMapEffect extends CatalogItem {
     this.jumpRadius = 0
     this.multiPlayerRaceRadius = 0
     this.singlePlayerRaceName = 0
-    this.minigameRadius = 59 * 0.7
+    this.minigameRadius = minigameRadius
     this.singlePlayerRaceRadius = 0
     this.slipperyRadius = 0
     this.boostAnimID = 0
