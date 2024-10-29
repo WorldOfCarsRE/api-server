@@ -50,7 +50,7 @@ clientData[101] = {
 
 clientData[104] = {
   name: 'McQueen Puppet',
-  classObj: new CatalogItemPuppet(31010, 'Lightning McQueen', 105)
+  classObj: new CatalogItemPuppet(31010, 'Lightning McQueen', 105, 16711680, 16711680)
 }
 
 clientData[105] = {
