@@ -47,17 +47,27 @@ clientData[100] = {
 
 clientData[101] = {
   name: 'Mater Puppet',
-  classObj: new CatalogItemPuppet(31009, 'Mater') // Mater npcId
+  classObj: new CatalogItemPuppet(110, 'Mater', 109, 9127187, 9127187) // Mater npcId
 }
 
 clientData[104] = {
   name: 'McQueen Puppet',
-  classObj: new CatalogItemPuppet(31010, 'Lightning McQueen', 105)
+  classObj: new CatalogItemPuppet(31010, 'Lightning McQueen', 105, 16711680, 16711680)
 }
 
 clientData[105] = {
   name: 'McQueen Idle Animation',
   classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_mcqueen_idleBlink.sani')
+}
+
+clientData[109] = {
+  name: 'Mater Idle Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_mater_idleBlink.sani')
+}
+
+clientData[110] = {
+  name: 'Mater', // Puppet
+  classObj: new CatalogItemNPC('car_k_chr_frn_materLow.dpak', 'Mater', 'car_r_chr_frn_mater.smod', '', 'car_g_ico_chr_mater.jpg', 109)
 }
 
 clientData[5500] = {
@@ -593,6 +603,20 @@ clientData[22009] = {
 clientData[22009].classObj = new CatalogItemStore(clientData[22009].name, '', 'car_f_gui_str_greatOutdoorsStore.swf', '', '', '')
 clientData[15001].classObj.dropPoints['22009'] = 'dp_greatoutdoors_180'
 
+clientData[22010] = {
+  name: 'Mack Shop',
+  classObj: null
+}
+
+clientData[22010].classObj = new CatalogItemStore(clientData[22010].name, '', '', '', '', '', 'car_f_gui_str_mackStore.swf')
+
+clientData[22011] = {
+  name: "Fillmore's Fizzy Fuel Hut",
+  classObj: null
+}
+
+clientData[22011].classObj = new CatalogItemStore(clientData[22011].name, '', '', '', '', '', 'car_f_gui_str_fizzyFuelHut.swf')
+
 // Ramone
 clientData[25010] = {
   name: 'Free Body Work!',
@@ -670,7 +694,8 @@ shopData[22001].push(new CatalogItemFizzyFuel(206, 'Glubble', '', 'car_g_ico_cns
 shopData[22001].push(new CatalogItemFizzyFuel(207, 'Party Blast', 'Make every party a blast by backfiring organic confetti!', 'car_g_ico_cns_partyBlast.png', 200))
 shopData[22001].push(new CatalogItemFizzyFuel(208, 'Flurrrp', '', 'car_g_ico_cns_flurrrp.ajpg', 100))
 shopData[22001].push(new CatalogItemFizzyFuel(209, 'Gastro Blasto', '', 'car_g_ico_cns_gastroBlastro.ajpg', 200))
-shopData[22001].push(new CatalogItemFizzyFuel(210, 'Flurp', '', 'car_g_ico_cns_flurp.ajpg', 200))
+shopData[22001].push(new CatalogItemFizzyFuel(210, 'Flurp', '', 'car_g_ico_cns_flurp.ajpg', 100))
+shopData[22001].push(new CatalogItemFizzyFuel(211, 'SBD NRG', '', 'car_g_ico_cns_sbdNrg.ajpg', 200))
 
 // Lightning McQueen's Pro-Race Shop
 shopData[22002] = new ArrayCollection()
@@ -690,42 +715,72 @@ clientData[15001].classObj.dropPoints['22003'] = 'dp_luigi_135 '
 
 // Sally's Cozy Cone Gift Shop
 shopData[22005] = new ArrayCollection()
-shopData[22005].push(new CatalogItemYardItem(211, 'Tail Light Bouquet', '', 'car_g_ico_yar_tireSmallFlowerPot.ajpg', 300, 100))
-shopData[22005].push(new CatalogItemYardItem(212, 'Cozy Tail Light Cone', '', 'car_g_ico_yar_coneFlowerPot.ajpg', 500, 100))
-shopData[22005].push(new CatalogItemYardItem(213, 'Cozy Cone Fountain', '', 'car_g_ico_yar_cozyConeFountain.ajpg', 4000, 101))
+shopData[22005].push(new CatalogItemYardItem(212, 'Tail Light Bouquet', '', 'car_g_ico_yar_tireSmallFlowerPot.ajpg', 300, 100))
+shopData[22005].push(new CatalogItemYardItem(213, 'Cozy Tail Light Cone', '', 'car_g_ico_yar_coneFlowerPot.ajpg', 500, 100))
+shopData[22005].push(new CatalogItemYardItem(214, 'Cozy Cone Fountain', '', 'car_g_ico_yar_cozyConeFountain.ajpg', 4000, 101))
 
 // Sarge's Surplus Hut
 shopData[22006] = new ArrayCollection()
-shopData[22006].push(new CatalogItemGear(214, 'Oil Slick 6-Pack', '', 'car_g_ico_ger_oilSlick6x.png', 595))
-shopData[22006].push(new CatalogItemGear(215, 'Smoke Screen 6-Pack', '', 'car_g_ico_ger_smokeScreen6x.png', 595))
-shopData[22006].push(new CatalogItemGear(216, 'Hay Bale Boom! 3-Pack', '', 'car_g_ico_ger_hayBaleBomb3x.png', 400))
-shopData[22006].push(new CatalogItemGear(217, 'Oil Slick 3-Pack', '', 'car_g_ico_ger_oilSlick3x.png', 200))
-shopData[22006].push(new CatalogItemGear(218, 'Smoke Screen 3-Pack', '', 'car_g_ico_ger_smokeScreen3x.png', 200))
+shopData[22006].push(new CatalogItemGear(215, 'Oil Slick 6-Pack', '', 'car_g_ico_ger_oilSlick6x.png', 595))
+shopData[22006].push(new CatalogItemGear(216, 'Smoke Screen 6-Pack', '', 'car_g_ico_ger_smokeScreen6x.png', 595))
+shopData[22006].push(new CatalogItemGear(217, 'Hay Bale Boom! 3-Pack', '', 'car_g_ico_ger_hayBaleBomb3x.png', 400))
+shopData[22006].push(new CatalogItemGear(218, 'Oil Slick 3-Pack', '', 'car_g_ico_ger_oilSlick3x.png', 200))
+shopData[22006].push(new CatalogItemGear(219, 'Smoke Screen 3-Pack', '', 'car_g_ico_ger_smokeScreen3x.png', 200))
 
 // Mater's Junk Yard
 shopData[22008] = new ArrayCollection()
-shopData[22008].push(new CatalogItemYardItem(219, 'Foolish Sign', 'Let Cars know that you are a sucker!', 'car_g_ico_yar_freeSign.png', 9999, 103))
-shopData[22008].push(new CatalogItemYardItem(220, "Mater's Windmill", '', 'car_g_ico_yar_junkBarrelWindmill.ajpg', 5000, 100))
-shopData[22008].push(new CatalogItemYardItem(221, 'Giant Gas Tank', '', 'car_g_ico_yar_gasTankLarge.ajpg', 3000, 104))
-shopData[22008].push(new CatalogItemYardItem(222, 'Large Tire Stack', '', 'car_g_ico_yar_tireStackTruckBig.ajpg', 500))
-shopData[22008].push(new CatalogItemYardItem(223, 'Oil Drum', '', 'car_g_ico_yar_oilDrumB.ajpg', 300, 102))
-shopData[22008].push(new CatalogItemYardItem(224, 'Medium Tire Stack', '', 'car_g_ico_yar_tireStackTruckMed.ajpg', 300))
-shopData[22008].push(new CatalogItemYardItem(225, 'Gear Fountain', 'A little fountain for your yard. Gearific!', 'car_g_ico_yar_fountainGear.ajpg', 3000, 101))
-shopData[22008].push(new CatalogItemYardItem(226, 'Cafe Gas Tank', '', 'car_g_ico_yar_gasTank.ajpg', 1000, 104))
-shopData[22008].push(new CatalogItemYardItem(227, "Mater's Oil Pan Fountain", '', 'car_g_ico_yar_junkFountainA.ajpg', 3000, 101))
+shopData[22008].push(new CatalogItemYardItem(220, 'Foolish Sign', 'Let Cars know that you are a sucker!', 'car_g_ico_yar_freeSign.png', 9999, 103))
+shopData[22008].push(new CatalogItemYardItem(221, "Mater's Windmill", '', 'car_g_ico_yar_junkBarrelWindmill.ajpg', 5000, 100))
+shopData[22008].push(new CatalogItemYardItem(222, 'Giant Gas Tank', '', 'car_g_ico_yar_gasTankLarge.ajpg', 3000, 104))
+shopData[22008].push(new CatalogItemYardItem(223, 'Large Tire Stack', '', 'car_g_ico_yar_tireStackTruckBig.ajpg', 500))
+shopData[22008].push(new CatalogItemYardItem(224, 'Oil Drum', '', 'car_g_ico_yar_oilDrumB.ajpg', 300, 102))
+shopData[22008].push(new CatalogItemYardItem(225, 'Medium Tire Stack', '', 'car_g_ico_yar_tireStackTruckMed.ajpg', 300))
+shopData[22008].push(new CatalogItemYardItem(226, 'Gear Fountain', 'A little fountain for your yard. Gearific!', 'car_g_ico_yar_fountainGear.ajpg', 3000, 101))
+shopData[22008].push(new CatalogItemYardItem(227, 'Cafe Gas Tank', '', 'car_g_ico_yar_gasTank.ajpg', 1000, 104))
+shopData[22008].push(new CatalogItemYardItem(228, "Mater's Oil Pan Fountain", '', 'car_g_ico_yar_junkFountainA.ajpg', 3000, 101))
 
 // The Great Outdoors
 shopData[22009] = new ArrayCollection()
-shopData[22009].push(new CatalogItemYardItem(228, 'Funny Car Mailbox', '', 'car_g_ico_yar_mailboxFunnyCar.ajpg', 3000, 50))
-shopData[22009].push(new CatalogItemYardItem(229, 'Covered Wagon Mailbox', '', 'car_g_ico_yar_mailboxCoverWagon.ajpg', 3000, 50))
-shopData[22009].push(new CatalogItemYardItem(230, "Fillmore's Windmill", 'Now you can always know which way the wind blows.', '', 5000, 50))
-shopData[22009].push(new CatalogItemYardItem(231, 'Big Camp Fire', '', 'car_g_ico_ger_hayBaleBomb.ajpg', 100, 50))
-shopData[22009].push(new CatalogItemYardItem(232, 'Car Show-Off Home Version Wall Right', '', 'car_g_ico_yar_CarShowOffBanner_090.png', 200, 50))
-shopData[22009].push(new CatalogItemYardItem(233, 'Car Show-Off Home Version Wall Left', '', 'car_g_ico_yar_CarShowOffBanner_000.png', 200, 50))
-shopData[22009].push(new CatalogItemYardItem(234, 'Petroleum City Pipe Wall Left', '', 'car_g_ico_yar_petroFence_000.png', 800, 102))
-shopData[22009].push(new CatalogItemYardItem(235, 'Wiggly Ahead Sign', '', 'car_g_ico_yar_wiggleAheadSign.ajpg', 1000, 103))
-shopData[22009].push(new CatalogItemYardItem(236, 'Danger Sign', '', 'car_g_ico_yar_dangerSign.png', 1000, 103))
-shopData[22009].push(new CatalogItemYardItem(237, 'Race Sign', '', 'car_g_ico_yar_raceArrowSignWithPole.png', 1000, 103))
+shopData[22009].push(new CatalogItemYardItem(229, 'Funny Car Mailbox', '', 'car_g_ico_yar_mailboxFunnyCar.ajpg', 3000, 50))
+shopData[22009].push(new CatalogItemYardItem(230, 'Covered Wagon Mailbox', '', 'car_g_ico_yar_mailboxCoverWagon.ajpg', 3000, 50))
+shopData[22009].push(new CatalogItemYardItem(231, "Fillmore's Windmill", 'Now you can always know which way the wind blows.', '', 5000, 50))
+shopData[22009].push(new CatalogItemYardItem(232, 'Big Camp Fire', '', 'car_g_ico_ger_hayBaleBomb.ajpg', 100, 50))
+shopData[22009].push(new CatalogItemYardItem(233, 'Car Show-Off Home Version Wall Right', '', 'car_g_ico_yar_CarShowOffBanner_090.png', 200, 50))
+shopData[22009].push(new CatalogItemYardItem(234, 'Car Show-Off Home Version Wall Left', '', 'car_g_ico_yar_CarShowOffBanner_000.png', 200, 50))
+shopData[22009].push(new CatalogItemYardItem(235, 'Petroleum City Pipe Wall Left', '', 'car_g_ico_yar_petroFence_000.png', 800, 102))
+shopData[22009].push(new CatalogItemYardItem(236, 'Wiggly Ahead Sign', '', 'car_g_ico_yar_wiggleAheadSign.ajpg', 1000, 103))
+shopData[22009].push(new CatalogItemYardItem(237, 'Danger Sign', '', 'car_g_ico_yar_dangerSign.png', 1000, 103))
+shopData[22009].push(new CatalogItemYardItem(238, 'Race Sign', '', 'car_g_ico_yar_raceArrowSignWithPole.png', 1000, 103))
+
+// Mack Shop
+shopData[22010] = new ArrayCollection()
+shopData[22010].push(new CatalogItemFizzyFuel(262, 'Flakey Flake', '', 'car_g_ico_cns_flakeyFlake.png', 200))
+shopData[22010].push(new CatalogItemYardItem(261, 'Green Fireworks', 'Keep the celebration going, and annoy yourself!', 'car_g_ico_yar_greenFireworks.ajpg', 1000, 103))
+shopData[22010].push(new CatalogItemYardItem(260, 'Red Fireworks', 'Keep the celebration going, and annoy yourself!', 'car_g_ico_yar_redFireworks.ajpg', 1000, 103))
+shopData[22010].push(new CatalogItemYardItem(259, 'Purple Fireworks', 'Keep the celebration going, and annoy yourself!', 'car_g_ico_yar_purpleFireworks.ajpg', 1000, 103))
+shopData[22010].push(new CatalogItemYardItem(258, 'Peppermint Pit Stop Picnic Umbrella', '', 'car_g_ico_yar_pepermintPitStopPicnicUmbrella.ajpg', 800, 103))
+shopData[22010].push(new CatalogItemYardItem(257, 'Red White & Zoom Picnic Umbrella', '', 'car_g_ico_yar_redWhiteZoomPicnicUmbrella.ajpg', 700, 103))
+shopData[22010].push(new CatalogItemYardItem(256, 'Fancy Finish Line Picnic Umbrella', '', 'car_g_ico_yar_fancyFinishLinesPicnicUmbrella.ajpg', 600, 103))
+shopData[22010].push(new CatalogItemYardItem(255, 'Red-E-Set-Go Picnic Umbrella', '', 'car_g_ico_yar_redESetGoPicnicUmbrella.ajpg', 500, 103))
+shopData[22010].push(new CatalogItemYardItem(254, 'Peppermint Picnic Table', '', 'car_g_ico_yar_pepermintPitStopPicnicTable.ajpg', 800, 103))
+shopData[22010].push(new CatalogItemYardItem(253, 'Red White & Zoom Picnic Table', '', 'car_g_ico_yar_redWhiteZoomPicnicTable.ajpg', 700, 103))
+shopData[22010].push(new CatalogItemYardItem(252, 'Fancy Finish Line Picnic Table', '', 'car_g_ico_yar_fancyFinishLinesPicnicTable.ajpg', 600, 103))
+shopData[22010].push(new CatalogItemYardItem(251, 'Red-E-Set-Go Picnic Table', '', 'car_g_ico_yar_redESetGoPicnicTable.ajpg', 500, 103))
+shopData[22010].push(new CatalogItemYardItem(250, 'Red-E-Set-Go Grill', '', 'car_g_ico_yar_redESetGoGrill.ajpg', 1000, 103))
+shopData[22010].push(new CatalogItemYardItem(249, 'Funbrella', '', 'car_g_ico_yar_beachUmbrella.png', 200, 103))
+shopData[22010].push(new CatalogItemYardItem(248, 'Tilting Tiki', '', 'car_g_ico_yar_danceTikiTorch.png', 100, 103))
+shopData[22010].push(new CatalogItemYardItem(247, 'Sand Tower of', '', 'car_g_ico_yar_sandTower.png', 5000, 103))
+shopData[22010].push(new CatalogItemYardItem(246, 'Sand Cone', '', 'car_g_ico_yar_sandCone.png', 1000, 103))
+shopData[22010].push(new CatalogItemYardItem(245, 'Sand Castle', '', 'car_g_ico_yar_sandCastle.png', 9000, 103))
+shopData[22010].push(new CatalogItemYardItem(244, 'Sand Car', '', 'car_g_ico_yar_sandCar.png', 5000, 103))
+shopData[22010].push(new CatalogItemYardItem(243, 'A Pile of Gifts', '', 'car_g_ico_yar_giftBoxes.ajpg', 1000, 103))
+shopData[22010].push(new CatalogItemYardItem(242, 'Snow Pile', '', 'car_g_ico_yar_snowMound.ajpg', 1000, 103))
+shopData[22010].push(new CatalogItemYardItem(241, 'Bigger Snow Tree', '', 'car_g_ico_yar_snowTree.ajpg', 500, 103))
+shopData[22010].push(new CatalogItemYardItem(240, 'Smaller Snow Tree', '', 'car_g_ico_yar_snowTreeSmall.ajpg', 300, 103))
+shopData[22010].push(new CatalogItemYardItem(239, 'Never-Melt Faux-', '', 'car_g_ico_yar_snowCar.ajpg', 2000, 103))
+
+// Fillmore's Fizzy Fuel Hut
+shopData[22011] = shopData[22001]
 
 clientData[31024] = {
   name: 'New Player Tutorial (Truck)',

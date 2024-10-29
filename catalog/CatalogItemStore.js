@@ -5,7 +5,7 @@ ArrayCollection = global.ArrayCollection
 CatalogItem = global.CatalogItem
 
 class CatalogItemStore extends CatalogItem {
-  constructor (name, openVO, viewURL, idleAnimations, expansionURL, closeVO) {
+  constructor (name, openVO, viewURL, idleAnimations, expansionURL, closeVO, dialogSwf = '') {
     super()
 
     this.name = name
@@ -14,7 +14,7 @@ class CatalogItemStore extends CatalogItem {
     this.viewURL = viewURL
     this.inventoryIds = new ArrayCollection()
     this.expansionCustomPrice = ''
-    this.dialogSwf = ''
+    this.dialogSwf = dialogSwf
     this.npcId = 0
     this.dialogBackground = ''
     this.npcAnimationId = 0
