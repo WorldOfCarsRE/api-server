@@ -140,7 +140,8 @@ server.app.post('/dxd/flashAPI/login', async (req, res) => {
 
 server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
   const username = req.body.username
-  const status = await db.isUsernameAvailable(username)
+  // TODO: Integrate registration into Sunrise database and re-enable in-game registrations for production
+  const status = process.env.LOCALHOST_INSTANCE ? await db.isUsernameAvailable(username) : false
 
   const root = create().ele('response')
   root.ele('success').txt(status)
