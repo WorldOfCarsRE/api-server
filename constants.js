@@ -571,6 +571,13 @@ clientData[22011] = {
 
 clientData[22011].classObj = new CatalogItemStore(clientData[22011].name, '', '', '', '', '', 'car_f_gui_str_fizzyFuelHut.swf')
 
+clientData[22012] = {
+  name: 'Spy Shop',
+  classObj: null
+}
+
+clientData[22012].classObj = new CatalogItemStore(clientData[22012].name, '', '', '', '', '', 'car_f_gui_str_spyStore.swf')
+
 // Ramone
 clientData[25010] = {
   name: 'Free Body Work!',
@@ -735,6 +742,16 @@ shopData[22010].push(new CatalogItemYardItem(239, 'Never-Melt Faux-', '', 'car_g
 
 // Fillmore's Fizzy Fuel Hut
 shopData[22011] = shopData[22001]
+
+// Spy Shop
+shopData[22012] = new ArrayCollection()
+shopData[22012].push(new CatalogItemFizzyFuel(269, 'Red Laser', 'Attaches easily to your headlights. For Spies who need Lasers!', 'car_g_ico_cns_laserBeamRed.png', 500, 25))
+shopData[22012].push(new CatalogItemFizzyFuel(268, 'Pink Laser', 'Attaches easily to your headlights. For Spies who need Lasers!', 'car_g_ico_cns_laserBeamPink.png', 500, 25))
+shopData[22012].push(new CatalogItemFizzyFuel(267, 'Green Laser', 'Attaches easily to your headlights. For Spies who need Lasers!', 'car_g_ico_cns_laserBeamGreen.png', 500, 25))
+shopData[22012].push(new CatalogItemYardItem(266, 'WOC 93011', 'The WOC 93011 is the latest in secret spy computers! Monitors all of Carburetor County!', 'car_g_ico_yar_SpyComputer_000.ajpg', 2000))
+shopData[22012].push(new CatalogItemYardItem(265, 'Laser Fence Left', '', 'car_g_ico_yar_laserFenceLeft.ajpg', 600))
+shopData[22012].push(new CatalogItemYardItem(264, 'Laser Fence Right', '', 'car_g_ico_yar_laserFenceRight.ajpg', 600))
+shopData[22012].push(new CatalogItemYardItem(263, 'Surveillance Cam', '', 'car_g_ico_yar_surveillanceCamera.ajpg', 1000))
 
 clientData[31024] = {
   name: 'New Player Tutorial (Truck)',
