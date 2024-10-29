@@ -557,6 +557,13 @@ clientData[22009] = {
 clientData[22009].classObj = new CatalogItemStore(clientData[22009].name, '', 'car_f_gui_str_greatOutdoorsStore.swf', '', '', '')
 clientData[15001].classObj.dropPoints['22009'] = 'dp_greatoutdoors_180'
 
+clientData[22010] = {
+  name: 'Mack Shop',
+  classObj: null
+}
+
+clientData[22010].classObj = new CatalogItemStore(clientData[22010].name, '', '', '', '', '', 'car_f_gui_str_mackStore.swf')
+
 // Ramone
 clientData[25010] = {
   name: 'Free Body Work!',
@@ -691,6 +698,33 @@ shopData[22009].push(new CatalogItemYardItem(235, 'Petroleum City Pipe Wall Left
 shopData[22009].push(new CatalogItemYardItem(236, 'Wiggly Ahead Sign', '', 'car_g_ico_yar_wiggleAheadSign.ajpg', 1000, 103))
 shopData[22009].push(new CatalogItemYardItem(237, 'Danger Sign', '', 'car_g_ico_yar_dangerSign.png', 1000, 103))
 shopData[22009].push(new CatalogItemYardItem(238, 'Race Sign', '', 'car_g_ico_yar_raceArrowSignWithPole.png', 1000, 103))
+
+// Mack Shop
+shopData[22010] = new ArrayCollection()
+shopData[22010].push(new CatalogItemFizzyFuel(262, 'Flakey Flake', '', 'car_g_ico_cns_flakeyFlake.png', 200))
+shopData[22010].push(new CatalogItemYardItem(261, 'Green Fireworks', 'Keep the celebration going, and annoy yourself!', 'car_g_ico_yar_greenFireworks.ajpg', 1000, 103))
+shopData[22010].push(new CatalogItemYardItem(260, 'Red Fireworks', 'Keep the celebration going, and annoy yourself!', 'car_g_ico_yar_redFireworks.ajpg', 1000, 103))
+shopData[22010].push(new CatalogItemYardItem(259, 'Purple Fireworks', 'Keep the celebration going, and annoy yourself!', 'car_g_ico_yar_purpleFireworks.ajpg', 1000, 103))
+shopData[22010].push(new CatalogItemYardItem(258, 'Peppermint Pit Stop Picnic Umbrella', '', 'car_g_ico_yar_pepermintPitStopPicnicUmbrella.ajpg', 800, 103))
+shopData[22010].push(new CatalogItemYardItem(257, 'Red White & Zoom Picnic Umbrella', '', 'car_g_ico_yar_redWhiteZoomPicnicUmbrella.ajpg', 700, 103))
+shopData[22010].push(new CatalogItemYardItem(256, 'Fancy Finish Line Picnic Umbrella', '', 'car_g_ico_yar_fancyFinishLinesPicnicUmbrella.ajpg', 600, 103))
+shopData[22010].push(new CatalogItemYardItem(255, 'Red-E-Set-Go Picnic Umbrella', '', 'car_g_ico_yar_redESetGoPicnicUmbrella.ajpg', 500, 103))
+shopData[22010].push(new CatalogItemYardItem(254, 'Peppermint Picnic Table', '', 'car_g_ico_yar_pepermintPitStopPicnicTable.ajpg', 800, 103))
+shopData[22010].push(new CatalogItemYardItem(253, 'Red White & Zoom Picnic Table', '', 'car_g_ico_yar_redWhiteZoomPicnicTable.ajpg', 700, 103))
+shopData[22010].push(new CatalogItemYardItem(252, 'Fancy Finish Line Picnic Table', '', 'car_g_ico_yar_fancyFinishLinesPicnicTable.ajpg', 600, 103))
+shopData[22010].push(new CatalogItemYardItem(251, 'Red-E-Set-Go Picnic Table', '', 'car_g_ico_yar_redESetGoPicnicTable.ajpg', 500, 103))
+shopData[22010].push(new CatalogItemYardItem(250, 'Red-E-Set-Go Grill', '', 'car_g_ico_yar_redESetGoGrill.ajpg', 1000, 103))
+shopData[22010].push(new CatalogItemYardItem(249, 'Funbrella', '', 'car_g_ico_yar_beachUmbrella.png', 200, 103))
+shopData[22010].push(new CatalogItemYardItem(248, 'Tilting Tiki', '', 'car_g_ico_yar_danceTikiTorch.png', 100, 103))
+shopData[22010].push(new CatalogItemYardItem(247, 'Sand Tower of', '', 'car_g_ico_yar_sandTower.png', 5000, 103))
+shopData[22010].push(new CatalogItemYardItem(246, 'Sand Cone', '', 'car_g_ico_yar_sandCone.png', 1000, 103))
+shopData[22010].push(new CatalogItemYardItem(245, 'Sand Castle', '', 'car_g_ico_yar_sandCastle.png', 9000, 103))
+shopData[22010].push(new CatalogItemYardItem(244, 'Sand Car', '', 'car_g_ico_yar_sandCar.png', 5000, 103))
+shopData[22010].push(new CatalogItemYardItem(243, 'A Pile of Gifts', '', 'car_g_ico_yar_giftBoxes.ajpg', 1000, 103))
+shopData[22010].push(new CatalogItemYardItem(242, 'Snow Pile', '', 'car_g_ico_yar_snowMound.ajpg', 1000, 103))
+shopData[22010].push(new CatalogItemYardItem(241, 'Bigger Snow Tree', '', 'car_g_ico_yar_snowTree.ajpg', 500, 103))
+shopData[22010].push(new CatalogItemYardItem(240, 'Smaller Snow Tree', '', 'car_g_ico_yar_snowTreeSmall.ajpg', 300, 103))
+shopData[22010].push(new CatalogItemYardItem(239, 'Never-Melt Faux-', '', 'car_g_ico_yar_snowCar.ajpg', 2000, 103))
 
 clientData[31024] = {
   name: 'New Player Tutorial (Truck)',
