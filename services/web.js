@@ -142,7 +142,7 @@ server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
   const username = req.body.username
   let status
 
-  if (process.env.LOCALHOST_INSTANCE) {
+  if (process.env.LOCALHOST_INSTANCE === 'true') {
     status = await db.isUsernameAvailable(username)
   } else {
   // TODO: Integrate registration into Sunrise database and re-enable in-game registrations for producti
