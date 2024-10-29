@@ -257,7 +257,7 @@ server.app.post('/carsds/api/RedeemPromoCodeRequest', async (req, res) => {
     if (ses.username && !valid) {
       error.att('code', 'INVALID_PROMO_CODE')
     }
-    
+
     if (redeemed) {
       error.att('code', 'ALREADY_REDEEMED_PROMO_CODE')
     }

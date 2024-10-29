@@ -59,7 +59,7 @@ clientData[105] = {
 }
 
 clientData[109] = {
-  name: "Mater Idle Animation",
+  name: 'Mater Idle Animation',
   classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_mater_idleBlink.sani')
 }
 
