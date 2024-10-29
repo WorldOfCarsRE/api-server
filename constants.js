@@ -564,6 +564,13 @@ clientData[22010] = {
 
 clientData[22010].classObj = new CatalogItemStore(clientData[22010].name, '', '', '', '', '', 'car_f_gui_str_mackStore.swf')
 
+clientData[22011] = {
+  name: "Fillmore's Fizzy Fuel Hut",
+  classObj: null
+}
+
+clientData[22011].classObj = new CatalogItemStore(clientData[22011].name, '', '', '', '', '', 'car_f_gui_str_fizzyFuelHut.swf')
+
 // Ramone
 clientData[25010] = {
   name: 'Free Body Work!',
@@ -725,6 +732,9 @@ shopData[22010].push(new CatalogItemYardItem(242, 'Snow Pile', '', 'car_g_ico_ya
 shopData[22010].push(new CatalogItemYardItem(241, 'Bigger Snow Tree', '', 'car_g_ico_yar_snowTree.ajpg', 500, 103))
 shopData[22010].push(new CatalogItemYardItem(240, 'Smaller Snow Tree', '', 'car_g_ico_yar_snowTreeSmall.ajpg', 300, 103))
 shopData[22010].push(new CatalogItemYardItem(239, 'Never-Melt Faux-', '', 'car_g_ico_yar_snowCar.ajpg', 2000, 103))
+
+// Fillmore's Fizzy Fuel Hut
+shopData[22011] = shopData[22001]
 
 clientData[31024] = {
   name: 'New Player Tutorial (Truck)',
