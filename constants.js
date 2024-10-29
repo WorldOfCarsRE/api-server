@@ -45,7 +45,7 @@ clientData[100] = {
 
 clientData[101] = {
   name: 'Mater Puppet',
-  classObj: new CatalogItemPuppet(31009, 'Mater') // Mater npcId
+  classObj: new CatalogItemPuppet(110, 'Mater', 109, 9127187, 9127187) // Mater npcId
 }
 
 clientData[104] = {
@@ -56,6 +56,16 @@ clientData[104] = {
 clientData[105] = {
   name: 'McQueen Idle Animation',
   classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_mcqueen_idleBlink.sani')
+}
+
+clientData[109] = {
+  name: "Mater Idle Animation",
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_mater_idleBlink.sani')
+}
+
+clientData[110] = {
+  name: 'Mater', // Puppet
+  classObj: new CatalogItemNPC('car_k_chr_frn_materLow.dpak', 'Mater', 'car_r_chr_frn_mater.smod', '', 'car_g_ico_chr_mater.jpg', 109)
 }
 
 clientData[5500] = {
