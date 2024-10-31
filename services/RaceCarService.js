@@ -48,7 +48,7 @@ class RaceCarService extends libamf.Service {
     const stretches = new ArrayCollection(...car.stretches)
     car.stretches = stretches
 
-    const consumableItemList = car.consumableItemList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.consumableItemList)
+    const consumableItemList = new ArrayCollection(...car.consumableItemList)
     car.consumableItemList = consumableItemList
 
     return libamf.serialize(car, libamf.ENCODING.AMF3)
