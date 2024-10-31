@@ -27,8 +27,8 @@ const CatalogItemMapSprite = global.CatalogItemMapSprite
 const CatalogItemDialogItem = global.CatalogItemDialogItem
 const CatalogItemMicrogame = global.CatalogItemMicrogame
 const CatalogItemFizzyFuel = global.CatalogItemFizzyFuel
-const CatalogItemGear = global.CatalogItemGear
 const CatalogItemYardItem = global.CatalogItemYardItem
+const CatalogItemConsumable = global.CatalogItemConsumable
 
 const ArrayCollection = global.ArrayCollection
 
@@ -682,11 +682,11 @@ shopData[22005].push(new CatalogItemYardItem(214, 'Cozy Cone Fountain', '', 'car
 
 // Sarge's Surplus Hut
 shopData[22006] = new ArrayCollection()
-shopData[22006].push(new CatalogItemGear(215, 'Oil Slick 6-Pack', '', 'car_g_ico_ger_oilSlick6x.png', 595))
-shopData[22006].push(new CatalogItemGear(216, 'Smoke Screen 6-Pack', '', 'car_g_ico_ger_smokeScreen6x.png', 595))
-shopData[22006].push(new CatalogItemGear(217, 'Hay Bale Boom! 3-Pack', '', 'car_g_ico_ger_hayBaleBomb3x.png', 400))
-shopData[22006].push(new CatalogItemGear(218, 'Oil Slick 3-Pack', '', 'car_g_ico_ger_oilSlick3x.png', 200))
-shopData[22006].push(new CatalogItemGear(219, 'Smoke Screen 3-Pack', '', 'car_g_ico_ger_smokeScreen3x.png', 200))
+shopData[22006].push(new CatalogItemConsumable(215, 'Oil Slick 6-Pack', 'Lay down a slick escape plan—six times the slipperiness!', 'car_g_ico_ger_oilSlick6x.png', 595, 2))
+shopData[22006].push(new CatalogItemConsumable(216, 'Smoke Screen 6-Pack', 'Double the packs, double the smoke—make your getaway grand! (Screen not included.)', 'car_g_ico_ger_smokeScreen6x.png', 595, 2))
+shopData[22006].push(new CatalogItemConsumable(217, 'Hay Bale Boom! 3-Pack', 'Bales that go boom! Perfect for camouflaging with a little extra kick.', 'car_g_ico_ger_hayBaleBomb3x.png', 400, 2))
+shopData[22006].push(new CatalogItemConsumable(218, 'Oil Slick 3-Pack', 'A triple threat of slick moves for a quick getaway!', 'car_g_ico_ger_oilSlick3x.png', 200, 2))
+shopData[22006].push(new CatalogItemConsumable(219, 'Smoke Screen 3-Pack', "Pull the wool over your opponent's eyes with triple the smoke! (Screen not included.)", 'car_g_ico_ger_smokeScreen3x.png', 200, 2))
 
 // Mater's Junk Yard
 shopData[22008] = new ArrayCollection()
