@@ -2,10 +2,30 @@
 
 libamf = global.libamf
 ArrayCollection = global.ArrayCollection
+Player = global.Player
 
 class PlayerService extends libamf.Service {
   constructor () {
     super('player')
+  }
+
+  async getPlayer (playerId) {
+    console.log(`getPlayer: ${playerId}`)
+
+    const player = new Player()
+    const car = await db.retrieveCar(playerId)
+    if (!car) {
+      console.log(`getPlayer: Couldn't find car with playerId: ${playerId}`)
+      return
+    }
+
+    // This call is only used on LobbyCarFrame (Racing Lobbies) and CarLogoSprite,
+    // so set only the needed values.
+    player.userId = car.accountId
+    // TODO: player.access
+
+    return player
+
   }
 
   getRuleStates (playerId, carId, ruleIds) {

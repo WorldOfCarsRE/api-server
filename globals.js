@@ -112,6 +112,10 @@ const cors = require('cors')
 
 global.Racecar = require('./amf/Racecar')
 
+/* global Player */
+
+global.Player = require('./amf/Player')
+
 _create = require('xmlbuilder2')
 global.create = _create.create
 
@@ -170,6 +174,7 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.player.ui.DialogItem',
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.FizzyFuel', CatalogItemFizzyFuel)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.yard.YardItem', CatalogItemYardItem)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.Consumable', CatalogItemConsumable)
+libamf.registerClassAlias('com.disney.cars.domain.player.Player', Player)
 
 /* global server */
 
