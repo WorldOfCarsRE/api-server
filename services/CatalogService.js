@@ -119,6 +119,12 @@ class CatalogService extends libamf.Service {
 
     return item.classObj
   }
+
+  getConsumables () {
+    console.log('getConsumables')
+
+    return new ArrayCollection()
+  }
 }
 
 module.exports = CatalogService
