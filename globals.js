@@ -96,6 +96,7 @@ global.CatalogItemDialogItem = require('./catalog/CatalogItemDialogItem')
 global.CatalogItemFizzyFuel = require('./catalog/CatalogItemFizzyFuel')
 global.CatalogItemYardItem = require('./catalog/CatalogItemYardItem')
 global.CatalogItemConsumable = require('./catalog/CatalogItemConsumable')
+global.CatalogItemStack = require('./catalog/CatalogItemStack')
 
 const express = require('express')
 
@@ -175,6 +176,7 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.player.FizzyFuel', Cat
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.yard.YardItem', CatalogItemYardItem)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.Consumable', CatalogItemConsumable)
 libamf.registerClassAlias('com.disney.cars.domain.player.Player', Player)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.store.Stack', CatalogItemStack)
 
 /* global server */
 
