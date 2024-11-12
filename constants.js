@@ -27,8 +27,9 @@ const CatalogItemMapSprite = global.CatalogItemMapSprite
 const CatalogItemDialogItem = global.CatalogItemDialogItem
 const CatalogItemMicrogame = global.CatalogItemMicrogame
 const CatalogItemFizzyFuel = global.CatalogItemFizzyFuel
-const CatalogItemGear = global.CatalogItemGear
 const CatalogItemYardItem = global.CatalogItemYardItem
+const CatalogItemConsumable = global.CatalogItemConsumable
+const CatalogItemStack = global.CatalogItemStack
 
 const ArrayCollection = global.ArrayCollection
 
@@ -422,22 +423,22 @@ clientData[31010] = {
 
 clientData[42001] = {
   name: 'spRace_ccs',
-  classObj: new CatalogItemRaceTrack(false, 'sp_ccs', 'car_f_gui_ttl_carburetorCounty_en_US.swf', 'sp_ccs', 'car_w_trk_rsp_CarburetorCountySpeedway', 'car_g_map_trk_carburetorCounty.swf', 'Music', 'CarburetorCountySpeedway', 'car_w_trk_rsp_ccSpeedway_SS_phys.xml', 15001, 'car_g_lgo_trk_carburetorCountySpeedway_en_US.swf', 'car_g_rac_scn_CarbCountySpeedway.jpg')
+  classObj: new CatalogItemRaceTrack(false, 'sp_ccs', 'car_f_gui_ttl_carburetorCounty_en_US.swf', 'mp_ccs', 'car_w_trk_rsp_CarburetorCountySpeedway', 'car_g_map_trk_carburetorCounty.swf', 'Music', 'CarburetorCountySpeedway', 'car_w_trk_rsp_ccSpeedway_SS_phys.xml', 15001, 'car_g_lgo_trk_carburetorCountySpeedway_en_US.swf', 'car_g_rac_scn_CarbCountySpeedway.jpg')
 }
 
 clientData[42002] = {
   name: 'spRace_rh',
-  classObj: new CatalogItemRaceTrack(false, 'sp_ttf', 'car_f_gui_ttl_twistinTailfinTrk_en_US.swf', 'sp_ttf', 'car_w_trk_tfn_TwistinTailfinTrails', 'car_g_map_trk_twistinTailfin.swf', 'Music', 'TwistinTailfinTrack', 'car_w_trk_tfn_twistinTailfin_SS_V1_phys.xml', 15003, 'car_g_lgo_trk_twistinTailfinTrk_en_US.swf', 'car_g_rac_scn_TwistinTailfinTrack.jpg')
+  classObj: new CatalogItemRaceTrack(false, 'sp_ttf', 'car_f_gui_ttl_twistinTailfinTrk_en_US.swf', 'mp_ttf', 'car_w_trk_tfn_TwistinTailfinTrails', 'car_g_map_trk_twistinTailfin.swf', 'Music', 'TwistinTailfinTrack', 'car_w_trk_tfn_twistinTailfin_SS_V1_phys.xml', 15003, 'car_g_lgo_trk_twistinTailfinTrk_en_US.swf', 'car_g_rac_scn_TwistinTailfinTrack.jpg')
 }
 
 clientData[42003] = {
   name: 'spRace_ffr',
-  classObj: new CatalogItemRaceTrack(false, 'sp_ffr', 'car_f_gui_ttl_fillmoresFieldsRally_en_US.swf', 'sp_ffr', 'car_w_trk_frm_FillmoresFieldsRally', 'car_g_map_trk_fillmoreFieldsRally.swf', 'Music', 'raceFillmoresFieldsRally', 'car_w_trk_frm_ffRally_SS_phys.xml', 15002, 'car_g_lgo_trk_fillmoresFieldsRally_en_US.swf', 'car_g_rac_scn_FillmoresFieldsRally.jpg')
+  classObj: new CatalogItemRaceTrack(false, 'sp_ffr', 'car_f_gui_ttl_fillmoresFieldsRally_en_US.swf', 'mp_ffr', 'car_w_trk_frm_FillmoresFieldsRally', 'car_g_map_trk_fillmoreFieldsRally.swf', 'Music', 'raceFillmoresFieldsRally', 'car_w_trk_frm_ffRally_SS_phys.xml', 15002, 'car_g_lgo_trk_fillmoresFieldsRally_en_US.swf', 'car_g_rac_scn_FillmoresFieldsRally.jpg')
 }
 
 clientData[42005] = {
   name: 'spRace_wb',
-  classObj: new CatalogItemRaceTrack(false, 'sp_wbr', 'car_f_gui_ttl_willysButteRally_en_US.swf', 'sp_wbr', 'car_w_trk_wil_WillysButteRally', 'car_g_map_trk_willysButte.swf', 'Music', 'raceWilliesButteRally', 'car_w_trk_wil_WillysButte_SS_phys.xml', 15006, 'car_g_lgo_trk_willysButte_en_US.swf', 'car_g_rac_scn_WillysButte.jpg')
+  classObj: new CatalogItemRaceTrack(false, 'sp_wbr', 'car_f_gui_ttl_willysButteRally_en_US.swf', 'mp_wbr', 'car_w_trk_wil_WillysButteRally', 'car_g_map_trk_willysButte.swf', 'Music', 'raceWilliesButteRally', 'car_w_trk_wil_WillysButte_SS_phys.xml', 15006, 'car_g_lgo_trk_willysButte_en_US.swf', 'car_g_rac_scn_WillysButte.jpg')
 }
 
 clientData[31016] = {
@@ -682,11 +683,11 @@ shopData[22005].push(new CatalogItemYardItem(214, 'Cozy Cone Fountain', '', 'car
 
 // Sarge's Surplus Hut
 shopData[22006] = new ArrayCollection()
-shopData[22006].push(new CatalogItemGear(215, 'Oil Slick 6-Pack', '', 'car_g_ico_ger_oilSlick6x.png', 595))
-shopData[22006].push(new CatalogItemGear(216, 'Smoke Screen 6-Pack', '', 'car_g_ico_ger_smokeScreen6x.png', 595))
-shopData[22006].push(new CatalogItemGear(217, 'Hay Bale Boom! 3-Pack', '', 'car_g_ico_ger_hayBaleBomb3x.png', 400))
-shopData[22006].push(new CatalogItemGear(218, 'Oil Slick 3-Pack', '', 'car_g_ico_ger_oilSlick3x.png', 200))
-shopData[22006].push(new CatalogItemGear(219, 'Smoke Screen 3-Pack', '', 'car_g_ico_ger_smokeScreen3x.png', 200))
+shopData[22006].push(new CatalogItemStack(215, 'Oil Slick 6-Pack', 'Lay down a slick escape plan—six times the slipperiness!', 'car_g_ico_ger_oilSlick6x.png', 595, 501, 6))
+shopData[22006].push(new CatalogItemStack(216, 'Smoke Screen 6-Pack', 'Double the packs, double the smoke—make your getaway grand! (Screen not included.)', 'car_g_ico_ger_smokeScreen6x.png', 595, 503, 6))
+shopData[22006].push(new CatalogItemStack(217, 'Hay Bale Boom! 3-Pack', 'Bales that go boom! Perfect for camouflaging with a little extra kick.', 'car_g_ico_ger_hayBaleBomb3x.png', 400, 502, 3))
+shopData[22006].push(new CatalogItemStack(218, 'Oil Slick 3-Pack', 'A triple threat of slick moves for a quick getaway!', 'car_g_ico_ger_oilSlick3x.png', 200, 501, 3))
+shopData[22006].push(new CatalogItemStack(219, 'Smoke Screen 3-Pack', "Pull the wool over your opponent's eyes with triple the smoke! (Screen not included.)", 'car_g_ico_ger_smokeScreen3x.png', 200, 501, 3))
 
 // Mater's Junk Yard
 shopData[22008] = new ArrayCollection()
@@ -753,6 +754,22 @@ shopData[22012].push(new CatalogItemYardItem(265, 'Laser Fence Left', '', 'car_g
 shopData[22012].push(new CatalogItemYardItem(264, 'Laser Fence Right', '', 'car_g_ico_yar_laserFenceRight.ajpg', 600))
 shopData[22012].push(new CatalogItemYardItem(263, 'Surveillance Cam', '', 'car_g_ico_yar_surveillanceCamera.ajpg', 1000))
 
+// Hazards
+clientData[501] = {
+  name: 'Oil Slick',
+  classObj: new CatalogItemConsumable(501, 'Oil Slick', '', 'car_g_ico_ger_oilSlick.ajpg', 100, 5001, 2, 'scripts/interactive/racing_hazard_oilSlick.lua')
+}
+
+clientData[502] = {
+  name: 'Hay Bale Boom!',
+  classObj: new CatalogItemConsumable(502, 'Hay Bale Boom!', '', 'car_g_ico_ger_hayBaleBomb.ajpg', 200, 5002, 2, 'scripts/interactive/racing_hazard_hayBaleBomb.lua')
+}
+
+clientData[503] = {
+  name: 'Smoke Screen Blast',
+  classObj: new CatalogItemConsumable(503, 'Smoke Screen Blast', "Pull the wool over your opponent's eyes, but do it with smoke! (Screen not included.)", 'car_g_ico_ger_smokeScreen.ajpg', 200, 5003, 2, 'scripts/interactive/racing_hazard_smokeScreen.lua')
+}
+
 clientData[31024] = {
   name: 'New Player Tutorial (Truck)',
   classObj: new CatalogItemNPC('car_a_chr_frn_semi_tut1_sc1.sani', 'Truck', 'car_r_chr_avt_semi.smod', '', '')
@@ -810,7 +827,22 @@ clientData[21007].classObj = new CatalogItemEmote(clientData[21007].name, 'car_g
 
 clientData[5000] = {
   name: 'Map Sprite Test (InteractiveObject)',
-  classObj: new CatalogItemMapSprite()
+  classObj: new CatalogItemMapSprite(40, 36, 40, 36)
+}
+
+clientData[5001] = {
+  name: 'Oil Slick Map Sprite (InteractiveObject)',
+  classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_oilSlick.swf', ['drop', 'end_drop', 'visible', 'end_visible', 'explode', 'end_explode', 'invisible', 'end_invisible'])
+}
+
+clientData[5002] = {
+  name: 'Hay Bale Bomb Map Sprite (InteractiveObject)',
+  classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_hayBaleBombRacing.swf', ['drop', 'end_drop', 'visible', 'end_visible', 'explode', 'end_explode', 'invisible', 'end_invisible'])
+}
+
+clientData[5003] = {
+  name: 'Smoke Screen Map Sprite (InteractiveObject)',
+  classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_smokeScreen.swf', ['drop', 'end_drop', 'visible', 'end_visible', 'explode', 'end_explode', 'invisible', 'end_invisible'])
 }
 
 module.exports = { clientData, shopData, assetData }
