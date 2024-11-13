@@ -301,6 +301,11 @@ clientData[31011] = {
   classObj: new CatalogItemSimpleAnimation('idlescan')
 }
 
+clientData[32010] = {
+  name: 'Tractor Smoke Effect',
+  classObj: new CatalogItemEffect(['car_f_evt_efx_tractorSmoke.swf'])
+}
+
 clientData[32012] = {
   name: 'Sleep ZZZ Effect',
   classObj: new CatalogItemEffect(['car_f_evt_efx_zzzEffect.swf'])
@@ -334,6 +339,11 @@ clientData[33273] = {
 clientData[33274] = {
   name: 'Idle Animation',
   classObj: new CatalogItemSimpleAnimation('idleBlink')
+}
+
+clientData[54010] = {
+  name: 'Tractor Fart 1 Sound',
+  classObj: new CatalogItemSimpleSound('Tractors', 'TF1')
 }
 
 clientData[54019] = {
@@ -401,6 +411,31 @@ clientData[33052] = {
   classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_mater_idleScan.sani')
 }
 
+clientData[33260] = {
+  name: 'Tractor Drive Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_tractor_drive.sani')
+}
+
+clientData[33267] = {
+  name: 'Tractor Sleep Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_tractor_sleep.sani')
+}
+
+clientData[33269] = {
+  name: 'Tractor Sleep to Tipped Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_tractor_sleep_to_tipped.sani')
+}
+
+clientData[33271] = {
+  name: 'Tractor Tipped Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_tractor_tipped.sani')
+}
+
+clientData[33272] = {
+  name: 'Tractor Tipped to Idle Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_tractor_tipped_to_idle.sani')
+}
+
 clientData[1000] = {
   name: 'New Player Tutorial',
   classObj: new CatalogItemDungeon('New Player Tutorial', 0, 'car_f_evt_rsn_newPlayerRsnBackStory_en_US.swf', 'car_w_env_rsp_NewPlayer', 'car_g_map_env_newPlayer.swf', 'new_player_tutorial')
@@ -419,6 +454,11 @@ clientData[31009] = {
 clientData[31010] = {
   name: 'Lightning McQueen',
   classObj: new CatalogItemNPC('car_k_chr_frn_mcqueenLow.dpak', 'Lightning McQueen', 'car_r_chr_frn_mcqueen.smod', '', '', 105)
+}
+
+clientData[31015] = {
+  name: 'Tractor',
+  classObj: new CatalogItemNPC('car_k_chr_frn_tractorLow.dpak', 'Tractor', 'car_r_chr_frn_tractor.smod', '', '', 33267)
 }
 
 clientData[42001] = {
@@ -767,7 +807,7 @@ clientData[502] = {
 
 clientData[503] = {
   name: 'Smoke Screen Blast',
-  classObj: new CatalogItemConsumable(503, 'Smoke Screen Blast', "Pull the wool over your opponent's eyes, but do it with smoke! (Screen not included.)", 'car_g_ico_ger_smokeScreen.ajpg', 200, 5003, 2, 'scripts/interactive/racing_hazard_smokeScreen.lua')
+  classObj: new CatalogItemConsumable(503, 'Smoke Screen Blast', "Pull the wool over your opponent's eyes, but do it with smoke! (Screen not included.)", 'car_g_ico_ger_smokeScreen.ajpg', 100, 5003, 2, 'scripts/interactive/racing_hazard_smokeScreen.lua')
 }
 
 clientData[31024] = {
