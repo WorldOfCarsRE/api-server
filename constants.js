@@ -342,8 +342,13 @@ clientData[33274] = {
 }
 
 clientData[54010] = {
-  name: 'Tractor Fart 1 Sound',
-  classObj: new CatalogItemSimpleSound('Tractors', 'TF1')
+  name: 'Tractor Slosh Sounds',
+  classObj: new CatalogItemSimpleSound('Tractors', 'Sloshes')
+}
+
+clientData[54011] = {
+  name: 'Tractor Fart Sounds',
+  classObj: new CatalogItemSimpleSound('Tractors', 'Farts')
 }
 
 clientData[54019] = {
