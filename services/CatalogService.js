@@ -141,6 +141,12 @@ class CatalogService extends libamf.Service {
 
     return new ArrayCollection()
   }
+
+  getRaceTracks () {
+    console.log('getRaceTracks')
+
+    return this.getItemsByIds([42008, 42001, 42010, 42006, 42007, 42009, 42003, 42005, 42004, 42002])
+  }
 }
 
 module.exports = CatalogService

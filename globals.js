@@ -97,6 +97,7 @@ global.CatalogItemFizzyFuel = require('./catalog/CatalogItemFizzyFuel')
 global.CatalogItemYardItem = require('./catalog/CatalogItemYardItem')
 global.CatalogItemConsumable = require('./catalog/CatalogItemConsumable')
 global.CatalogItemStack = require('./catalog/CatalogItemStack')
+global.RacecarHighScore = require('./amf/RacecarHighScore')
 
 const express = require('express')
 
@@ -177,6 +178,7 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.player.yard.YardItem',
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.Consumable', CatalogItemConsumable)
 libamf.registerClassAlias('com.disney.cars.domain.player.Player', Player)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.store.Stack', CatalogItemStack)
+libamf.registerClassAlias('com.disney.cars.domain.leaderboard.RacecarHighScore', RacecarHighScore)
 
 /* global server */
 
@@ -188,16 +190,19 @@ const CatalogService = require('./services/CatalogService')
 const PlayerService = require('./services/PlayerService')
 const RaceCarService = require('./services/RaceCarService')
 const AssetService = require('./services/AssetService')
+const LeaderboardService = require('./services/LeaderboardService')
 
 const catalogService = new CatalogService()
 const raceCarService = new RaceCarService()
 const playerService = new PlayerService()
 const assetService = new AssetService()
+const leaderboardService = new LeaderboardService()
 
 server.registerService(catalogService)
 server.registerService(raceCarService)
 server.registerService(playerService)
 server.registerService(assetService)
+server.registerService(leaderboardService)
 
 // for parsing application/x-www-form-urlencoded
 server.app.use(express.urlencoded({ extended: true }))

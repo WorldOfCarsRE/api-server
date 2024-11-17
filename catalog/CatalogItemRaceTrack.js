@@ -4,7 +4,7 @@ const CatalogItemDungeon = global.CatalogItemDungeon
 ArrayCollection = global.ArrayCollection
 
 class CatalogItemRaceTrack extends CatalogItemDungeon {
-  constructor (name, description, proTrack, spClientScriptUrl, mpClientScriptUrl, titleUrl, scriptUrl, mapUrl, miniMapUrl, group, alias, physicsUrl, exitMapId, logoUrl, sceneryUrl) {
+  constructor (name, description, proTrack, spClientScriptUrl, mpClientScriptUrl, titleUrl, scriptUrl, mapUrl, miniMapUrl, group, alias, physicsUrl, exitMapId, logoUrl, sceneryUrl, brandingMapUrl) {
     super()
 
     this.name = name
@@ -30,6 +30,9 @@ class CatalogItemRaceTrack extends CatalogItemDungeon {
     this.alias = alias
     this.logoUrl = logoUrl
     this.sceneryUrl = sceneryUrl
+    this.onLeaderboards = true
+    this.raceFinishedEventId = 1 
+    this.brandingMapUrl = brandingMapUrl
   }
 }
 
