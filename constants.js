@@ -164,7 +164,7 @@ clientData[15002].classObj.dropPoints['15006'] = 'dp_wb_135'
 
 // Race tracks
 clientData[15002].classObj.dropPoints.sp = 'dp_sp_225'
-clientData[15002].classObj.dropPoints.mp = 'dp_mp_225'
+clientData[15002].classObj.dropPoints.mp = 'dp_mp_270'
 
 clientData[15003] = {
   name: 'Redhood Valley',
