@@ -468,17 +468,17 @@ clientData[31015] = {
 
 clientData[42001] = {
   name: 'spRace_ccs',
-  classObj: new CatalogItemRaceTrack('Carburetor County Speedway', 'Local track where the showdown is downtown!', false, 'sp_ccs', '', 'car_f_gui_ttl_carburetorCounty_en_US.swf', 'sp_ccs', 'car_w_trk_rsp_CarburetorCountySpeedway', 'car_g_map_trk_carburetorCounty.swf', 'Music', 'CarburetorCountySpeedway', 'car_w_trk_rsp_ccSpeedway_SS_phys.xml', 15001, 'car_g_lgo_trk_carburetorCountySpeedway_en_US.swf', 'car_g_rac_scn_CarbCountySpeedway.jpg', 'car_g_ico_map_CCS.swf')
+  classObj: new CatalogItemRaceTrack('Carburetor County Speedway', 'Local track where the showdown is downtown!', false, 'sp_ccs', 'mp_ccs', 'car_f_gui_ttl_carburetorCounty_en_US.swf', 'sp_ccs', 'car_w_trk_rsp_CarburetorCountySpeedway', 'car_g_map_trk_carburetorCounty.swf', 'Music', 'CarburetorCountySpeedway', 'car_w_trk_rsp_ccSpeedway_SS_phys.xml', 15001, 'car_g_lgo_trk_carburetorCountySpeedway_en_US.swf', 'car_g_rac_scn_CarbCountySpeedway.jpg', 'car_g_ico_map_CCS.swf')
 }
 
 clientData[42002] = {
   name: 'spRace_rh',
-  classObj: new CatalogItemRaceTrack("Twistin' Tailfin Trails", "Test tons of turns on Twistin' Tailfin Trails!", false, 'sp_ttf', '', 'car_f_gui_ttl_twistinTailfinTrk_en_US.swf', 'sp_ttf', 'car_w_trk_tfn_TwistinTailfinTrails', 'car_g_map_trk_twistinTailfin.swf', 'Music', 'TwistinTailfinTrack', 'car_w_trk_tfn_twistinTailfin_SS_V1_phys.xml', 15003, 'car_g_lgo_trk_twistinTailfinTrk_en_US.swf', 'car_g_rac_scn_TwistinTailfinTrack.jpg', 'car_g_ico_map_TTT.swf')
+  classObj: new CatalogItemRaceTrack("Twistin' Tailfin Trails", "Test tons of turns on Twistin' Tailfin Trails!", false, 'sp_ttf', 'mp_ttf', 'car_f_gui_ttl_twistinTailfinTrk_en_US.swf', 'sp_ttf', 'car_w_trk_tfn_TwistinTailfinTrails', 'car_g_map_trk_twistinTailfin.swf', 'Music', 'TwistinTailfinTrack', 'car_w_trk_tfn_twistinTailfin_SS_V1_phys.xml', 15003, 'car_g_lgo_trk_twistinTailfinTrk_en_US.swf', 'car_g_rac_scn_TwistinTailfinTrack.jpg', 'car_g_ico_map_TTT.swf')
 }
 
 clientData[42003] = {
   name: 'spRace_ffr',
-  classObj: new CatalogItemRaceTrack("Fillmore's Fields Rally", "Farm-tastic fun track that's totally organic!", false, 'sp_ffr', '', 'car_f_gui_ttl_fillmoresFieldsRally_en_US.swf', 'sp_ffr', 'car_w_trk_frm_FillmoresFieldsRally', 'car_g_map_trk_fillmoreFieldsRally.swf', 'Music', 'raceFillmoresFieldsRally', 'car_w_trk_frm_ffRally_SS_phys.xml', 15002, 'car_g_lgo_trk_fillmoresFieldsRally_en_US.swf', 'car_g_rac_scn_FillmoresFieldsRally.jpg', 'car_g_ico_map_FFR.swf')
+  classObj: new CatalogItemRaceTrack("Fillmore's Fields Rally", "Farm-tastic fun track that's totally organic!", false, 'sp_ffr', 'mp_ffr', 'car_f_gui_ttl_fillmoresFieldsRally_en_US.swf', 'sp_ffr', 'car_w_trk_frm_FillmoresFieldsRally', 'car_g_map_trk_fillmoreFieldsRally.swf', 'Music', 'raceFillmoresFieldsRally', 'car_w_trk_frm_ffRally_SS_phys.xml', 15002, 'car_g_lgo_trk_fillmoresFieldsRally_en_US.swf', 'car_g_rac_scn_FillmoresFieldsRally.jpg', 'car_g_ico_map_FFR.swf')
 }
 
 clientData[42004] = {
@@ -488,7 +488,7 @@ clientData[42004] = {
 
 clientData[42005] = {
   name: 'spRace_wb',
-  classObj: new CatalogItemRaceTrack('Willys Butte Rally', "Doc Hudson's old stomping grounds sizzle with speed!", false, 'sp_wbr', '', 'car_f_gui_ttl_willysButteRally_en_US.swf', 'sp_wbr', 'car_w_trk_wil_WillysButteRally', 'car_g_map_trk_willysButte.swf', 'Music', 'raceWilliesButteRally', 'car_w_trk_wil_WillysButte_SS_phys.xml', 15006, 'car_g_lgo_trk_willysButte_en_US.swf', 'car_g_rac_scn_WillysButte.jpg', 'car_g_ico_map_WBR.swf')
+  classObj: new CatalogItemRaceTrack('Willys Butte Rally', "Doc Hudson's old stomping grounds sizzle with speed!", false, 'sp_wbr', 'mp_wbr', 'car_f_gui_ttl_willysButteRally_en_US.swf', 'sp_wbr', 'car_w_trk_wil_WillysButteRally', 'car_g_map_trk_willysButte.swf', 'Music', 'raceWilliesButteRally', 'car_w_trk_wil_WillysButte_SS_phys.xml', 15006, 'car_g_lgo_trk_willysButte_en_US.swf', 'car_g_rac_scn_WillysButte.jpg', 'car_g_ico_map_WBR.swf')
 }
 
 clientData[42006] = {
