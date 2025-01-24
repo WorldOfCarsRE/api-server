@@ -11,6 +11,7 @@ Racecar = global.Racecar
 const Account = require('./models/Account')
 const Cars = require('./models/Cars')
 const CarPlayerStatus = require('./models/CarPlayerStatus')
+const RedeemableCodes = require('./models/RedeemableCodes')
 
 const bcrypt = require('bcrypt')
 
@@ -405,6 +406,16 @@ class Database {
       account.codesRedeemed.push(code)
       await account.save()
     }
+  }
+
+  async retrieveRedeemableCode (code) {
+    const redeemableCode = await RedeemableCodes.findOne({ $and: [{ codeName: code }, { expirationDate: { $gt: new Date() } }] })
+    
+    if (redeemableCode) {
+      return redeemableCode
+    }
+
+    return false
   }
 }
 

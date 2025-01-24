@@ -245,12 +245,12 @@ server.app.get('/carsds/api/GenerateTokenRequest', async (req, res) => {
 
 server.app.post('/carsds/api/RedeemPromoCodeRequest', async (req, res) => {
   const root = create().ele('RedeemPromoCodeRequestResponse')
-  const valid = req.body.code === 'launch'
   const ses = req.session
 
+  const code = await db.retrieveRedeemableCode(req.body.code)
   const redeemed = await db.checkCodeRedeemedByUser(ses.username, req.body.code)
 
-  const success = ses.username && valid && !redeemed
+  const success = ses.username && code && !redeemed
   const item = root.ele('success')
   item.txt(success ? 'true' : 'false')
 
@@ -261,7 +261,7 @@ server.app.post('/carsds/api/RedeemPromoCodeRequest', async (req, res) => {
       error.att('code', 'USER_NOT_LOGGED_IN')
     }
 
-    if (ses.username && !valid) {
+    if (ses.username && !code) {
       error.att('code', 'INVALID_PROMO_CODE')
     }
 
@@ -270,19 +270,53 @@ server.app.post('/carsds/api/RedeemPromoCodeRequest', async (req, res) => {
     }
   }
 
-  if (ses.username && valid && !redeemed) {
-    // TODO: Dynamic codes and items
-    const coins = 1000
+  if (ses.username && code && !redeemed) {
+    const description = (code.type == 'coins') ? 'car coins' : code.description
 
     const reward = root.ele('reward')
-    reward.ele('description').txt('car coins')
-    reward.ele('quantity').txt(coins)
+    reward.ele('description').txt(description)
+    reward.ele('quantity').txt(code.quantity)
+
+    if (code.type != 'coins') {
+      reward.ele('thumbnail').txt(code.thumbnail)
+    }
 
     const car = await db.retrieveCarByOwnerAccount(ses.username)
 
     if (car) {
       const carData = car.toObject().carData
-      carData.carCoins += coins
+
+      if (code.type == 'coins') {
+        carData.carCoins += code.quantity
+      }
+
+      if (code.type == 'consumable' || code.type == 'fizzyfuel') {
+        let hasConsumable = false
+
+        for (let i = 0; i < carData.consumableItemList.length; i++) {
+          const consumable = carData.consumableItemList[i]
+
+          if (consumable[0] == code.rewardId) {
+            if ((code.type == 'consumable' && consumable[1] < 99) || (code.type == 'fizzyfuel' && consumable[1] < 10)) {
+              consumable[1] += code.quantity
+            }
+
+            hasConsumable = true
+            break
+          }
+        }
+
+        if (!hasConsumable) {
+          carData.consumableItemList.push([code.rewardId, code.quantity])
+        }
+      }
+
+      if (code.type == 'paintjob') {
+        if (!carData.detailings.includes(code.rewardId)) {
+          carData.detailings.push(code.rewardId)
+        }
+      }
+
       car.carData = carData
       await car.save()
       await db.setCodeAsRedeemedByUser(ses.username, req.body.code)
