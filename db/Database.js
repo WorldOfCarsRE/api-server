@@ -410,7 +410,7 @@ class Database {
 
   async retrieveRedeemableCode (code) {
     const redeemableCode = await RedeemableCodes.findOne({ $and: [{ codeName: code }, { expirationDate: { $gt: new Date() } }] })
-    
+
     if (redeemableCode) {
       return redeemableCode
     }

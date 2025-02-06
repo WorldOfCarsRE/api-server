@@ -1,3 +1,5 @@
+/* global CatalogPlayerStoreItem: writeable */
+
 CatalogPlayerStoreItem = global.CatalogPlayerStoreItem
 
 class CatalogItemStack extends CatalogPlayerStoreItem {

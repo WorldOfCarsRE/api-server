@@ -31,7 +31,7 @@ class CatalogItemRaceTrack extends CatalogItemDungeon {
     this.logoUrl = logoUrl
     this.sceneryUrl = sceneryUrl
     this.onLeaderboards = true
-    this.raceFinishedEventId = 1 
+    this.raceFinishedEventId = 1
     this.brandingMapUrl = brandingMapUrl
   }
 }

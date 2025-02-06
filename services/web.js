@@ -271,13 +271,13 @@ server.app.post('/carsds/api/RedeemPromoCodeRequest', async (req, res) => {
   }
 
   if (ses.username && code && !redeemed) {
-    const description = (code.type == 'coins') ? 'car coins' : code.description
+    const description = (code.type === 'coins') ? 'car coins' : code.description
 
     const reward = root.ele('reward')
     reward.ele('description').txt(description)
     reward.ele('quantity').txt(code.quantity)
 
-    if (code.type != 'coins') {
+    if (code.type !== 'coins') {
       reward.ele('thumbnail').txt(code.thumbnail)
     }
 
@@ -286,18 +286,18 @@ server.app.post('/carsds/api/RedeemPromoCodeRequest', async (req, res) => {
     if (car) {
       const carData = car.toObject().carData
 
-      if (code.type == 'coins') {
+      if (code.type === 'coins') {
         carData.carCoins += code.quantity
       }
 
-      if (code.type == 'consumable' || code.type == 'fizzyfuel') {
+      if (code.type === 'consumable' || code.type === 'fizzyfuel') {
         let hasConsumable = false
 
         for (let i = 0; i < carData.consumableItemList.length; i++) {
           const consumable = carData.consumableItemList[i]
 
-          if (consumable[0] == code.rewardId) {
-            if ((code.type == 'consumable' && consumable[1] < 99) || (code.type == 'fizzyfuel' && consumable[1] < 10)) {
+          if (consumable[0] === code.rewardId) {
+            if ((code.type === 'consumable' && consumable[1] < 99) || (code.type === 'fizzyfuel' && consumable[1] < 10)) {
               consumable[1] += code.quantity
             }
 
@@ -311,7 +311,7 @@ server.app.post('/carsds/api/RedeemPromoCodeRequest', async (req, res) => {
         }
       }
 
-      if (code.type == 'paintjob') {
+      if (code.type === 'paintjob') {
         if (!carData.detailings.includes(code.rewardId)) {
           carData.detailings.push(code.rewardId)
         }

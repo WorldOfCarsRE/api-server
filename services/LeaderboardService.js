@@ -1,3 +1,6 @@
+/* global libamf:writeable, ArrayCollection:writeable */
+/* global RacecarHighScore:writeable, db:writeable */
+
 libamf = global.libamf
 ArrayCollection = global.ArrayCollection
 RacecarHighScore = global.RacecarHighScore

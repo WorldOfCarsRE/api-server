@@ -3,7 +3,7 @@
 ArrayCollection = global.ArrayCollection
 
 const PLAYER_ACCESS_FREE = 1
-const PLAYER_ACCESS_SUBSCRIBER = 2
+// const PLAYER_ACCESS_SUBSCRIBER = 2
 
 class Player {
   constructor () {
@@ -21,13 +21,12 @@ class Player {
     this.playerTrackList = new ArrayCollection()
     this.createTime = new Date()
     this.playerId = 0
-    this.dname = ""
+    this.dname = ''
     this.totalTime = 0
     this.lastLogin = new Date()
     this.health = 0
     this.yard = null
     this.originalSubscriptionTime = new Date()
-
   }
 }
 
