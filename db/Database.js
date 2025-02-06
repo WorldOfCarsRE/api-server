@@ -12,6 +12,7 @@ const Account = require('./models/Account')
 const Cars = require('./models/Cars')
 const CarPlayerStatus = require('./models/CarPlayerStatus')
 const RedeemableCodes = require('./models/RedeemableCodes')
+const RaceCodes = require('./models/RaceCodes')
 
 const bcrypt = require('bcrypt')
 
@@ -413,6 +414,16 @@ class Database {
 
     if (redeemableCode) {
       return redeemableCode
+    }
+
+    return false
+  }
+
+  async retrieveRaceCode (code) {
+    const raceCode = await RaceCodes.findOne({ codeName: code })
+
+    if (raceCode) {
+      return raceCode
     }
 
     return false
