@@ -1,4 +1,4 @@
-/* global libamf:writeable, ArrayCollection:writeable */
+/* global libamf:writeable, ArrayCollection:writeable, Player:writeable, db:writeable */
 
 libamf = global.libamf
 ArrayCollection = global.ArrayCollection
@@ -25,7 +25,6 @@ class PlayerService extends libamf.Service {
     // TODO: player.access
 
     return player
-
   }
 
   getRuleStates (playerId, carId, ruleIds) {

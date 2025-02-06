@@ -1,8 +1,10 @@
-/* global libamf:writeable, Asset: writeable, ArrayCollection: writeable */
+/* global libamf:writeable, Asset: writeable */
+/* global ArrayCollection: writeable, AssetDictionary:writeable */
 
 libamf = global.libamf
 Asset = global.Asset
 ArrayCollection = global.ArrayCollection
+AssetDictionary = global.AssetDictionary
 
 const { assetData } = require('../constants')
 
@@ -20,6 +22,14 @@ class AssetService extends libamf.Service {
     }
 
     return assets
+  }
+
+  getDictionaries () {
+    const dicts = new ArrayCollection()
+    dicts.push(new AssetDictionary(1, 'graphic', 'g'))
+    dicts.push(new AssetDictionary(2, 'badge', 'bad'))
+    dicts.push(new AssetDictionary(3, 'mattel', 'mat'))
+    return dicts
   }
 
   getAsset (assetId) {

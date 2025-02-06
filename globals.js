@@ -48,6 +48,11 @@ global.libamf = require('libamf')
 /* global CatalogItemDialogItem */
 /* global CatalogItemFizzyFuel */
 /* global CatalogItemYardItem */
+/* global AssetDictionary */
+/* global CatalogItemConsumable */
+/* global CatalogItemStack */
+/* global RacecarHighScore */
+/* global PromoResult */
 
 global.CatalogItem = require('./catalog/CatalogItem')
 global.CatalogItemRaceSeries = require('./catalog/CatalogItemRaceSeries')
@@ -97,6 +102,9 @@ global.CatalogItemFizzyFuel = require('./catalog/CatalogItemFizzyFuel')
 global.CatalogItemYardItem = require('./catalog/CatalogItemYardItem')
 global.CatalogItemConsumable = require('./catalog/CatalogItemConsumable')
 global.CatalogItemStack = require('./catalog/CatalogItemStack')
+global.RacecarHighScore = require('./amf/RacecarHighScore')
+global.AssetDictionary = require('./amf/AssetDictionary')
+global.PromoResult = require('./amf/PromoResult')
 
 const express = require('express')
 
@@ -177,6 +185,9 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.player.yard.YardItem',
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.Consumable', CatalogItemConsumable)
 libamf.registerClassAlias('com.disney.cars.domain.player.Player', Player)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.store.Stack', CatalogItemStack)
+libamf.registerClassAlias('com.disney.cars.domain.leaderboard.RacecarHighScore', RacecarHighScore)
+libamf.registerClassAlias('com.disney.cars.domain.asset.Dictionary', AssetDictionary)
+libamf.registerClassAlias('com.disney.cars.domain.promo.PromoResult', PromoResult)
 
 /* global server */
 
@@ -188,16 +199,22 @@ const CatalogService = require('./services/CatalogService')
 const PlayerService = require('./services/PlayerService')
 const RaceCarService = require('./services/RaceCarService')
 const AssetService = require('./services/AssetService')
+const LeaderboardService = require('./services/LeaderboardService')
+const PromoCodeService = require('./services/PromoCodeService')
 
 const catalogService = new CatalogService()
 const raceCarService = new RaceCarService()
 const playerService = new PlayerService()
 const assetService = new AssetService()
+const leaderboardService = new LeaderboardService()
+const promoCodeService = new PromoCodeService()
 
 server.registerService(catalogService)
 server.registerService(raceCarService)
 server.registerService(playerService)
 server.registerService(assetService)
+server.registerService(leaderboardService)
+server.registerService(promoCodeService)
 
 // for parsing application/x-www-form-urlencoded
 server.app.use(express.urlencoded({ extended: true }))

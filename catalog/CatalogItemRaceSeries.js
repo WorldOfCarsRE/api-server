@@ -11,7 +11,7 @@ class CatalogItemRaceSeries extends CatalogItem {
     this.itemId = itemId
 
     this.raceLevelIds = new ArrayCollection()
-    this.raceLevelIds.push(1)
+    this.raceLevelIds.push(41001, 41002, 41003, 41004, 41005, 41006)
 
     this.proTrackItemId = 1
     this.milestoneQuestId = 0

@@ -1,14 +1,16 @@
+/* global CatalogPlayerStoreItem: writeable */
+
 CatalogPlayerStoreItem = global.CatalogPlayerStoreItem
 
 class CatalogItemConsumable extends CatalogPlayerStoreItem {
   constructor (itemId, name, description, storeThumbnail, storePrice, mapSpriteId, type, clientScript) {
-      super(itemId, name, description, storeThumbnail, storePrice)
+    super(itemId, name, description, storeThumbnail, storePrice)
 
-      this.maximumOwnable = 99
+    this.maximumOwnable = 99
 
-      this.mapSpriteCatalogItemId = mapSpriteId
-      this.type = type
-      this.clientScript = clientScript
+    this.mapSpriteCatalogItemId = mapSpriteId
+    this.type = type
+    this.clientScript = clientScript
   }
 }
 
