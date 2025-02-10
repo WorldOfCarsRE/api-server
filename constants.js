@@ -22,10 +22,12 @@ const CatalogItemQuestStep = global.CatalogItemQuestStep
 const CatalogItemQuestReward = global.CatalogItemQuestReward
 const CatalogItemMapEffect = global.CatalogItemMapEffect
 const CatalogItemEmote = global.CatalogItemEmote
+const CatalogItemSponsor = global.CatalogItemSponsor
 const Asset = global.Asset
 const CatalogItemMapSprite = global.CatalogItemMapSprite
 const CatalogItemDialogItem = global.CatalogItemDialogItem
 const CatalogItemMicrogame = global.CatalogItemMicrogame
+const CatalogItemCarDNA = global.CatalogItemCarDNA
 const CatalogItemFizzyFuel = global.CatalogItemFizzyFuel
 const CatalogItemYardItem = global.CatalogItemYardItem
 const CatalogItemConsumable = global.CatalogItemConsumable
@@ -284,6 +286,15 @@ clientData[51103] = {
 clientData[51104] = {
   name: 'Car Decal (Tail Lights)',
   classObj: new CatalogItemDecal(['car_t_cst_lit_tailLight02.swf'], 2)
+}
+
+clientData[51105] = {
+  name: 'Car Decal Rear (Shiny Wax)',
+  classObj: new CatalogItemDecal(['car_t_cst_dec_shinyWax_rear.swf', 2])
+}
+clientData[51106] = {
+  name: 'Car Decal Hood (Shiny Wax)',
+  classObj: new CatalogItemDecal(['car_t_cst_dec_shinyWax_topFront.swf', 0])
 }
 
 clientData[20206] = {
@@ -561,6 +572,11 @@ clientData[15002].classObj.dropPoints['61003'] = 'dp_fillmoremix_225'
 clientData[59000] = {
   name: 'Default Profile Background',
   classObj: new CatalogItemProfileTheme('car_g_bcg_pfl_checkeredFlag.swf')
+}
+
+clientData[59001] = {
+  name: 'Shiny Wax Profile Background',
+  classObj: new CatalogItemProfileTheme('car_g_bcg_spr_shinyWax.swf')
 }
 
 clientData[22001] = {
@@ -850,6 +866,159 @@ clientData[31024] = {
   classObj: new CatalogItemNPC('car_a_chr_frn_semi_tut1_sc1.sani', 'Truck', 'car_r_chr_avt_semi.smod', '', '')
 }
 
+// Sponsors
+clientData[9980] = {
+  name: 'Shiny Wax',
+  classObj: null
+}
+
+clientData[9980].classObj = new CatalogItemSponsor(clientData[9980].name, 1, 'car_g_bcg_spr_shinyWax.swf', 'car_g_bcg_spr_shinyWaxTent_en_US.swf', 'car_t_cst_dec_shinyWax.swf', '', 5001, 59001)
+
+clientData[5001] = {
+  name: 'Shiny Wax (CatalogItemCarDNA)',
+  classObj: new CatalogItemCarDNA([51105, 51106], 59001, 5001)
+}
+
+clientData[9981] = {
+  name: 'Leak Less',
+  classObj: null
+}
+
+clientData[9981].classObj = new CatalogItemSponsor(clientData[9981].name, 1, 'car_g_bcg_spr_leakLess.swf', 'car_g_bcg_spr_leaklessTent_en_US.swf', 'car_t_cst_dec_leakLess.swf', '')
+
+clientData[9982] = {
+  name: 'Sputter Stop',
+  classObj: null
+}
+
+clientData[9982].classObj = new CatalogItemSponsor(clientData[9982].name, 1, 'car_g_bcg_spr_sputterStop.swf', 'car_g_bcg_spr_sputterStopTent_en_US.swf', 'car_t_cst_dec_sputterStop.swf', '')
+
+clientData[9983] = {
+  name: 'Spare Mint',
+  classObj: null
+}
+
+clientData[9983].classObj = new CatalogItemSponsor(clientData[9983].name, 1, 'car_g_bcg_spr_spareMint.swf', 'car_g_bcg_spr_spareMintTent_en_US.swf', 'car_t_cst_dec_spareMint.swf', '')
+
+clientData[9984] = {
+  name: 'Trunk Fresh',
+  classObj: null
+}
+
+clientData[9984].classObj = new CatalogItemSponsor(clientData[9984].name, 1, 'car_g_bcg_spr_trunkFresh.swf', 'car_g_bcg_spr_trunkFreshTent_en_US.swf', 'car_t_cst_dec_trunkFresh.swf', '')
+
+clientData[9985] = {
+  name: "Lil' Torquey Pistons",
+  classObj: null
+}
+
+clientData[9985].classObj = new CatalogItemSponsor(clientData[9985].name, 2, 'car_g_bcg_spr_torquey.swf', 'car_g_bcg_spr_torqueyTent_en_US.swf', 'car_t_cst_dec_torqueyPistons.swf', 'car_g_bcg_spr_torqueyTent_main_en_US.swf')
+
+clientData[9986] = {
+  name: 'Gask-Its',
+  classObj: null
+}
+
+clientData[9986].classObj = new CatalogItemSponsor(clientData[9986].name, 2, 'car_g_bcg_spr_gaskits.swf', 'car_g_bcg_spr_gaskitsTent_en_US.swf', 'car_t_cst_dec_gaskits.swf', 'car_g_bcg_spr_gaskitsTent_main_en_US.swf')
+
+clientData[9987] = {
+  name: 'No Stall',
+  classObj: null
+}
+
+clientData[9987].classObj = new CatalogItemSponsor(clientData[9987].name, 3, 'car_g_bcg_spr_nostall.swf', 'car_g_bcg_spr_nostallTent_en_US.swf', 'car_t_cst_dec_noStall.swf', 'car_g_bcg_spr_nostallTent_main_en_US.swf')
+
+clientData[9988] = {
+  name: 'Rev-N-Go',
+  classObj: null
+}
+
+clientData[9988].classObj = new CatalogItemSponsor(clientData[9988].name, 3, 'car_g_bcg_spr_revNgo.swf', 'car_g_bcg_spr_revNgoTent_en_US.swf', 'car_t_cst_dec_revNGo.swf', 'car_g_bcg_spr_revNgoTent_main_en_US.swf')
+
+clientData[9989] = {
+  name: 'Gasprin',
+  classObj: null
+}
+
+clientData[9989].classObj = new CatalogItemSponsor(clientData[9989].name, 4, 'car_g_bcg_spr_gasprin.swf', 'car_g_bcg_spr_gasprinTent_en_US.swf', 'car_t_cst_dec_gasprin.swf', 'car_g_bcg_spr_gasprinTent_main_en_US.swf')
+
+clientData[9990] = {
+  name: 'Tank Coat',
+  classObj: null
+}
+
+clientData[9990].classObj = new CatalogItemSponsor(clientData[9990].name, 4, 'car_g_bcg_spr_tankCoat.swf', 'car_g_bcg_spr_tankCoatTent_en_US.swf', 'car_t_cst_dec_tankCoat.swf', 'car_g_bcg_spr_tankCoatTent_main_en_US.swf')
+
+clientData[9991] = {
+  name: 'Re-Volting',
+  classObj: null
+}
+
+clientData[9991].classObj = new CatalogItemSponsor(clientData[9991].name, 5, 'car_g_bcg_spr_reVolting.swf', 'car_g_bcg_spr_reVoltingTent_en_US.swf', 'car_t_cst_dec_revolting.swf', 'car_g_bcg_spr_reVoltingTent_main_en_US.swf')
+
+clientData[9992] = {
+  name: 'htB',
+  classObj: null
+}
+
+clientData[9992].classObj = new CatalogItemSponsor(clientData[9992].name, 5, 'car_g_bcg_spr_htB.swf', 'car_g_bcg_spr_htBTent_en_US.swf', 'car_t_cst_dec_htb.swf', 'car_g_bcg_spr_htBTent_main_en_US.swf')
+
+clientData[9993] = {
+  name: 'Vitoline',
+  classObj: null
+}
+
+clientData[9993].classObj = new CatalogItemSponsor(clientData[9993].name, 6, 'car_g_bcg_spr_vitoline.swf', 'car_g_bcg_spr_vitolineTent_en_US.swf', 'car_t_cst_dec_vitoline.swf', 'car_g_bcg_spr_vitolineTent_main_en_US.swf')
+
+clientData[9994] = {
+  name: 'ViewZeen',
+  classObj: null
+}
+
+clientData[9994].classObj = new CatalogItemSponsor(clientData[9994].name, 6, 'car_g_bcg_spr_viewZeen.swf', 'car_g_bcg_spr_viewZeenTent_en_US.swf', 'car_t_cst_dec_vuzeen.swf', 'car_g_bcg_spr_viewzeenTent_main_en_US.swf')
+
+clientData[9995] = {
+  name: 'Rust-eze',
+  classObj: null
+}
+
+clientData[9995].classObj = new CatalogItemSponsor(clientData[9995].name, 7, 'car_g_bcg_spr_rusteze.swf', 'car_g_bcg_spr_rustezeTent_en_US.swf', 'car_t_cst_dec_rusteze.swf', 'car_g_bcg_spr_rustezeTent_main_en_US.swf')
+
+clientData[9996] = {
+  name: 'Nitroade',
+  classObj: null
+}
+
+clientData[9996].classObj = new CatalogItemSponsor(clientData[9996].name, 7, 'car_g_bcg_spr_nitroAde.swf', 'car_g_bcg_spr_nitroAdeTent_en_US.swf', 'car_t_cst_dec_nitroAde.swf', 'car_g_bcg_spr_nitroAdeTent_main_en_US.swf')
+
+clientData[9997] = {
+  name: 'Octane Gain',
+  classObj: null
+}
+
+clientData[9997].classObj = new CatalogItemSponsor(clientData[9997].name, 7, 'car_g_bcg_spr_octaneGain.swf', 'car_g_bcg_spr_octaneGainTent_en_US.swf', 'car_t_cst_dec_octaneGain.swf', 'car_g_bcg_spr_octaneGainTent_main_en_US.swf')
+
+clientData[9998] = {
+  name: 'N2O Cola',
+  classObj: null
+}
+
+clientData[9998].classObj = new CatalogItemSponsor(clientData[9998].name, 7, 'car_g_bcg_spr_n2oCola.swf', 'car_g_bcg_spr_n2oColaTent_en_US.swf', 'car_t_cst_dec_n2o.swf', 'car_g_bcg_spr_n2oColaTent_main_en_US.swf')
+
+clientData[9999] = {
+  name: 'Dinoco',
+  classObj: null
+}
+
+clientData[9999].classObj = new CatalogItemSponsor(clientData[9999].name, 7, 'car_g_bcg_spr_dinoco.swf', 'car_g_bcg_spr_dinocoTent_en_US.swf', 'car_t_cst_dec_dinoco.swf', 'car_g_bcg_spr_dinocoTent_main_en_US.swf')
+
+clientData[10000] = {
+  name: 'Mood Springs',
+  classObj: null
+}
+
+clientData[10000].classObj = new CatalogItemSponsor(clientData[10000].name, 7, 'car_g_bcg_spr_moodSprings.swf', 'car_g_bcg_spr_moodSpringsTent_en_US.swf', 'car_t_cst_dec_moodSprings.swf', 'car_g_bcg_spr_moodSpringsTent_main_en_US.swf')
+
 // Emotes
 clientData[21001] = {
   name: 'Laugh',
@@ -919,5 +1088,7 @@ clientData[5003] = {
   name: 'Smoke Screen Map Sprite (InteractiveObject)',
   classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_smokeScreen.swf', ['drop', 'end_drop', 'visible', 'end_visible', 'explode', 'end_explode', 'invisible', 'end_invisible'])
 }
+
+
 
 module.exports = { clientData, shopData, assetData }
