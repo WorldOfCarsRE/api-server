@@ -872,11 +872,11 @@ clientData[9980] = {
   classObj: null
 }
 
-clientData[9980].classObj = new CatalogItemSponsor(clientData[9980].name, 1, 'car_g_bcg_spr_shinyWax.swf', 'car_g_bcg_spr_shinyWaxTent_en_US.swf', 'car_t_cst_dec_shinyWax.swf', '', 5001, 59001)
+clientData[9980].classObj = new CatalogItemSponsor(clientData[9980].name, 1, 'car_g_bcg_spr_shinyWax.swf', 'car_g_bcg_spr_shinyWaxTent_en_US.swf', 'car_t_cst_dec_shinyWax.swf', '', 5004, 59001)
 
-clientData[5001] = {
+clientData[5004] = {
   name: 'Shiny Wax (CatalogItemCarDNA)',
-  classObj: new CatalogItemCarDNA([51105, 51106], 59001, 5001)
+  classObj: new CatalogItemCarDNA([51105, 51106], 59001, 5004)
 }
 
 clientData[9981] = {
@@ -1088,7 +1088,5 @@ clientData[5003] = {
   name: 'Smoke Screen Map Sprite (InteractiveObject)',
   classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_smokeScreen.swf', ['drop', 'end_drop', 'visible', 'end_visible', 'explode', 'end_explode', 'invisible', 'end_invisible'])
 }
-
-
 
 module.exports = { clientData, shopData, assetData }
