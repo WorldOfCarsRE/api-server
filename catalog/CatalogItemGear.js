@@ -1,15 +1,10 @@
 const CatalogCarItem = global.CatalogCarItem
 
 class CatalogItemGear extends CatalogCarItem {
-  constructor (itemId, name, description, storeThumbnail, storePrice) {
+  constructor (itemId) {
     super()
 
     this.itemId = itemId
-    this.name = name
-    this.description = description
-    this.storeThumbnail = storeThumbnail
-    this.storePrice = storePrice
-    this.maximumOwnable = 99
 
     this.physicsId = 100
     this.tabButton = 'gear1Button'

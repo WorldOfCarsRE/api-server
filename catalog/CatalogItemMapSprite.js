@@ -1,16 +1,16 @@
 const CatalogItem = global.CatalogItem
 
 class CatalogItemMapSprite extends CatalogItem {
-  constructor () {
+  constructor (offsetX, offsetY, sortOffsetX, sortOffsetY, asset = '', frameNames = []) {
     super()
 
-    this.offsetX = 40
-    this.offsetY = 36
-    this.sortOffsetX = 40
-    this.sortOffsetY = 36
-    this.asset = ''
+    this.offsetX = offsetX
+    this.offsetY = offsetY
+    this.sortOffsetX = sortOffsetX
+    this.sortOffsetY = sortOffsetY
+    this.asset = asset
     this.jobIcon = ''
-    this.frameNames = []
+    this.frameNames = frameNames
   }
 }
 

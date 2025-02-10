@@ -13,7 +13,12 @@ class RaceCarService extends libamf.Service {
 
   async createRaceCar (carData) {
     const car = new Racecar()
-    Object.assign(car, carData)
+
+    Object.entries(carData).forEach(([key, value]) => {
+      if (key in car) {
+        car[key] = value
+      }
+    })
 
     // Some attribute types are wrong from DB, causing client errors.
     // TODO: Better way of solving this?
@@ -22,31 +27,29 @@ class RaceCarService extends libamf.Service {
     const decalSlots = new ArrayCollection(...car.decalSlots)
     car.decalSlots = decalSlots
 
-    const trophyItemList = car.trophyItemList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.trophyItemList)
+    const trophyItemList = new ArrayCollection(...car.trophyItemList)
     car.trophyItemList = trophyItemList
 
-    const animationList = car.animationList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.animationList)
+    const animationList = new ArrayCollection(...car.animationList)
     car.animationList = animationList
 
-    const addonItemList = car.addonItemList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.addonItemList)
+    const addonItemList = new ArrayCollection(...car.addonItemList)
     car.addonItemList = addonItemList
 
-    const sponsorList = car.sponsorList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.sponsorList)
+    const sponsorList = new ArrayCollection(...car.sponsorList)
     car.sponsorList = sponsorList
 
-    const danceSequenceList = car.danceSequenceList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.danceSequenceList)
+    const danceSequenceList = new ArrayCollection(...car.danceSequenceList)
     car.danceSequenceList = danceSequenceList
 
-    const customItemList = car.customItemList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.customItemList)
+    const customItemList = new ArrayCollection(...car.customItemList)
     car.customItemList = customItemList
 
-    const stretches = car.stretches.length === 0 ? new ArrayCollection() : new ArrayCollection(car.stretches)
+    const stretches = new ArrayCollection(...car.stretches)
     car.stretches = stretches
 
-    const consumableItemList = car.consumableItemList.length === 0 ? new ArrayCollection() : new ArrayCollection(car.consumableItemList)
+    const consumableItemList = new ArrayCollection(...car.consumableItemList)
     car.consumableItemList = consumableItemList
-
-    // delete car.carDna
 
     return libamf.serialize(car, libamf.ENCODING.AMF3)
   }
