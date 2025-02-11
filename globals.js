@@ -53,6 +53,7 @@ global.libamf = require('libamf')
 /* global CatalogItemStack */
 /* global RacecarHighScore */
 /* global PromoResult */
+/* global CatalogItemDetailing */
 
 global.CatalogItem = require('./catalog/CatalogItem')
 global.CatalogItemRaceSeries = require('./catalog/CatalogItemRaceSeries')

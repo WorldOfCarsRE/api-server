@@ -315,7 +315,7 @@ server.app.post('/carsds/api/RedeemPromoCodeRequest', async (req, res) => {
         if (!carData.detailings) {
           carData.detailings = []
         }
-        
+
         if (!carData.detailings.includes(code.rewardId)) {
           carData.detailings.push(code.rewardId)
         }
