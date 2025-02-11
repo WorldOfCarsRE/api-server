@@ -105,6 +105,7 @@ global.CatalogItemStack = require('./catalog/CatalogItemStack')
 global.RacecarHighScore = require('./amf/RacecarHighScore')
 global.AssetDictionary = require('./amf/AssetDictionary')
 global.PromoResult = require('./amf/PromoResult')
+global.CatalogItemDetailing = require('./catalog/CatalogItemDetailing')
 
 const express = require('express')
 
@@ -188,6 +189,7 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.store.Stack', CatalogI
 libamf.registerClassAlias('com.disney.cars.domain.leaderboard.RacecarHighScore', RacecarHighScore)
 libamf.registerClassAlias('com.disney.cars.domain.asset.Dictionary', AssetDictionary)
 libamf.registerClassAlias('com.disney.cars.domain.promo.PromoResult', PromoResult)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Detailing', CatalogItemDetailing)
 
 /* global server */
 

@@ -59,7 +59,11 @@ class RaceCarService extends libamf.Service {
     console.log('updateRacecar: ', carObj.playerId, car)
 
     if (car) {
-      car.carData = carObj
+      car.carData = {
+        ...car.carData,
+        detailingId: carObj.detailingId
+      }
+
       await car.save()
     }
 

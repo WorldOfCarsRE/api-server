@@ -13,7 +13,7 @@ class CatalogPlayerStoreItem extends CatalogPlayerItem {
     this.description = description
 
     this.sponsorIds = new ArrayCollection()
-    this.sponsorIds.push(1)
+    // this.sponsorIds.push(1)
 
     this.storeThumbnail = storeThumbnail
     this.membershipRequired = false
