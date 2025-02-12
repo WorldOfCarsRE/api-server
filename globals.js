@@ -54,6 +54,8 @@ global.libamf = require('libamf')
 /* global CatalogItemStack */
 /* global RacecarHighScore */
 /* global PromoResult */
+/* global CatalogItemDetailing */
+/* global Badge */
 
 global.CatalogItem = require('./catalog/CatalogItem')
 global.CatalogItemRaceSeries = require('./catalog/CatalogItemRaceSeries')
@@ -107,6 +109,8 @@ global.CatalogItemStack = require('./catalog/CatalogItemStack')
 global.RacecarHighScore = require('./amf/RacecarHighScore')
 global.AssetDictionary = require('./amf/AssetDictionary')
 global.PromoResult = require('./amf/PromoResult')
+global.CatalogItemDetailing = require('./catalog/CatalogItemDetailing')
+global.Badge = require('./amf/Badge')
 
 const express = require('express')
 
@@ -191,6 +195,8 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.store.Stack', CatalogI
 libamf.registerClassAlias('com.disney.cars.domain.leaderboard.RacecarHighScore', RacecarHighScore)
 libamf.registerClassAlias('com.disney.cars.domain.asset.Dictionary', AssetDictionary)
 libamf.registerClassAlias('com.disney.cars.domain.promo.PromoResult', PromoResult)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Detailing', CatalogItemDetailing)
+libamf.registerClassAlias('com.disney.cars.domain.player.Badge', Badge)
 
 /* global server */
 
