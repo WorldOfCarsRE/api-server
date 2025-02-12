@@ -848,7 +848,12 @@ clientData[503] = {
 
 clientData[31024] = {
   name: 'New Player Tutorial (Truck)',
-  classObj: new CatalogItemNPC('car_a_chr_frn_semi_tut1_sc1.sani', 'Truck', 'car_r_chr_avt_semi.smod', '', '')
+  classObj: new CatalogItemNPC('', 'Truck', 'car_r_chr_avt_semi.smod', '', '', 111)
+}
+
+clientData[111] = {
+  name: 'New Player Tutorial (Truck) Tut1 (SC1) Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_semi_tut1_sc1.sani')
 }
 
 // Emotes
