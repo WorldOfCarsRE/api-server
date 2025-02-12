@@ -30,6 +30,7 @@ const CatalogItemFizzyFuel = global.CatalogItemFizzyFuel
 const CatalogItemYardItem = global.CatalogItemYardItem
 const CatalogItemConsumable = global.CatalogItemConsumable
 const CatalogItemStack = global.CatalogItemStack
+const CatalogItemDetailing = global.CatalogItemDetailing
 
 const ArrayCollection = global.ArrayCollection
 
@@ -918,6 +919,12 @@ clientData[5002] = {
 clientData[5003] = {
   name: 'Smoke Screen Map Sprite (InteractiveObject)',
   classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_smokeScreen.swf', ['drop', 'end_drop', 'visible', 'end_visible', 'explode', 'end_explode', 'invisible', 'end_invisible'])
+}
+
+// Paint jobs
+clientData[20101] = {
+  name: 'Cars 2 Special-Edition Paint Job',
+  classObj: new CatalogItemDetailing('Cars 2 Special-Edition Paint Job', 'Cars 2 Special-Edition Paint Job', 'car_g_ico_pjb_ramone_red_neutral.ajpg', 1000, 'car_t_cst_pjb_ramone_red.swf')
 }
 
 module.exports = { clientData, shopData, assetData }
