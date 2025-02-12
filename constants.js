@@ -851,6 +851,8 @@ clientData[31024] = {
   classObj: new CatalogItemNPC('', 'Truck', 'car_r_chr_avt_semi.smod', '', '', 111)
 }
 
+clientData[31024].classObj.spriteSize = 140 * 4
+
 clientData[111] = {
   name: 'New Player Tutorial (Truck) Tut1 (SC1) Animation',
   classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_semi_tut1_sc1.sani')
