@@ -1,3 +1,5 @@
+/* global CatalogCarItem: writeable */
+
 CatalogCarItem = global.CatalogCarItem
 
 class CatalogItemDetailing extends CatalogCarItem {
