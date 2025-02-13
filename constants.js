@@ -357,6 +357,26 @@ clientData[54019] = {
   classObj: new CatalogItemSimpleSound('ui', 'HonkMedium')
 }
 
+clientData[54020] = {
+  name: 'VoiceOver (tutorial01)',
+  classObj: new CatalogItemSimpleSound('VoiceOver', 'tutorial01')
+}
+
+clientData[54021] = {
+  name: 'VoiceOver (tutorial02)',
+  classObj: new CatalogItemSimpleSound('VoiceOver', 'tutorial02')
+}
+
+clientData[54022] = {
+  name: 'VoiceOver (tutorial03)',
+  classObj: new CatalogItemSimpleSound('VoiceOver', 'tutorial03')
+}
+
+clientData[54023] = {
+  name: 'VoiceOver (tutorial04)',
+  classObj: new CatalogItemSimpleSound('VoiceOver', 'tutorial04')
+}
+
 clientData[60025] = {
   name: 'Wave Animation',
   classObj: new CatalogItemSimpleAnimation('wave')
@@ -856,6 +876,21 @@ clientData[31024].classObj.spriteSize = 140 * 4
 clientData[111] = {
   name: 'New Player Tutorial (Truck) Tut1 (SC1) Animation',
   classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_semi_tut1_sc1.sani')
+}
+
+clientData[112] = {
+  name: 'New Player Tutorial (Mater) Tut1 (SC1) Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_mater_tut1_sc1.sani')
+}
+
+clientData[113] = {
+  name: 'New Player Tutorial (Mater) Tut1 (SC1) (boyThisIsFun) Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_mater_tut1_sc1_boyThisIsFun.sani')
+}
+
+clientData[114] = {
+  name: 'New Player Tutorial (Mater) Tut1 (SC1) (boyThisIsFunIdle) Animation',
+  classObj: new CatalogItemSimpleAnimation('', 'car_a_chr_frn_mater_tut1_sc1_boyThisIsFunIdle.sani')
 }
 
 // Emotes
