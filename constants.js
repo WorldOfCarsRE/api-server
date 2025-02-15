@@ -301,32 +301,32 @@ clientData[51106] = {
 
 clientData[51107] = {
   name: 'Car Decal Hood (Leak Less)',
-  classObj: new CatalogItemDecal(['car_t_cst_dec_shinyWax_topFront.swf', 0])
+  classObj: new CatalogItemDecal(['car_t_cst_dec_leakLess_topFront.swf', 0])
 }
 
 clientData[51108] = {
   name: 'Car Decal Rear (Leak Less)',
-  classObj: new CatalogItemDecal(['car_t_cst_dec_shinyWax_rear.swf', 9])
+  classObj: new CatalogItemDecal(['car_t_cst_dec_leakLess_rear.swf', 9])
 }
 
 clientData[51109] = {
   name: 'Car Decal Hood (Sputter Stop)',
-  classObj: new CatalogItemDecal(['car_t_cst_dec_shinyWax_topFront.swf', 0])
+  classObj: new CatalogItemDecal(['car_t_cst_dec_sputterStop_topFront.swf', 0])
 }
 
 clientData[51110] = {
   name: 'Car Decal Rear (Sputter Stop)',
-  classObj: new CatalogItemDecal(['car_t_cst_dec_shinyWax_rear.swf', 9])
+  classObj: new CatalogItemDecal(['car_t_cst_dec_sputterStop_rear.swf', 9])
 }
 
 clientData[51111] = {
   name: 'Car Decal Hood (Spare Mint)',
-  classObj: new CatalogItemDecal(['car_t_cst_dec_shinyWax_topFront.swf', 0])
+  classObj: new CatalogItemDecal(['car_t_cst_dec_spareMint_topFront.swf', 0])
 }
 
 clientData[51112] = {
   name: 'Car Decal Rear (Spare Mint)',
-  classObj: new CatalogItemDecal(['car_t_cst_dec_shinyWax_rear.swf', 9])
+  classObj: new CatalogItemDecal(['car_t_cst_dec_spareMint_rear.swf', 9])
 }
 
 clientData[51113] = {
