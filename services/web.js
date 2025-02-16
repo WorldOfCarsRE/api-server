@@ -7,6 +7,7 @@ create = global.create
 const express = require('express')
 
 const CryptoJS = require('crypto-js')
+const { shopData } = require('../constants')
 
 const loginQueue = []
 
@@ -579,4 +580,8 @@ server.app.get('/dxd/flashAPI/getTermsOfUseText', async (req, res) => {
   const xml = root.end({ prettyPrint: true })
   res.setHeader('content-type', 'text/xml')
   res.send(xml)
+})
+
+server.app.get('/getShopItemData', async (req, res) => {
+  return res.end(JSON.stringify(shopData))
 })

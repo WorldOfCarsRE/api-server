@@ -890,6 +890,9 @@ clientData[22001] = {
 clientData[22001].classObj = new CatalogItemStore(clientData[22001].name, 'voStoreFillmoreEnter', 'car_f_gui_str_fillmoreStore.swf', '33274,60002,60021,60022,33274,33274,33274,33274,33274,33274', '', 'voStoreFillmoreExit')
 clientData[15001].classObj.dropPoints['22001'] = 'dp_fillmore_225 '
 
+// TODO: Figure out proper animation for this id?
+clientData[60002] = clientData[31011]
+
 clientData[22002] = {
   name: "Lightning McQueen's Pro-Race Shop",
   classObj: null
@@ -1043,7 +1046,15 @@ const shopData = {}
 
 // Fillmore's Organic Fuels
 shopData[22001] = new ArrayCollection()
-shopData[22001].push(new CatalogItemFizzyFuel(204, 'Flakey Flake', '', 'car_g_ico_cns_flakeyFlake.png', 200))
+
+clientData[204] = {
+  name: 'Flakey Flake',
+  classObj: null
+}
+
+clientData[204].classObj = new CatalogItemFizzyFuel(204, clientData[204].name, '', 'car_g_ico_cns_flakeyFlake.png', 200)
+shopData[22001].push(clientData[204])
+
 shopData[22001].push(new CatalogItemFizzyFuel(205, 'Spray Ray', 'Help other Cars cool off in the hot sun! Or just surprise them with a blast to the grill!', 'car_g_ico_cns_superSpray.png', 200))
 shopData[22001].push(new CatalogItemFizzyFuel(206, 'Glubble', '', 'car_g_ico_cns_glubble.png', 200))
 shopData[22001].push(new CatalogItemFizzyFuel(207, 'Party Blast', 'Make every party a blast by backfiring organic confetti!', 'car_g_ico_cns_partyBlast.png', 200))
