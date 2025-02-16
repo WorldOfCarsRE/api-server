@@ -696,7 +696,7 @@ clientData[42003] = {
 
 clientData[42004] = {
   name: 'race_tgs',
-  classObj: new CatalogItemRaceTrack('Tailgator Speedway', 'Piston Cup Series Grand Challenge No. 1', true, 'sp_bhl', 'mp_bhl', 'car_f_gui_ttl_tailGatorSpeedway_en_US.swf', '', 'car_w_trk_prf_TailgatorSpeedway', 'car_g_map_trk_tailgatorSpeedway.swf', 'Music', 'raceTailGatorSpeedway', 'car_w_trk_prf_tailgator_SS_phys.xml', 15005, 'car_g_lgo_trk_tailGatorSpeedway_en_US.swf', 'car_g_rac_scn_tailgatorSpeedwayTrack.jpg', 'car_g_ico_map_TGS.swf')
+  classObj: new CatalogItemRaceTrack('Tailgator Speedway', 'Piston Cup Series Grand Challenge No. 1', true, 'sp_tgs', 'mp_tgs', 'car_f_gui_ttl_tailGatorSpeedway_en_US.swf', 'sp_tgs', 'car_w_trk_prf_TailgatorSpeedway', 'car_g_map_trk_tailgatorSpeedway.swf', 'Music', 'raceTailGatorSpeedway', 'car_w_trk_prf_tailgator_SS_phys.xml', 15005, 'car_g_lgo_trk_tailGatorSpeedway_en_US.swf', 'car_g_rac_scn_tailgatorSpeedwayTrack.jpg', 'car_g_ico_map_TGS.swf')
 }
 
 clientData[42005] = {
