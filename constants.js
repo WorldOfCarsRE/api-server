@@ -1053,7 +1053,7 @@ clientData[204] = {
 }
 
 clientData[204].classObj = new CatalogItemFizzyFuel(204, clientData[204].name, '', 'car_g_ico_cns_flakeyFlake.png', 200)
-shopData[22001].push(clientData[204])
+shopData[22001].push(clientData[204].classObj)
 
 shopData[22001].push(new CatalogItemFizzyFuel(205, 'Spray Ray', 'Help other Cars cool off in the hot sun! Or just surprise them with a blast to the grill!', 'car_g_ico_cns_superSpray.png', 200))
 shopData[22001].push(new CatalogItemFizzyFuel(206, 'Glubble', '', 'car_g_ico_cns_glubble.png', 200))
