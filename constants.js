@@ -1065,7 +1065,15 @@ shopData[22001].push(new CatalogItemFizzyFuel(211, 'SBD NRG', '', 'car_g_ico_cns
 
 // Lightning McQueen's Pro-Race Shop
 shopData[22002] = new ArrayCollection()
-shopData[22002].push(new CatalogPlayerStoreItem(200, 'Motor Speedway Exclusive Costume', 'Available only to Motor Speedway of the South Champions!', 'car_g_ico_pjb_motorspeedway.ajpg', 5000))
+
+clientData[200] = {
+  name: 'Motor Speedway Exclusive Costume',
+  classObj: null
+}
+
+clientData[200].classObj = new CatalogItemDetailing(clientData[200].name, 'Available only to Motor Speedway of the South Champions!', 'car_g_ico_pjb_motorspeedway.ajpg', 5000, 'car_t_cst_pjb_motorspeedway.swf')
+shopData[22002].push(clientData[200].classObj)
+
 shopData[22002].push(new CatalogPlayerStoreItem(201, 'AV-RAGE Racing Fin', '', 'car_g_ico_spo_avrageRacingFin.ajpg', 1000))
 shopData[22002].push(new CatalogPlayerStoreItem(202, 'RZN-TEK Ninja XL', '', 'car_g_ico_spo_RZNTEKNinjaXL.ajpg', 8000))
 shopData[22002].push(new CatalogPlayerStoreItem(203, 'SKY-LITE Drop Wing', '', 'car_g_ico_spo_skyLiteDropWing.ajpg', 6000))
