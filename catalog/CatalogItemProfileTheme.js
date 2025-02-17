@@ -3,8 +3,10 @@
 const CatalogPlayerStoreItem = global.CatalogPlayerStoreItem
 
 class CatalogItemProfileTheme extends CatalogPlayerStoreItem {
-  constructor (backgroundImage) {
+  constructor (storeThumbnail, backgroundImage) {
     super()
+
+    this.storeThumbnail = storeThumbnail
 
     this.backgroundImage = backgroundImage
   }

@@ -46,6 +46,7 @@ global.libamf = require('libamf')
 /* global CatalogItemMapSprite */
 /* global CatalogItemMicrogame */
 /* global CatalogItemDialogItem */
+/* global CatalogItemCarDNA */
 /* global CatalogItemFizzyFuel */
 /* global CatalogItemYardItem */
 /* global AssetDictionary */
@@ -95,6 +96,7 @@ global.CatalogItemQuestReward = require('./catalog/CatalogItemQuestReward')
 global.CatalogItemMapEffect = require('./catalog/CatalogItemMapEffect')
 global.CatalogItemGPSIcon = require('./catalog/CatalogItemGPSIcon')
 global.CatalogItemEmote = require('./catalog/CatalogItemEmote')
+global.CatalogItemCarDNA = require('./catalog/CatalogItemCarDNA')
 global.RuleStateAMF = require('./amf/RuleStateAMF')
 global.Asset = require('./amf/Asset')
 global.CatalogItemMapSprite = require('./catalog/CatalogItemMapSprite')
@@ -180,6 +182,7 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.progression.QuestRewar
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.MapEffect', CatalogItemMapEffect)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.GPSIcon', CatalogItemGPSIcon)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.Emote', CatalogItemEmote)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Dna', CatalogItemCarDNA)
 libamf.registerClassAlias('com.disney.cars.domain.asset.Asset', Asset)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.interactive.MapSprite', CatalogItemMapSprite)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.microgame.Microgame', CatalogItemMicrogame)
