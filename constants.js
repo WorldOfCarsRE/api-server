@@ -1101,8 +1101,24 @@ clientData[212].classObj = new CatalogItemYardItem(212, clientData[212].name, ''
 
 shopData[22005].push(clientData[212].classObj)
 
-shopData[22005].push(new CatalogItemYardItem(213, 'Cozy Tail Light Cone', '', 'car_g_ico_yar_coneFlowerPot.ajpg', 500, 100))
-shopData[22005].push(new CatalogItemYardItem(214, 'Cozy Cone Fountain', '', 'car_g_ico_yar_cozyConeFountain.ajpg', 4000, 101))
+clientData[213] = {
+  name: 'Cozy Tail Light Cone',
+  classObj: null
+}
+
+clientData[213].classObj = new CatalogItemYardItem(213, clientData[213].name, '', 'car_g_ico_yar_coneFlowerPot.ajpg', 500, 100)
+
+shopData[22005].push(clientData[213].classObj)
+
+clientData[214] = {
+  name: 'Cozy Cone Fountain',
+  classObj: null
+}
+
+clientData[214].classObj = new CatalogItemYardItem(214, clientData[214].name, '', 'car_g_ico_yar_cozyConeFountain.ajpg', 4000, 101)
+clientData[214].classObj.assetId = 4184872185 // Found in `car_yard_items_assets.xml`
+
+shopData[22005].push(clientData[214].classObj)
 
 // Sarge's Surplus Hut
 shopData[22006] = new ArrayCollection()
