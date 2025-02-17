@@ -1091,7 +1091,16 @@ clientData[15001].classObj.dropPoints['22003'] = 'dp_luigi_135 '
 
 // Sally's Cozy Cone Gift Shop
 shopData[22005] = new ArrayCollection()
-shopData[22005].push(new CatalogItemYardItem(212, 'Tail Light Bouquet', '', 'car_g_ico_yar_tireSmallFlowerPot.ajpg', 300, 100))
+
+clientData[212] = {
+  name: 'Tail Light Bouquet',
+  classObj: null
+}
+
+clientData[212].classObj = new CatalogItemYardItem(212, clientData[212].name, '', 'car_g_ico_yar_tireSmallFlowerPot.ajpg', 300, 100)
+
+shopData[22005].push(clientData[212].classObj)
+
 shopData[22005].push(new CatalogItemYardItem(213, 'Cozy Tail Light Cone', '', 'car_g_ico_yar_coneFlowerPot.ajpg', 500, 100))
 shopData[22005].push(new CatalogItemYardItem(214, 'Cozy Cone Fountain', '', 'car_g_ico_yar_cozyConeFountain.ajpg', 4000, 101))
 
