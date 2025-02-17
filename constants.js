@@ -1072,6 +1072,8 @@ clientData[200] = {
 }
 
 clientData[200].classObj = new CatalogItemDetailing(clientData[200].name, 'Available only to Motor Speedway of the South Champions!', 'car_g_ico_pjb_motorspeedway.ajpg', 5000, 'car_t_cst_pjb_motorspeedway.swf')
+clientData[200].classObj.itemId = 200
+
 shopData[22002].push(clientData[200].classObj)
 
 shopData[22002].push(new CatalogPlayerStoreItem(201, 'AV-RAGE Racing Fin', '', 'car_g_ico_spo_avrageRacingFin.ajpg', 1000))
@@ -1165,6 +1167,19 @@ shopData[22012].push(new CatalogItemYardItem(266, 'WOC 93011', 'The WOC 93011 is
 shopData[22012].push(new CatalogItemYardItem(265, 'Laser Fence Left', '', 'car_g_ico_yar_laserFenceLeft.ajpg', 600))
 shopData[22012].push(new CatalogItemYardItem(264, 'Laser Fence Right', '', 'car_g_ico_yar_laserFenceRight.ajpg', 600))
 shopData[22012].push(new CatalogItemYardItem(263, 'Surveillance Cam', '', 'car_g_ico_yar_surveillanceCamera.ajpg', 1000))
+
+// Ramone's House of Body Art
+shopData[22004] = new ArrayCollection()
+
+clientData[201] = {
+  name: 'Tribal',
+  classObj: null
+}
+
+clientData[201].classObj = new CatalogItemDetailing(clientData[201].name, 'Savage but smart. Just like you out on the track!', 'car_g_ico_pjb_tribalPinStripe.ajpg', 4000, 'car_t_cst_pjb_tribalPinStripe.swf')
+clientData[201].classObj.itemId = 201
+
+shopData[22004].push(clientData[201].classObj)
 
 // Hazards
 clientData[501] = {
