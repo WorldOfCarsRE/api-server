@@ -1151,7 +1151,16 @@ shopData[22009].push(new CatalogItemYardItem(234, 'Car Show-Off Home Version Wal
 shopData[22009].push(new CatalogItemYardItem(235, 'Petroleum City Pipe Wall Left', '', 'car_g_ico_yar_petroFence_000.png', 800, 102))
 shopData[22009].push(new CatalogItemYardItem(236, 'Wiggly Ahead Sign', '', 'car_g_ico_yar_wiggleAheadSign.ajpg', 1000, 103))
 shopData[22009].push(new CatalogItemYardItem(237, 'Danger Sign', '', 'car_g_ico_yar_dangerSign.png', 1000, 103))
-shopData[22009].push(new CatalogItemYardItem(238, 'Race Sign', '', 'car_g_ico_yar_raceArrowSignWithPole.png', 1000, 103))
+
+clientData[238] = {
+  name: 'Race Sign',
+  classObj: null
+}
+
+clientData[238].classObj = new CatalogItemYardItem(238, 'Race Sign', clientData[238].name, 'car_g_ico_yar_raceArrowSignWithPole.png', 1000, 103)
+clientData[238].classObj.assetId = 4236589663 // Found in `car_yard_items_assets.xml`
+
+shopData[22009].push(clientData[238].classObj)
 
 // Mack Shop
 shopData[22010] = new ArrayCollection()
