@@ -524,6 +524,61 @@ clientData[32012] = {
   classObj: new CatalogItemEffect(['car_f_evt_efx_zzzEffect.swf'])
 }
 
+clientData[32013] = {
+  name: 'Flakey Flake Effect',
+  classObj: new CatalogItemEffect(['car_f_evt_efx_flakeyFlake.swf'])
+}
+
+clientData[32014] = {
+  name: 'Spray Ray Effect',
+  classObj: new CatalogItemEffect(['car_f_evt_efx_superSpray.swf'])
+}
+
+clientData[32015] = {
+  name: 'Glubble Effect',
+  classObj: new CatalogItemEffect(['car_f_evt_efx_bubbleBlast.swf'])
+}
+
+clientData[32016] = {
+  name: 'Party Blast Effect',
+  classObj: new CatalogItemEffect(['car_f_evt_efx_partyBlast.swf'])
+}
+
+clientData[32017] = {
+  name: 'Flurrrp Effect',
+  classObj: new CatalogItemEffect(['car_f_evt_efx_flurrrp.swf'])
+}
+
+clientData[32018] = {
+  name: 'Gastro Blasto Effect',
+  classObj: new CatalogItemEffect(['car_f_evt_efx_gastroBlastro.swf'])
+}
+
+clientData[32019] = {
+  name: 'Flurp Effect',
+  classObj: new CatalogItemEffect(['car_f_evt_efx_flurp.swf'])
+}
+
+clientData[32020] = {
+  name: 'SBD NRG Effect',
+  classObj: new CatalogItemEffect(['car_f_evt_efx_sbdNrg.swf'])
+}
+
+clientData[32021] = {
+  name: 'Green Laser Effect',
+  classObj: new CatalogItemEffect(['car_f_evt_efx_laserBeamGreen.swf'])
+}
+
+clientData[32022] = {
+  name: 'Pink Laser Effect',
+  classObj: new CatalogItemEffect(['car_f_evt_efx_laserBeamPink.swf'])
+}
+
+clientData[32023] = {
+  name: 'Red Laser Effect',
+  classObj: new CatalogItemEffect(['car_f_evt_efx_laserBeamRed.swf'])
+}
+
 clientData[20209] = {
   name: 'Powerhouse Purple',
   classObj: new CatalogItemPaint(10571765)
@@ -562,6 +617,61 @@ clientData[54010] = {
 clientData[54011] = {
   name: 'Tractor Fart Sounds',
   classObj: new CatalogItemSimpleSound('Tractors', 'Farts')
+}
+
+clientData[54012] = {
+  name: 'Flakey Flake Sound',
+  classObj: new CatalogItemSimpleSound('FizzyFuel', 'fizzyFuelFlakeyFlake')
+}
+
+clientData[54013] = {
+  name: 'Spray Ray Sound',
+  classObj: new CatalogItemSimpleSound('FizzyFuel', 'fizzyFuelSuperSpray')
+}
+
+clientData[54014] = {
+  name: 'Glubble Sound',
+  classObj: new CatalogItemSimpleSound('FizzyFuel', 'fizzyFuelBubbleBlast')
+}
+
+clientData[54015] = {
+  name: 'Party Blast Sound',
+  classObj: new CatalogItemSimpleSound('FizzyFuel', 'fizzyFuelPartyBlast')
+}
+
+clientData[54016] = {
+  name: 'Flurrrp Sound',
+  classObj: new CatalogItemSimpleSound('FizzyFuel', 'fizzyFuelBurp')
+}
+
+clientData[54017] = {
+  name: 'Gastro Blasto Sound',
+  classObj: new CatalogItemSimpleSound('FizzyFuel', 'blastroGastroBackFire')
+}
+
+clientData[54018] = {
+  name: 'Flurp Sound',
+  classObj: new CatalogItemSimpleSound('FizzyFuel', 'urp')
+}
+
+clientData[54020] = {
+  name: 'SBD NRG Sound',
+  classObj: new CatalogItemSimpleSound('FizzyFuel', 'sbdNRG')
+}
+
+clientData[54021] = {
+  name: 'Green Laser Sound',
+  classObj: new CatalogItemSimpleSound('FizzyFuel', 'fizzyFuelLaserGreen')
+}
+
+clientData[54022] = {
+  name: 'Pink Laser Sound',
+  classObj: new CatalogItemSimpleSound('FizzyFuel', 'fizzyFuelLaserPink')
+}
+
+clientData[54023] = {
+  name: 'Red Laser Sound',
+  classObj: new CatalogItemSimpleSound('FizzyFuel', 'fizzyFuelLaserRed')
 }
 
 clientData[54019] = {
@@ -1052,16 +1162,65 @@ clientData[204] = {
   classObj: null
 }
 
-clientData[204].classObj = new CatalogItemFizzyFuel(204, clientData[204].name, '', 'car_g_ico_cns_flakeyFlake.png', 200)
+clientData[204].classObj = new CatalogItemFizzyFuel(204, clientData[204].name, 'Bring on the chill! A frosty fuel to keep things cool, man.', 'car_g_ico_cns_flakeyFlake.png', 200, 16777215, 32013, 21008, 'car_g_ico_cns_flakeyFlake_dashboard.swf', 54012)
 shopData[22001].push(clientData[204].classObj)
 
-shopData[22001].push(new CatalogItemFizzyFuel(205, 'Spray Ray', 'Help other Cars cool off in the hot sun! Or just surprise them with a blast to the grill!', 'car_g_ico_cns_superSpray.png', 200))
-shopData[22001].push(new CatalogItemFizzyFuel(206, 'Glubble', '', 'car_g_ico_cns_glubble.png', 200))
-shopData[22001].push(new CatalogItemFizzyFuel(207, 'Party Blast', 'Make every party a blast by backfiring organic confetti!', 'car_g_ico_cns_partyBlast.png', 200))
-shopData[22001].push(new CatalogItemFizzyFuel(208, 'Flurrrp', '', 'car_g_ico_cns_flurrrp.ajpg', 100))
-shopData[22001].push(new CatalogItemFizzyFuel(209, 'Gastro Blasto', '', 'car_g_ico_cns_gastroBlastro.ajpg', 200))
-shopData[22001].push(new CatalogItemFizzyFuel(210, 'Flurp', '', 'car_g_ico_cns_flurp.ajpg', 100))
-shopData[22001].push(new CatalogItemFizzyFuel(211, 'SBD NRG', '', 'car_g_ico_cns_sbdNrg.ajpg', 200))
+
+clientData[205] = {
+  name: 'Spray Ray',
+  classObj: null
+}
+
+clientData[205].classObj = new CatalogItemFizzyFuel(205, clientData[205].name, 'Help other Cars cool off in the hot sun! Or just surprise them with a blast to the grill!', 'car_g_ico_cns_superSpray.png', 200, 16777215, 32014, 21009, 'car_g_ico_cns_superSpray_dashboard.swf', 54013)
+shopData[22001].push(clientData[205].classObj)
+
+clientData[206] = {
+  name: 'Glubble',
+  classObj: null
+}
+
+clientData[206].classObj = new CatalogItemFizzyFuel(206, clientData[206].name, "Give your ride a bubbly boost! Pink fuel with poppin' personality.", 'car_g_ico_cns_glubble.png', 200, 16777215, 32015, 21010, 'car_g_ico_cns_bubbleBlast_dashboard.swf', 54014)
+shopData[22001].push(clientData[206].classObj)
+
+clientData[207] = {
+  name: 'Party Blast',
+  classObj: null
+}
+
+clientData[207].classObj = new CatalogItemFizzyFuel(207, clientData[207].name, 'Make every party a blast by backfiring organic confetti!', 'car_g_ico_cns_partyBlast.png', 200, 16777215, 32016, 21011, 'car_g_ico_cns_partyBlast_dashboard.swf', 54015)
+shopData[22001].push(clientData[207].classObj)
+
+clientData[208] = {
+  name: 'Flurrrp',
+  classObj: null
+}
+
+clientData[208].classObj = new CatalogItemFizzyFuel(208, clientData[208].name, "Triple the 'urp, triple the fun! Super-concentrated for serious flurp power.", 'car_g_ico_cns_flurrrp.ajpg', 100, 16777215, 32017, 21012, 'car_g_ico_cns_flurrrp_dashboard.swf', 54016)
+shopData[22001].push(clientData[208].classObj)
+
+clientData[209] = {
+  name: 'Gastro Blasto',
+  classObj: null
+}
+
+clientData[209].classObj = new CatalogItemFizzyFuel(209, clientData[209].name, 'A green blast of fizzy goodness feel it tingle from tank to tailpipe!', 'car_g_ico_cns_gastroBlastro.ajpg', 200, 16777215, 32018, 21013, 'car_g_ico_cns_gastroBlastro_dashboard.swf', 54017)
+shopData[22001].push(clientData[209].classObj)
+
+clientData[210] = {
+  name: 'Flurp',
+  classObj: null
+}
+
+clientData[210].classObj = new CatalogItemFizzyFuel(210, clientData[210].name, "Make your muffler sing! One sip and your engine's groovin' in technicolor.", 'car_g_ico_cns_flurp.ajpg', 100, 16777215, 32019, 21014, 'car_g_ico_cns_flurp_dashboard.swf', 54018)
+shopData[22001].push(clientData[210].classObj)
+
+clientData[211] = {
+  name: 'SBD NRG',
+  classObj: null
+}
+
+clientData[211].classObj = new CatalogItemFizzyFuel(211, clientData[211].name, "Silent but… dynamic! This fuel's got a kick you'll feel all the way to the bumper.", 'car_g_ico_cns_sbdNrg.ajpg', 200, 16777215, 32020, 21015, 'car_g_ico_cns_sbdNrg_dashboard.swf', 54020)
+shopData[22001].push(clientData[211].classObj)
 
 // Lightning McQueen's Pro-Race Shop
 shopData[22002] = new ArrayCollection()
@@ -1185,7 +1344,7 @@ shopData[22009].push(clientData[238].classObj)
 
 // Mack Shop
 shopData[22010] = new ArrayCollection()
-shopData[22010].push(new CatalogItemFizzyFuel(262, 'Flakey Flake', '', 'car_g_ico_cns_flakeyFlake.png', 200))
+shopData[22010].push(clientData[204].classObj)
 shopData[22010].push(new CatalogItemYardItem(261, 'Green Fireworks', 'Keep the celebration going, and annoy yourself!', 'car_g_ico_yar_greenFireworks.ajpg', 1000, 103))
 shopData[22010].push(new CatalogItemYardItem(260, 'Red Fireworks', 'Keep the celebration going, and annoy yourself!', 'car_g_ico_yar_redFireworks.ajpg', 1000, 103))
 shopData[22010].push(new CatalogItemYardItem(259, 'Purple Fireworks', 'Keep the celebration going, and annoy yourself!', 'car_g_ico_yar_purpleFireworks.ajpg', 1000, 103))
@@ -1215,9 +1374,31 @@ shopData[22011] = shopData[22001]
 
 // Spy Shop
 shopData[22012] = new ArrayCollection()
-shopData[22012].push(new CatalogItemFizzyFuel(269, 'Red Laser', 'Attaches easily to your headlights. For Spies who need Lasers!', 'car_g_ico_cns_laserBeamRed.png', 500, 25))
-shopData[22012].push(new CatalogItemFizzyFuel(268, 'Pink Laser', 'Attaches easily to your headlights. For Spies who need Lasers!', 'car_g_ico_cns_laserBeamPink.png', 500, 25))
-shopData[22012].push(new CatalogItemFizzyFuel(267, 'Green Laser', 'Attaches easily to your headlights. For Spies who need Lasers!', 'car_g_ico_cns_laserBeamGreen.png', 500, 25))
+
+clientData[269] = {
+  name: 'Red Laser',
+  classObj: null
+}
+
+clientData[269].classObj = new CatalogItemFizzyFuel(269, clientData[269].name, 'Attaches easily to your headlights. For Spies who need Lasers!', 'car_g_ico_cns_laserBeamRed.png', 500, 16777215, 32023, 21018, 'car_g_ico_cns_laserBeam_dashboard.swf', 54023, 25)
+shopData[22012].push(clientData[269].classObj)
+
+clientData[268] = {
+  name: 'Pink Laser',
+  classObj: null
+}
+
+clientData[268].classObj = new CatalogItemFizzyFuel(268, clientData[268].name, 'Attaches easily to your headlights. For Spies who need Lasers!', 'car_g_ico_cns_laserBeamPink.png', 500, 16777215, 32022, 21017, 'car_g_ico_cns_laserBeam_dashboard.swf', 54022, 25)
+shopData[22012].push(clientData[268].classObj)
+
+clientData[267] = {
+  name: 'Green Laser',
+  classObj: null
+}
+
+clientData[267].classObj = new CatalogItemFizzyFuel(267, clientData[267].name, 'Attaches easily to your headlights. For Spies who need Lasers!', 'car_g_ico_cns_laserBeamGreen.png', 500, 16777215, 32021, 21016, 'car_g_ico_cns_laserBeam_dashboard.swf', 54021, 25)
+shopData[22012].push(clientData[267].classObj)
+
 shopData[22012].push(new CatalogItemYardItem(266, 'WOC 93011', 'The WOC 93011 is the latest in secret spy computers! Monitors all of Carburetor County!', 'car_g_ico_yar_SpyComputer_000.ajpg', 2000))
 shopData[22012].push(new CatalogItemYardItem(265, 'Laser Fence Left', '', 'car_g_ico_yar_laserFenceLeft.ajpg', 600))
 shopData[22012].push(new CatalogItemYardItem(264, 'Laser Fence Right', '', 'car_g_ico_yar_laserFenceRight.ajpg', 600))
@@ -1559,6 +1740,83 @@ clientData[21007] = {
 }
 
 clientData[21007].classObj = new CatalogItemEmote(clientData[21007].name, 'car_g_ico_emo_yuck.swf', 'car_a_chr_avt_sports_yuck.sani', '')
+
+clientData[21008] = {
+  name: 'Flakey Flake emote',
+  classObj: null
+}
+
+clientData[21008].classObj = new CatalogItemEmote(clientData[21008].name, 'car_g_ico_emo_fizzyFlakeyFlake.swf', '', '')
+
+clientData[21009] = {
+  name: 'Spray Ray emote',
+  classObj: null
+}
+
+clientData[21009].classObj = new CatalogItemEmote(clientData[21009].name, 'car_g_ico_emo_superSpray.swf', '', '')
+
+clientData[21010] = {
+  name: 'Glubble emote',
+  classObj: null
+}
+
+clientData[21010].classObj = new CatalogItemEmote(clientData[21010].name, 'car_g_ico_emo_fizzyGlubble.swf', '', '')
+
+clientData[21011] = {
+  name: 'Party Blast emote',
+  classObj: null
+}
+
+clientData[21011].classObj = new CatalogItemEmote(clientData[21011].name, 'car_g_ico_emo_fizzyPartyBlast.swf', '', '')
+
+clientData[21012] = {
+  name: 'Flurrrp emote',
+  classObj: null
+}
+
+clientData[21012].classObj = new CatalogItemEmote(clientData[21012].name, 'car_g_ico_emo_fizzyFlurrrp.swf', '', '')
+
+clientData[21013] = {
+  name: 'Gastro Blasto emote',
+  classObj: null
+}
+
+clientData[21013].classObj = new CatalogItemEmote(clientData[21013].name, 'car_g_ico_emo_fizzyGastroBlastro.swf', '', '')
+
+clientData[21014] = {
+  name: 'Flurp emote',
+  classObj: null
+}
+
+clientData[21014].classObj = new CatalogItemEmote(clientData[21014].name, 'car_g_ico_emo_fizzyFlurp.swf', '', '')
+
+clientData[21015] = {
+  name: 'SBD NRG emote',
+  classObj: null
+}
+
+clientData[21015].classObj = new CatalogItemEmote(clientData[21015].name, 'car_g_ico_emo_fizzySBD.swf', '', '')
+
+clientData[21016] = {
+  name: 'Green Laser emote',
+  classObj: null
+}
+
+clientData[21016].classObj = new CatalogItemEmote(clientData[21016].name, 'car_g_ico_emo_laserGreen.swf', '', '')
+
+clientData[21017] = {
+  name: 'Pink Laser emote',
+  classObj: null
+}
+
+clientData[21017].classObj = new CatalogItemEmote(clientData[21017].name, 'car_g_ico_emo_laserPink.swf', '', '')
+
+clientData[21018] = {
+  name: 'Red Laser emote',
+  classObj: null
+}
+
+clientData[21018].classObj = new CatalogItemEmote(clientData[21018].name, 'car_g_ico_emo_laserRed.swf', '', '')
 
 clientData[5000] = {
   name: 'Map Sprite Test (InteractiveObject)',
