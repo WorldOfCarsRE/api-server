@@ -1130,6 +1130,18 @@ shopData[22006].push(new CatalogItemStack(219, 'Smoke Screen 3-Pack', "Pull the 
 
 // Mater's Junk Yard
 shopData[22008] = new ArrayCollection()
+
+clientData[220] = {
+  name: 'Foolish Sign',
+  classObj: null
+}
+
+clientData[220].classObj = new CatalogItemYardItem(220, clientData[220].name, 'Let Cars know that you are a sucker!', 'car_g_ico_yar_freeSign.png', 9999, 103)
+
+// TODO: Find assetId for this item.
+
+shopData[22008].push(clientData[220].classObj)
+
 shopData[22008].push(new CatalogItemYardItem(220, 'Foolish Sign', 'Let Cars know that you are a sucker!', 'car_g_ico_yar_freeSign.png', 9999, 103))
 shopData[22008].push(new CatalogItemYardItem(221, "Mater's Windmill", '', 'car_g_ico_yar_junkBarrelWindmill.ajpg', 5000, 100))
 shopData[22008].push(new CatalogItemYardItem(222, 'Giant Gas Tank', '', 'car_g_ico_yar_gasTankLarge.ajpg', 3000, 104))
@@ -1138,7 +1150,16 @@ shopData[22008].push(new CatalogItemYardItem(224, 'Oil Drum', '', 'car_g_ico_yar
 shopData[22008].push(new CatalogItemYardItem(225, 'Medium Tire Stack', '', 'car_g_ico_yar_tireStackTruckMed.ajpg', 300))
 shopData[22008].push(new CatalogItemYardItem(226, 'Gear Fountain', 'A little fountain for your yard. Gearific!', 'car_g_ico_yar_fountainGear.ajpg', 3000, 101))
 shopData[22008].push(new CatalogItemYardItem(227, 'Cafe Gas Tank', '', 'car_g_ico_yar_gasTank.ajpg', 1000, 104))
-shopData[22008].push(new CatalogItemYardItem(228, "Mater's Oil Pan Fountain", '', 'car_g_ico_yar_junkFountainA.ajpg', 3000, 101))
+
+clientData[228] = {
+  name: "Mater's Oil Pan Fountain",
+  classObj: null
+}
+
+clientData[228].classObj = new CatalogItemYardItem(228, clientData[228].name, '', 'car_g_ico_yar_junkFountainA.ajpg', 3000, 101)
+clientData[228].classObj.assetId = 391881775 // Found in `car_yard_items_assets.xml`
+
+shopData[22008].push(clientData[228].classObj)
 
 // The Great Outdoors
 shopData[22009] = new ArrayCollection()
@@ -1157,7 +1178,7 @@ clientData[238] = {
   classObj: null
 }
 
-clientData[238].classObj = new CatalogItemYardItem(238, 'Race Sign', clientData[238].name, 'car_g_ico_yar_raceArrowSignWithPole.png', 1000, 103)
+clientData[238].classObj = new CatalogItemYardItem(238, clientData[238].name, '', 'car_g_ico_yar_raceArrowSignWithPole.png', 1000, 103)
 clientData[238].classObj.assetId = 4236589663 // Found in `car_yard_items_assets.xml`
 
 shopData[22009].push(clientData[238].classObj)
