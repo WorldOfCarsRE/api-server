@@ -3,17 +3,17 @@
 CatalogPlayerStoreItem = global.CatalogPlayerStoreItem
 
 class CatalogItemFizzyFuel extends CatalogPlayerStoreItem {
-  constructor (itemId, name, description, storeThumbnail, storePrice, maxOwnable = 10) {
+  constructor (itemId, name, description, storeThumbnail, storePrice, color, effect, emoteId, dashboardButtonImage, soundId, maximumOwnable = 10) {
     super(itemId, name, description, storeThumbnail, storePrice)
 
-    this.color = 0
-    this.emoteIconImage = ''
-    this.effect = 0
-    this.emoteId = 0
-    this.dashboardButtonImage = ''
-    this.soundId = 0
+    this.maximumOwnable = maximumOwnable
 
-    this.maximumOwnable = maxOwnable
+    this.color = color
+    this.emoteIconImage = ''
+    this.effect = effect
+    this.emoteId = emoteId
+    this.dashboardButtonImage = dashboardButtonImage
+    this.soundId = soundId
   }
 }
 

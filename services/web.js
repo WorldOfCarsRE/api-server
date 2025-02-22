@@ -569,6 +569,16 @@ server.app.post('/commerce/flashapi/lookupOffers', async (req, res) => {
   res.send(xml)
 })
 
+server.app.post('/commerce/flashapi/lookupSubscriptions', async (req, res) => {
+  // TODO: Same as above
+  const root = create().ele('response')
+  root.ele('success').txt(1)
+
+  const xml = root.end({ prettyPrint: true })
+  res.setHeader('content-type', 'text/xml')
+  res.send(xml)
+})
+
 server.app.get('/dxd/flashAPI/getTermsOfUseText', async (req, res) => {
   // TODO: Same as above
   const root = create().ele('response')
