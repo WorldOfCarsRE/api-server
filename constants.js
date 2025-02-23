@@ -143,6 +143,20 @@ function parseAssetData (filename) {
 }
 
 assetData[15001] = parseAssetData('car_w_env_rsp_RadiatorSprings_assets.xml')
+assetData[15002] = parseAssetData('car_w_env_frm_FillmoresFields_assets.xml')
+assetData[15003] = parseAssetData('car_w_env_tfn_RedhoodValley_assets.xml')
+assetData[15005] = parseAssetData('car_w_trk_prf_TailgatorZone_assets.xml')
+assetData[15006] = parseAssetData('car_w_env_wil_WillysButte_assets.xml')
+assetData[15008] = parseAssetData('car_w_trk_prf_BigHeartlandZone_assets.xml')
+assetData[15009] = parseAssetData('car_w_trk_prf_BackFireCanyonZone_assets.xml')
+assetData[15010] = parseAssetData('car_w_trk_prf_PetroleumCityZone_assets.xml')
+assetData[15011] = parseAssetData('car_w_trk_prf_MotorSpeedwaySouthZone_assets.xml')
+assetData[15012] = parseAssetData('car_w_trk_prf_LASpeedwayZone_assets.xml')
+
+assetData[42001] = parseAssetData('car_w_trk_rsp_CarburetorCountySpeedway_assets.xml')
+assetData[42002] = parseAssetData('car_w_trk_tfn_TwistinTailfinTrails_assets.xml')
+assetData[42003] = parseAssetData('car_w_trk_frm_FillmoresFieldsRally_assets.xml')
+assetData[42005] = parseAssetData('car_w_trk_wil_WillysButteRally_assets.xml')
 
 // Fillmore's Fields
 clientData[15001].classObj.dropPoints['15002'] = 'dp_ff_225'
@@ -159,7 +173,7 @@ clientData[15001].classObj.dropPoints.mp = 'dp_mp_225'
 
 clientData[15002] = {
   name: "Fillmore's Fields",
-  classObj: new CatalogItemWorldZone("Fillmore's Fields", 100, 'car_f_gui_ttl_fillmoresFields_en_US.swf', 'car_w_env_frm_FillmoresFields_design', 'car_g_map_env_farmGrounds.swf', 'scripts/isoworld/fillmores_fields.lua', 'Music', 'zoneFillmoresFields', 'dp_default_45')
+  classObj: new CatalogItemWorldZone("Fillmore's Fields", 100, 'car_f_gui_ttl_fillmoresFields_en_US.swf', 'car_w_env_frm_FillmoresFields', 'car_g_map_env_farmGrounds.swf', 'scripts/isoworld/fillmores_fields.lua', 'Music', 'zoneFillmoresFields', 'dp_default_45')
 }
 
 // Willy's Buttle
@@ -811,7 +825,7 @@ clientData[31015] = {
 
 clientData[42001] = {
   name: 'spRace_ccs',
-  classObj: new CatalogItemRaceTrack('Carburetor County Speedway', 'Local track where the showdown is downtown!', false, 'sp_ccs', 'mp_ccs', 'car_f_gui_ttl_carburetorCounty_en_US.swf', 'sp_ccs', 'car_w_trk_rsp_CarburetorCountySpeedway', 'car_g_map_trk_carburetorCounty.swf', 'Music', 'CarburetorCountySpeedway', 'car_w_trk_rsp_ccSpeedway_SS_phys.xml', 15001, 'car_g_lgo_trk_carburetorCountySpeedway_en_US.swf', 'car_g_rac_scn_CarbCountySpeedway.jpg', 'car_g_ico_map_CCS.swf')
+  classObj: new CatalogItemRaceTrack('Carburetor County Speedway', 'Local track where the showdown is downtown!', false, 'sp_ccs', 'mp_ccs', 'car_f_gui_ttl_carburetorCounty_en_US.swf', 'sp_ccs', 'car_w_trk_rsp_CarburetorCountySpeedway', 'car_g_map_trk_carburetorCounty.swf', 'Music', 'raceCarburetorCountySpeedway', 'car_w_trk_rsp_ccSpeedway_SS_phys.xml', 15001, 'car_g_lgo_trk_carburetorCountySpeedway_en_US.swf', 'car_g_rac_scn_CarbCountySpeedway.jpg', 'car_g_ico_map_CCS.swf')
 }
 
 clientData[42002] = {
