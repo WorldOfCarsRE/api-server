@@ -164,6 +164,11 @@ assetData[42005] = parseAssetData('car_w_trk_wil_WillysButteRally_assets.xml')
 
 assetData[10001] = parseAssetData('car_w_yar_own_non_member_yard_assets.xml')
 
+// Parse these items as well
+for (const asset of parseAssetData('car_yard_items_assets.xml')) {
+  assetData[10001].push(asset)
+}
+
 // Fillmore's Fields
 clientData[15001].classObj.dropPoints['15002'] = 'dp_ff_225'
 

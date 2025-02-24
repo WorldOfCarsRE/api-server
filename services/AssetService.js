@@ -8,6 +8,16 @@ AssetDictionary = global.AssetDictionary
 
 const { assetData, idToAsset } = require('../constants')
 
+/**
+ * Converts a number to a uint32 value.
+ *
+ * @param {number} value The number to convert.
+ * @returns {number} The uint32 representation of the number.
+ */
+function toUint32 (value) {
+  return value >>> 0
+}
+
 class AssetService extends libamf.Service {
   constructor () {
     super('asset')
@@ -33,10 +43,10 @@ class AssetService extends libamf.Service {
   }
 
   getAsset (assetId) {
-    const asset = idToAsset[assetId]
+    const asset = idToAsset[toUint32(assetId)]
 
     if (asset === undefined) {
-      console.log('NO ASSET DATA:', assetId)
+      console.log('NO ASSET DATA:', toUint32(assetId))
       return new Asset()
     }
 
