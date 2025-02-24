@@ -36,6 +36,8 @@ const CatalogItemDetailing = global.CatalogItemDetailing
 
 const ArrayCollection = global.ArrayCollection
 
+const AssetDictionary = global.AssetDictionary
+
 const fs = require('fs')
 const { XMLParser } = require('fast-xml-parser')
 
@@ -128,6 +130,27 @@ clientData[108] = {
 }
 
 // Asset service
+const idToAsset = {}
+
+function parseAssetMappings () {
+  const results = new ArrayCollection()
+
+  const xmlData = fs.readFileSync('assets/mappings.xml', 'utf-8')
+  const parser = new XMLParser({ ignoreAttributes: false })
+  const mappings = parser.parse(xmlData).mappings
+
+  let id = 1
+
+  for (const mapping of mappings.m) {
+    results.push(new AssetDictionary(id, mapping['@_dir'], mapping['@_key']))
+    id += 1
+  }
+
+  return results
+}
+
+const assetMappings = parseAssetMappings()
+
 function parseAssetData (filename) {
   const results = new ArrayCollection()
 
@@ -136,7 +159,9 @@ function parseAssetData (filename) {
   const assets = parser.parse(xmlData).assets
 
   for (const asset of assets.asset) {
-    results.push(new Asset(asset.layerId, asset.offsetX, asset.width, asset.filename, asset.assetId, asset.offsetY, asset.solid, asset.height))
+    const assetObj = new Asset(asset.layerId, asset.offsetX, asset.width, asset.filename, asset.assetId, asset.offsetY, asset.solid, asset.height)
+    results.push(assetObj)
+    idToAsset[Number(asset.assetId)] = assetObj
   }
 
   return results
@@ -157,6 +182,13 @@ assetData[42001] = parseAssetData('car_w_trk_rsp_CarburetorCountySpeedway_assets
 assetData[42002] = parseAssetData('car_w_trk_tfn_TwistinTailfinTrails_assets.xml')
 assetData[42003] = parseAssetData('car_w_trk_frm_FillmoresFieldsRally_assets.xml')
 assetData[42005] = parseAssetData('car_w_trk_wil_WillysButteRally_assets.xml')
+
+assetData[10001] = parseAssetData('car_w_yar_own_non_member_yard_assets.xml')
+
+// Parse these items as well
+for (const asset of parseAssetData('car_yard_items_assets.xml')) {
+  assetData[10001].push(asset)
+}
 
 // Fillmore's Fields
 clientData[15001].classObj.dropPoints['15002'] = 'dp_ff_225'
@@ -1199,7 +1231,6 @@ clientData[204] = {
 clientData[204].classObj = new CatalogItemFizzyFuel(204, clientData[204].name, 'Bring on the chill! A frosty fuel to keep things cool, man.', 'car_g_ico_cns_flakeyFlake.png', 200, 16777215, 32013, 21008, 'car_g_ico_cns_flakeyFlake_dashboard.swf', 54012)
 shopData[22001].push(clientData[204].classObj)
 
-
 clientData[205] = {
   name: 'Spray Ray',
   classObj: null
@@ -1330,8 +1361,7 @@ clientData[220] = {
 }
 
 clientData[220].classObj = new CatalogItemYardItem(220, clientData[220].name, 'Let Cars know that you are a sucker!', 'car_g_ico_yar_freeSign.png', 9999, 103)
-
-// TODO: Find assetId for this item.
+clientData[220].classObj.assetId = 3839703644 // Found in `car_yard_items_assets.xml`
 
 shopData[22008].push(clientData[220].classObj)
 
@@ -2005,4 +2035,4 @@ clientData[20122] = {
   classObj: new CatalogItemDetailing('Mood Springs Paint Job', '', '', 0, 'car_t_cst_pjb_moodSprings.swf')
 }
 
-module.exports = { clientData, shopData, assetData }
+module.exports = { clientData, shopData, assetData, idToAsset, assetMappings }
