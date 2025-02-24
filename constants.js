@@ -36,6 +36,8 @@ const CatalogItemDetailing = global.CatalogItemDetailing
 
 const ArrayCollection = global.ArrayCollection
 
+const AssetDictionary = global.AssetDictionary
+
 const fs = require('fs')
 const { XMLParser } = require('fast-xml-parser')
 
@@ -129,6 +131,25 @@ clientData[108] = {
 
 // Asset service
 const idToAsset = {}
+
+function parseAssetMappings () {
+  const results = new ArrayCollection()
+
+  const xmlData = fs.readFileSync('assets/mappings.xml', 'utf-8')
+  const parser = new XMLParser({ ignoreAttributes: false })
+  const mappings = parser.parse(xmlData).mappings
+
+  let id = 1
+
+  for (const mapping of mappings.m) {
+    results.push(new AssetDictionary(id, mapping['@_dir'], mapping['@_key']))
+    id += 1
+  }
+
+  return results
+}
+
+const assetMappings = parseAssetMappings()
 
 function parseAssetData (filename) {
   const results = new ArrayCollection()
@@ -1972,4 +1993,4 @@ clientData[20122] = {
   classObj: new CatalogItemDetailing('Mood Springs Paint Job', '', '', 0, 'car_t_cst_pjb_moodSprings.swf')
 }
 
-module.exports = { clientData, shopData, assetData, idToAsset }
+module.exports = { clientData, shopData, assetData, idToAsset, assetMappings }

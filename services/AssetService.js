@@ -1,12 +1,11 @@
 /* global libamf:writeable, Asset: writeable */
-/* global ArrayCollection: writeable, AssetDictionary:writeable */
+/* global ArrayCollection: writeable */
 
 libamf = global.libamf
 Asset = global.Asset
 ArrayCollection = global.ArrayCollection
-AssetDictionary = global.AssetDictionary
 
-const { assetData, idToAsset } = require('../constants')
+const { assetData, idToAsset, assetMappings } = require('../constants')
 
 /**
  * Converts a number to a uint32 value.
@@ -35,11 +34,7 @@ class AssetService extends libamf.Service {
   }
 
   getDictionaries () {
-    const dicts = new ArrayCollection()
-    dicts.push(new AssetDictionary(1, 'graphic', 'g'))
-    dicts.push(new AssetDictionary(2, 'badge', 'bad'))
-    dicts.push(new AssetDictionary(3, 'mattel', 'mat'))
-    return dicts
+    return assetMappings
   }
 
   getAsset (assetId) {
