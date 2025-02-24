@@ -1310,8 +1310,7 @@ clientData[220] = {
 }
 
 clientData[220].classObj = new CatalogItemYardItem(220, clientData[220].name, 'Let Cars know that you are a sucker!', 'car_g_ico_yar_freeSign.png', 9999, 103)
-
-// TODO: Find assetId for this item.
+clientData[220].classObj.assetId = 3839703644 // Found in `car_yard_items_assets.xml`
 
 shopData[22008].push(clientData[220].classObj)
 
