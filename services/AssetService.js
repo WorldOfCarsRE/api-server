@@ -6,7 +6,7 @@ Asset = global.Asset
 ArrayCollection = global.ArrayCollection
 AssetDictionary = global.AssetDictionary
 
-const { assetData } = require('../constants')
+const { assetData, idToAsset } = require('../constants')
 
 class AssetService extends libamf.Service {
   constructor () {
@@ -33,9 +33,14 @@ class AssetService extends libamf.Service {
   }
 
   getAsset (assetId) {
-    // TODO
-    console.log(assetId)
-    return new Asset()
+    const asset = idToAsset[assetId]
+
+    if (asset === undefined) {
+      console.log('NO ASSET DATA:', assetId)
+      return new Asset()
+    }
+
+    return asset
   }
 }
 

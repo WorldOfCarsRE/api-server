@@ -128,6 +128,8 @@ clientData[108] = {
 }
 
 // Asset service
+const idToAsset = {}
+
 function parseAssetData (filename) {
   const results = new ArrayCollection()
 
@@ -136,7 +138,9 @@ function parseAssetData (filename) {
   const assets = parser.parse(xmlData).assets
 
   for (const asset of assets.asset) {
-    results.push(new Asset(asset.layerId, asset.offsetX, asset.width, asset.filename, asset.assetId, asset.offsetY, asset.solid, asset.height))
+    const assetObj = new Asset(asset.layerId, asset.offsetX, asset.width, asset.filename, asset.assetId, asset.offsetY, asset.solid, asset.height)
+    results.push(assetObj)
+    idToAsset[Number(asset.assetId)] = assetObj
   }
 
   return results
@@ -1963,4 +1967,4 @@ clientData[20122] = {
   classObj: new CatalogItemDetailing('Mood Springs Paint Job', '', '', 0, 'car_t_cst_pjb_moodSprings.swf')
 }
 
-module.exports = { clientData, shopData, assetData }
+module.exports = { clientData, shopData, assetData, idToAsset }
