@@ -158,6 +158,8 @@ assetData[42002] = parseAssetData('car_w_trk_tfn_TwistinTailfinTrails_assets.xml
 assetData[42003] = parseAssetData('car_w_trk_frm_FillmoresFieldsRally_assets.xml')
 assetData[42005] = parseAssetData('car_w_trk_wil_WillysButteRally_assets.xml')
 
+assetData[10001] = parseAssetData('car_w_yar_own_non_member_yard_assets.xml')
+
 // Fillmore's Fields
 clientData[15001].classObj.dropPoints['15002'] = 'dp_ff_225'
 
@@ -1178,7 +1180,6 @@ clientData[204] = {
 
 clientData[204].classObj = new CatalogItemFizzyFuel(204, clientData[204].name, 'Bring on the chill! A frosty fuel to keep things cool, man.', 'car_g_ico_cns_flakeyFlake.png', 200, 16777215, 32013, 21008, 'car_g_ico_cns_flakeyFlake_dashboard.swf', 54012)
 shopData[22001].push(clientData[204].classObj)
-
 
 clientData[205] = {
   name: 'Spray Ray',
