@@ -56,6 +56,7 @@ global.libamf = require('libamf')
 /* global PromoResult */
 /* global CatalogItemDetailing */
 /* global Badge */
+/* global Yard */
 
 global.CatalogItem = require('./catalog/CatalogItem')
 global.CatalogItemRaceSeries = require('./catalog/CatalogItemRaceSeries')
@@ -111,6 +112,7 @@ global.AssetDictionary = require('./amf/AssetDictionary')
 global.PromoResult = require('./amf/PromoResult')
 global.CatalogItemDetailing = require('./catalog/CatalogItemDetailing')
 global.Badge = require('./amf/Badge')
+global.Yard = require('./amf/Yard')
 
 const express = require('express')
 
@@ -197,6 +199,7 @@ libamf.registerClassAlias('com.disney.cars.domain.asset.Dictionary', AssetDictio
 libamf.registerClassAlias('com.disney.cars.domain.promo.PromoResult', PromoResult)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Detailing', CatalogItemDetailing)
 libamf.registerClassAlias('com.disney.cars.domain.player.Badge', Badge)
+libamf.registerClassAlias('com.disney.cars.domain.player.Yard', Yard)
 
 /* global server */
 
@@ -210,6 +213,7 @@ const RaceCarService = require('./services/RaceCarService')
 const AssetService = require('./services/AssetService')
 const LeaderboardService = require('./services/LeaderboardService')
 const PromoCodeService = require('./services/PromoCodeService')
+const YardService = require('./services/YardService')
 
 const catalogService = new CatalogService()
 const raceCarService = new RaceCarService()
@@ -217,6 +221,7 @@ const playerService = new PlayerService()
 const assetService = new AssetService()
 const leaderboardService = new LeaderboardService()
 const promoCodeService = new PromoCodeService()
+const yardService = new YardService()
 
 server.registerService(catalogService)
 server.registerService(raceCarService)
@@ -224,6 +229,7 @@ server.registerService(playerService)
 server.registerService(assetService)
 server.registerService(leaderboardService)
 server.registerService(promoCodeService)
+server.registerService(yardService)
 
 // for parsing application/x-www-form-urlencoded
 server.app.use(express.urlencoded({ extended: true }))
