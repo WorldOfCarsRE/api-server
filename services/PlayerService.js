@@ -9,6 +9,22 @@ class PlayerService extends libamf.Service {
     super('player')
   }
 
+  async getPlayerOriginalStartDate (playerId) {
+    const car = await db.retrieveCar(playerId)
+    if (!car) {
+      console.log(`getPlayerOriginalStartDate: Couldn't find car with playerId: ${playerId}`)
+      return
+    }
+
+    if (car.membershipStart === undefined) {
+      // Add membership start date to Car object
+      car.membershipStart = new Date()
+      await car.save()
+    }
+
+    return car.membershipStart.toISOString().split('T')[0]
+  }
+
   async getPlayer (playerId) {
     console.log(`getPlayer: ${playerId}`)
 
