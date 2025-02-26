@@ -10,6 +10,7 @@ class YardService extends libamf.Service {
 
   getYard () {
     // TODO
+    console.log(userSession)
     return new Yard()
   }
 }

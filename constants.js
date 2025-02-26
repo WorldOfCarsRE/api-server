@@ -292,7 +292,7 @@ clientData[15012].classObj.dropPoints.mp = 'dp_mp_225'
 
 clientData[10001] = {
   name: 'Home',
-  classObj: new CatalogItemDungeon('Home', 0, 'car_f_gui_ldr_generic_en_US.swf', 'car_w_yar_own_non_member_yard', 'car_g_map_env_yardNonMember.swf', 'scripts/yard/small.lua', 'Music', 'radiatorSprings', 'dp_default_45')
+  classObj: new CatalogItemDungeon('Home', 0, 'car_f_gui_ldr_generic_en_US.swf', 'car_w_yar_own_non_member_yard', 'car_g_map_env_yardNonMember.swf', 'scripts/yard/small.lua', 'Music', 'zoneRadiatorSprings02', 'dp_default_45')
 }
 
 clientData[10101] = {

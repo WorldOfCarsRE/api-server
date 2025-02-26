@@ -595,3 +595,9 @@ server.app.get('/dxd/flashAPI/getTermsOfUseText', async (req, res) => {
 server.app.get('/getShopItemData', async (req, res) => {
   return res.end(JSON.stringify(shopData))
 })
+
+// Remove userSession at the very end of the router stack, add routes above this call please.
+server.app.use((req, res, next) => {
+  userSession = {}
+  next()
+})
