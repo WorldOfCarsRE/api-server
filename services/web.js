@@ -598,6 +598,7 @@ server.app.get('/getShopItemData', async (req, res) => {
 
 // Remove userSession at the very end of the router stack, add routes above this call please.
 server.app.use((req, res, next) => {
+  // eslint-disable-next-line no-undef
   userSession = {}
   next()
 })

@@ -207,7 +207,8 @@ global.server = new libamf.Server({
   path: '/carsds/messagebroker/amf'
 })
 
-/* global userSession */
+// eslint-disable-next-line no-unused-vars
+/* global userSession: writeable */
 global.userSession = {}
 
 const CatalogService = require('./services/CatalogService')
