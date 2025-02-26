@@ -207,6 +207,10 @@ global.server = new libamf.Server({
   path: '/carsds/messagebroker/amf'
 })
 
+// eslint-disable-next-line no-unused-vars
+/* global userSession: writeable */
+global.userSession = {}
+
 const CatalogService = require('./services/CatalogService')
 const PlayerService = require('./services/PlayerService')
 const RaceCarService = require('./services/RaceCarService')
@@ -259,5 +263,18 @@ sess = {
 }
 
 server.app.use(session(sess))
+// HACK: Move the session middleware to the very beginning
+// of the stack to ensure it gets called before the AMF stuff.
+server.app._router.stack.unshift(server.app._router.stack.pop())
+
+// Store the session cookie at a global variable
+// so that AMF functions can actually use it. (This gets
+// deleted at the end of the stack; see the bottom of web.js)
+server.app.use((req, res, next) => {
+  userSession = req.session
+  next()
+})
+// HACK: Make it the 2nd middleware to be called from the stack.
+server.app._router.stack.splice(1, 0, server.app._router.stack.pop())
 
 require('./services/web')
