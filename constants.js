@@ -720,6 +720,26 @@ clientData[54023] = {
   classObj: new CatalogItemSimpleSound('FizzyFuel', 'fizzyFuelLaserRed')
 }
 
+clientData[54024] = {
+  name: 'Hay Bale Bomb explosion sounds',
+  classObj: new CatalogItemSimpleSound('WorldSFX', 'haybaleExplosions')
+}
+
+clientData[54025] = {
+  name: 'Messy Mix sounds',
+  classObj: new CatalogItemSimpleSound('WorldSFX', 'messedUpMixExplosions')
+}
+
+clientData[54026] = {
+  name: 'Water Tower Lever sound',
+  classObj: new CatalogItemSimpleSound('WorldSFX', 'fillmoreWaterTowerLever')
+}
+
+clientData[54027] = {
+  name: 'Water Tower Water sound',
+  classObj: new CatalogItemSimpleSound('WorldSFX', 'fillmoreWaterTowerWater')
+}
+
 clientData[54019] = {
   name: 'Medium Horn',
   classObj: new CatalogItemSimpleSound('ui', 'HonkMedium')
@@ -1868,18 +1888,33 @@ clientData[5000] = {
 }
 
 clientData[5001] = {
-  name: 'Oil Slick Map Sprite (InteractiveObject)',
+  name: 'Racing Oil Slick Map Sprite (InteractiveObject)',
   classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_oilSlick.swf', ['drop', 'end_drop', 'visible', 'end_visible', 'explode', 'end_explode', 'invisible', 'end_invisible'])
 }
 
 clientData[5002] = {
-  name: 'Hay Bale Bomb Map Sprite (InteractiveObject)',
+  name: 'Racing Hay Bale Bomb Map Sprite (InteractiveObject)',
   classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_hayBaleBombRacing.swf', ['drop', 'end_drop', 'visible', 'end_visible', 'explode', 'end_explode', 'invisible', 'end_invisible'])
 }
 
 clientData[5003] = {
-  name: 'Smoke Screen Map Sprite (InteractiveObject)',
+  name: 'Racing Smoke Screen Map Sprite (InteractiveObject)',
   classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_smokeScreen.swf', ['drop', 'end_drop', 'visible', 'end_visible', 'explode', 'end_explode', 'invisible', 'end_invisible'])
+}
+
+clientData[5004] = {
+  name: 'Hay Bale Bomb Map Sprite (InteractiveObject)',
+  classObj: new CatalogItemMapSprite(0, 0, 0, 0, '', ['', 'visible', 'end_visible', 'explode', 'end_explode', 'invisible', 'end_invisible'])
+}
+
+clientData[5005] = {
+  name: 'Messy Mix Map Sprite (InteractiveObject)',
+  classObj: new CatalogItemMapSprite(0, 0, 0, 0, '', ['idle', 'end_idle', 'active', 'end_active', 'collectEffect', 'end_collectEffect', 'collected', 'end_collected', 'inactive', 'end_inactive'])
+}
+
+clientData[5006] = {
+  name: 'Water Tower Shower Map Sprite (InteractiveObject)',
+  classObj: new CatalogItemMapSprite(0, 30, 0, 0, '', ['idle', 'end_idle', 'lever', 'end_lever', 'wateron', 'end_wateron', 'waterflow', 'end_waterflow', 'wateroff', 'end_wateroff'])
 }
 
 // Paint jobs
