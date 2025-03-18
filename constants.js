@@ -1889,17 +1889,17 @@ clientData[5000] = {
 
 clientData[5001] = {
   name: 'Racing Oil Slick Map Sprite (InteractiveObject)',
-  classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_oilSlick.swf', ['drop', 'end_drop', 'visible', 'end_visible', 'explode', 'end_explode', 'invisible', 'end_invisible'])
+  classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_oilSlick.swf', ['drop', 'drop', 'visible', 'visible', 'explode', 'explode', 'invisible', 'invisible'])
 }
 
 clientData[5002] = {
   name: 'Racing Hay Bale Bomb Map Sprite (InteractiveObject)',
-  classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_hayBaleBombRacing.swf', ['drop', 'end_drop', 'visible', 'end_visible', 'explode', 'end_explode', 'invisible', 'end_invisible'])
+  classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_hayBaleBombRacing.swf', ['drop', 'drop', 'visible', 'visible', 'explode', 'explode', 'invisible', 'invisible'])
 }
 
 clientData[5003] = {
   name: 'Racing Smoke Screen Map Sprite (InteractiveObject)',
-  classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_smokeScreen.swf', ['drop', 'end_drop', 'visible', 'end_visible', 'explode', 'end_explode', 'invisible', 'end_invisible'])
+  classObj: new CatalogItemMapSprite(0, 0, 0, 0, 'car_s_int_rac_smokeScreen.swf', ['drop', 'drop', 'visible', 'visible', 'explode', 'explode', 'invisible', 'invisible'])
 }
 
 clientData[5004] = {
