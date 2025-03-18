@@ -1346,11 +1346,51 @@ shopData[22005].push(clientData[214].classObj)
 
 // Sarge's Surplus Hut
 shopData[22006] = new ArrayCollection()
-shopData[22006].push(new CatalogItemStack(215, 'Oil Slick 6-Pack', 'Lay down a slick escape plan—six times the slipperiness!', 'car_g_ico_ger_oilSlick6x.png', 595, 501, 6))
-shopData[22006].push(new CatalogItemStack(216, 'Smoke Screen 6-Pack', 'Double the packs, double the smoke—make your getaway grand! (Screen not included.)', 'car_g_ico_ger_smokeScreen6x.png', 595, 503, 6))
-shopData[22006].push(new CatalogItemStack(217, 'Hay Bale Boom! 3-Pack', 'Bales that go boom! Perfect for camouflaging with a little extra kick.', 'car_g_ico_ger_hayBaleBomb3x.png', 400, 502, 3))
-shopData[22006].push(new CatalogItemStack(218, 'Oil Slick 3-Pack', 'A triple threat of slick moves for a quick getaway!', 'car_g_ico_ger_oilSlick3x.png', 200, 501, 3))
-shopData[22006].push(new CatalogItemStack(219, 'Smoke Screen 3-Pack', "Pull the wool over your opponent's eyes with triple the smoke! (Screen not included.)", 'car_g_ico_ger_smokeScreen3x.png', 200, 501, 3))
+
+clientData[215] = {
+  name: 'Oil Slick 6-Pack',
+  classObj: null
+}
+
+clientData[215].classObj = new CatalogItemStack(215, clientData[215].name, 'Lay down a slick escape plan—six times the slipperiness!', 'car_g_ico_ger_oilSlick6x.png', 595, 501, 6)
+
+shopData[22006].push(clientData[215].classObj)
+
+clientData[216] = {
+  name: 'Smoke Screen 6-Pack',
+  classObj: null
+}
+
+clientData[216].classObj = new CatalogItemStack(216, clientData[216].name, 'Double the packs, double the smoke—make your getaway grand! (Screen not included.)', 'car_g_ico_ger_smokeScreen6x.png', 595, 503, 6)
+
+shopData[22006].push(clientData[216].classObj)
+
+clientData[217] = {
+  name: 'Hay Bale Boom! 3-Pack',
+  classObj: null
+}
+
+clientData[217].classObj = new CatalogItemStack(217, clientData[217].name, 'Bales that go boom! Perfect for camouflaging with a little extra kick.', 'car_g_ico_ger_hayBaleBomb3x.png', 400, 502, 3)
+
+shopData[22006].push(clientData[217].classObj)
+
+clientData[218] = {
+  name: 'Oil Slick 3-Pack',
+  classObj: null
+}
+
+clientData[218].classObj = new CatalogItemStack(218, clientData[218].name, 'A triple threat of slick moves for a quick getaway!', 'car_g_ico_ger_oilSlick3x.png', 200, 501, 3)
+
+shopData[22006].push(clientData[218].classObj)
+
+clientData[219] = {
+  name: 'Smoke Screen 3-Pack',
+  classObj: null
+}
+
+clientData[219].classObj = new CatalogItemStack(219, clientData[219].name, "Pull the wool over your opponent's eyes with triple the smoke! (Screen not included.)", 'car_g_ico_ger_smokeScreen3x.png', 200, 501, 3)
+
+shopData[22006].push(clientData[219].classObj)
 
 // Mater's Junk Yard
 shopData[22008] = new ArrayCollection()
