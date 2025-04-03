@@ -847,7 +847,7 @@ clientData[31009] = {
 
 clientData[31010] = {
   name: 'Lightning McQueen',
-  classObj: new CatalogItemNPC('car_k_chr_frn_mcqueenLow.dpak', 'Lightning McQueen', 'car_r_chr_frn_mcqueen.smod', '', '', 105)
+  classObj: new CatalogItemNPC('car_k_chr_frn_mcqueenLow.dpak', 'Lightning McQueen', 'car_r_chr_frn_mcqueenLow_Cars2.smod', '', '', 105)
 }
 
 clientData[31015] = {
