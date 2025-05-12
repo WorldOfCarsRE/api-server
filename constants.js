@@ -1062,12 +1062,13 @@ clientData[22001] = {
   classObj: null
 }
 
+// TODO: Figure out proper animation for this id?
+clientData[60002] = clientData[31011]
+clientData[60002].itemId = 60002
+
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.fillmoreStore)
 clientData[22001].classObj = new CatalogItemStore(clientData[22001].name, 'voStoreFillmoreEnter', 'car_f_gui_str_fillmoreStore.swf', '33274,60002,60021,60022,33274,33274,33274,33274,33274,33274', '', 'voStoreFillmoreExit')
 clientData[15001].classObj.dropPoints['22001'] = 'dp_fillmore_225 '
-
-// TODO: Figure out proper animation for this id?
-clientData[60002] = clientData[31011]
 
 clientData[22002] = {
   name: "Lightning McQueen's Pro-Race Shop",
@@ -1310,6 +1311,10 @@ clientData[22003] = {
   classObj: null
 }
 
+// TODO: Figure out proper animation for this id?
+clientData[60011] = clientData[31011]
+clientData[60011].itemId = 60011
+
 clientData[22003].classObj = new CatalogItemStore(clientData[22003].name, 'voStoreLuigiEnter', 'car_f_gui_str_luigiStore.swf', '33274,60010,60011,60022,60010,60010,33274,33274,33274,33274', null, 'voStoreLuigiExit')
 clientData[15001].classObj.dropPoints['22003'] = 'dp_luigi_135 '
 
@@ -1405,7 +1410,6 @@ clientData[220].classObj.assetId = 3839703644 // Found in `car_yard_items_assets
 
 shopData[22008].push(clientData[220].classObj)
 
-shopData[22008].push(new CatalogItemYardItem(220, 'Foolish Sign', 'Let Cars know that you are a sucker!', 'car_g_ico_yar_freeSign.png', 9999, 103))
 shopData[22008].push(new CatalogItemYardItem(221, "Mater's Windmill", '', 'car_g_ico_yar_junkBarrelWindmill.ajpg', 5000, 100))
 shopData[22008].push(new CatalogItemYardItem(222, 'Giant Gas Tank', '', 'car_g_ico_yar_gasTankLarge.ajpg', 3000, 104))
 shopData[22008].push(new CatalogItemYardItem(223, 'Large Tire Stack', '', 'car_g_ico_yar_tireStackTruckBig.ajpg', 500))
