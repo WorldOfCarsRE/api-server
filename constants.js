@@ -857,7 +857,7 @@ clientData[31015] = {
 
 clientData[42001] = {
   name: 'spRace_ccs',
-  classObj: new CatalogItemRaceTrack('Carburetor County Speedway', 'Local track where the showdown is downtown!', false, 'sp_ccs', 'mp_ccs', 'car_f_gui_ttl_carburetorCounty_en_US.swf', 'sp_ccs', 'car_w_trk_rsp_CarburetorCountySpeedway', 'car_g_map_trk_carburetorCounty.swf', 'Music', 'raceCarburetorCountySpeedway', 'car_w_trk_rsp_ccSpeedway_SS_phys.xml', 15001, 'car_g_lgo_trk_carburetorCountySpeedway_en_US.swf', 'car_g_rac_scn_CarbCountySpeedway.jpg', 'car_g_ico_map_CCS.swf')
+  classObj: new CatalogItemRaceTrack('Carburetor County Speedway', 'Local track where the showdown is downtown!', false, 'sp_ccs', 'mp_ccs', 'car_f_gui_ttl_carburetorCounty_en_US.swf', 'sp_ccs', 'car_w_trk_rsp_carburetorCountySpeedway', 'car_g_map_trk_carburetorCounty.swf', 'Music', 'raceCarburetorCountySpeedway', 'car_w_trk_rsp_ccSpeedway_SS_phys.xml', 15001, 'car_g_lgo_trk_carburetorCountySpeedway_en_US.swf', 'car_g_rac_scn_CarbCountySpeedway.jpg', 'car_g_ico_map_CCS.swf')
 }
 
 clientData[42002] = {
