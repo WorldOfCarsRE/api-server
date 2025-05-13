@@ -343,9 +343,6 @@ server.app.post('/carsds/api/internal/setCarData', async (req, res) => {
   const data = req.body
 
   if (data.playToken && data.fieldData) {
-    if (data.playToken.includes('%')) {
-      data.playToken = decodeURIComponent(data.playToken)
-    }
     const car = await db.retrieveCarByOwnerAccount(data.playToken)
     console.log(car, data.fieldData)
     Object.assign(car, data.fieldData)
