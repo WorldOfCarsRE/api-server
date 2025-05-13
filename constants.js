@@ -1393,7 +1393,7 @@ clientData[219] = {
   classObj: null
 }
 
-clientData[219].classObj = new CatalogItemStack(219, clientData[219].name, "Pull the wool over your opponent's eyes with triple the smoke! (Screen not included.)", 'car_g_ico_ger_smokeScreen3x.png', 200, 501, 3)
+clientData[219].classObj = new CatalogItemStack(219, clientData[219].name, "Pull the wool over your opponent's eyes with triple the smoke! (Screen not included.)", 'car_g_ico_ger_smokeScreen3x.png', 200, 503, 3)
 
 shopData[22006].push(clientData[219].classObj)
 
