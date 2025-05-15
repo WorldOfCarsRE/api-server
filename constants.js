@@ -1515,16 +1515,6 @@ shopData[22012].push(new CatalogItemYardItem(263, 'Surveillance Cam', '', 'car_g
 // Ramone's House of Body Art
 shopData[22004] = new ArrayCollection()
 
-clientData[201] = {
-  name: 'Tribal',
-  classObj: null
-}
-
-clientData[201].classObj = new CatalogItemDetailing(clientData[201].name, 'Savage but smart. Just like you out on the track!', 'car_g_ico_pjb_tribalPinStripe.ajpg', 4000, 'car_t_cst_pjb_tribalPinStripe.swf')
-clientData[201].classObj.itemId = 201
-
-shopData[22004].push(clientData[201].classObj)
-
 // Hazards
 clientData[501] = {
   name: 'Oil Slick',
@@ -2071,5 +2061,15 @@ clientData[20122] = {
   name: 'Mood Springs Paint Job',
   classObj: new CatalogItemDetailing('Mood Springs Paint Job', '', '', 0, 'car_t_cst_pjb_moodSprings.swf')
 }
+
+clientData[20123] = {
+  name: 'Tribal',
+  classObj: null
+}
+
+clientData[20123].classObj = new CatalogItemDetailing(clientData[20123].name, 'Savage but smart. Just like you out on the track!', 'car_g_ico_pjb_tribalPinStripe.ajpg', 4000, 'car_t_cst_pjb_tribalPinStripe.swf')
+clientData[20123].classObj.itemId = 20123
+
+shopData[22004].push(clientData[20123].classObj)
 
 module.exports = { clientData, shopData, assetData, idToAsset, assetMappings }
