@@ -877,7 +877,7 @@ clientData[31015] = {
 
 clientData[42001] = {
   name: 'spRace_ccs',
-  classObj: new CatalogItemRaceTrack('Carburetor County Speedway', 'Local track where the showdown is downtown!', false, 'sp_ccs', 'mp_ccs', 'car_f_gui_ttl_carburetorCounty_en_US.swf', 'sp_ccs', 'car_w_trk_rsp_CarburetorCountySpeedway', 'car_g_map_trk_carburetorCounty.swf', 'Music', 'raceCarburetorCountySpeedway', 'car_w_trk_rsp_ccSpeedway_SS_phys.xml', 15001, 'car_g_lgo_trk_carburetorCountySpeedway_en_US.swf', 'car_g_rac_scn_CarbCountySpeedway.jpg', 'car_g_ico_map_CCS.swf')
+  classObj: new CatalogItemRaceTrack('Carburetor County Speedway', 'Local track where the showdown is downtown!', false, 'sp_ccs', 'mp_ccs', 'car_f_gui_ttl_carburetorCounty_en_US.swf', 'sp_ccs', 'car_w_trk_rsp_carburetorCountySpeedway', 'car_g_map_trk_carburetorCounty.swf', 'Music', 'raceCarburetorCountySpeedway', 'car_w_trk_rsp_ccSpeedway_SS_phys.xml', 15001, 'car_g_lgo_trk_carburetorCountySpeedway_en_US.swf', 'car_g_rac_scn_CarbCountySpeedway.jpg', 'car_g_ico_map_CCS.swf')
 }
 
 clientData[42002] = {
@@ -1082,12 +1082,13 @@ clientData[22001] = {
   classObj: null
 }
 
+// TODO: Figure out proper animation for this id?
+clientData[60002] = clientData[31011]
+clientData[60002].itemId = 60002
+
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.fillmoreStore)
 clientData[22001].classObj = new CatalogItemStore(clientData[22001].name, 'voStoreFillmoreEnter', 'car_f_gui_str_fillmoreStore.swf', '33274,60002,60021,60022,33274,33274,33274,33274,33274,33274', '', 'voStoreFillmoreExit')
 clientData[15001].classObj.dropPoints['22001'] = 'dp_fillmore_225 '
-
-// TODO: Figure out proper animation for this id?
-clientData[60002] = clientData[31011]
 
 clientData[22002] = {
   name: "Lightning McQueen's Pro-Race Shop",
@@ -1330,6 +1331,10 @@ clientData[22003] = {
   classObj: null
 }
 
+// TODO: Figure out proper animation for this id?
+clientData[60011] = clientData[31011]
+clientData[60011].itemId = 60011
+
 clientData[22003].classObj = new CatalogItemStore(clientData[22003].name, 'voStoreLuigiEnter', 'car_f_gui_str_luigiStore.swf', '33274,60010,60011,60022,60010,60010,33274,33274,33274,33274', null, 'voStoreLuigiExit')
 clientData[15001].classObj.dropPoints['22003'] = 'dp_luigi_135 '
 
@@ -1408,7 +1413,7 @@ clientData[219] = {
   classObj: null
 }
 
-clientData[219].classObj = new CatalogItemStack(219, clientData[219].name, "Pull the wool over your opponent's eyes with triple the smoke! (Screen not included.)", 'car_g_ico_ger_smokeScreen3x.png', 200, 501, 3)
+clientData[219].classObj = new CatalogItemStack(219, clientData[219].name, "Pull the wool over your opponent's eyes with triple the smoke! (Screen not included.)", 'car_g_ico_ger_smokeScreen3x.png', 200, 503, 3)
 
 shopData[22006].push(clientData[219].classObj)
 
@@ -1425,7 +1430,6 @@ clientData[220].classObj.assetId = 3839703644 // Found in `car_yard_items_assets
 
 shopData[22008].push(clientData[220].classObj)
 
-shopData[22008].push(new CatalogItemYardItem(220, 'Foolish Sign', 'Let Cars know that you are a sucker!', 'car_g_ico_yar_freeSign.png', 9999, 103))
 shopData[22008].push(new CatalogItemYardItem(221, "Mater's Windmill", '', 'car_g_ico_yar_junkBarrelWindmill.ajpg', 5000, 100))
 shopData[22008].push(new CatalogItemYardItem(222, 'Giant Gas Tank', '', 'car_g_ico_yar_gasTankLarge.ajpg', 3000, 104))
 shopData[22008].push(new CatalogItemYardItem(223, 'Large Tire Stack', '', 'car_g_ico_yar_tireStackTruckBig.ajpg', 500))
@@ -1530,16 +1534,6 @@ shopData[22012].push(new CatalogItemYardItem(263, 'Surveillance Cam', '', 'car_g
 
 // Ramone's House of Body Art
 shopData[22004] = new ArrayCollection()
-
-clientData[201] = {
-  name: 'Tribal',
-  classObj: null
-}
-
-clientData[201].classObj = new CatalogItemDetailing(clientData[201].name, 'Savage but smart. Just like you out on the track!', 'car_g_ico_pjb_tribalPinStripe.ajpg', 4000, 'car_t_cst_pjb_tribalPinStripe.swf')
-clientData[201].classObj.itemId = 201
-
-shopData[22004].push(clientData[201].classObj)
 
 // Hazards
 clientData[501] = {
@@ -2109,5 +2103,15 @@ clientData[20122] = {
   name: 'Mood Springs Paint Job',
   classObj: new CatalogItemDetailing('Mood Springs Paint Job', '', '', 0, 'car_t_cst_pjb_moodSprings.swf')
 }
+
+clientData[20123] = {
+  name: 'Tribal',
+  classObj: null
+}
+
+clientData[20123].classObj = new CatalogItemDetailing(clientData[20123].name, 'Savage but smart. Just like you out on the track!', 'car_g_ico_pjb_tribalPinStripe.ajpg', 4000, 'car_t_cst_pjb_tribalPinStripe.swf')
+clientData[20123].classObj.itemId = 20123
+
+shopData[22004].push(clientData[20123].classObj)
 
 module.exports = { clientData, shopData, assetData, idToAsset, assetMappings }
