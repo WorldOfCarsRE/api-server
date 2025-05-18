@@ -33,6 +33,7 @@ const CatalogItemYardItem = global.CatalogItemYardItem
 const CatalogItemConsumable = global.CatalogItemConsumable
 const CatalogItemStack = global.CatalogItemStack
 const CatalogItemDetailing = global.CatalogItemDetailing
+const CatalogItemAddon = global.CatalogItemAddon
 
 const ArrayCollection = global.ArrayCollection
 
@@ -1301,10 +1302,6 @@ clientData[200].classObj.itemId = 200
 
 shopData[22002].push(clientData[200].classObj)
 
-shopData[22002].push(new CatalogPlayerStoreItem(201, 'AV-RAGE Racing Fin', '', 'car_g_ico_spo_avrageRacingFin.ajpg', 1000))
-shopData[22002].push(new CatalogPlayerStoreItem(202, 'RZN-TEK Ninja XL', '', 'car_g_ico_spo_RZNTEKNinjaXL.ajpg', 8000))
-shopData[22002].push(new CatalogPlayerStoreItem(203, 'SKY-LITE Drop Wing', '', 'car_g_ico_spo_skyLiteDropWing.ajpg', 6000))
-
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.luigiStore)
 clientData[22003] = {
   name: "Luigi's Casa Della Tires",
@@ -2071,5 +2068,36 @@ clientData[20123].classObj = new CatalogItemDetailing(clientData[20123].name, 'S
 clientData[20123].classObj.itemId = 20123
 
 shopData[22004].push(clientData[20123].classObj)
+
+// Addons
+clientData[201] = {
+  name: 'AV-RAGE Racing Fin',
+  classObj: null
+}
+
+clientData[201].classObj = new CatalogItemAddon(clientData[201].name, "All the pros you've seen on the RSN use this fin for a reason: it works!", 'car_g_ico_spo_avrageRacingFin.ajpg', 1000, 'spoiler', 'car_m_cst_spo_avrageRacingFin.smod')
+clientData[201].classObj.itemId = 201
+
+shopData[22002].push(clientData[201].classObj)
+
+clientData[202] = {
+  name: 'RZN-TEK Ninja XL',
+  classObj: null
+}
+
+clientData[202].classObj = new CatalogItemAddon(clientData[202].name, 'RZN-TEK dares you to go EXTRA LARGE with this Ninja spoiler.', 'car_g_ico_spo_RZNTEKNinjaXL.ajpg', 8000, 'spoiler', 'car_m_cst_spo_RZNTEKNinjaXL.smod')
+clientData[202].classObj.itemId = 202
+
+shopData[22002].push(clientData[202].classObj)
+
+clientData[203] = {
+  name: 'SKY-LITE Drop Wing',
+  classObj: null
+}
+
+clientData[203].classObj = new CatalogItemAddon(clientData[203].name, '', 'car_g_ico_spo_skyLiteDropWing.ajpg', 6000, 'spoiler', 'car_m_cst_spo_skyLiteDropWing.smod')
+clientData[203].classObj.itemId = 203
+
+shopData[22002].push(clientData[203].classObj)
 
 module.exports = { clientData, shopData, assetData, idToAsset, assetMappings }
