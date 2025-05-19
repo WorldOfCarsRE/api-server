@@ -508,12 +508,12 @@ clientData[51138] = {
 
 clientData[51139] = {
   name: 'Car Decal Hood (Octane Gain)',
-  classObj: new CatalogItemDecal(['car_t_cst_dec_octaneGain_topFront.swf', 0])
+  classObj: new CatalogItemDecal(['car_t_cst_dec_octainGain_topFront.swf', 0])
 }
 
 clientData[51140] = {
   name: 'Car Decal Rear (Octane Gain)',
-  classObj: new CatalogItemDecal(['car_t_cst_dec_octaneGain_rear.swf', 9])
+  classObj: new CatalogItemDecal(['car_t_cst_dec_octainGain_rear.swf', 9])
 }
 
 clientData[51141] = {
@@ -1539,7 +1539,7 @@ clientData[9980] = {
   classObj: null
 }
 
-clientData[9980].classObj = new CatalogItemSponsor(clientData[9980].name, 1, 'car_g_bcg_spr_shinyWax.swf', 'car_g_bcg_spr_shinyWaxTent_en_US.swf', 'car_t_cst_dec_shinyWax.swf', '', 20401, 59001)
+clientData[9980].classObj = new CatalogItemSponsor(clientData[9980].name, 1, 'car_g_bcg_spr_shinyWax.swf', 'car_g_bcg_spr_shinyWaxTent_en_US.swf', 'car_t_cst_dec_shinyWax.swf', 20401, 59001, '', 'voSponsorShinyWax')
 
 clientData[20401] = {
   name: 'Shiny Wax (CatalogItemCarDNA)',
@@ -1551,7 +1551,7 @@ clientData[9981] = {
   classObj: null
 }
 
-clientData[9981].classObj = new CatalogItemSponsor(clientData[9981].name, 1, 'car_g_bcg_spr_leakLess.swf', 'car_g_bcg_spr_leaklessTent_en_US.swf', 'car_t_cst_dec_leakLess.swf', '', 20402, 59002)
+clientData[9981].classObj = new CatalogItemSponsor(clientData[9981].name, 1, 'car_g_bcg_spr_leakLess.swf', 'car_g_bcg_spr_leaklessTent_en_US.swf', 'car_t_cst_dec_leakLess.swf', 20402, 59002, '', 'voSponsorLeakLess')
 
 clientData[20402] = {
   name: 'Leak Less (CatalogItemCarDNA)',
@@ -1563,7 +1563,7 @@ clientData[9982] = {
   classObj: null
 }
 
-clientData[9982].classObj = new CatalogItemSponsor(clientData[9982].name, 1, 'car_g_bcg_spr_sputterStop.swf', 'car_g_bcg_spr_sputterStopTent_en_US.swf', 'car_t_cst_dec_sputterStop.swf', '', 20403, 59003)
+clientData[9982].classObj = new CatalogItemSponsor(clientData[9982].name, 1, 'car_g_bcg_spr_sputterStop.swf', 'car_g_bcg_spr_sputterStopTent_en_US.swf', 'car_t_cst_dec_sputterStop.swf', 20403, 59003, '', 'voSponsorSputterStop')
 
 clientData[20403] = {
   name: 'Sputter Stop (CatalogItemCarDNA)',
@@ -1575,7 +1575,7 @@ clientData[9983] = {
   classObj: null
 }
 
-clientData[9983].classObj = new CatalogItemSponsor(clientData[9983].name, 1, 'car_g_bcg_spr_spareMint.swf', 'car_g_bcg_spr_spareMintTent_en_US.swf', 'car_t_cst_dec_spareMint.swf', '', 20404, 59004)
+clientData[9983].classObj = new CatalogItemSponsor(clientData[9983].name, 1, 'car_g_bcg_spr_spareMint.swf', 'car_g_bcg_spr_spareMintTent_en_US.swf', 'car_t_cst_dec_spareMint.swf', 20404, 59004, '', 'voSponsorSpareMint')
 
 clientData[20404] = {
   name: 'Spare Mint (CatalogItemCarDNA)',
@@ -1587,7 +1587,7 @@ clientData[9984] = {
   classObj: null
 }
 
-clientData[9984].classObj = new CatalogItemSponsor(clientData[9984].name, 1, 'car_g_bcg_spr_trunkFresh.swf', 'car_g_bcg_spr_trunkFreshTent_en_US.swf', 'car_t_cst_dec_trunkFresh.swf', '', 20405, 59005)
+clientData[9984].classObj = new CatalogItemSponsor(clientData[9984].name, 1, 'car_g_bcg_spr_trunkFresh.swf', 'car_g_bcg_spr_trunkFreshTent_en_US.swf', 'car_t_cst_dec_trunkFresh.swf', 20405, 59005, '', 'voSponsorTrunkFresh')
 
 clientData[20405] = {
   name: 'Trunk Fresh (CatalogItemCarDNA)',
@@ -1599,7 +1599,7 @@ clientData[9985] = {
   classObj: null
 }
 
-clientData[9985].classObj = new CatalogItemSponsor(clientData[9985].name, 2, 'car_g_bcg_spr_torquey.swf', 'car_g_bcg_spr_torqueyTent_en_US.swf', 'car_t_cst_dec_torqueyPistons.swf', 'car_g_bcg_spr_torqueyTent_main_en_US.swf', 20406, 59006)
+clientData[9985].classObj = new CatalogItemSponsor(clientData[9985].name, 2, 'car_g_bcg_spr_torquey.swf', 'car_g_bcg_spr_torqueyTent_en_US.swf', 'car_t_cst_dec_torqueyPistons.swf', 20406, 59006, 'car_g_bcg_spr_torqueyTent_main_en_US.swf', 'voSponsorLilTorquey')
 
 clientData[20406] = {
   name: "Lil' Torquey Pistons (CatalogItemCarDNA)",
@@ -1611,7 +1611,7 @@ clientData[9986] = {
   classObj: null
 }
 
-clientData[9986].classObj = new CatalogItemSponsor(clientData[9986].name, 2, 'car_g_bcg_spr_gaskits.swf', 'car_g_bcg_spr_gaskitsTent_en_US.swf', 'car_t_cst_dec_gaskits.swf', 'car_g_bcg_spr_gaskitsTent_main_en_US.swf', 20407, 59007)
+clientData[9986].classObj = new CatalogItemSponsor(clientData[9986].name, 2, 'car_g_bcg_spr_gaskits.swf', 'car_g_bcg_spr_gaskitsTent_en_US.swf', 'car_t_cst_dec_gaskits.swf', 20407, 59007, 'car_g_bcg_spr_gaskitsTent_main_en_US.swf', 'voSponsorGasKits')
 
 clientData[20407] = {
   name: 'Gask-Its (CatalogItemCarDNA)',
@@ -1623,7 +1623,7 @@ clientData[9987] = {
   classObj: null
 }
 
-clientData[9987].classObj = new CatalogItemSponsor(clientData[9987].name, 3, 'car_g_bcg_spr_nostall.swf', 'car_g_bcg_spr_nostallTent_en_US.swf', 'car_t_cst_dec_noStall.swf', 'car_g_bcg_spr_nostallTent_main_en_US.swf', 20408, 59008)
+clientData[9987].classObj = new CatalogItemSponsor(clientData[9987].name, 3, 'car_g_bcg_spr_nostall.swf', 'car_g_bcg_spr_nostallTent_en_US.swf', 'car_t_cst_dec_noStall.swf', 20408, 59008, 'car_g_bcg_spr_nostallTent_main_en_US.swf', 'voSponsorNoStall')
 
 clientData[20408] = {
   name: 'No Stall (CatalogItemCarDNA)',
@@ -1635,7 +1635,7 @@ clientData[9988] = {
   classObj: null
 }
 
-clientData[9988].classObj = new CatalogItemSponsor(clientData[9988].name, 3, 'car_g_bcg_spr_revNgo.swf', 'car_g_bcg_spr_revNgoTent_en_US.swf', 'car_t_cst_dec_revNGo.swf', 'car_g_bcg_spr_revNgoTent_main_en_US.swf', 20409, 59009)
+clientData[9988].classObj = new CatalogItemSponsor(clientData[9988].name, 3, 'car_g_bcg_spr_revNgo.swf', 'car_g_bcg_spr_revNgoTent_en_US.swf', 'car_t_cst_dec_revNGo.swf', 20409, 59009, 'car_g_bcg_spr_revNgoTent_main_en_US.swf', 'voSponsorRevNGo')
 
 clientData[20409] = {
   name: 'Rev-N-Go (CatalogItemCarDNA)',
@@ -1647,7 +1647,7 @@ clientData[9989] = {
   classObj: null
 }
 
-clientData[9989].classObj = new CatalogItemSponsor(clientData[9989].name, 4, 'car_g_bcg_spr_gasprin.swf', 'car_g_bcg_spr_gasprinTent_en_US.swf', 'car_t_cst_dec_gasprin.swf', 'car_g_bcg_spr_gasprinTent_main_en_US.swf', 20410, 59010)
+clientData[9989].classObj = new CatalogItemSponsor(clientData[9989].name, 4, 'car_g_bcg_spr_gasprin.swf', 'car_g_bcg_spr_gasprinTent_en_US.swf', 'car_t_cst_dec_gasprin.swf', 20410, 59010, 'car_g_bcg_spr_gasprinTent_main_en_US.swf', 'voSponsorGasprin')
 
 clientData[20410] = {
   name: 'Gasprin (CatalogItemCarDNA)',
@@ -1659,7 +1659,7 @@ clientData[9990] = {
   classObj: null
 }
 
-clientData[9990].classObj = new CatalogItemSponsor(clientData[9990].name, 4, 'car_g_bcg_spr_tankCoat.swf', 'car_g_bcg_spr_tankCoatTent_en_US.swf', 'car_t_cst_dec_tankCoat.swf', 'car_g_bcg_spr_tankCoatTent_main_en_US.swf', 20411, 59011)
+clientData[9990].classObj = new CatalogItemSponsor(clientData[9990].name, 4, 'car_g_bcg_spr_tankCoat.swf', 'car_g_bcg_spr_tankCoatTent_en_US.swf', 'car_t_cst_dec_tankCoat.swf', 20411, 59011, 'car_g_bcg_spr_tankCoatTent_main_en_US.swf', 'voSponsorTankCoat')
 
 clientData[20411] = {
   name: 'Tank Coat (CatalogItemCarDNA)',
@@ -1671,7 +1671,7 @@ clientData[9991] = {
   classObj: null
 }
 
-clientData[9991].classObj = new CatalogItemSponsor(clientData[9991].name, 5, 'car_g_bcg_spr_reVolting.swf', 'car_g_bcg_spr_reVoltingTent_en_US.swf', 'car_t_cst_dec_revolting.swf', 'car_g_bcg_spr_reVoltingTent_main_en_US.swf', 20412, 59012)
+clientData[9991].classObj = new CatalogItemSponsor(clientData[9991].name, 5, 'car_g_bcg_spr_reVolting.swf', 'car_g_bcg_spr_reVoltingTent_en_US.swf', 'car_t_cst_dec_revolting.swf', 20412, 59012, 'car_g_bcg_spr_reVoltingTent_main_en_US.swf')
 
 clientData[20412] = {
   name: 'Re-Volting (CatalogItemCarDNA)',
@@ -1683,7 +1683,7 @@ clientData[9992] = {
   classObj: null
 }
 
-clientData[9992].classObj = new CatalogItemSponsor(clientData[9992].name, 5, 'car_g_bcg_spr_htB.swf', 'car_g_bcg_spr_htBTent_en_US.swf', 'car_t_cst_dec_htb.swf', 'car_g_bcg_spr_htBTent_main_en_US.swf', 20413, 59013)
+clientData[9992].classObj = new CatalogItemSponsor(clientData[9992].name, 5, 'car_g_bcg_spr_htB.swf', 'car_g_bcg_spr_htBTent_en_US.swf', 'car_t_cst_dec_htb.swf', 20413, 59013, 'car_g_bcg_spr_htBTent_main_en_US.swf')
 
 clientData[20413] = {
   name: 'htB (CatalogItemCarDNA)',
@@ -1695,7 +1695,7 @@ clientData[9993] = {
   classObj: null
 }
 
-clientData[9993].classObj = new CatalogItemSponsor(clientData[9993].name, 6, 'car_g_bcg_spr_vitoline.swf', 'car_g_bcg_spr_vitolineTent_en_US.swf', 'car_t_cst_dec_vitoline.swf', 'car_g_bcg_spr_vitolineTent_main_en_US.swf', 20414, 59014)
+clientData[9993].classObj = new CatalogItemSponsor(clientData[9993].name, 6, 'car_g_bcg_spr_vitoline.swf', 'car_g_bcg_spr_vitolineTent_en_US.swf', 'car_t_cst_dec_vitoline.swf', 20414, 59014, 'car_g_bcg_spr_vitolineTent_main_en_US.swf')
 
 clientData[20414] = {
   name: 'Vitoline (CatalogItemCarDNA)',
@@ -1707,7 +1707,7 @@ clientData[9994] = {
   classObj: null
 }
 
-clientData[9994].classObj = new CatalogItemSponsor(clientData[9994].name, 6, 'car_g_bcg_spr_viewZeen.swf', 'car_g_bcg_spr_viewZeenTent_en_US.swf', 'car_t_cst_dec_vuzeen.swf', 'car_g_bcg_spr_viewzeenTent_main_en_US.swf', 20415, 59015)
+clientData[9994].classObj = new CatalogItemSponsor(clientData[9994].name, 6, 'car_g_bcg_spr_viewZeen.swf', 'car_g_bcg_spr_viewZeenTent_en_US.swf', 'car_t_cst_dec_vuzeen.swf', 20415, 59015, 'car_g_bcg_spr_viewzeenTent_main_en_US.swf')
 
 clientData[20415] = {
   name: 'ViewZeen (CatalogItemCarDNA)',
@@ -1719,7 +1719,7 @@ clientData[9995] = {
   classObj: null
 }
 
-clientData[9995].classObj = new CatalogItemSponsor(clientData[9995].name, 7, 'car_g_bcg_spr_rusteze.swf', 'car_g_bcg_spr_rustezeTent_en_US.swf', 'car_t_cst_dec_rusteze.swf', 'car_g_bcg_spr_rustezeTent_main_en_US.swf', 20416, 59016)
+clientData[9995].classObj = new CatalogItemSponsor(clientData[9995].name, 7, 'car_g_bcg_spr_rusteze.swf', 'car_g_bcg_spr_rustezeTent_en_US.swf', 'car_t_cst_dec_rusteze.swf', 20416, 59016, 'car_g_bcg_spr_rustezeTent_main_en_US.swf')
 
 clientData[20416] = {
   name: 'Rust-eze (CatalogItemCarDNA)',
@@ -1731,7 +1731,7 @@ clientData[9996] = {
   classObj: null
 }
 
-clientData[9996].classObj = new CatalogItemSponsor(clientData[9996].name, 7, 'car_g_bcg_spr_nitroAde.swf', 'car_g_bcg_spr_nitroAdeTent_en_US.swf', 'car_t_cst_dec_nitroAde.swf', 'car_g_bcg_spr_nitroAdeTent_main_en_US.swf', 20417, 59017)
+clientData[9996].classObj = new CatalogItemSponsor(clientData[9996].name, 7, 'car_g_bcg_spr_nitroAde.swf', 'car_g_bcg_spr_nitroAdeTent_en_US.swf', 'car_t_cst_dec_nitroAde.swf', 20417, 59017, 'car_g_bcg_spr_nitroAdeTent_main_en_US.swf')
 
 clientData[20417] = {
   name: 'Nitroade (CatalogItemCarDNA)',
@@ -1743,9 +1743,9 @@ clientData[9997] = {
   classObj: null
 }
 
-clientData[9997].classObj = new CatalogItemSponsor(clientData[9997].name, 7, 'car_g_bcg_spr_octaneGain.swf', 'car_g_bcg_spr_octaneGainTent_en_US.swf', 'car_t_cst_dec_octaneGain.swf', 'car_g_bcg_spr_octaneGainTent_main_en_US.swf', 20418, 59018)
+clientData[9997].classObj = new CatalogItemSponsor(clientData[9997].name, 7, 'car_g_bcg_spr_octaneGain.swf', 'car_g_bcg_spr_octaneGainTent_en_US.swf', 'car_t_cst_dec_octaneGain.swf', 20418, 59018, 'car_g_bcg_spr_octaneGainTent_main_en_US.swf')
 
-clientData[20417] = {
+clientData[20418] = {
   name: 'Octane Gain (CatalogItemCarDNA)',
   classObj: new CatalogItemCarDNA('Octane Gain', 'A quart a day keeps roadside assistance away!', 'car_t_cst_dec_octaneGain.swf', [51139, 0, 0, 0, 0, 0, 0, 0, 0, 51140], 0, 20119)
 }
@@ -1755,7 +1755,7 @@ clientData[9998] = {
   classObj: null
 }
 
-clientData[9998].classObj = new CatalogItemSponsor(clientData[9998].name, 7, 'car_g_bcg_spr_n2oCola.swf', 'car_g_bcg_spr_n2oColaTent_en_US.swf', 'car_t_cst_dec_n2o.swf', 'car_g_bcg_spr_n2oColaTent_main_en_US.swf', 20419, 59019)
+clientData[9998].classObj = new CatalogItemSponsor(clientData[9998].name, 7, 'car_g_bcg_spr_n2oCola.swf', 'car_g_bcg_spr_n2oColaTent_en_US.swf', 'car_t_cst_dec_n2o.swf', 20419, 59019, 'car_g_bcg_spr_n2oColaTent_main_en_US.swf')
 
 clientData[20419] = {
   name: 'N2O Cola (CatalogItemCarDNA)',
@@ -1767,7 +1767,7 @@ clientData[9999] = {
   classObj: null
 }
 
-clientData[9999].classObj = new CatalogItemSponsor(clientData[9999].name, 7, 'car_g_bcg_spr_dinoco.swf', 'car_g_bcg_spr_dinocoTent_en_US.swf', 'car_t_cst_dec_dinoco.swf', 'car_g_bcg_spr_dinocoTent_main_en_US.swf', 20420, 59020)
+clientData[9999].classObj = new CatalogItemSponsor(clientData[9999].name, 7, 'car_g_bcg_spr_dinoco.swf', 'car_g_bcg_spr_dinocoTent_en_US.swf', 'car_t_cst_dec_dinoco.swf', 20420, 59020, 'car_g_bcg_spr_dinocoTent_main_en_US.swf')
 
 clientData[20420] = {
   name: 'Dinoco (CatalogItemCarDNA)',
@@ -1779,7 +1779,7 @@ clientData[10000] = {
   classObj: null
 }
 
-clientData[10000].classObj = new CatalogItemSponsor(clientData[10000].name, 7, 'car_g_bcg_spr_moodSprings.swf', 'car_g_bcg_spr_moodSpringsTent_en_US.swf', 'car_t_cst_dec_moodSprings.swf', 'car_g_bcg_spr_moodSpringsTent_main_en_US.swf', 20421, 59021)
+clientData[10000].classObj = new CatalogItemSponsor(clientData[10000].name, 7, 'car_g_bcg_spr_moodSprings.swf', 'car_g_bcg_spr_moodSpringsTent_en_US.swf', 'car_t_cst_dec_moodSprings.swf', 20421, 59021, 'car_g_bcg_spr_moodSpringsTent_main_en_US.swf')
 
 clientData[20421] = {
   name: 'Mood Springs (CatalogItemCarDNA)',
@@ -1948,6 +1948,11 @@ clientData[5006] = {
   classObj: new CatalogItemMapSprite(0, 30, 0, 0, '', ['idle', 'end_idle', 'lever', 'end_lever', 'wateron', 'end_wateron', 'waterflow', 'end_waterflow', 'wateroff', 'end_wateroff'])
 }
 
+clientData[5007] = {
+  name: 'Sponsor Booth Map Sprite (InteractiveObject)',
+  classObj: new CatalogItemMapSprite(20, 15, 0, 0)
+}
+
 // Paint jobs
 clientData[20101] = {
   name: 'Cars 2 Special-Edition Paint Job',
@@ -2041,7 +2046,7 @@ clientData[20118] = {
 
 clientData[20119] = {
   name: 'Octane Gain Paint Job',
-  classObj: new CatalogItemDetailing('Octane Gain Paint Job', '', '', 0, 'car_t_cst_pjb_octaneGain.swf')
+  classObj: new CatalogItemDetailing('Octane Gain Paint Job', '', '', 0, 'car_t_cst_pjb_octainGain.swf')
 }
 
 clientData[20120] = {
