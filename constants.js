@@ -105,11 +105,6 @@ clientData[15001] = {
   classObj: new CatalogItemWorldZone('Downtown Radiator Springs', 100, 'car_f_gui_ttl_radiatorSprings_en_US.swf', 'car_w_env_rsp_RadiatorSprings', 'car_g_map_env_radiatorSprings.swf', 'scripts/isoworld/radiator_springs.lua', 'Music', 'zoneRadiatorSprings02', 'dp_npt_315')
 }
 
-clientData[102] = {
-  name: 'Redhood Valley (CatalogItemMapEffect)',
-  classObj: new CatalogItemMapEffect(15003, 0)
-}
-
 clientData[103] = {
   name: 'Downtown Radiator Springs Cones (CatalogItemMapEffect)',
   classObj: new CatalogItemMapEffect(0, 0)
