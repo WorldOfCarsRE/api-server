@@ -61,7 +61,8 @@ class RaceCarService extends libamf.Service {
     if (car) {
       car.carData = {
         ...car.carData,
-        detailingId: carObj.detailingId
+        detailingId: carObj.detailingId,
+        addonItemList: carObj.carDna.onAddons.length > 0 ? [[carObj.carDna.onAddons[0].itemId, 0, 0, 0]] : []
       }
 
       await car.save()
