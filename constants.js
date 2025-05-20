@@ -621,6 +621,26 @@ clientData[32023] = {
   classObj: new CatalogItemEffect(['car_f_evt_efx_laserBeamRed.swf'])
 }
 
+clientData[32024] = {
+  name: 'First Visit Indicator',
+  classObj: new CatalogItemEffect(['car_g_ico_ind_firstVisit.swf'], 0, 1)
+}
+
+clientData[32025] = {
+  name: 'Available Quest Indicator',
+  classObj: new CatalogItemEffect(['car_g_ico_ind_availableQuest.swf'], 0, 1)
+}
+
+clientData[32026] = {
+  name: 'Incomplete Quest Indicator',
+  classObj: new CatalogItemEffect(['car_g_ico_ind_incompleteQuest.swf'], 0, 1)
+}
+
+clientData[32027] = {
+  name: 'Complete Quest Indicator',
+  classObj: new CatalogItemEffect(['car_g_ico_ind_completeQuest.swf'], 0, 1)
+}
+
 clientData[20209] = {
   name: 'Powerhouse Purple',
   classObj: new CatalogItemPaint(10571765)
