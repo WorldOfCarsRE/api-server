@@ -16,7 +16,6 @@ const CatalogItemMinigame = global.CatalogItemMinigame
 const CatalogItemProfileTheme = global.CatalogItemProfileTheme
 const CatalogItemPuppet = global.CatalogItemPuppet
 const CatalogItemEffect = global.CatalogItemEffect
-const CatalogPlayerStoreItem = global.CatalogPlayerStoreItem
 const CatalogItemQuest = global.CatalogItemQuest
 const CatalogItemQuestStep = global.CatalogItemQuestStep
 const CatalogItemQuestReward = global.CatalogItemQuestReward
@@ -871,6 +870,36 @@ clientData[31015] = {
   classObj: new CatalogItemNPC('car_k_chr_frn_tractorLow.dpak', 'Tractor', 'car_r_chr_frn_tractor.smod', '', '', 33267)
 }
 
+clientData[41001] = {
+  name: 'Piston Cup Series Level 1 (Tailgator Speedway)',
+  classObj: new CatalogItemRaceLevel(42004, 25004, 111, 0, 60000, [9980, 9981, 9982, 9983, 9984, 9985, 9986])
+}
+
+clientData[41002] = {
+  name: 'Piston Cup Series Level 2 (Big Heartland Speedway)',
+  classObj: new CatalogItemRaceLevel(42006, 25005, 111, 0, 200000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988])
+}
+
+clientData[41003] = {
+  name: 'Piston Cup Series Level 3 (Backfire Canyon Speedway)',
+  classObj: new CatalogItemRaceLevel(42007, 25007, 111, 0, 380000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990])
+}
+
+clientData[41004] = {
+  name: 'Piston Cup Series Level 4 (Petroleum City Super Speedway)',
+  classObj: new CatalogItemRaceLevel(42008, 25008, 111, 0, 640000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990, 9991, 9992])
+}
+
+clientData[41005] = {
+  name: 'Piston Cup Series Level 5 (Motor Speedway of the South)',
+  classObj: new CatalogItemRaceLevel(42009, 25009, 111, 0, 1000000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990, 9991, 9992, 9993, 9994])
+}
+
+clientData[41006] = {
+  name: 'Piston Cup Series Level 6 (LA International Speedway)',
+  classObj: new CatalogItemRaceLevel(42010, 25014, 111, 0, 1000001, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990, 9991, 9992, 9993, 9994, 9995, 9996, 9997, 9998, 9999, 10000])
+}
+
 clientData[42001] = {
   name: 'spRace_ccs',
   classObj: new CatalogItemRaceTrack('Carburetor County Speedway', 'Local track where the showdown is downtown!', false, 'sp_ccs', 'mp_ccs', 'car_f_gui_ttl_carburetorCounty_en_US.swf', 'sp_ccs', 'car_w_trk_rsp_carburetorCountySpeedway', 'car_g_map_trk_carburetorCounty.swf', 'Music', 'raceCarburetorCountySpeedway', 'car_w_trk_rsp_ccSpeedway_SS_phys.xml', 15001, 'car_g_lgo_trk_carburetorCountySpeedway_en_US.swf', 'car_g_rac_scn_CarbCountySpeedway.jpg', 'car_g_ico_map_CCS.swf')
@@ -888,7 +917,7 @@ clientData[42003] = {
 
 clientData[42004] = {
   name: 'race_tgs',
-  classObj: new CatalogItemRaceTrack('Tailgator Speedway', 'Piston Cup Series Grand Challenge No. 1', true, 'sp_tgs', 'mp_tgs', 'car_f_gui_ttl_tailGatorSpeedway_en_US.swf', 'sp_tgs', 'car_w_trk_prf_TailgatorSpeedway', 'car_g_map_trk_tailgatorSpeedway.swf', 'Music', 'raceTailGatorSpeedway', 'car_w_trk_prf_tailgator_SS_phys.xml', 15005, 'car_g_lgo_trk_tailGatorSpeedway_en_US.swf', 'car_g_rac_scn_tailgatorSpeedwayTrack.jpg', 'car_g_ico_map_TGS.swf')
+  classObj: new CatalogItemRaceTrack('Tailgator Speedway', 'Piston Cup Series Grand Challenge No. 1', true, 'sp_tgs', 'mp_tgs', 'car_f_gui_ttl_tailGatorSpeedway_en_US.swf', 'sp_tgs', 'car_w_trk_prf_TailgatorSpeedway', 'car_g_map_trk_tailgatorSpeedway.swf', 'Music', 'raceTailGatorSpeedway', 'car_w_trk_prf_tailgator_SS_phys.xml', 15005, 'car_g_lgo_trk_tailGatorSpeedway_en_US.swf', 'car_g_rac_scn_tailgatorSpeedwayTrack.jpg', 'car_g_ico_map_TGS.swf', 'car_g_ico_rac_tailGatorSpeedwayPass.jpg', 'Tailgator Speedway Trophy', 'car_m_gar_tro_camshaftWrench_gold.smod')
 }
 
 clientData[42005] = {
@@ -1168,41 +1197,153 @@ clientData[22012] = {
 
 clientData[22012].classObj = new CatalogItemStore(clientData[22012].name, '', '', '', '', '', 'car_f_gui_str_spyStore.swf')
 
+clientData[25001] = {
+  name: "Fuel Mixin', Man",
+  classObj: null
+}
+
+clientData[25001].classObj = new CatalogItemQuest(clientData[25001].name, '', '', '', [], [], 2000, 2001, 2002)
+
+clientData[25002] = {
+  name: 'Hit the Road Challenge',
+  classObj: null
+}
+
+clientData[25002].classObj = new CatalogItemQuest(clientData[25002].name, '', '', '', [], [], 2003, 2004, 2005)
+
+clientData[25003] = {
+  name: "Lookin' for Junk",
+  classObj: null
+}
+
+clientData[25003].classObj = new CatalogItemQuest(clientData[25003].name, '', '', '', [], [], 2006, 2007, 2008)
+
+clientData[25004] = {
+  name: 'Tailgator Speedway Quest',
+  classObj: null
+}
+
+clientData[25004].classObj = new CatalogItemQuest(clientData[25004].name, "Congratulations! Here's your Tailgator Speedway Pro Pass.\n\nNow you're going to go race at Tailgator Speedway. This'll be your first step as a Pro Racer toward winning the Piston Cup Series!", 'car_g_qst_adv_mcQueenTailgatorSpeedway.jpg', 'car_g_ico_adv_mcqueen.ajpg', [25100, 25101, 25102], [], 2009, 2010, 2011, true)
+
+clientData[25100] = {
+  name: 'Complete Heat 1.',
+  classObj: null
+}
+
+clientData[25100].classObj = new CatalogItemQuestStep(clientData[25100].name, 2100)
+
+clientData[25101] = {
+  name: 'Complete Heat 2.',
+  classObj: null
+}
+
+clientData[25101].classObj = new CatalogItemQuestStep(clientData[25101].name, 2101)
+
+clientData[25102] = {
+  name: 'Win the Main Event Race.',
+  classObj: null
+}
+
+clientData[25102].classObj = new CatalogItemQuestStep(clientData[25102].name, 2102)
+
+clientData[25103] = {
+  name: 'Return to Lightning.',
+  classObj: null
+}
+
+clientData[25103].classObj = new CatalogItemQuestStep(clientData[25103].name, 2103)
+
+clientData[25005] = {
+  name: 'Big Heartland Speedway Quest',
+  classObj: null
+}
+
+clientData[25005].classObj = new CatalogItemQuest(clientData[25005].name, '', '', '', [], [], 2012, 2013, 2014)
+
+clientData[25006] = {
+  name: "Where's Sally?",
+  classObj: null
+}
+
+clientData[25006].classObj = new CatalogItemQuest(clientData[25006].name, '', '', '', [], [], 2015, 2016, 2017)
+
+clientData[25007] = {
+  name: 'Backfire Canyon Speedway Quest',
+  classObj: null
+}
+
+clientData[25007].classObj = new CatalogItemQuest(clientData[25007].name, '', '', '', [], [], 2018, 2019, 2020)
+
+clientData[25008] = {
+  name: 'Petroleum City Super Speedway Quest',
+  classObj: null
+}
+
+clientData[25008].classObj = new CatalogItemQuest(clientData[25008].name, '', '', '', [], [], 2021, 2022, 2023)
+
+clientData[25009] = {
+  name: 'Motor Speedway of the South Quest',
+  classObj: null
+}
+
+clientData[25009].classObj = new CatalogItemQuest(clientData[25009].name, '', '', '', [], [], 2024, 2025, 2026)
+
 // Ramone
 clientData[25010] = {
   name: 'Free Body Work!',
   classObj: null
 }
 
-clientData[25010].classObj = new CatalogItemQuest(clientData[25010].name, "You look pretty stock to Ramone.\nSo he's making you a one-time offer of some FREE BODY WORK!\nDrive inside and see what you can make of yourself!", 'car_g_qst_adv_ramoneFreeCustomization.jpg', 'car_g_ico_adv_ramone.ajpg')
+clientData[25010].classObj = new CatalogItemQuest(clientData[25010].name, "You look pretty stock to Ramone.\nSo he's making you a one-time offer of some FREE BODY WORK!\nDrive inside and see what you can make of yourself!", 'car_g_qst_adv_ramoneFreeCustomization.jpg', 'car_g_ico_adv_ramone.ajpg', [25104, 25105], [25500, 25501], 2027, 2028, 2029)
 
-clientData[22223] = {
+clientData[25104] = {
   name: "Enter Ramone's shop and get a free body customization.",
   classObj: null
 }
 
-clientData[22223].classObj = new CatalogItemQuestStep(clientData[22223].name)
+clientData[25104].classObj = new CatalogItemQuestStep(clientData[25104].name, 2104)
 
-clientData[22224] = {
+clientData[25105] = {
   name: 'Return to Ramone.',
   classObj: null
 }
 
-clientData[22224].classObj = new CatalogItemQuestStep(clientData[22224].name, 'return_npc')
+clientData[25105].classObj = new CatalogItemQuestStep(clientData[25105].name, 2105)
 
-clientData[22229] = {
+clientData[25500] = {
   name: 'Quest 25010 Coin Reward',
   classObj: null
 }
 
-clientData[22229].classObj = new CatalogItemQuestReward(clientData[22229].name, 3, 10)
+clientData[25500].classObj = new CatalogItemQuestReward(clientData[25500].name, 3, 10)
 
-clientData[22230] = {
-  name: 'Medallion Bronze Paint',
+clientData[25501] = {
+  name: 'Quest 25010 Medallion Bronze Paint',
   classObj: null
 }
 
-clientData[22230].classObj = new CatalogItemQuestReward(clientData[22230].name, 0, 1, 'car_g_ico_clr_blinginBronze.swf', 0)
+clientData[25501].classObj = new CatalogItemQuestReward(clientData[25501].name, 0, 1, 'car_g_ico_clr_blinginBronze.swf', 0)
+
+clientData[25011] = {
+  name: 'Holiday Quest',
+  classObj: null
+}
+
+clientData[25011].classObj = new CatalogItemQuest(clientData[25011].name, '', '', '', [], [], 2030, 2031, 2032)
+
+clientData[25013] = {
+  name: 'Tanksgiving Quest',
+  classObj: null
+}
+
+clientData[25013].classObj = new CatalogItemQuest(clientData[25013].name, '', '', '', [], [], 2033, 2034, 2035)
+
+clientData[25014] = {
+  name: 'LA International Speedway Quest',
+  classObj: null
+}
+
+clientData[25014].classObj = new CatalogItemQuest(clientData[25014].name, '', '', '', [], [], 2036, 2037, 2038)
 
 // Doc's Clinic game
 clientData[61004] = {

@@ -3,14 +3,14 @@
 CatalogItem = global.CatalogItem
 
 class CatalogItemQuestStep extends CatalogItem {
-  constructor (name, description = '') {
+  constructor (name, ruleId, goal = 1) {
     super()
 
     this.name = name
-    this.description = description
+    this.description = ''
 
-    this.goal = 0
-    this.ruleId = 0
+    this.goal = goal
+    this.ruleId = ruleId
     this.type = 0
     this.thumbnail = ''
   }

@@ -3,6 +3,7 @@
 libamf = global.libamf
 ArrayCollection = global.ArrayCollection
 Player = global.Player
+RuleStateAMF = global.RuleStateAMF
 
 class PlayerService extends libamf.Service {
   constructor () {
@@ -43,16 +44,19 @@ class PlayerService extends libamf.Service {
     return player
   }
 
-  getRuleStates (playerId, carId, ruleIds) {
-    console.log(`getRuleStates: ${playerId} - ${carId} - ${ruleIds}`)
+  getRuleStates (playerId, carIdOrRuleIds, ruleIds) {
+    console.log(`getRuleStates: ${playerId} - ${carIdOrRuleIds} - ${ruleIds}`)
 
     const resp = new ArrayCollection()
 
-    if (carId === 0) {
+    if (carIdOrRuleIds === 0) {
       // Having a empty array means autoLogin is true (go to tutorial).
       resp.push(1)
     } else {
       // TODO: Profile view case
+      carIdOrRuleIds.forEach(ruleId => {
+        resp.push(new RuleStateAMF(ruleId, playerId, 100000005, 1, 1))
+      })
     }
 
     return resp

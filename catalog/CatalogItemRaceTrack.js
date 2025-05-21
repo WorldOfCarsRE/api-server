@@ -4,7 +4,7 @@ const CatalogItemDungeon = global.CatalogItemDungeon
 ArrayCollection = global.ArrayCollection
 
 class CatalogItemRaceTrack extends CatalogItemDungeon {
-  constructor (name, description, proTrack, spClientScriptUrl, mpClientScriptUrl, titleUrl, scriptUrl, mapUrl, miniMapUrl, group, alias, physicsUrl, exitMapId, logoUrl, sceneryUrl, brandingMapUrl) {
+  constructor (name, description, proTrack, spClientScriptUrl, mpClientScriptUrl, titleUrl, scriptUrl, mapUrl, miniMapUrl, group, alias, physicsUrl, exitMapId, logoUrl, sceneryUrl, brandingMapUrl, proPassUrl = '', trophyName = '', trophyUrl = '') {
     super()
 
     this.name = name
@@ -18,7 +18,6 @@ class CatalogItemRaceTrack extends CatalogItemDungeon {
     this.racers.push(31016) // Snot Rod
     this.racers.push(31019) // Wingo
     this.titleUrl = titleUrl
-    this.mpClientScriptUrl = mpClientScriptUrl
     this.mapUrl = mapUrl
     this.miniMapUrl = miniMapUrl
     this.photoFinishTrackUrl = 'car_f_gui_gam_photoFinish.swf'
@@ -33,6 +32,9 @@ class CatalogItemRaceTrack extends CatalogItemDungeon {
     this.onLeaderboards = true
     this.raceFinishedEventId = 1
     this.brandingMapUrl = brandingMapUrl
+    this.proPassUrl = proPassUrl
+    this.trophyName = trophyName
+    this.trophyUrl = trophyUrl
   }
 }
 

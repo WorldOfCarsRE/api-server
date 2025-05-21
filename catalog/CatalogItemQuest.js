@@ -5,25 +5,25 @@ ArrayCollection = global.ArrayCollection
 CatalogItem = global.CatalogItem
 
 class CatalogItemQuest extends CatalogItem {
-  constructor (name, description, backgroundImage, thumbnailImage) {
+  constructor (name, description, backgroundImage, thumbnailImage, stepIds, rewardIds, startRuleId, abandonRuleId, endRuleId, membersOnly = false) {
     super()
 
     this.name = name
     this.description = description
 
-    this.startRuleId = 0
+    this.startRuleId = startRuleId
     this.rewardIds = new ArrayCollection()
-    this.rewardIds.push(22229, 22230)
-    this.abandonRuleId = 0
+    this.rewardIds.push(...rewardIds)
+    this.abandonRuleId = abandonRuleId
     this.backgroundImage = backgroundImage
     this.thumbnailImage = thumbnailImage
     this.stepIds = new ArrayCollection()
-    this.stepIds.push(22223, 22224)
+    this.stepIds.push(...stepIds)
     this.turnInRuleId = 0
-    this.membersOnly = false
+    this.membersOnly = membersOnly
     this.resetRuleId = 0
     this.completionText = ''
-    this.endRuleId = 0
+    this.endRuleId = endRuleId
   }
 }
 
