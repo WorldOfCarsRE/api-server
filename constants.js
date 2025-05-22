@@ -178,6 +178,13 @@ assetData[42002] = parseAssetData('car_w_trk_tfn_TwistinTailfinTrails_assets.xml
 assetData[42003] = parseAssetData('car_w_trk_frm_FillmoresFieldsRally_assets.xml')
 assetData[42005] = parseAssetData('car_w_trk_wil_WillysButteRally_assets.xml')
 
+assetData[42004] = parseAssetData('car_w_trk_prf_TailgatorSpeedway_assets.xml')
+assetData[42006] = parseAssetData('car_w_trk_prf_BigHeartlandSpeedway_assets.xml')
+assetData[42007] = parseAssetData('car_w_trk_prf_BackfireCanyon_assets.xml')
+assetData[42008] = parseAssetData('car_w_trk_prf_PetroleumCityRaceway_assets.xml')
+assetData[42009] = parseAssetData('car_w_trk_prf_MotorSpeedwaySouth_assets.xml')
+assetData[42010] = parseAssetData('car_w_trk_prf_LASpeedway_assets.xml')
+
 assetData[10001] = parseAssetData('car_w_yar_own_non_member_yard_assets.xml')
 
 // Parse these items as well
@@ -1348,7 +1355,7 @@ clientData[25014] = {
   classObj: null
 }
 
-clientData[25014].classObj = new CatalogItemQuest(clientData[25014].name, '', 'car_g_qst_adv_LASpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [], [], 2036, 2037, 2038)
+clientData[25014].classObj = new CatalogItemQuest(clientData[25014].name, '', 'car_g_qst_adv_LASpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [], [], 2036, 2037, 2038, true)
 
 // Doc's Clinic game
 clientData[61004] = {
