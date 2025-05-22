@@ -927,27 +927,27 @@ clientData[42005] = {
 
 clientData[42006] = {
   name: 'race_bhl',
-  classObj: new CatalogItemRaceTrack('Big Heartland Speedway', 'Piston Cup Series Grand Challenge No. 2', true, 'sp_bhl', 'mp_bhl', 'car_f_gui_ttl_bigHeartlandSpeedway_en_US.swf', '', 'car_w_trk_prf_BigHeartlandSpeedway', 'car_g_map_trk_bigHeartlandSpeedway.swf', 'Music', 'raceBigHeartland', 'car_w_trk_prf_BigHeartland_SS_phys.xml', 15006, 'car_g_lgo_trk_bigHeartlandSpeedway_en_US.swf', 'car_g_rac_scn_bigHeartlandSpeedwayTrack.jpg', 'car_g_ico_map_BHS.swf')
+  classObj: new CatalogItemRaceTrack('Big Heartland Speedway', 'Piston Cup Series Grand Challenge No. 2', true, 'sp_bhl', 'mp_bhl', 'car_f_gui_ttl_bigHeartlandSpeedway_en_US.swf', '', 'car_w_trk_prf_BigHeartlandSpeedway', 'car_g_map_trk_bigHeartlandSpeedway.swf', 'Music', 'raceBigHeartland', 'car_w_trk_prf_BigHeartland_SS_phys.xml', 15006, 'car_g_lgo_trk_bigHeartlandSpeedway_en_US.swf', 'car_g_rac_scn_bigHeartlandSpeedwayTrack.jpg', 'car_g_ico_map_BHS.swf', 'car_g_ico_rac_bigHeartlandRacewayPass.jpg', 'Big Heartland Speedway Trophy', 'car_m_gar_tro_bigHeartLand.smod')
 }
 
 clientData[42007] = {
   name: 'race_bfc',
-  classObj: new CatalogItemRaceTrack('Backfire Canyon Speedway', 'Piston Cup Series Grand Challenge No. 3', true, 'sp_bfc', 'mp_bfc', 'car_f_gui_ttl_backfireCanyonSpeedway_en_US.swf', '', 'car_w_trk_prf_BackfireCanyon', 'car_g_map_trk_backfireCanyon.swf', 'Music', 'raceBFC', 'car_w_trk_prf_BackfireCanyon_SS_phys.xml', 15009, 'car_g_lgo_trk_backfireCanyonSpeedway_en_US.swf', 'car_g_rac_scn_backfireCanyonSpeedwayTrack.jpg', 'car_g_ico_map_BCS.swf')
+  classObj: new CatalogItemRaceTrack('Backfire Canyon Speedway', 'Piston Cup Series Grand Challenge No. 3', true, 'sp_bfc', 'mp_bfc', 'car_f_gui_ttl_backfireCanyonSpeedway_en_US.swf', '', 'car_w_trk_prf_BackfireCanyon', 'car_g_map_trk_backfireCanyon.swf', 'Music', 'raceBFC', 'car_w_trk_prf_BackfireCanyon_SS_phys.xml', 15009, 'car_g_lgo_trk_backfireCanyonSpeedway_en_US.swf', 'car_g_rac_scn_backfireCanyonSpeedwayTrack.jpg', 'car_g_ico_map_BCS.swf', 'car_g_ico_rac_backfireCanyonSpeedwayPass.jpg', 'Backfire Canyon Speedway Trophy', 'car_m_gar_tro_backfireCanyon.smod')
 }
 
 clientData[42008] = {
   name: 'race_pc',
-  classObj: new CatalogItemRaceTrack('Petroleum City Super Speedway', 'Piston Cup Series Grand Challenge No. 4', true, 'sp_pc', 'mp_pc', 'car_f_gui_ttl_petroCitySpeedway_en_US.swf', '', 'car_w_trk_prf_PetroleumCityRaceway', 'car_g_map_trk_petroCitySpeedway.swf', 'Music', 'racePetroleum', 'car_w_trk_prf_PetroleumCityRace_SS_phys.xml', 15010, 'car_g_lgo_trk_petroCitySpeedway_en_US.swf', 'car_g_rac_scn_petroCitySpeedwayTrack.jpg', 'car_g_ico_map_PCS.swf')
+  classObj: new CatalogItemRaceTrack('Petroleum City Super Speedway', 'Piston Cup Series Grand Challenge No. 4', true, 'sp_pc', 'mp_pc', 'car_f_gui_ttl_petroCitySpeedway_en_US.swf', '', 'car_w_trk_prf_PetroleumCityRaceway', 'car_g_map_trk_petroCitySpeedway.swf', 'Music', 'racePetroleum', 'car_w_trk_prf_PetroleumCityRace_SS_phys.xml', 15010, 'car_g_lgo_trk_petroCitySpeedway_en_US.swf', 'car_g_rac_scn_petroCitySpeedwayTrack.jpg', 'car_g_ico_map_PCS.swf', 'car_g_ico_rac_petroCitySpeedwayPass.jpg', 'Petroleum City Super Speedway Trophy', 'car_m_gar_tro_petroCity_bronze.smod')
 }
 
 clientData[42009] = {
   name: 'race_mss',
-  classObj: new CatalogItemRaceTrack('Motor Speedway of the South', 'Piston Cup Series Grand Challenge No. 5', true, 'sp_mss', 'mp_mss', 'car_f_gui_ttl_motorCitySpeedway_en_US.swf', '', 'car_w_trk_prf_MotorSpeedwaySouth', 'car_g_map_trk_motorCitySpeedway.swf', 'Music', 'raceMSS', 'car_w_trk_prf_MotorSpeedwaySouth_SS_phys.xml', 15011, 'car_g_lgo_trk_motorSpeedway_en_US.swf', 'car_g_rac_scn_motorSpeedwayTrack.jpg', 'car_g_ico_map_MCS.swf')
+  classObj: new CatalogItemRaceTrack('Motor Speedway of the South', 'Piston Cup Series Grand Challenge No. 5', true, 'sp_mss', 'mp_mss', 'car_f_gui_ttl_motorCitySpeedway_en_US.swf', '', 'car_w_trk_prf_MotorSpeedwaySouth', 'car_g_map_trk_motorCitySpeedway.swf', 'Music', 'raceMSS', 'car_w_trk_prf_MotorSpeedwaySouth_SS_phys.xml', 15011, 'car_g_lgo_trk_motorSpeedway_en_US.swf', 'car_g_rac_scn_motorSpeedwayTrack.jpg', 'car_g_ico_map_MCS.swf', 'car_g_ico_rac_motorCitySpeedwayPass.jpg', 'Motor Speedway of the South Trophy', 'car_m_gar_tro_mSS.smod')
 }
 
 clientData[42010] = {
   name: 'race_las',
-  classObj: new CatalogItemRaceTrack('LA International Speedway', 'Piston Cup Series Grand Challenge No. 6', true, 'sp_las', 'mp_las', 'car_f_gui_ttl_laSpeedway_en_US.swf', '', 'car_w_trk_prf_LASpeedway', 'car_g_map_trk_laSpeedway.swf', 'Music', 'raceLASpeedway', 'car_w_trk_prf_LASpeedway_SS_phys.xml', 15012, 'car_g_lgo_trk_laSpeedway_en_US.swf', 'car_g_rac_scn_laSpeedwayTrack.jpg', 'car_g_ico_map_LAS.swf')
+  classObj: new CatalogItemRaceTrack('LA International Speedway', 'Piston Cup Series Grand Challenge No. 6', true, 'sp_las', 'mp_las', 'car_f_gui_ttl_laSpeedway_en_US.swf', '', 'car_w_trk_prf_LASpeedway', 'car_g_map_trk_laSpeedway.swf', 'Music', 'raceLASpeedway', 'car_w_trk_prf_LASpeedway_SS_phys.xml', 15012, 'car_g_lgo_trk_laSpeedway_en_US.swf', 'car_g_rac_scn_laSpeedwayTrack.jpg', 'car_g_ico_map_LAS.swf', 'car_g_ico_rac_laSpeedwayPass.jpg', 'Piston Cup Trophy', 'car_m_gar_tro_pistonCup_gold.smod')
 }
 
 clientData[31016] = {
@@ -1223,7 +1223,7 @@ clientData[25004] = {
   classObj: null
 }
 
-clientData[25004].classObj = new CatalogItemQuest(clientData[25004].name, "Congratulations! Here's your Tailgator Speedway Pro Pass.\n\nNow you're going to go race at Tailgator Speedway. This'll be your first step as a Pro Racer toward winning the Piston Cup Series!", 'car_g_qst_adv_mcQueenTailgatorSpeedway.jpg', 'car_g_ico_adv_mcqueen.ajpg', [25100, 25101, 25102], [], 2009, 2010, 2011, true)
+clientData[25004].classObj = new CatalogItemQuest(clientData[25004].name, "Congratulations! Here's your Tailgator Speedway Pro Pass.\n\nNow you're going to go race at Tailgator Speedway. This'll be your first step as a Pro Racer toward winning the Piston Cup Series!", 'car_g_qst_adv_mcQueenTailgatorSpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [25100, 25101, 25102, 25103], [], 2009, 2010, 2011, true)
 
 clientData[25100] = {
   name: 'Complete Heat 1.',
@@ -1258,7 +1258,7 @@ clientData[25005] = {
   classObj: null
 }
 
-clientData[25005].classObj = new CatalogItemQuest(clientData[25005].name, '', '', '', [], [], 2012, 2013, 2014)
+clientData[25005].classObj = new CatalogItemQuest(clientData[25005].name, '', 'car_g_qst_adv_mcQueenBigHeartlandSpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [], [], 2012, 2013, 2014, true)
 
 clientData[25006] = {
   name: "Where's Sally?",
@@ -1272,21 +1272,21 @@ clientData[25007] = {
   classObj: null
 }
 
-clientData[25007].classObj = new CatalogItemQuest(clientData[25007].name, '', '', '', [], [], 2018, 2019, 2020)
+clientData[25007].classObj = new CatalogItemQuest(clientData[25007].name, '', 'car_g_qst_adv_BackfireCanyonSpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [], [], 2018, 2019, 2020, true)
 
 clientData[25008] = {
   name: 'Petroleum City Super Speedway Quest',
   classObj: null
 }
 
-clientData[25008].classObj = new CatalogItemQuest(clientData[25008].name, '', '', '', [], [], 2021, 2022, 2023)
+clientData[25008].classObj = new CatalogItemQuest(clientData[25008].name, '', 'car_g_qst_adv_PetroleumCitySuperSpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [], [], 2021, 2022, 2023, true)
 
 clientData[25009] = {
   name: 'Motor Speedway of the South Quest',
   classObj: null
 }
 
-clientData[25009].classObj = new CatalogItemQuest(clientData[25009].name, '', '', '', [], [], 2024, 2025, 2026)
+clientData[25009].classObj = new CatalogItemQuest(clientData[25009].name, '', 'car_g_qst_adv_MotorSpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [], [], 2024, 2025, 2026, true)
 
 // Ramone
 clientData[25010] = {
@@ -1318,7 +1318,7 @@ clientData[25500] = {
 clientData[25500].classObj = new CatalogItemQuestReward(clientData[25500].name, 3, 10)
 
 clientData[25501] = {
-  name: 'Quest 25010 Medallion Bronze Paint',
+  name: 'Medallion Bronze Paint',
   classObj: null
 }
 
@@ -1343,7 +1343,7 @@ clientData[25014] = {
   classObj: null
 }
 
-clientData[25014].classObj = new CatalogItemQuest(clientData[25014].name, '', '', '', [], [], 2036, 2037, 2038)
+clientData[25014].classObj = new CatalogItemQuest(clientData[25014].name, '', 'car_g_qst_adv_LASpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [], [], 2036, 2037, 2038)
 
 // Doc's Clinic game
 clientData[61004] = {

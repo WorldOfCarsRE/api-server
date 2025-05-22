@@ -44,7 +44,7 @@ class PlayerService extends libamf.Service {
     return player
   }
 
-  getRuleStates (playerId, carIdOrRuleIds, ruleIds) {
+  async getRuleStates (playerId, carIdOrRuleIds, ruleIds) {
     console.log(`getRuleStates: ${playerId} - ${carIdOrRuleIds} - ${ruleIds}`)
 
     const resp = new ArrayCollection()
@@ -53,10 +53,13 @@ class PlayerService extends libamf.Service {
       // Having a empty array means autoLogin is true (go to tutorial).
       resp.push(1)
     } else {
+      const car = await db.retrieveCar(playerId)
       // TODO: Profile view case
-      carIdOrRuleIds.forEach(ruleId => {
-        resp.push(new RuleStateAMF(ruleId, playerId, 100000005, 1, 1))
-      })
+      if (car) {
+        carIdOrRuleIds.forEach(ruleId => {
+          resp.push(new RuleStateAMF(ruleId, playerId, car.racecarId, 1, 1))
+        })
+      }
     }
 
     return resp

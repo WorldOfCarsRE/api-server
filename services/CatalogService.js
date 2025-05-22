@@ -55,6 +55,8 @@ class CatalogService extends libamf.Service {
 
     const resp = new ArrayCollection()
 
+    const questIds = [25001, 25002, 25003, 25004, 25005, 25006, 25007, 25008, 25009, 25010, 25011, 25013, 25014, 25555, 25667, 26011, 26012, 26013, 26014, 26015]
+
     if (depth === 2) {
       // Puppet case
       let puppetItem = clientData[id]
@@ -73,28 +75,12 @@ class CatalogService extends libamf.Service {
         console.log('MISSING PUPPET ITEM:', id)
         resp.push(new CatalogItem())
       }
-    // TODO: Add list with questIds
-    } else if (depth === -1 && id === 25010) {
-      resp.push(this.getItem(id))
-      // Steps
-      resp.push(
-        this.getItem(25104),
-        this.getItem(25105)
-      )
-      // Rewards
-      resp.push(
-        this.getItem(25500),
-        this.getItem(25501)
-      )
-    } else if (depth === -1 && id === 25004) {
-      resp.push(this.getItem(id))
-      // Steps
-      resp.push(
-        this.getItem(25100),
-        this.getItem(25101),
-        this.getItem(25102),
-        this.getItem(25103)
-      )
+    } else if (depth === -1 && questIds.includes(id)) {
+      const questItem = this.getItem(id)
+
+      resp.push(questItem)
+      resp.push(...this.getItemsByIds([...questItem.stepIds]))
+      resp.push(...this.getItemsByIds([...questItem.rewardIds]))
     } else if (depth === -1 && id === 44000) {
       resp.push(new CatalogItemRaceSeries(id))
       // Race levels
