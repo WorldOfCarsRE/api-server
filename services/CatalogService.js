@@ -85,6 +85,7 @@ class CatalogService extends libamf.Service {
       resp.push(new CatalogItemRaceSeries(id))
       // Race levels
       resp.push(
+        this.getItem(41000),
         this.getItem(41001),
         this.getItem(41002),
         this.getItem(41003),
@@ -117,7 +118,7 @@ class CatalogService extends libamf.Service {
     } else if (itemType === 'sponsor') {
       return this.getItemsByIds([9995, 9999, 9998, 9997, 9996, 10000, 9994, 9993, 9992, 9991, 9990, 9989, 9988, 9987, 9986, 9985, 9984, 9983, 9982, 9981, 9980])
     } else if (itemType === 'racelevel') {
-      return this.getItemsByIds([41001, 41002, 41003, 41004, 41005, 41006])
+      return this.getItemsByIds([41000, 41001, 41002, 41003, 41004, 41005, 41006])
     }
 
     return resp

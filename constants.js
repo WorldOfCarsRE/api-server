@@ -870,6 +870,11 @@ clientData[31015] = {
   classObj: new CatalogItemNPC('car_k_chr_frn_tractorLow.dpak', 'Tractor', 'car_r_chr_frn_tractor.smod', '', '', 33267)
 }
 
+clientData[41000] = {
+  name: 'Piston Cup Series Level 0',
+  classObj: new CatalogItemRaceLevel(0, 0, 0, 0, 0, [9980, 9981, 9982, 9983, 9984])
+}
+
 clientData[41001] = {
   name: 'Piston Cup Series Level 1 (Tailgator Speedway)',
   classObj: new CatalogItemRaceLevel(42004, 25004, 111, 0, 60000, [9980, 9981, 9982, 9983, 9984, 9985, 9986])
@@ -927,7 +932,7 @@ clientData[42005] = {
 
 clientData[42006] = {
   name: 'race_bhl',
-  classObj: new CatalogItemRaceTrack('Big Heartland Speedway', 'Piston Cup Series Grand Challenge No. 2', true, 'sp_bhl', 'mp_bhl', 'car_f_gui_ttl_bigHeartlandSpeedway_en_US.swf', '', 'car_w_trk_prf_BigHeartlandSpeedway', 'car_g_map_trk_bigHeartlandSpeedway.swf', 'Music', 'raceBigHeartland', 'car_w_trk_prf_BigHeartland_SS_phys.xml', 15006, 'car_g_lgo_trk_bigHeartlandSpeedway_en_US.swf', 'car_g_rac_scn_bigHeartlandSpeedwayTrack.jpg', 'car_g_ico_map_BHS.swf', 'car_g_ico_rac_bigHeartlandRacewayPass.jpg', 'Big Heartland Speedway Trophy', 'car_m_gar_tro_bigHeartLand.smod')
+  classObj: new CatalogItemRaceTrack('Big Heartland Speedway', 'Piston Cup Series Grand Challenge No. 2', true, 'sp_bhl', 'mp_bhl', 'car_f_gui_ttl_bigHeartlandSpeedway_en_US.swf', '', 'car_w_trk_prf_BigHeartlandSpeedway', 'car_g_map_trk_bigHeartlandSpeedway.swf', 'Music', 'raceBigHeartland', 'car_w_trk_prf_BigHeartland_SS_phys.xml', 15008, 'car_g_lgo_trk_bigHeartlandSpeedway_en_US.swf', 'car_g_rac_scn_bigHeartlandSpeedwayTrack.jpg', 'car_g_ico_map_BHS.swf', 'car_g_ico_rac_bigHeartlandRacewayPass.jpg', 'Big Heartland Speedway Trophy', 'car_m_gar_tro_bigHeartLand.smod')
 }
 
 clientData[42007] = {
