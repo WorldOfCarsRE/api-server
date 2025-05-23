@@ -54,11 +54,21 @@ class PlayerService extends libamf.Service {
       resp.push(1)
     } else {
       const car = await db.retrieveCar(playerId)
-      // TODO: Profile view case
-      if (car) {
-        carIdOrRuleIds.forEach(ruleId => {
-          resp.push(new RuleStateAMF(ruleId, playerId, car.racecarId, 1, 1))
-        })
+      if (!car) {
+        console.log(`getRuleStates: Couldn't find car with playerId: ${playerId}`)
+        return
+      }
+
+      for (let ruleId of carIdOrRuleIds) {
+        const ruleState = car.ruleStates.find(rs => rs[0] === ruleId)
+
+        if (!ruleState) {
+          console.log(`getRuleStates: Couldn't find rule state: ${ruleId}`)
+          continue
+        }
+
+        const [_, count, accumulator] = ruleState
+        resp.push(new RuleStateAMF(ruleId, playerId, car.racecarId, count, accumulator))
       }
     }
 
