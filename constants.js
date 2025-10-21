@@ -33,6 +33,7 @@ const CatalogItemConsumable = global.CatalogItemConsumable
 const CatalogItemStack = global.CatalogItemStack
 const CatalogItemDetailing = global.CatalogItemDetailing
 const CatalogItemAddon = global.CatalogItemAddon
+const CatalogItemGPSIcon = global.CatalogItemGPSIcon
 
 const ArrayCollection = global.ArrayCollection
 
@@ -2272,5 +2273,10 @@ clientData[203].classObj = new CatalogItemAddon(clientData[203].name, '', 'car_g
 clientData[203].classObj.itemId = 203
 
 shopData[22002].push(clientData[203].classObj)
+
+clientData[111] = {
+  name: 'Zone GPS Icon',
+  classObj: new CatalogItemGPSIcon('zoneIcon')
+}
 
 module.exports = { clientData, shopData, assetData, idToAsset, assetMappings }
