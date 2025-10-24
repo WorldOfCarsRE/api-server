@@ -114,6 +114,8 @@ global.CatalogItemDetailing = require('./catalog/CatalogItemDetailing')
 global.Badge = require('./amf/Badge')
 global.Yard = require('./amf/Yard')
 global.CatalogItemAddon = require('./catalog/CatalogItemAddon')
+global.CatalogItemBadge = require('./catalog/CatalogItemBadge')
+global.CatalogItemSouvenir = require('./catalog/CatalogItemSouvenir')
 
 const express = require('express')
 
@@ -202,6 +204,8 @@ libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Detailing',
 libamf.registerClassAlias('com.disney.cars.domain.player.Badge', Badge)
 libamf.registerClassAlias('com.disney.cars.domain.player.Yard', Yard)
 libamf.registerClassAlias('com.disney.cars.domain.catalog.player.car.Addon', CatalogItemAddon)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.reward.Badge', CatalogItemBadge)
+libamf.registerClassAlias('com.disney.cars.domain.catalog.player.reward.Souvenir', CatalogItemSouvenir)
 
 /* global server */
 

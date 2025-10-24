@@ -59,7 +59,7 @@ class PlayerService extends libamf.Service {
         return
       }
 
-      for (let ruleId of carIdOrRuleIds) {
+      for (const ruleId of carIdOrRuleIds) {
         const ruleState = car.ruleStates.find(rs => rs[0] === ruleId)
 
         if (!ruleState) {
@@ -79,10 +79,24 @@ class PlayerService extends libamf.Service {
     return new ArrayCollection()
   }
 
-  getBadgesByPlayerId (playerId) {
+  async getBadgesByPlayerId (playerId) {
     console.log(`getBadgesByPlayerId: ${playerId}`)
 
-    return new ArrayCollection()
+    const resp = new ArrayCollection()
+
+    const car = await db.retrieveCar(playerId)
+    if (!car) {
+      console.log(`getBadgesByPlayerId: Couldn't find car with playerId: ${playerId}`)
+      return
+    }
+
+    const playerBadges = car.badges
+
+    for (const badgeId of playerBadges) {
+      resp.push(new Badge(badgeId))
+    }
+
+    return resp
   }
 }
 

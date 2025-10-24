@@ -34,6 +34,8 @@ const CatalogItemStack = global.CatalogItemStack
 const CatalogItemDetailing = global.CatalogItemDetailing
 const CatalogItemAddon = global.CatalogItemAddon
 const CatalogItemGPSIcon = global.CatalogItemGPSIcon
+const CatalogItemBadge = global.CatalogItemBadge
+const CatalogItemSouvenir = global.CatalogItemSouvenir
 
 const ArrayCollection = global.ArrayCollection
 
@@ -2278,5 +2280,267 @@ clientData[111] = {
   name: 'Zone GPS Icon',
   classObj: new CatalogItemGPSIcon('zoneIcon')
 }
+
+// Souvenirs
+clientData[45000] = {
+  name: 'Diecast Collectibles',
+  classObj: null
+}
+
+clientData[45000].classObj = new CatalogItemBadge(clientData[45000].name, '', '', 'car_g_svr_cat_mattelCategory_en_US.png')
+
+clientData[45200] = {
+  name: 'Mementos',
+  classObj: null
+}
+
+clientData[45200].classObj = new CatalogItemBadge(clientData[45200].name, '', '', 'car_g_svr_cat_mementosCategory_en_US.png')
+
+clientData[45201] = {
+  name: 'Holiday 2009',
+  classObj: null
+}
+
+clientData[45201].classObj = new CatalogItemSouvenir(clientData[45201].name, '', 45200, 'car_g_svr_mem_holidayPuppeteeringMcQueen_en_US.png', 'car_g_svr_mem_holidayPuppeteeringMcQueen_sm_en_US.png')
+
+clientData[45202] = {
+  name: 'Open Beta Plaque',
+  classObj: null
+}
+
+clientData[45202].classObj = new CatalogItemSouvenir(clientData[45202].name, '', 45200, 'car_g_svr_mem_betaParticipantPlaque_en_US.png', 'car_g_svr_mem_betaParticipantPlaque_sm_en_US.png')
+
+
+clientData[45203] = {
+  name: 'Beta Sponsor Commemorative Plate',
+  classObj: null
+}
+
+clientData[45203].classObj = new CatalogItemSouvenir(clientData[45203].name, '', 45200, 'car_g_svr_mem_sponsoredEarlyCommemorativePlate_en_US.png', 'car_g_svr_mem_sponsoredEarlyCommemorativePlate_sm_en_US.png')
+
+
+clientData[45204] = {
+  name: "Founder's Plaque",
+  classObj: null
+}
+
+clientData[45204].classObj = new CatalogItemSouvenir(clientData[45204].name, 'World of Cars Founding Member', 45200, 'car_g_svr_mem_foundersPlaque_en_US.png', 'car_g_svr_mem_foundersPlaque_sm_en_US.png')
+
+clientData[45205] = {
+  name: 'Sally Rock',
+  classObj: null
+}
+
+clientData[45205].classObj = new CatalogItemSouvenir(clientData[45205].name, '', 45200, 'car_g_svr_mem_sallyRock.png', 'car_g_svr_mem_sallyRock_sm.png')
+
+clientData[45206] = {
+  name: "Sally's Help Note",
+  classObj: null
+}
+
+clientData[45206].classObj = new CatalogItemSouvenir(clientData[45206].name, '', 45200, 'car_g_svr_qst_sallysHelpNote_en_US.ajpg', 'car_g_svr_qst_sallysHelpNote_sm_en_US.ajpg')
+
+clientData[45207] = {
+  name: "Lil' Torquey Keychain",
+  classObj: null
+}
+
+clientData[45207].classObj = new CatalogItemSouvenir(clientData[45207].name, "Eliminates embarrassing cylinder gas, Lil' Torquey way!", 45200, 'car_g_svr_mem_sponsorKeychain_lilTorquey.png', 'car_g_svr_mem_sponsorKeychain_lilTorquey_sm.png')
+
+clientData[45208] = {
+  name: 'Gask-Its Keychain',
+  classObj: null
+}
+
+clientData[45208].classObj = new CatalogItemSouvenir(clientData[45208].name, 'Transmission fluid race track treat! Yum!', 45200, 'car_g_svr_mem_sponsorKeychain_gaskits.png', 'car_g_svr_mem_sponsorKeychain_gaskits_sm.png')
+
+clientData[45209] = {
+  name: 'Trunk Fresh Keychain',
+  classObj: null
+}
+
+clientData[45209].classObj = new CatalogItemSouvenir(clientData[45209].name, 'Gives musty trunks that new Cars smell!', 45200, 'car_g_svr_mem_sponsorKeychain_trunkFresh.png', 'car_g_svr_mem_sponsorKeychain_trunkFresh_sm.png')
+
+clientData[45210] = {
+  name: 'Sputter Stop Keychain',
+  classObj: null
+}
+
+clientData[45210].classObj = new CatalogItemSouvenir(clientData[45210].name, 'Brings those embarrassing sputters to a stop - stop - stop!', 45200, 'car_g_svr_mem_sponsorKeychain_sputterStop.png', 'car_g_svr_mem_sponsorKeychain_sputterStop_sm.png')
+
+clientData[45211] = {
+  name: 'Leak Less Keychain',
+  classObj: null
+}
+
+clientData[45211].classObj = new CatalogItemSouvenir(clientData[45211].name, 'Guaranteed Leak Less with Adult Drip Pan!', 45200, 'car_g_svr_mem_sponsorKeychain_leakLess.png', 'car_g_svr_mem_sponsorKeychain_leakLess_sm.png')
+
+clientData[45212] = {
+  name: 'Shiny Wax Keychain',
+  classObj: null
+}
+
+clientData[45212].classObj = new CatalogItemSouvenir(clientData[45212].name, 'Keeps your shine beyond its time!', 45200, 'car_g_svr_mem_sponsorKeychain_shinyWax.png', 'car_g_svr_mem_sponsorKeychain_shinyWax_sm.png')
+
+clientData[45213] = {
+  name: 'Spare Mint Keychain',
+  classObj: null
+}
+
+clientData[45213].classObj = new CatalogItemSouvenir(clientData[45213].name, 'Gives old tires that minty fresh tread!', 45200, 'car_g_svr_mem_sponsorKeychain_spareMint.png', 'car_g_svr_mem_sponsorKeychain_spareMint_sm.png')
+
+clientData[45214] = {
+  name: 'Holiday Bash Free',
+  classObj: null
+}
+
+clientData[45214].classObj = new CatalogItemSouvenir(clientData[45214].name, '', 45200, 'car_g_svr_mem_holidayFestivalFree.png', 'car_g_svr_mem_holidayFestivalFree_sm.png')
+
+clientData[45215] = {
+  name: 'Radiator Springs Snow Globe Souvenir',
+  classObj: null
+}
+
+clientData[45215].classObj = new CatalogItemSouvenir(clientData[45215].name, "Given by Mack to commemorate his 2010 Holiday Bash ('N' Crash). YOU WERE THERE!", 45200, 'car_g_svr_mem_holidayFestivalSponsored_en_US.png', 'car_g_svr_mem_holidayFestivalSponsored_sm_en_US.png')
+
+clientData[45216] = {
+  name: "Sheriff's Certificate of Commendation",
+  classObj: null
+}
+
+clientData[45216].classObj = new CatalogItemSouvenir(clientData[45216].name, 'An extremely rare and valuable Commendation because Sheriff has never given anyone any Commendations before.', 45200, 'car_g_svr_qst_sheriffCommendationLetter.ajpg', 'car_g_svr_qst_sheriffCommendationLetter_sm.ajpg')
+
+clientData[45217] = {
+  name: "Scaryator Springs Collector's Plate",
+  classObj: null
+}
+
+clientData[45217].classObj = new CatalogItemSouvenir(clientData[45217].name, 'You attended the 2010 Scaryator Springs Festival and SURVIVED!', 45200, 'car_g_svr_mem_halloweenCommemorativePlate_en_US.png', 'car_g_svr_mem_halloweenCommemorativePlate_sm_en_US.png')
+
+clientData[45218] = {
+  name: 'No Stall Keychain',
+  classObj: null
+}
+
+clientData[45218].classObj = new CatalogItemSouvenir(clientData[45218].name, 'Fly into that final lap with No Stall confidence!', 45200, 'car_g_svr_mem_sponsorKeychain_noStall.png', 'car_g_svr_mem_sponsorKeychain_noStall_sm.png')
+
+clientData[45219] = {
+  name: 'Rev-N-Go Keychain',
+  classObj: null
+}
+
+clientData[45219].classObj = new CatalogItemSouvenir(clientData[45219].name, 'The carburetor decongestant of congested champions!', 45200, 'car_g_svr_mem_sponsorKeychain_revNGo.png', 'car_g_svr_mem_sponsorKeychain_revNGo_sm.png')
+
+clientData[45220] = {
+  name: "Mater's Holiday Mix Up",
+  classObj: null
+}
+
+clientData[45220].classObj = new CatalogItemSouvenir(clientData[45220].name, '', 45200, 'car_g_svr_mem_matersHolidayMixup.png', 'car_g_svr_mem_matersHolidayMixup_sm.png')
+
+clientData[45221] = {
+  name: 'Gasprin Keychain',
+  classObj: null
+}
+
+clientData[45221].classObj = new CatalogItemSouvenir(clientData[45221].name, "Provides Hood-ache relief when your achin' hood needs it most!", 45200, 'car_g_svr_mem_sponsorKeychain_gasprin.png', 'car_g_svr_mem_sponsorKeychain_gasprin_sm.png')
+
+clientData[45222] = {
+  name: 'Tank Coat Keychain',
+  classObj: null
+}
+
+clientData[45222].classObj = new CatalogItemSouvenir(clientData[45222].name, 'Soothes upset tanks, with little to no leakage.', 45200, 'car_g_svr_mem_sponsorKeychain_tankCoat.png', 'car_g_svr_mem_sponsorKeychain_tankCoat_sm.png')
+
+clientData[45223] = {
+  name: 'htB Keychain',
+  classObj: null
+}
+
+clientData[45223].classObj = new CatalogItemSouvenir(clientData[45223].name, "You won't dare leave your garage without us.", 45200, 'car_g_svr_mem_sponsorKeychain_htB.png', 'car_g_svr_mem_sponsorKeychain_htB_sm.png')
+
+clientData[45224] = {
+  name: 'Re-Volting Keychain',
+  classObj: null
+}
+
+clientData[45224].classObj = new CatalogItemSouvenir(clientData[45224].name, "They may not be new, but they're RE-VOLTING!", 45200, 'car_g_svr_mem_sponsorKeychain_revolting.png', 'car_g_svr_mem_sponsorKeychain_revolting_sm.png')
+
+clientData[45225] = {
+  name: 'Mack Tiki Souvenir',
+  classObj: null
+}
+
+clientData[45225].classObj = new CatalogItemSouvenir(clientData[45225].name, "Mack's Spring Brake 2011", 45200, 'car_g_svr_mem_mackTiki.png', 'car_g_svr_mem_mackTiki_sm.png')
+
+clientData[45226] = {
+  name: 'Vitoline Keychain',
+  classObj: null
+}
+
+clientData[45226].classObj = new CatalogItemSouvenir(clientData[45226].name, 'Feel full of vim and vigor... with Vitoline!', 45200, 'car_g_svr_mem_sponsorKeychain_vitoline.png', 'car_g_svr_mem_sponsorKeychain_vitoline_sm.png')
+
+clientData[45227] = {
+  name: 'View Zeen Keychain',
+  classObj: null
+}
+
+clientData[45227].classObj = new CatalogItemSouvenir(clientData[45227].name, 'Trouble staying in your lane? SHARPEN YOUR SIGHT WITH VIEW ZEEN.', 45200, 'car_g_svr_mem_sponsorKeychain_viewZeen.png', 'car_g_svr_mem_sponsorKeychain_viewZeen_sm.png')
+
+clientData[45228] = {
+  name: 'Car Show Off 2011',
+  classObj: null
+}
+
+clientData[45228].classObj = new CatalogItemSouvenir(clientData[45228].name, '', 45200, 'car_g_svr_mem_carShowOff2011_en_US.png', 'car_g_svr_mem_carShowOff2011_sm_en_US.png')
+
+clientData[45229] = {
+  name: 'Rust-eze Keychain',
+  classObj: null
+}
+
+clientData[45229].classObj = new CatalogItemSouvenir(clientData[45229].name, 'Aching rear? Rust-Eze medicated bumper ointment, PLEASE!', 45200, 'car_g_svr_mem_sponsorKeychain_rusteze.png', 'car_g_svr_mem_sponsorKeychain_rusteze_sm.png')
+
+clientData[45230] = {
+  name: 'Dinoco Keychain',
+  classObj: null
+}
+
+clientData[45230].classObj = new CatalogItemSouvenir(clientData[45230].name, 'Found in the ground, makes you go, go, go! Go Dinoco!', 45200, 'car_g_svr_mem_sponsorKeychain_dinoco.png', 'car_g_svr_mem_sponsorKeychain_dinoco_sm.png')
+
+clientData[45231] = {
+  name: 'Mood Springs Keychain',
+  classObj: null
+}
+
+clientData[45231].classObj = new CatalogItemSouvenir(clientData[45231].name, 'Get the glide back on your ride. Get MOOD SPRINGS!', 45200, 'car_g_svr_mem_sponsorKeychain_moodSprings.png', 'car_g_svr_mem_sponsorKeychain_moodSprings_sm.png')
+
+clientData[45232] = {
+  name: 'Nitroade Keychain',
+  classObj: null
+}
+
+clientData[45232].classObj = new CatalogItemSouvenir(clientData[45232].name, 'Long drives make you crash? Stay awake with Nitroade.', 45200, 'car_g_svr_mem_sponsorKeychain_nitroAde.png', 'car_g_svr_mem_sponsorKeychain_nitroAde_sm.png')
+
+clientData[45233] = {
+  name: 'N2O Cola Keychain',
+  classObj: null
+}
+
+clientData[45233].classObj = new CatalogItemSouvenir(clientData[45233].name, 'Need a good laugh with your gas? Drink N2O Cola today!', 45200, 'car_g_svr_mem_sponsorKeychain_n2oCola.png', 'car_g_svr_mem_sponsorKeychain_n2oCola_sm.png')
+
+clientData[45234] = {
+  name: 'Octane Gain Keychain',
+  classObj: null
+}
+
+clientData[45234].classObj = new CatalogItemSouvenir(clientData[45234].name, 'A quart a day keeps roadside assistance away!', 45200, 'car_g_svr_mem_sponsorKeychain_octaneGain.png', 'car_g_svr_mem_sponsorKeychain_octaneGain_sm.png')
+
+clientData[45235] = {
+  name: "Mack's Tip 'Em And Dip 'Em Sauce",
+  classObj: null
+}
+
+clientData[45235].classObj = new CatalogItemSouvenir(clientData[45235].name, "Yum! It's tire-licking good!", 45200, 'car_g_svr_mem_MacksTipEmAndDipEmSauce.png', 'car_g_svr_mem_MacksTipEmAndDipEmSauce_sm.png')
 
 module.exports = { clientData, shopData, assetData, idToAsset, assetMappings }
