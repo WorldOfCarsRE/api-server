@@ -2310,14 +2310,12 @@ clientData[45202] = {
 
 clientData[45202].classObj = new CatalogItemSouvenir(clientData[45202].name, '', 45200, 'car_g_svr_mem_betaParticipantPlaque_en_US.png', 'car_g_svr_mem_betaParticipantPlaque_sm_en_US.png')
 
-
 clientData[45203] = {
   name: 'Beta Sponsor Commemorative Plate',
   classObj: null
 }
 
 clientData[45203].classObj = new CatalogItemSouvenir(clientData[45203].name, '', 45200, 'car_g_svr_mem_sponsoredEarlyCommemorativePlate_en_US.png', 'car_g_svr_mem_sponsoredEarlyCommemorativePlate_sm_en_US.png')
-
 
 clientData[45204] = {
   name: "Founder's Plaque",

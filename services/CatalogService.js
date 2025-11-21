@@ -91,7 +91,7 @@ class CatalogService extends libamf.Service {
         this.getItem(41003),
         this.getItem(41004),
         this.getItem(41005),
-        this.getItem(41006),
+        this.getItem(41006)
       )
       // Pro race tracks
       resp.push(
