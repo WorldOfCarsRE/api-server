@@ -5,7 +5,7 @@ ArrayCollection = global.ArrayCollection
 CatalogItem = global.CatalogItem
 
 class CatalogItemStore extends CatalogItem {
-  constructor (name, openVO, viewURL, idleAnimations, expansionURL, closeVO, dialogSwf = '') {
+  constructor (name, openVO, viewURL, idleAnimations, expansionURL, closeVO, dialogSwf = '', expansionCustomPrice = 0) {
     super()
 
     this.name = name
@@ -13,7 +13,7 @@ class CatalogItemStore extends CatalogItem {
     this.canRotateCar = true
     this.viewURL = viewURL
     this.inventoryIds = new ArrayCollection()
-    this.expansionCustomPrice = ''
+    this.expansionCustomPrice = expansionCustomPrice
     this.dialogSwf = dialogSwf
     this.npcId = 0
     this.dialogBackground = ''

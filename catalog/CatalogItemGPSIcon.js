@@ -3,11 +3,11 @@
 CatalogItem = global.CatalogItem
 
 class CatalogItemGPSIcon extends CatalogItem {
-  constructor () {
+  constructor (standardType) {
     super()
 
     this.customImage = ''
-    this.standardType = ''
+    this.standardType = standardType
   }
 }
 

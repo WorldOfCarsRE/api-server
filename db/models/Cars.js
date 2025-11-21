@@ -10,7 +10,9 @@ const Cars = new mongoose.model('Cars', {
   racecarId: { type: Number }, // DistributedRaceCar object id
   friends: { type: Array }, // Friends list (of Account object ids)
   membershipStart: { type: Date }, // Membership start date
-  yardPermissionMask: { type: Number } // Yard permission mask
+  yardPermissionMask: { type: Number }, // Yard permission mask
+  ruleStates: { type: Array },
+  badges: { type: Array }
 })
 
 module.exports = Cars

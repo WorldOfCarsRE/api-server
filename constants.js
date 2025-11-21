@@ -16,7 +16,6 @@ const CatalogItemMinigame = global.CatalogItemMinigame
 const CatalogItemProfileTheme = global.CatalogItemProfileTheme
 const CatalogItemPuppet = global.CatalogItemPuppet
 const CatalogItemEffect = global.CatalogItemEffect
-const CatalogPlayerStoreItem = global.CatalogPlayerStoreItem
 const CatalogItemQuest = global.CatalogItemQuest
 const CatalogItemQuestStep = global.CatalogItemQuestStep
 const CatalogItemQuestReward = global.CatalogItemQuestReward
@@ -33,6 +32,10 @@ const CatalogItemYardItem = global.CatalogItemYardItem
 const CatalogItemConsumable = global.CatalogItemConsumable
 const CatalogItemStack = global.CatalogItemStack
 const CatalogItemDetailing = global.CatalogItemDetailing
+const CatalogItemAddon = global.CatalogItemAddon
+const CatalogItemGPSIcon = global.CatalogItemGPSIcon
+const CatalogItemBadge = global.CatalogItemBadge
+const CatalogItemSouvenir = global.CatalogItemSouvenir
 
 const ArrayCollection = global.ArrayCollection
 
@@ -102,11 +105,6 @@ clientData[20210] = {
 clientData[15001] = {
   name: 'Downtown Radiator Springs',
   classObj: new CatalogItemWorldZone('Downtown Radiator Springs', 100, 'car_f_gui_ttl_radiatorSprings_en_US.swf', 'car_w_env_rsp_RadiatorSprings', 'car_g_map_env_radiatorSprings.swf', 'scripts/isoworld/radiator_springs.lua', 'Music', 'zoneRadiatorSprings02', 'dp_npt_315')
-}
-
-clientData[102] = {
-  name: 'Redhood Valley (CatalogItemMapEffect)',
-  classObj: new CatalogItemMapEffect(15003, 0)
 }
 
 clientData[103] = {
@@ -182,6 +180,13 @@ assetData[42001] = parseAssetData('car_w_trk_rsp_CarburetorCountySpeedway_assets
 assetData[42002] = parseAssetData('car_w_trk_tfn_TwistinTailfinTrails_assets.xml')
 assetData[42003] = parseAssetData('car_w_trk_frm_FillmoresFieldsRally_assets.xml')
 assetData[42005] = parseAssetData('car_w_trk_wil_WillysButteRally_assets.xml')
+
+assetData[42004] = parseAssetData('car_w_trk_prf_TailgatorSpeedway_assets.xml')
+assetData[42006] = parseAssetData('car_w_trk_prf_BigHeartlandSpeedway_assets.xml')
+assetData[42007] = parseAssetData('car_w_trk_prf_BackfireCanyon_assets.xml')
+assetData[42008] = parseAssetData('car_w_trk_prf_PetroleumCityRaceway_assets.xml')
+assetData[42009] = parseAssetData('car_w_trk_prf_MotorSpeedwaySouth_assets.xml')
+assetData[42010] = parseAssetData('car_w_trk_prf_LASpeedway_assets.xml')
 
 assetData[10001] = parseAssetData('car_w_yar_own_non_member_yard_assets.xml')
 
@@ -507,12 +512,12 @@ clientData[51138] = {
 
 clientData[51139] = {
   name: 'Car Decal Hood (Octane Gain)',
-  classObj: new CatalogItemDecal(['car_t_cst_dec_octaneGain_topFront.swf', 0])
+  classObj: new CatalogItemDecal(['car_t_cst_dec_octainGain_topFront.swf', 0])
 }
 
 clientData[51140] = {
   name: 'Car Decal Rear (Octane Gain)',
-  classObj: new CatalogItemDecal(['car_t_cst_dec_octaneGain_rear.swf', 9])
+  classObj: new CatalogItemDecal(['car_t_cst_dec_octainGain_rear.swf', 9])
 }
 
 clientData[51141] = {
@@ -623,6 +628,26 @@ clientData[32022] = {
 clientData[32023] = {
   name: 'Red Laser Effect',
   classObj: new CatalogItemEffect(['car_f_evt_efx_laserBeamRed.swf'])
+}
+
+clientData[32024] = {
+  name: 'First Visit Indicator',
+  classObj: new CatalogItemEffect(['car_g_ico_ind_firstVisit.swf'], 0, 1)
+}
+
+clientData[32025] = {
+  name: 'Available Quest Indicator',
+  classObj: new CatalogItemEffect(['car_g_ico_ind_availableQuest.swf'], 0, 1)
+}
+
+clientData[32026] = {
+  name: 'Incomplete Quest Indicator',
+  classObj: new CatalogItemEffect(['car_g_ico_ind_incompleteQuest.swf'], 0, 1)
+}
+
+clientData[32027] = {
+  name: 'Complete Quest Indicator',
+  classObj: new CatalogItemEffect(['car_g_ico_ind_completeQuest.swf'], 0, 1)
 }
 
 clientData[20209] = {
@@ -875,6 +900,41 @@ clientData[31015] = {
   classObj: new CatalogItemNPC('car_k_chr_frn_tractorLow.dpak', 'Tractor', 'car_r_chr_frn_tractor.smod', '', '', 33267)
 }
 
+clientData[41000] = {
+  name: 'Piston Cup Series Level 0',
+  classObj: new CatalogItemRaceLevel(0, 0, 0, 0, 0, [9980, 9981, 9982, 9983, 9984])
+}
+
+clientData[41001] = {
+  name: 'Piston Cup Series Level 1 (Tailgator Speedway)',
+  classObj: new CatalogItemRaceLevel(42004, 25004, 111, 0, 60000, [9980, 9981, 9982, 9983, 9984, 9985, 9986])
+}
+
+clientData[41002] = {
+  name: 'Piston Cup Series Level 2 (Big Heartland Speedway)',
+  classObj: new CatalogItemRaceLevel(42006, 25005, 111, 0, 200000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988])
+}
+
+clientData[41003] = {
+  name: 'Piston Cup Series Level 3 (Backfire Canyon Speedway)',
+  classObj: new CatalogItemRaceLevel(42007, 25007, 111, 0, 380000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990])
+}
+
+clientData[41004] = {
+  name: 'Piston Cup Series Level 4 (Petroleum City Super Speedway)',
+  classObj: new CatalogItemRaceLevel(42008, 25008, 111, 0, 640000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990, 9991, 9992])
+}
+
+clientData[41005] = {
+  name: 'Piston Cup Series Level 5 (Motor Speedway of the South)',
+  classObj: new CatalogItemRaceLevel(42009, 25009, 111, 0, 1000000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990, 9991, 9992, 9993, 9994])
+}
+
+clientData[41006] = {
+  name: 'Piston Cup Series Level 6 (LA International Speedway)',
+  classObj: new CatalogItemRaceLevel(42010, 25014, 111, 0, 1000001, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990, 9991, 9992, 9993, 9994, 9995, 9996, 9997, 9998, 9999, 10000])
+}
+
 clientData[42001] = {
   name: 'spRace_ccs',
   classObj: new CatalogItemRaceTrack('Carburetor County Speedway', 'Local track where the showdown is downtown!', false, 'sp_ccs', 'mp_ccs', 'car_f_gui_ttl_carburetorCounty_en_US.swf', 'sp_ccs', 'car_w_trk_rsp_carburetorCountySpeedway', 'car_g_map_trk_carburetorCounty.swf', 'Music', 'raceCarburetorCountySpeedway', 'car_w_trk_rsp_ccSpeedway_SS_phys.xml', 15001, 'car_g_lgo_trk_carburetorCountySpeedway_en_US.swf', 'car_g_rac_scn_CarbCountySpeedway.jpg', 'car_g_ico_map_CCS.swf')
@@ -892,7 +952,7 @@ clientData[42003] = {
 
 clientData[42004] = {
   name: 'race_tgs',
-  classObj: new CatalogItemRaceTrack('Tailgator Speedway', 'Piston Cup Series Grand Challenge No. 1', true, 'sp_tgs', 'mp_tgs', 'car_f_gui_ttl_tailGatorSpeedway_en_US.swf', 'sp_tgs', 'car_w_trk_prf_TailgatorSpeedway', 'car_g_map_trk_tailgatorSpeedway.swf', 'Music', 'raceTailGatorSpeedway', 'car_w_trk_prf_tailgator_SS_phys.xml', 15005, 'car_g_lgo_trk_tailGatorSpeedway_en_US.swf', 'car_g_rac_scn_tailgatorSpeedwayTrack.jpg', 'car_g_ico_map_TGS.swf')
+  classObj: new CatalogItemRaceTrack('Tailgator Speedway', 'Piston Cup Series Grand Challenge No. 1', true, 'sp_tgs', 'mp_tgs', 'car_f_gui_ttl_tailGatorSpeedway_en_US.swf', 'sp_tgs', 'car_w_trk_prf_TailgatorSpeedway', 'car_g_map_trk_tailgatorSpeedway.swf', 'Music', 'raceTailGatorSpeedway', 'car_w_trk_prf_tailgator_SS_phys.xml', 15005, 'car_g_lgo_trk_tailGatorSpeedway_en_US.swf', 'car_g_rac_scn_tailgatorSpeedwayTrack.jpg', 'car_g_ico_map_TGS.swf', 'car_g_ico_rac_tailGatorSpeedwayPass.jpg', 'Tailgator Speedway Trophy', 'car_m_gar_tro_camshaftWrench_gold.smod')
 }
 
 clientData[42005] = {
@@ -902,27 +962,27 @@ clientData[42005] = {
 
 clientData[42006] = {
   name: 'race_bhl',
-  classObj: new CatalogItemRaceTrack('Big Heartland Speedway', 'Piston Cup Series Grand Challenge No. 2', true, 'sp_bhl', 'mp_bhl', 'car_f_gui_ttl_bigHeartlandSpeedway_en_US.swf', '', 'car_w_trk_prf_BigHeartlandSpeedway', 'car_g_map_trk_bigHeartlandSpeedway.swf', 'Music', 'raceBigHeartland', 'car_w_trk_prf_BigHeartland_SS_phys.xml', 15006, 'car_g_lgo_trk_bigHeartlandSpeedway_en_US.swf', 'car_g_rac_scn_bigHeartlandSpeedwayTrack.jpg', 'car_g_ico_map_BHS.swf')
+  classObj: new CatalogItemRaceTrack('Big Heartland Speedway', 'Piston Cup Series Grand Challenge No. 2', true, 'sp_bhl', 'mp_bhl', 'car_f_gui_ttl_bigHeartlandSpeedway_en_US.swf', '', 'car_w_trk_prf_BigHeartlandSpeedway', 'car_g_map_trk_bigHeartlandSpeedway.swf', 'Music', 'raceBigHeartland', 'car_w_trk_prf_BigHeartland_SS_phys.xml', 15008, 'car_g_lgo_trk_bigHeartlandSpeedway_en_US.swf', 'car_g_rac_scn_bigHeartlandSpeedwayTrack.jpg', 'car_g_ico_map_BHS.swf', 'car_g_ico_rac_bigHeartlandRacewayPass.jpg', 'Big Heartland Speedway Trophy', 'car_m_gar_tro_bigHeartLand.smod')
 }
 
 clientData[42007] = {
   name: 'race_bfc',
-  classObj: new CatalogItemRaceTrack('Backfire Canyon Speedway', 'Piston Cup Series Grand Challenge No. 3', true, 'sp_bfc', 'mp_bfc', 'car_f_gui_ttl_backfireCanyonSpeedway_en_US.swf', '', 'car_w_trk_prf_BackfireCanyon', 'car_g_map_trk_backfireCanyon.swf', 'Music', 'raceBFC', 'car_w_trk_prf_BackfireCanyon_SS_phys.xml', 15009, 'car_g_lgo_trk_backfireCanyonSpeedway_en_US.swf', 'car_g_rac_scn_backfireCanyonSpeedwayTrack.jpg', 'car_g_ico_map_BCS.swf')
+  classObj: new CatalogItemRaceTrack('Backfire Canyon Speedway', 'Piston Cup Series Grand Challenge No. 3', true, 'sp_bfc', 'mp_bfc', 'car_f_gui_ttl_backfireCanyonSpeedway_en_US.swf', '', 'car_w_trk_prf_BackfireCanyon', 'car_g_map_trk_backfireCanyon.swf', 'Music', 'raceBFC', 'car_w_trk_prf_BackfireCanyon_SS_phys.xml', 15009, 'car_g_lgo_trk_backfireCanyonSpeedway_en_US.swf', 'car_g_rac_scn_backfireCanyonSpeedwayTrack.jpg', 'car_g_ico_map_BCS.swf', 'car_g_ico_rac_backfireCanyonSpeedwayPass.jpg', 'Backfire Canyon Speedway Trophy', 'car_m_gar_tro_backfireCanyon.smod')
 }
 
 clientData[42008] = {
   name: 'race_pc',
-  classObj: new CatalogItemRaceTrack('Petroleum City Super Speedway', 'Piston Cup Series Grand Challenge No. 4', true, 'sp_pc', 'mp_pc', 'car_f_gui_ttl_petroCitySpeedway_en_US.swf', '', 'car_w_trk_prf_PetroleumCityRaceway', 'car_g_map_trk_petroCitySpeedway.swf', 'Music', 'racePetroleum', 'car_w_trk_prf_PetroleumCityRace_SS_phys.xml', 15010, 'car_g_lgo_trk_petroCitySpeedway_en_US.swf', 'car_g_rac_scn_petroCitySpeedwayTrack.jpg', 'car_g_ico_map_PCS.swf')
+  classObj: new CatalogItemRaceTrack('Petroleum City Super Speedway', 'Piston Cup Series Grand Challenge No. 4', true, 'sp_pc', 'mp_pc', 'car_f_gui_ttl_petroCitySpeedway_en_US.swf', '', 'car_w_trk_prf_PetroleumCityRaceway', 'car_g_map_trk_petroCitySpeedway.swf', 'Music', 'racePetroleum', 'car_w_trk_prf_PetroleumCityRace_SS_phys.xml', 15010, 'car_g_lgo_trk_petroCitySpeedway_en_US.swf', 'car_g_rac_scn_petroCitySpeedwayTrack.jpg', 'car_g_ico_map_PCS.swf', 'car_g_ico_rac_petroCitySpeedwayPass.jpg', 'Petroleum City Super Speedway Trophy', 'car_m_gar_tro_petroCity_bronze.smod')
 }
 
 clientData[42009] = {
   name: 'race_mss',
-  classObj: new CatalogItemRaceTrack('Motor Speedway of the South', 'Piston Cup Series Grand Challenge No. 5', true, 'sp_mss', 'mp_mss', 'car_f_gui_ttl_motorCitySpeedway_en_US.swf', '', 'car_w_trk_prf_MotorSpeedwaySouth', 'car_g_map_trk_motorCitySpeedway.swf', 'Music', 'raceMSS', 'car_w_trk_prf_MotorSpeedwaySouth_SS_phys.xml', 15011, 'car_g_lgo_trk_motorSpeedway_en_US.swf', 'car_g_rac_scn_motorSpeedwayTrack.jpg', 'car_g_ico_map_MCS.swf')
+  classObj: new CatalogItemRaceTrack('Motor Speedway of the South', 'Piston Cup Series Grand Challenge No. 5', true, 'sp_mss', 'mp_mss', 'car_f_gui_ttl_motorCitySpeedway_en_US.swf', '', 'car_w_trk_prf_MotorSpeedwaySouth', 'car_g_map_trk_motorCitySpeedway.swf', 'Music', 'raceMSS', 'car_w_trk_prf_MotorSpeedwaySouth_SS_phys.xml', 15011, 'car_g_lgo_trk_motorSpeedway_en_US.swf', 'car_g_rac_scn_motorSpeedwayTrack.jpg', 'car_g_ico_map_MCS.swf', 'car_g_ico_rac_motorCitySpeedwayPass.jpg', 'Motor Speedway of the South Trophy', 'car_m_gar_tro_mSS.smod')
 }
 
 clientData[42010] = {
   name: 'race_las',
-  classObj: new CatalogItemRaceTrack('LA International Speedway', 'Piston Cup Series Grand Challenge No. 6', true, 'sp_las', 'mp_las', 'car_f_gui_ttl_laSpeedway_en_US.swf', '', 'car_w_trk_prf_LASpeedway', 'car_g_map_trk_laSpeedway.swf', 'Music', 'raceLASpeedway', 'car_w_trk_prf_LASpeedway_SS_phys.xml', 15012, 'car_g_lgo_trk_laSpeedway_en_US.swf', 'car_g_rac_scn_laSpeedwayTrack.jpg', 'car_g_ico_map_LAS.swf')
+  classObj: new CatalogItemRaceTrack('LA International Speedway', 'Piston Cup Series Grand Challenge No. 6', true, 'sp_las', 'mp_las', 'car_f_gui_ttl_laSpeedway_en_US.swf', '', 'car_w_trk_prf_LASpeedway', 'car_g_map_trk_laSpeedway.swf', 'Music', 'raceLASpeedway', 'car_w_trk_prf_LASpeedway_SS_phys.xml', 15012, 'car_g_lgo_trk_laSpeedway_en_US.swf', 'car_g_rac_scn_laSpeedwayTrack.jpg', 'car_g_ico_map_LAS.swf', 'car_g_ico_rac_laSpeedwayPass.jpg', 'Piston Cup Trophy', 'car_m_gar_tro_pistonCup_gold.smod')
 }
 
 clientData[31016] = {
@@ -1096,7 +1156,7 @@ clientData[22002] = {
 }
 
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.mcQueenStore)
-clientData[22002].classObj = new CatalogItemStore(clientData[22002].name, 'voStoreLightningEnter', 'car_f_gui_str_mcQueenStore.swf', '33274,60020,60021,60022,60020,60010,33274,33274,33274,33274', 'car_f_gui_str_avatarEditor.swf', 'voStoreLightningExit')
+clientData[22002].classObj = new CatalogItemStore(clientData[22002].name, 'voStoreLightningEnter', 'car_f_gui_str_mcQueenStore.swf', '33274,60020,60021,60022,60020,60010,33274,33274,33274,33274', 'car_f_gui_str_avatarEditor.swf', 'voStoreLightningExit', '', 500)
 clientData[15001].classObj.dropPoints['22002'] = 'dp_lightning_225'
 
 // TODO: Figure out proper animation for these ids?
@@ -1109,7 +1169,7 @@ clientData[22004] = {
 }
 
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.ramoneStore)
-clientData[22004].classObj = new CatalogItemStore(clientData[22004].name, 'voStoreRamoneEnter', 'car_f_gui_str_ramoneStore.swf', '33274,60022,60021,60026,60010,33274,33274,33274,33274,33274', 'car_f_gui_str_bodyShaping.swf', 'voStoreRamoneExit')
+clientData[22004].classObj = new CatalogItemStore(clientData[22004].name, 'voStoreRamoneEnter', 'car_f_gui_str_ramoneStore.swf', '33274,60022,60021,60026,60010,33274,33274,33274,33274,33274', 'car_f_gui_str_bodyShaping.swf', 'voStoreRamoneExit', '', 100)
 clientData[15001].classObj.dropPoints['22004'] = 'dp_ramone_180'
 
 // TODO: Figure out proper animation for this id?
@@ -1172,41 +1232,153 @@ clientData[22012] = {
 
 clientData[22012].classObj = new CatalogItemStore(clientData[22012].name, '', '', '', '', '', 'car_f_gui_str_spyStore.swf')
 
+clientData[25001] = {
+  name: "Fuel Mixin', Man",
+  classObj: null
+}
+
+clientData[25001].classObj = new CatalogItemQuest(clientData[25001].name, '', '', '', [], [], 2000, 2001, 2002)
+
+clientData[25002] = {
+  name: 'Hit the Road Challenge',
+  classObj: null
+}
+
+clientData[25002].classObj = new CatalogItemQuest(clientData[25002].name, '', '', '', [], [], 2003, 2004, 2005)
+
+clientData[25003] = {
+  name: "Lookin' for Junk",
+  classObj: null
+}
+
+clientData[25003].classObj = new CatalogItemQuest(clientData[25003].name, '', '', '', [], [], 2006, 2007, 2008)
+
+clientData[25004] = {
+  name: 'Tailgator Speedway Quest',
+  classObj: null
+}
+
+clientData[25004].classObj = new CatalogItemQuest(clientData[25004].name, "Congratulations! Here's your Tailgator Speedway Pro Pass.\n\nNow you're going to go race at Tailgator Speedway. This'll be your first step as a Pro Racer toward winning the Piston Cup Series!", 'car_g_qst_adv_mcQueenTailgatorSpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [25100, 25101, 25102, 25103], [], 2009, 2010, 2011, true)
+
+clientData[25100] = {
+  name: 'Complete Heat 1.',
+  classObj: null
+}
+
+clientData[25100].classObj = new CatalogItemQuestStep(clientData[25100].name, 2100)
+
+clientData[25101] = {
+  name: 'Complete Heat 2.',
+  classObj: null
+}
+
+clientData[25101].classObj = new CatalogItemQuestStep(clientData[25101].name, 2101)
+
+clientData[25102] = {
+  name: 'Win the Main Event Race.',
+  classObj: null
+}
+
+clientData[25102].classObj = new CatalogItemQuestStep(clientData[25102].name, 2102)
+
+clientData[25103] = {
+  name: 'Return to Lightning.',
+  classObj: null
+}
+
+clientData[25103].classObj = new CatalogItemQuestStep(clientData[25103].name, 2103)
+
+clientData[25005] = {
+  name: 'Big Heartland Speedway Quest',
+  classObj: null
+}
+
+clientData[25005].classObj = new CatalogItemQuest(clientData[25005].name, '', 'car_g_qst_adv_mcQueenBigHeartlandSpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [], [], 2012, 2013, 2014, true)
+
+clientData[25006] = {
+  name: "Where's Sally?",
+  classObj: null
+}
+
+clientData[25006].classObj = new CatalogItemQuest(clientData[25006].name, '', '', '', [], [], 2015, 2016, 2017)
+
+clientData[25007] = {
+  name: 'Backfire Canyon Speedway Quest',
+  classObj: null
+}
+
+clientData[25007].classObj = new CatalogItemQuest(clientData[25007].name, '', 'car_g_qst_adv_BackfireCanyonSpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [], [], 2018, 2019, 2020, true)
+
+clientData[25008] = {
+  name: 'Petroleum City Super Speedway Quest',
+  classObj: null
+}
+
+clientData[25008].classObj = new CatalogItemQuest(clientData[25008].name, '', 'car_g_qst_adv_PetroleumCitySuperSpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [], [], 2021, 2022, 2023, true)
+
+clientData[25009] = {
+  name: 'Motor Speedway of the South Quest',
+  classObj: null
+}
+
+clientData[25009].classObj = new CatalogItemQuest(clientData[25009].name, '', 'car_g_qst_adv_MotorSpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [], [], 2024, 2025, 2026, true)
+
 // Ramone
 clientData[25010] = {
   name: 'Free Body Work!',
   classObj: null
 }
 
-clientData[25010].classObj = new CatalogItemQuest(clientData[25010].name, "You look pretty stock to Ramone.\nSo he's making you a one-time offer of some FREE BODY WORK!\nDrive inside and see what you can make of yourself!", 'car_g_qst_adv_ramoneFreeCustomization.jpg', 'car_g_ico_adv_ramone.ajpg')
+clientData[25010].classObj = new CatalogItemQuest(clientData[25010].name, "You look pretty stock to Ramone.\nSo he's making you a one-time offer of some FREE BODY WORK!\nDrive inside and see what you can make of yourself!", 'car_g_qst_adv_ramoneFreeCustomization.jpg', 'car_g_ico_adv_ramone.ajpg', [25104, 25105], [25500, 25501], 2027, 2028, 2029)
 
-clientData[22223] = {
+clientData[25104] = {
   name: "Enter Ramone's shop and get a free body customization.",
   classObj: null
 }
 
-clientData[22223].classObj = new CatalogItemQuestStep(clientData[22223].name)
+clientData[25104].classObj = new CatalogItemQuestStep(clientData[25104].name, 2104)
 
-clientData[22224] = {
+clientData[25105] = {
   name: 'Return to Ramone.',
   classObj: null
 }
 
-clientData[22224].classObj = new CatalogItemQuestStep(clientData[22224].name, 'return_npc')
+clientData[25105].classObj = new CatalogItemQuestStep(clientData[25105].name, 2105)
 
-clientData[22229] = {
+clientData[25500] = {
   name: 'Quest 25010 Coin Reward',
   classObj: null
 }
 
-clientData[22229].classObj = new CatalogItemQuestReward(clientData[22229].name, 3, 10)
+clientData[25500].classObj = new CatalogItemQuestReward(clientData[25500].name, 3, 10)
 
-clientData[22230] = {
+clientData[25501] = {
   name: 'Medallion Bronze Paint',
   classObj: null
 }
 
-clientData[22230].classObj = new CatalogItemQuestReward(clientData[22230].name, 0, 1, 'car_g_ico_clr_blinginBronze.swf', 0)
+clientData[25501].classObj = new CatalogItemQuestReward(clientData[25501].name, 0, 1, 'car_g_ico_clr_blinginBronze.swf', 0)
+
+clientData[25011] = {
+  name: 'Holiday Quest',
+  classObj: null
+}
+
+clientData[25011].classObj = new CatalogItemQuest(clientData[25011].name, '', '', '', [], [], 2030, 2031, 2032)
+
+clientData[25013] = {
+  name: 'Tanksgiving Quest',
+  classObj: null
+}
+
+clientData[25013].classObj = new CatalogItemQuest(clientData[25013].name, '', '', '', [], [], 2033, 2034, 2035)
+
+clientData[25014] = {
+  name: 'LA International Speedway Quest',
+  classObj: null
+}
+
+clientData[25014].classObj = new CatalogItemQuest(clientData[25014].name, '', 'car_g_qst_adv_LASpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [], [], 2036, 2037, 2038, true)
 
 // Doc's Clinic game
 clientData[61004] = {
@@ -1320,10 +1492,6 @@ clientData[200].classObj = new CatalogItemDetailing(clientData[200].name, 'Avail
 clientData[200].classObj.itemId = 200
 
 shopData[22002].push(clientData[200].classObj)
-
-shopData[22002].push(new CatalogPlayerStoreItem(201, 'AV-RAGE Racing Fin', '', 'car_g_ico_spo_avrageRacingFin.ajpg', 1000))
-shopData[22002].push(new CatalogPlayerStoreItem(202, 'RZN-TEK Ninja XL', '', 'car_g_ico_spo_RZNTEKNinjaXL.ajpg', 8000))
-shopData[22002].push(new CatalogPlayerStoreItem(203, 'SKY-LITE Drop Wing', '', 'car_g_ico_spo_skyLiteDropWing.ajpg', 6000))
 
 // Values found in .#ClientScripts.swf.1.6.2.9 (com.disney.cars.scripts.store.luigiStore)
 clientData[22003] = {
@@ -1584,7 +1752,7 @@ clientData[9980] = {
   classObj: null
 }
 
-clientData[9980].classObj = new CatalogItemSponsor(clientData[9980].name, 1, 'car_g_bcg_spr_shinyWax.swf', 'car_g_bcg_spr_shinyWaxTent_en_US.swf', 'car_t_cst_dec_shinyWax.swf', '', 20401, 59001)
+clientData[9980].classObj = new CatalogItemSponsor(clientData[9980].name, 1, 'car_g_bcg_spr_shinyWax.swf', 'car_g_bcg_spr_shinyWaxTent_en_US.swf', 'car_t_cst_dec_shinyWax.swf', 20401, 59001, '', 'voSponsorShinyWax')
 
 clientData[20401] = {
   name: 'Shiny Wax (CatalogItemCarDNA)',
@@ -1596,7 +1764,7 @@ clientData[9981] = {
   classObj: null
 }
 
-clientData[9981].classObj = new CatalogItemSponsor(clientData[9981].name, 1, 'car_g_bcg_spr_leakLess.swf', 'car_g_bcg_spr_leaklessTent_en_US.swf', 'car_t_cst_dec_leakLess.swf', '', 20402, 59002)
+clientData[9981].classObj = new CatalogItemSponsor(clientData[9981].name, 1, 'car_g_bcg_spr_leakLess.swf', 'car_g_bcg_spr_leaklessTent_en_US.swf', 'car_t_cst_dec_leakLess.swf', 20402, 59002, '', 'voSponsorLeakLess')
 
 clientData[20402] = {
   name: 'Leak Less (CatalogItemCarDNA)',
@@ -1608,7 +1776,7 @@ clientData[9982] = {
   classObj: null
 }
 
-clientData[9982].classObj = new CatalogItemSponsor(clientData[9982].name, 1, 'car_g_bcg_spr_sputterStop.swf', 'car_g_bcg_spr_sputterStopTent_en_US.swf', 'car_t_cst_dec_sputterStop.swf', '', 20403, 59003)
+clientData[9982].classObj = new CatalogItemSponsor(clientData[9982].name, 1, 'car_g_bcg_spr_sputterStop.swf', 'car_g_bcg_spr_sputterStopTent_en_US.swf', 'car_t_cst_dec_sputterStop.swf', 20403, 59003, '', 'voSponsorSputterStop')
 
 clientData[20403] = {
   name: 'Sputter Stop (CatalogItemCarDNA)',
@@ -1620,7 +1788,7 @@ clientData[9983] = {
   classObj: null
 }
 
-clientData[9983].classObj = new CatalogItemSponsor(clientData[9983].name, 1, 'car_g_bcg_spr_spareMint.swf', 'car_g_bcg_spr_spareMintTent_en_US.swf', 'car_t_cst_dec_spareMint.swf', '', 20404, 59004)
+clientData[9983].classObj = new CatalogItemSponsor(clientData[9983].name, 1, 'car_g_bcg_spr_spareMint.swf', 'car_g_bcg_spr_spareMintTent_en_US.swf', 'car_t_cst_dec_spareMint.swf', 20404, 59004, '', 'voSponsorSpareMint')
 
 clientData[20404] = {
   name: 'Spare Mint (CatalogItemCarDNA)',
@@ -1632,7 +1800,7 @@ clientData[9984] = {
   classObj: null
 }
 
-clientData[9984].classObj = new CatalogItemSponsor(clientData[9984].name, 1, 'car_g_bcg_spr_trunkFresh.swf', 'car_g_bcg_spr_trunkFreshTent_en_US.swf', 'car_t_cst_dec_trunkFresh.swf', '', 20405, 59005)
+clientData[9984].classObj = new CatalogItemSponsor(clientData[9984].name, 1, 'car_g_bcg_spr_trunkFresh.swf', 'car_g_bcg_spr_trunkFreshTent_en_US.swf', 'car_t_cst_dec_trunkFresh.swf', 20405, 59005, '', 'voSponsorTrunkFresh')
 
 clientData[20405] = {
   name: 'Trunk Fresh (CatalogItemCarDNA)',
@@ -1644,7 +1812,7 @@ clientData[9985] = {
   classObj: null
 }
 
-clientData[9985].classObj = new CatalogItemSponsor(clientData[9985].name, 2, 'car_g_bcg_spr_torquey.swf', 'car_g_bcg_spr_torqueyTent_en_US.swf', 'car_t_cst_dec_torqueyPistons.swf', 'car_g_bcg_spr_torqueyTent_main_en_US.swf', 20406, 59006)
+clientData[9985].classObj = new CatalogItemSponsor(clientData[9985].name, 2, 'car_g_bcg_spr_torquey.swf', 'car_g_bcg_spr_torqueyTent_en_US.swf', 'car_t_cst_dec_torqueyPistons.swf', 20406, 59006, 'car_g_bcg_spr_torqueyTent_main_en_US.swf', 'voSponsorLilTorquey')
 
 clientData[20406] = {
   name: "Lil' Torquey Pistons (CatalogItemCarDNA)",
@@ -1656,7 +1824,7 @@ clientData[9986] = {
   classObj: null
 }
 
-clientData[9986].classObj = new CatalogItemSponsor(clientData[9986].name, 2, 'car_g_bcg_spr_gaskits.swf', 'car_g_bcg_spr_gaskitsTent_en_US.swf', 'car_t_cst_dec_gaskits.swf', 'car_g_bcg_spr_gaskitsTent_main_en_US.swf', 20407, 59007)
+clientData[9986].classObj = new CatalogItemSponsor(clientData[9986].name, 2, 'car_g_bcg_spr_gaskits.swf', 'car_g_bcg_spr_gaskitsTent_en_US.swf', 'car_t_cst_dec_gaskits.swf', 20407, 59007, 'car_g_bcg_spr_gaskitsTent_main_en_US.swf', 'voSponsorGasKits')
 
 clientData[20407] = {
   name: 'Gask-Its (CatalogItemCarDNA)',
@@ -1668,7 +1836,7 @@ clientData[9987] = {
   classObj: null
 }
 
-clientData[9987].classObj = new CatalogItemSponsor(clientData[9987].name, 3, 'car_g_bcg_spr_nostall.swf', 'car_g_bcg_spr_nostallTent_en_US.swf', 'car_t_cst_dec_noStall.swf', 'car_g_bcg_spr_nostallTent_main_en_US.swf', 20408, 59008)
+clientData[9987].classObj = new CatalogItemSponsor(clientData[9987].name, 3, 'car_g_bcg_spr_nostall.swf', 'car_g_bcg_spr_nostallTent_en_US.swf', 'car_t_cst_dec_noStall.swf', 20408, 59008, 'car_g_bcg_spr_nostallTent_main_en_US.swf', 'voSponsorNoStall')
 
 clientData[20408] = {
   name: 'No Stall (CatalogItemCarDNA)',
@@ -1680,7 +1848,7 @@ clientData[9988] = {
   classObj: null
 }
 
-clientData[9988].classObj = new CatalogItemSponsor(clientData[9988].name, 3, 'car_g_bcg_spr_revNgo.swf', 'car_g_bcg_spr_revNgoTent_en_US.swf', 'car_t_cst_dec_revNGo.swf', 'car_g_bcg_spr_revNgoTent_main_en_US.swf', 20409, 59009)
+clientData[9988].classObj = new CatalogItemSponsor(clientData[9988].name, 3, 'car_g_bcg_spr_revNgo.swf', 'car_g_bcg_spr_revNgoTent_en_US.swf', 'car_t_cst_dec_revNGo.swf', 20409, 59009, 'car_g_bcg_spr_revNgoTent_main_en_US.swf', 'voSponsorRevNGo')
 
 clientData[20409] = {
   name: 'Rev-N-Go (CatalogItemCarDNA)',
@@ -1692,7 +1860,7 @@ clientData[9989] = {
   classObj: null
 }
 
-clientData[9989].classObj = new CatalogItemSponsor(clientData[9989].name, 4, 'car_g_bcg_spr_gasprin.swf', 'car_g_bcg_spr_gasprinTent_en_US.swf', 'car_t_cst_dec_gasprin.swf', 'car_g_bcg_spr_gasprinTent_main_en_US.swf', 20410, 59010)
+clientData[9989].classObj = new CatalogItemSponsor(clientData[9989].name, 4, 'car_g_bcg_spr_gasprin.swf', 'car_g_bcg_spr_gasprinTent_en_US.swf', 'car_t_cst_dec_gasprin.swf', 20410, 59010, 'car_g_bcg_spr_gasprinTent_main_en_US.swf', 'voSponsorGasprin')
 
 clientData[20410] = {
   name: 'Gasprin (CatalogItemCarDNA)',
@@ -1704,7 +1872,7 @@ clientData[9990] = {
   classObj: null
 }
 
-clientData[9990].classObj = new CatalogItemSponsor(clientData[9990].name, 4, 'car_g_bcg_spr_tankCoat.swf', 'car_g_bcg_spr_tankCoatTent_en_US.swf', 'car_t_cst_dec_tankCoat.swf', 'car_g_bcg_spr_tankCoatTent_main_en_US.swf', 20411, 59011)
+clientData[9990].classObj = new CatalogItemSponsor(clientData[9990].name, 4, 'car_g_bcg_spr_tankCoat.swf', 'car_g_bcg_spr_tankCoatTent_en_US.swf', 'car_t_cst_dec_tankCoat.swf', 20411, 59011, 'car_g_bcg_spr_tankCoatTent_main_en_US.swf', 'voSponsorTankCoat')
 
 clientData[20411] = {
   name: 'Tank Coat (CatalogItemCarDNA)',
@@ -1716,7 +1884,7 @@ clientData[9991] = {
   classObj: null
 }
 
-clientData[9991].classObj = new CatalogItemSponsor(clientData[9991].name, 5, 'car_g_bcg_spr_reVolting.swf', 'car_g_bcg_spr_reVoltingTent_en_US.swf', 'car_t_cst_dec_revolting.swf', 'car_g_bcg_spr_reVoltingTent_main_en_US.swf', 20412, 59012)
+clientData[9991].classObj = new CatalogItemSponsor(clientData[9991].name, 5, 'car_g_bcg_spr_reVolting.swf', 'car_g_bcg_spr_reVoltingTent_en_US.swf', 'car_t_cst_dec_revolting.swf', 20412, 59012, 'car_g_bcg_spr_reVoltingTent_main_en_US.swf')
 
 clientData[20412] = {
   name: 'Re-Volting (CatalogItemCarDNA)',
@@ -1728,7 +1896,7 @@ clientData[9992] = {
   classObj: null
 }
 
-clientData[9992].classObj = new CatalogItemSponsor(clientData[9992].name, 5, 'car_g_bcg_spr_htB.swf', 'car_g_bcg_spr_htBTent_en_US.swf', 'car_t_cst_dec_htb.swf', 'car_g_bcg_spr_htBTent_main_en_US.swf', 20413, 59013)
+clientData[9992].classObj = new CatalogItemSponsor(clientData[9992].name, 5, 'car_g_bcg_spr_htB.swf', 'car_g_bcg_spr_htBTent_en_US.swf', 'car_t_cst_dec_htb.swf', 20413, 59013, 'car_g_bcg_spr_htBTent_main_en_US.swf')
 
 clientData[20413] = {
   name: 'htB (CatalogItemCarDNA)',
@@ -1740,7 +1908,7 @@ clientData[9993] = {
   classObj: null
 }
 
-clientData[9993].classObj = new CatalogItemSponsor(clientData[9993].name, 6, 'car_g_bcg_spr_vitoline.swf', 'car_g_bcg_spr_vitolineTent_en_US.swf', 'car_t_cst_dec_vitoline.swf', 'car_g_bcg_spr_vitolineTent_main_en_US.swf', 20414, 59014)
+clientData[9993].classObj = new CatalogItemSponsor(clientData[9993].name, 6, 'car_g_bcg_spr_vitoline.swf', 'car_g_bcg_spr_vitolineTent_en_US.swf', 'car_t_cst_dec_vitoline.swf', 20414, 59014, 'car_g_bcg_spr_vitolineTent_main_en_US.swf')
 
 clientData[20414] = {
   name: 'Vitoline (CatalogItemCarDNA)',
@@ -1752,7 +1920,7 @@ clientData[9994] = {
   classObj: null
 }
 
-clientData[9994].classObj = new CatalogItemSponsor(clientData[9994].name, 6, 'car_g_bcg_spr_viewZeen.swf', 'car_g_bcg_spr_viewZeenTent_en_US.swf', 'car_t_cst_dec_vuzeen.swf', 'car_g_bcg_spr_viewzeenTent_main_en_US.swf', 20415, 59015)
+clientData[9994].classObj = new CatalogItemSponsor(clientData[9994].name, 6, 'car_g_bcg_spr_viewZeen.swf', 'car_g_bcg_spr_viewZeenTent_en_US.swf', 'car_t_cst_dec_vuzeen.swf', 20415, 59015, 'car_g_bcg_spr_viewzeenTent_main_en_US.swf')
 
 clientData[20415] = {
   name: 'ViewZeen (CatalogItemCarDNA)',
@@ -1764,7 +1932,7 @@ clientData[9995] = {
   classObj: null
 }
 
-clientData[9995].classObj = new CatalogItemSponsor(clientData[9995].name, 7, 'car_g_bcg_spr_rusteze.swf', 'car_g_bcg_spr_rustezeTent_en_US.swf', 'car_t_cst_dec_rusteze.swf', 'car_g_bcg_spr_rustezeTent_main_en_US.swf', 20416, 59016)
+clientData[9995].classObj = new CatalogItemSponsor(clientData[9995].name, 7, 'car_g_bcg_spr_rusteze.swf', 'car_g_bcg_spr_rustezeTent_en_US.swf', 'car_t_cst_dec_rusteze.swf', 20416, 59016, 'car_g_bcg_spr_rustezeTent_main_en_US.swf')
 
 clientData[20416] = {
   name: 'Rust-eze (CatalogItemCarDNA)',
@@ -1776,7 +1944,7 @@ clientData[9996] = {
   classObj: null
 }
 
-clientData[9996].classObj = new CatalogItemSponsor(clientData[9996].name, 7, 'car_g_bcg_spr_nitroAde.swf', 'car_g_bcg_spr_nitroAdeTent_en_US.swf', 'car_t_cst_dec_nitroAde.swf', 'car_g_bcg_spr_nitroAdeTent_main_en_US.swf', 20417, 59017)
+clientData[9996].classObj = new CatalogItemSponsor(clientData[9996].name, 7, 'car_g_bcg_spr_nitroAde.swf', 'car_g_bcg_spr_nitroAdeTent_en_US.swf', 'car_t_cst_dec_nitroAde.swf', 20417, 59017, 'car_g_bcg_spr_nitroAdeTent_main_en_US.swf')
 
 clientData[20417] = {
   name: 'Nitroade (CatalogItemCarDNA)',
@@ -1788,9 +1956,9 @@ clientData[9997] = {
   classObj: null
 }
 
-clientData[9997].classObj = new CatalogItemSponsor(clientData[9997].name, 7, 'car_g_bcg_spr_octaneGain.swf', 'car_g_bcg_spr_octaneGainTent_en_US.swf', 'car_t_cst_dec_octaneGain.swf', 'car_g_bcg_spr_octaneGainTent_main_en_US.swf', 20418, 59018)
+clientData[9997].classObj = new CatalogItemSponsor(clientData[9997].name, 7, 'car_g_bcg_spr_octaneGain.swf', 'car_g_bcg_spr_octaneGainTent_en_US.swf', 'car_t_cst_dec_octaneGain.swf', 20418, 59018, 'car_g_bcg_spr_octaneGainTent_main_en_US.swf')
 
-clientData[20417] = {
+clientData[20418] = {
   name: 'Octane Gain (CatalogItemCarDNA)',
   classObj: new CatalogItemCarDNA('Octane Gain', 'A quart a day keeps roadside assistance away!', 'car_t_cst_dec_octaneGain.swf', [51139, 0, 0, 0, 0, 0, 0, 0, 0, 51140], 0, 20119)
 }
@@ -1800,7 +1968,7 @@ clientData[9998] = {
   classObj: null
 }
 
-clientData[9998].classObj = new CatalogItemSponsor(clientData[9998].name, 7, 'car_g_bcg_spr_n2oCola.swf', 'car_g_bcg_spr_n2oColaTent_en_US.swf', 'car_t_cst_dec_n2o.swf', 'car_g_bcg_spr_n2oColaTent_main_en_US.swf', 20419, 59019)
+clientData[9998].classObj = new CatalogItemSponsor(clientData[9998].name, 7, 'car_g_bcg_spr_n2oCola.swf', 'car_g_bcg_spr_n2oColaTent_en_US.swf', 'car_t_cst_dec_n2o.swf', 20419, 59019, 'car_g_bcg_spr_n2oColaTent_main_en_US.swf')
 
 clientData[20419] = {
   name: 'N2O Cola (CatalogItemCarDNA)',
@@ -1812,7 +1980,7 @@ clientData[9999] = {
   classObj: null
 }
 
-clientData[9999].classObj = new CatalogItemSponsor(clientData[9999].name, 7, 'car_g_bcg_spr_dinoco.swf', 'car_g_bcg_spr_dinocoTent_en_US.swf', 'car_t_cst_dec_dinoco.swf', 'car_g_bcg_spr_dinocoTent_main_en_US.swf', 20420, 59020)
+clientData[9999].classObj = new CatalogItemSponsor(clientData[9999].name, 7, 'car_g_bcg_spr_dinoco.swf', 'car_g_bcg_spr_dinocoTent_en_US.swf', 'car_t_cst_dec_dinoco.swf', 20420, 59020, 'car_g_bcg_spr_dinocoTent_main_en_US.swf')
 
 clientData[20420] = {
   name: 'Dinoco (CatalogItemCarDNA)',
@@ -1824,7 +1992,7 @@ clientData[10000] = {
   classObj: null
 }
 
-clientData[10000].classObj = new CatalogItemSponsor(clientData[10000].name, 7, 'car_g_bcg_spr_moodSprings.swf', 'car_g_bcg_spr_moodSpringsTent_en_US.swf', 'car_t_cst_dec_moodSprings.swf', 'car_g_bcg_spr_moodSpringsTent_main_en_US.swf', 20421, 59021)
+clientData[10000].classObj = new CatalogItemSponsor(clientData[10000].name, 7, 'car_g_bcg_spr_moodSprings.swf', 'car_g_bcg_spr_moodSpringsTent_en_US.swf', 'car_t_cst_dec_moodSprings.swf', 20421, 59021, 'car_g_bcg_spr_moodSpringsTent_main_en_US.swf')
 
 clientData[20421] = {
   name: 'Mood Springs (CatalogItemCarDNA)',
@@ -1993,6 +2161,11 @@ clientData[5006] = {
   classObj: new CatalogItemMapSprite(0, 30, 0, 0, '', ['idle', 'end_idle', 'lever', 'end_lever', 'wateron', 'end_wateron', 'waterflow', 'end_waterflow', 'wateroff', 'end_wateroff'])
 }
 
+clientData[5007] = {
+  name: 'Sponsor Booth Map Sprite (InteractiveObject)',
+  classObj: new CatalogItemMapSprite(20, 15, 0, 0)
+}
+
 // Paint jobs
 clientData[20101] = {
   name: 'Cars 2 Special-Edition Paint Job',
@@ -2086,7 +2259,7 @@ clientData[20118] = {
 
 clientData[20119] = {
   name: 'Octane Gain Paint Job',
-  classObj: new CatalogItemDetailing('Octane Gain Paint Job', '', '', 0, 'car_t_cst_pjb_octaneGain.swf')
+  classObj: new CatalogItemDetailing('Octane Gain Paint Job', '', '', 0, 'car_t_cst_pjb_octainGain.swf')
 }
 
 clientData[20120] = {
@@ -2113,5 +2286,303 @@ clientData[20123].classObj = new CatalogItemDetailing(clientData[20123].name, 'S
 clientData[20123].classObj.itemId = 20123
 
 shopData[22004].push(clientData[20123].classObj)
+
+// Addons
+clientData[201] = {
+  name: 'AV-RAGE Racing Fin',
+  classObj: null
+}
+
+clientData[201].classObj = new CatalogItemAddon(clientData[201].name, "All the pros you've seen on the RSN use this fin for a reason: it works!", 'car_g_ico_spo_avrageRacingFin.ajpg', 1000, 'spoiler', 'car_m_cst_spo_avrageRacingFin.smod')
+clientData[201].classObj.itemId = 201
+
+shopData[22002].push(clientData[201].classObj)
+
+clientData[202] = {
+  name: 'RZN-TEK Ninja XL',
+  classObj: null
+}
+
+clientData[202].classObj = new CatalogItemAddon(clientData[202].name, 'RZN-TEK dares you to go EXTRA LARGE with this Ninja spoiler.', 'car_g_ico_spo_RZNTEKNinjaXL.ajpg', 8000, 'spoiler', 'car_m_cst_spo_RZNTEKNinjaXL.smod')
+clientData[202].classObj.itemId = 202
+
+shopData[22002].push(clientData[202].classObj)
+
+clientData[203] = {
+  name: 'SKY-LITE Drop Wing',
+  classObj: null
+}
+
+clientData[203].classObj = new CatalogItemAddon(clientData[203].name, '', 'car_g_ico_spo_skyLiteDropWing.ajpg', 6000, 'spoiler', 'car_m_cst_spo_skyLiteDropWing.smod')
+clientData[203].classObj.itemId = 203
+
+shopData[22002].push(clientData[203].classObj)
+
+clientData[111] = {
+  name: 'Zone GPS Icon',
+  classObj: new CatalogItemGPSIcon('zoneIcon')
+}
+
+// Souvenirs
+clientData[45000] = {
+  name: 'Diecast Collectibles',
+  classObj: null
+}
+
+clientData[45000].classObj = new CatalogItemBadge(clientData[45000].name, '', '', 'car_g_svr_cat_mattelCategory_en_US.png')
+
+clientData[45200] = {
+  name: 'Mementos',
+  classObj: null
+}
+
+clientData[45200].classObj = new CatalogItemBadge(clientData[45200].name, '', '', 'car_g_svr_cat_mementosCategory_en_US.png')
+
+clientData[45201] = {
+  name: 'Holiday 2009',
+  classObj: null
+}
+
+clientData[45201].classObj = new CatalogItemSouvenir(clientData[45201].name, '', 45200, 'car_g_svr_mem_holidayPuppeteeringMcQueen_en_US.png', 'car_g_svr_mem_holidayPuppeteeringMcQueen_sm_en_US.png')
+
+clientData[45202] = {
+  name: 'Open Beta Plaque',
+  classObj: null
+}
+
+clientData[45202].classObj = new CatalogItemSouvenir(clientData[45202].name, '', 45200, 'car_g_svr_mem_betaParticipantPlaque_en_US.png', 'car_g_svr_mem_betaParticipantPlaque_sm_en_US.png')
+
+
+clientData[45203] = {
+  name: 'Beta Sponsor Commemorative Plate',
+  classObj: null
+}
+
+clientData[45203].classObj = new CatalogItemSouvenir(clientData[45203].name, '', 45200, 'car_g_svr_mem_sponsoredEarlyCommemorativePlate_en_US.png', 'car_g_svr_mem_sponsoredEarlyCommemorativePlate_sm_en_US.png')
+
+
+clientData[45204] = {
+  name: "Founder's Plaque",
+  classObj: null
+}
+
+clientData[45204].classObj = new CatalogItemSouvenir(clientData[45204].name, 'World of Cars Founding Member', 45200, 'car_g_svr_mem_foundersPlaque_en_US.png', 'car_g_svr_mem_foundersPlaque_sm_en_US.png')
+
+clientData[45205] = {
+  name: 'Sally Rock',
+  classObj: null
+}
+
+clientData[45205].classObj = new CatalogItemSouvenir(clientData[45205].name, '', 45200, 'car_g_svr_mem_sallyRock.png', 'car_g_svr_mem_sallyRock_sm.png')
+
+clientData[45206] = {
+  name: "Sally's Help Note",
+  classObj: null
+}
+
+clientData[45206].classObj = new CatalogItemSouvenir(clientData[45206].name, '', 45200, 'car_g_svr_qst_sallysHelpNote_en_US.ajpg', 'car_g_svr_qst_sallysHelpNote_sm_en_US.ajpg')
+
+clientData[45207] = {
+  name: "Lil' Torquey Keychain",
+  classObj: null
+}
+
+clientData[45207].classObj = new CatalogItemSouvenir(clientData[45207].name, "Eliminates embarrassing cylinder gas, Lil' Torquey way!", 45200, 'car_g_svr_mem_sponsorKeychain_lilTorquey.png', 'car_g_svr_mem_sponsorKeychain_lilTorquey_sm.png')
+
+clientData[45208] = {
+  name: 'Gask-Its Keychain',
+  classObj: null
+}
+
+clientData[45208].classObj = new CatalogItemSouvenir(clientData[45208].name, 'Transmission fluid race track treat! Yum!', 45200, 'car_g_svr_mem_sponsorKeychain_gaskits.png', 'car_g_svr_mem_sponsorKeychain_gaskits_sm.png')
+
+clientData[45209] = {
+  name: 'Trunk Fresh Keychain',
+  classObj: null
+}
+
+clientData[45209].classObj = new CatalogItemSouvenir(clientData[45209].name, 'Gives musty trunks that new Cars smell!', 45200, 'car_g_svr_mem_sponsorKeychain_trunkFresh.png', 'car_g_svr_mem_sponsorKeychain_trunkFresh_sm.png')
+
+clientData[45210] = {
+  name: 'Sputter Stop Keychain',
+  classObj: null
+}
+
+clientData[45210].classObj = new CatalogItemSouvenir(clientData[45210].name, 'Brings those embarrassing sputters to a stop - stop - stop!', 45200, 'car_g_svr_mem_sponsorKeychain_sputterStop.png', 'car_g_svr_mem_sponsorKeychain_sputterStop_sm.png')
+
+clientData[45211] = {
+  name: 'Leak Less Keychain',
+  classObj: null
+}
+
+clientData[45211].classObj = new CatalogItemSouvenir(clientData[45211].name, 'Guaranteed Leak Less with Adult Drip Pan!', 45200, 'car_g_svr_mem_sponsorKeychain_leakLess.png', 'car_g_svr_mem_sponsorKeychain_leakLess_sm.png')
+
+clientData[45212] = {
+  name: 'Shiny Wax Keychain',
+  classObj: null
+}
+
+clientData[45212].classObj = new CatalogItemSouvenir(clientData[45212].name, 'Keeps your shine beyond its time!', 45200, 'car_g_svr_mem_sponsorKeychain_shinyWax.png', 'car_g_svr_mem_sponsorKeychain_shinyWax_sm.png')
+
+clientData[45213] = {
+  name: 'Spare Mint Keychain',
+  classObj: null
+}
+
+clientData[45213].classObj = new CatalogItemSouvenir(clientData[45213].name, 'Gives old tires that minty fresh tread!', 45200, 'car_g_svr_mem_sponsorKeychain_spareMint.png', 'car_g_svr_mem_sponsorKeychain_spareMint_sm.png')
+
+clientData[45214] = {
+  name: 'Holiday Bash Free',
+  classObj: null
+}
+
+clientData[45214].classObj = new CatalogItemSouvenir(clientData[45214].name, '', 45200, 'car_g_svr_mem_holidayFestivalFree.png', 'car_g_svr_mem_holidayFestivalFree_sm.png')
+
+clientData[45215] = {
+  name: 'Radiator Springs Snow Globe Souvenir',
+  classObj: null
+}
+
+clientData[45215].classObj = new CatalogItemSouvenir(clientData[45215].name, "Given by Mack to commemorate his 2010 Holiday Bash ('N' Crash). YOU WERE THERE!", 45200, 'car_g_svr_mem_holidayFestivalSponsored_en_US.png', 'car_g_svr_mem_holidayFestivalSponsored_sm_en_US.png')
+
+clientData[45216] = {
+  name: "Sheriff's Certificate of Commendation",
+  classObj: null
+}
+
+clientData[45216].classObj = new CatalogItemSouvenir(clientData[45216].name, 'An extremely rare and valuable Commendation because Sheriff has never given anyone any Commendations before.', 45200, 'car_g_svr_qst_sheriffCommendationLetter.ajpg', 'car_g_svr_qst_sheriffCommendationLetter_sm.ajpg')
+
+clientData[45217] = {
+  name: "Scaryator Springs Collector's Plate",
+  classObj: null
+}
+
+clientData[45217].classObj = new CatalogItemSouvenir(clientData[45217].name, 'You attended the 2010 Scaryator Springs Festival and SURVIVED!', 45200, 'car_g_svr_mem_halloweenCommemorativePlate_en_US.png', 'car_g_svr_mem_halloweenCommemorativePlate_sm_en_US.png')
+
+clientData[45218] = {
+  name: 'No Stall Keychain',
+  classObj: null
+}
+
+clientData[45218].classObj = new CatalogItemSouvenir(clientData[45218].name, 'Fly into that final lap with No Stall confidence!', 45200, 'car_g_svr_mem_sponsorKeychain_noStall.png', 'car_g_svr_mem_sponsorKeychain_noStall_sm.png')
+
+clientData[45219] = {
+  name: 'Rev-N-Go Keychain',
+  classObj: null
+}
+
+clientData[45219].classObj = new CatalogItemSouvenir(clientData[45219].name, 'The carburetor decongestant of congested champions!', 45200, 'car_g_svr_mem_sponsorKeychain_revNGo.png', 'car_g_svr_mem_sponsorKeychain_revNGo_sm.png')
+
+clientData[45220] = {
+  name: "Mater's Holiday Mix Up",
+  classObj: null
+}
+
+clientData[45220].classObj = new CatalogItemSouvenir(clientData[45220].name, '', 45200, 'car_g_svr_mem_matersHolidayMixup.png', 'car_g_svr_mem_matersHolidayMixup_sm.png')
+
+clientData[45221] = {
+  name: 'Gasprin Keychain',
+  classObj: null
+}
+
+clientData[45221].classObj = new CatalogItemSouvenir(clientData[45221].name, "Provides Hood-ache relief when your achin' hood needs it most!", 45200, 'car_g_svr_mem_sponsorKeychain_gasprin.png', 'car_g_svr_mem_sponsorKeychain_gasprin_sm.png')
+
+clientData[45222] = {
+  name: 'Tank Coat Keychain',
+  classObj: null
+}
+
+clientData[45222].classObj = new CatalogItemSouvenir(clientData[45222].name, 'Soothes upset tanks, with little to no leakage.', 45200, 'car_g_svr_mem_sponsorKeychain_tankCoat.png', 'car_g_svr_mem_sponsorKeychain_tankCoat_sm.png')
+
+clientData[45223] = {
+  name: 'htB Keychain',
+  classObj: null
+}
+
+clientData[45223].classObj = new CatalogItemSouvenir(clientData[45223].name, "You won't dare leave your garage without us.", 45200, 'car_g_svr_mem_sponsorKeychain_htB.png', 'car_g_svr_mem_sponsorKeychain_htB_sm.png')
+
+clientData[45224] = {
+  name: 'Re-Volting Keychain',
+  classObj: null
+}
+
+clientData[45224].classObj = new CatalogItemSouvenir(clientData[45224].name, "They may not be new, but they're RE-VOLTING!", 45200, 'car_g_svr_mem_sponsorKeychain_revolting.png', 'car_g_svr_mem_sponsorKeychain_revolting_sm.png')
+
+clientData[45225] = {
+  name: 'Mack Tiki Souvenir',
+  classObj: null
+}
+
+clientData[45225].classObj = new CatalogItemSouvenir(clientData[45225].name, "Mack's Spring Brake 2011", 45200, 'car_g_svr_mem_mackTiki.png', 'car_g_svr_mem_mackTiki_sm.png')
+
+clientData[45226] = {
+  name: 'Vitoline Keychain',
+  classObj: null
+}
+
+clientData[45226].classObj = new CatalogItemSouvenir(clientData[45226].name, 'Feel full of vim and vigor... with Vitoline!', 45200, 'car_g_svr_mem_sponsorKeychain_vitoline.png', 'car_g_svr_mem_sponsorKeychain_vitoline_sm.png')
+
+clientData[45227] = {
+  name: 'View Zeen Keychain',
+  classObj: null
+}
+
+clientData[45227].classObj = new CatalogItemSouvenir(clientData[45227].name, 'Trouble staying in your lane? SHARPEN YOUR SIGHT WITH VIEW ZEEN.', 45200, 'car_g_svr_mem_sponsorKeychain_viewZeen.png', 'car_g_svr_mem_sponsorKeychain_viewZeen_sm.png')
+
+clientData[45228] = {
+  name: 'Car Show Off 2011',
+  classObj: null
+}
+
+clientData[45228].classObj = new CatalogItemSouvenir(clientData[45228].name, '', 45200, 'car_g_svr_mem_carShowOff2011_en_US.png', 'car_g_svr_mem_carShowOff2011_sm_en_US.png')
+
+clientData[45229] = {
+  name: 'Rust-eze Keychain',
+  classObj: null
+}
+
+clientData[45229].classObj = new CatalogItemSouvenir(clientData[45229].name, 'Aching rear? Rust-Eze medicated bumper ointment, PLEASE!', 45200, 'car_g_svr_mem_sponsorKeychain_rusteze.png', 'car_g_svr_mem_sponsorKeychain_rusteze_sm.png')
+
+clientData[45230] = {
+  name: 'Dinoco Keychain',
+  classObj: null
+}
+
+clientData[45230].classObj = new CatalogItemSouvenir(clientData[45230].name, 'Found in the ground, makes you go, go, go! Go Dinoco!', 45200, 'car_g_svr_mem_sponsorKeychain_dinoco.png', 'car_g_svr_mem_sponsorKeychain_dinoco_sm.png')
+
+clientData[45231] = {
+  name: 'Mood Springs Keychain',
+  classObj: null
+}
+
+clientData[45231].classObj = new CatalogItemSouvenir(clientData[45231].name, 'Get the glide back on your ride. Get MOOD SPRINGS!', 45200, 'car_g_svr_mem_sponsorKeychain_moodSprings.png', 'car_g_svr_mem_sponsorKeychain_moodSprings_sm.png')
+
+clientData[45232] = {
+  name: 'Nitroade Keychain',
+  classObj: null
+}
+
+clientData[45232].classObj = new CatalogItemSouvenir(clientData[45232].name, 'Long drives make you crash? Stay awake with Nitroade.', 45200, 'car_g_svr_mem_sponsorKeychain_nitroAde.png', 'car_g_svr_mem_sponsorKeychain_nitroAde_sm.png')
+
+clientData[45233] = {
+  name: 'N2O Cola Keychain',
+  classObj: null
+}
+
+clientData[45233].classObj = new CatalogItemSouvenir(clientData[45233].name, 'Need a good laugh with your gas? Drink N2O Cola today!', 45200, 'car_g_svr_mem_sponsorKeychain_n2oCola.png', 'car_g_svr_mem_sponsorKeychain_n2oCola_sm.png')
+
+clientData[45234] = {
+  name: 'Octane Gain Keychain',
+  classObj: null
+}
+
+clientData[45234].classObj = new CatalogItemSouvenir(clientData[45234].name, 'A quart a day keeps roadside assistance away!', 45200, 'car_g_svr_mem_sponsorKeychain_octaneGain.png', 'car_g_svr_mem_sponsorKeychain_octaneGain_sm.png')
+
+clientData[45235] = {
+  name: "Mack's Tip 'Em And Dip 'Em Sauce",
+  classObj: null
+}
+
+clientData[45235].classObj = new CatalogItemSouvenir(clientData[45235].name, "Yum! It's tire-licking good!", 45200, 'car_g_svr_mem_MacksTipEmAndDipEmSauce.png', 'car_g_svr_mem_MacksTipEmAndDipEmSauce_sm.png')
 
 module.exports = { clientData, shopData, assetData, idToAsset, assetMappings }

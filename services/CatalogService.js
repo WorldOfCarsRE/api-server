@@ -55,6 +55,8 @@ class CatalogService extends libamf.Service {
 
     const resp = new ArrayCollection()
 
+    const questIds = [25001, 25002, 25003, 25004, 25005, 25006, 25007, 25008, 25009, 25010, 25011, 25013, 25014, 25555, 25667, 26011, 26012, 26013, 26014, 26015]
+
     if (depth === 2) {
       // Puppet case
       let puppetItem = clientData[id]
@@ -73,24 +75,23 @@ class CatalogService extends libamf.Service {
         console.log('MISSING PUPPET ITEM:', id)
         resp.push(new CatalogItem())
       }
-    // TODO: Add list with questIds
-    } else if (depth === -1 && id === 25010) {
-      resp.push(this.getItem(id))
-      // Steps
-      resp.push(this.getItem(22223))
-      resp.push(this.getItem(22224))
-      // Rewards
-      resp.push(this.getItem(22229))
-      resp.push(this.getItem(22230))
-    } else {
+    } else if (depth === -1 && questIds.includes(id)) {
+      const questItem = this.getItem(id)
+
+      resp.push(questItem)
+      resp.push(...this.getItemsByIds([...questItem.stepIds]))
+      resp.push(...this.getItemsByIds([...questItem.rewardIds]))
+    } else if (depth === -1 && id === 44000) {
       resp.push(new CatalogItemRaceSeries(id))
+      // Race levels
       resp.push(
-        new CatalogItemRaceLevel(41001, 42004, 60000, [9980, 9981, 9982, 9983, 9984, 9985, 9986]),
-        new CatalogItemRaceLevel(41002, 42006, 200000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988]),
-        new CatalogItemRaceLevel(41003, 42007, 380000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990]),
-        new CatalogItemRaceLevel(41004, 42008, 640000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990, 9991, 9992]),
-        new CatalogItemRaceLevel(41005, 42009, 1000000, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990, 9991, 9992, 9993, 9994]),
-        new CatalogItemRaceLevel(41006, 42010, 1000001, [9980, 9981, 9982, 9983, 9984, 9985, 9986, 9987, 9988, 9989, 9990, 9991, 9992, 9993, 9994, 9995, 9996, 9997, 9998, 9999, 10000])
+        this.getItem(41000),
+        this.getItem(41001),
+        this.getItem(41002),
+        this.getItem(41003),
+        this.getItem(41004),
+        this.getItem(41005),
+        this.getItem(41006),
       )
       // Pro race tracks
       resp.push(
@@ -116,6 +117,8 @@ class CatalogService extends libamf.Service {
       resp.push(new CatalogItemGear(1))
     } else if (itemType === 'sponsor') {
       return this.getItemsByIds([9995, 9999, 9998, 9997, 9996, 10000, 9994, 9993, 9992, 9991, 9990, 9989, 9988, 9987, 9986, 9985, 9984, 9983, 9982, 9981, 9980])
+    } else if (itemType === 'racelevel') {
+      return this.getItemsByIds([41000, 41001, 41002, 41003, 41004, 41005, 41006])
     }
 
     return resp

@@ -3,6 +3,7 @@
 libamf = global.libamf
 ArrayCollection = global.ArrayCollection
 Player = global.Player
+RuleStateAMF = global.RuleStateAMF
 
 class PlayerService extends libamf.Service {
   constructor () {
@@ -43,16 +44,32 @@ class PlayerService extends libamf.Service {
     return player
   }
 
-  getRuleStates (playerId, carId, ruleIds) {
-    console.log(`getRuleStates: ${playerId} - ${carId} - ${ruleIds}`)
+  async getRuleStates (playerId, carIdOrRuleIds, ruleIds) {
+    console.log(`getRuleStates: ${playerId} - ${carIdOrRuleIds} - ${ruleIds}`)
 
     const resp = new ArrayCollection()
 
-    if (carId === 0) {
+    if (carIdOrRuleIds === 0) {
       // Having a empty array means autoLogin is true (go to tutorial).
       // resp.push(1)
     } else {
-      // TODO: Profile view case
+      const car = await db.retrieveCar(playerId)
+      if (!car) {
+        console.log(`getRuleStates: Couldn't find car with playerId: ${playerId}`)
+        return
+      }
+
+      for (const ruleId of carIdOrRuleIds) {
+        const ruleState = car.ruleStates.find(rs => rs[0] === ruleId)
+
+        if (!ruleState) {
+          console.log(`getRuleStates: Couldn't find rule state: ${ruleId}`)
+          continue
+        }
+
+        const [_, count, accumulator] = ruleState
+        resp.push(new RuleStateAMF(ruleId, playerId, car.racecarId, count, accumulator))
+      }
     }
 
     return resp
@@ -62,10 +79,24 @@ class PlayerService extends libamf.Service {
     return new ArrayCollection()
   }
 
-  getBadgesByPlayerId (playerId) {
+  async getBadgesByPlayerId (playerId) {
     console.log(`getBadgesByPlayerId: ${playerId}`)
 
-    return new ArrayCollection()
+    const resp = new ArrayCollection()
+
+    const car = await db.retrieveCar(playerId)
+    if (!car) {
+      console.log(`getBadgesByPlayerId: Couldn't find car with playerId: ${playerId}`)
+      return
+    }
+
+    const playerBadges = car.badges
+
+    for (const badgeId of playerBadges) {
+      resp.push(new Badge(badgeId))
+    }
+
+    return resp
   }
 }
 

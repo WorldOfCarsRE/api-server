@@ -3,12 +3,12 @@
 CatalogItem = global.CatalogItem
 
 class CatalogItemSponsor extends CatalogItem {
-  constructor (name, sponsorLevel, chooserBackground, genericBooth, logoImage, mainBooth = '', costumeId = 0, profileBackgroundId = 0) {
+  constructor (name, sponsorLevel, chooserBackground, genericBooth, logoImage, costumeId, profileBackgroundId, mainBooth = '', soundAlias = '') {
     super()
 
     this.name = name
 
-    this.soundAlias = ''
+    this.soundAlias = soundAlias
     this.sponsorLevel = sponsorLevel
     this.sponsorChooserBackgroundImage = chooserBackground
     this.thumbnailImage = ''
@@ -19,7 +19,7 @@ class CatalogItemSponsor extends CatalogItem {
     this.raceLevelId = 0
     this.logoImage = logoImage
     this.profileBackgroundId = profileBackgroundId
-    this.soundGroup = ''
+    this.soundGroup = 'VoiceOver'
     this.mainBooth = mainBooth
   }
 }
