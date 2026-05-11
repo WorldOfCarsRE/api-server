@@ -166,8 +166,23 @@ class Database {
       return false
     }
 
+    if (process.env.LOCALHOST_INSTANCE !== 'true') {
+      // Check the Sunrise Games database as well.
+      return await this.checkUsernameAvailability(username)
+    }
+
     return true
   }
+
+  async checkUsernameAvailability(username) {
+    const response = await axios.get('https://toontastic.sunrise.games/api/checkUsernameAvailability', {
+      params: {
+        username: username,
+        siteCode: 'US.EN.CAR'
+        }
+    });
+    return String(response.data).trim() === '1';
+}
 
   async doesCarExist (identifier) {
     const car = await Cars.findOne({ $or: [{ _id: identifier }, { accountId: identifier }, { racecarId: identifier }] })
@@ -301,7 +316,8 @@ class Database {
 
       if (errorCode === 0) {
         // Create a brand new account
-        account = await this.createAccount(username, password)
+        // Email is unused in this case as we already have a Sunrise Games account.
+        account = await this.createAccount(username, password, 'default@sunrise.games', true)
       } else {
         return false
       }
@@ -367,17 +383,45 @@ class Database {
     return saved.carData
   }
 
-  async createAccount (username, password) {
+  async createAccount (username, password, email, firstName, lastName, bdayYear, bypassMainRegister) {
     if (!await this.isUsernameAvailable(username)) {
       // Sanity check
       return false
     }
 
+    if (!bypassMainRegister && process.env.LOCALHOST_INSTANCE !== 'true') {
+      // Put this account in the main Sunrise Games database as well.
+      const data = new URLSearchParams()
+
+      data.append('username', username)
+      data.append('email', email)
+      data.append('password', password)
+      data.append('firstName', firstName)
+      data.append('firstName', firstName)
+      data.append('lastName', lastName)
+      data.append('bdayYear', bdayYear)
+      data.append('secretKey', process.env.API_TOKEN)
+
+      const response = await axios.post('https://sunrise.games/api/internal/Register.php', data, {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'User-Agent': userAgent
+        }
+      })
+
+      if (String(response.data).trim() === '0') {
+        // Failed to register.
+        return false
+      }
+    }
+
     // Store the account object.
+    const hashedPassword = bcrypt.hashSync(password, saltRounds)
+
     const account = new Account({
       _id: await this.getNextDoId(),
       username,
-      password: bcrypt.hashSync(password, saltRounds),
+      password: hashedPassword,
       puppet: 0
     })
 

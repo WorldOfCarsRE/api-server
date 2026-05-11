@@ -11,30 +11,30 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.39.1",
-    "axios": "^1.13.2",
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "^10.0.1",
+    "axios": "^1.16.0",
     "bcrypt": "^6.0.0",
-    "connect-mongo": "^5.1.0",
-    "cors": "^2.8.5",
+    "connect-mongo": "^6.0.0",
+    "cors": "^2.8.6",
     "crypto-js": "^4.2.0",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "express-session": "^1.18.2",
-    "fast-xml-parser": "^5.3.2",
-    "globals": "^16.5.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "fast-xml-parser": "^5.7.3",
+    "globals": "^17.6.0",
     "libamf": "^1.4.2",
-    "mongoose": "^9.0.0",
-    "pm2": "^6.0.13",
+    "mongoose": "^9.6.2",
+    "pm2": "^7.0.1",
     "readline-sync": "^1.4.10",
-    "xmlbuilder2": "^4.0.0"
+    "xmlbuilder2": "^4.0.3"
   },
   "devDependencies": {
-    "eslint": "^9.39.1",
+    "eslint": "^10.3.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-n": "^17.23.1",
-    "eslint-plugin-promise": "^7.2.1"
+    "eslint-plugin-n": "^18.0.1",
+    "eslint-plugin-promise": "^7.3.0"
   },
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.12.0+sha512.f45ab632439a67f8bc759bf32ead036a1f413287b9042726b7cc4818b7b49e14e9423ba49b18f9e06ea4941c1ad062385b1d8760a8d5091a1a31e5f6219afca8"
 }

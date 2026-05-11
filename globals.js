@@ -250,7 +250,7 @@ server.app.set('trust proxy', 1)
 
 // Setup sessions and include our web routes.
 const session = require('express-session')
-const MongoStore = require('connect-mongo')
+const MongoStore = require('connect-mongo').default
 
 /* global sess: writeable */
 

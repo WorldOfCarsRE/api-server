@@ -140,14 +140,7 @@ server.app.post('/dxd/flashAPI/login', async (req, res) => {
 
 server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
   const username = req.body.username
-  let status
-
-  if (process.env.LOCALHOST_INSTANCE === 'true') {
-    status = await db.isUsernameAvailable(username)
-  } else {
-    // TODO: Integrate registration into Sunrise database and re-enable in-game registrations for production
-    status = false
-  }
+  const status = await db.isUsernameAvailable(username)
 
   const root = create().ele('response')
   root.ele('success').txt(status)
@@ -176,7 +169,15 @@ server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
 })
 
 server.app.post('/dxd/flashAPI/createAccount', async (req, res) => {
-  const status = await db.createAccount(req.body.username.toLowerCase(), req.body.password)
+  const status = await db.createAccount(
+    req.body.username.toLowerCase(),
+    req.body.password,
+    req.body.email,
+    req.body.firstName,
+    req.body.lastName,
+    req.body.bdayYear,
+    false
+  )
   const accountId = await db.getAccountIdFromUser(req.body.username)
 
   const root = create().ele('response')
