@@ -317,7 +317,7 @@ class Database {
       if (errorCode === 0) {
         // Create a brand new account
         // Email is unused in this case as we already have a Sunrise Games account.
-        account = await this.createAccount(username, password, 'default@sunrise.games', true)
+        account = await this.createAccount(username, password, 'default@sunrise.games', "Lightning", "McQueen", "1983", true)
       } else {
         return false
       }
@@ -416,12 +416,10 @@ class Database {
     }
 
     // Store the account object.
-    const hashedPassword = bcrypt.hashSync(password, saltRounds)
-
     const account = new Account({
       _id: await this.getNextDoId(),
       username,
-      password: hashedPassword,
+      password: bcrypt.hashSync(password, saltRounds),
       puppet: 0
     })
 
