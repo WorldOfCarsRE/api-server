@@ -104,7 +104,7 @@ clientData[20210] = {
 
 clientData[20211] = {
   name: 'Medallion Bronze Paint',
-  classObj: new CatalogItemPaint(11370089, 20211, 'Medallion Bronze Paint', '', 'car_g_ico_clr_blinginBronze.swf')
+  classObj: new CatalogItemPaint(10313506, 20211, 'Medallion Bronze Paint', '', 'car_g_ico_clr_blinginBronze.swf')
 }
 
 clientData[15001] = {
@@ -662,7 +662,7 @@ clientData[20209] = {
 
 clientData[20201] = {
   name: 'DJ Blue',
-  classObj: new CatalogItemPaint(167913)
+  classObj: new CatalogItemPaint(167913, 20201, 'DJ Blue', '', 'car_g_ico_clr_djBlue.swf')
 }
 
 clientData[20205] = {
