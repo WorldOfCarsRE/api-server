@@ -182,7 +182,7 @@ class Database {
         }
     });
     return String(response.data).trim() === '1';
-}
+  }
 
   async doesCarExist (identifier) {
     const car = await Cars.findOne({ $or: [{ _id: identifier }, { accountId: identifier }, { racecarId: identifier }] })
@@ -316,7 +316,7 @@ class Database {
 
       if (errorCode === 0) {
         // Create a brand new account
-        // Email is unused in this case as we already have a Sunrise Games account.
+        // Email, first name, last name and year of birth is unused here as we already have a Sunrise Games account.
         account = await this.createAccount(username, password, 'default@sunrise.games', "Lightning", "McQueen", "1983", true)
       } else {
         return false

@@ -12,7 +12,8 @@ const Cars = new mongoose.model('Cars', {
   membershipStart: { type: Date }, // Membership start date
   yardPermissionMask: { type: Number }, // Yard permission mask
   ruleStates: { type: Array },
-  badges: { type: Array }
+  badges: { type: Array },
+  paints: { type: Array },
 })
 
 module.exports = Cars

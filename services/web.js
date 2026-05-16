@@ -471,8 +471,15 @@ server.app.post('/carsds/api/internal/updateObject/:identifier', async (req, res
     if (!updated) {
       const car = await db.retrieveCar(req.params.identifier)
       if (car) {
-        const carData = car.toObject().carData
-        Object.assign(carData, data)
+        const rootData = car.toObject()
+        const carData = rootData.carData
+        for (const [key, value] of Object.entries(data)) {
+          if (key === 'ruleStates' || key === 'badges' || key === 'paints') {
+            car[key] = value
+          } else {
+            carData[key] = value
+        }
+      }
         car.carData = carData
         await car.save()
         updated = true

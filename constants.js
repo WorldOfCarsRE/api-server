@@ -102,6 +102,11 @@ clientData[20210] = {
   classObj: new CatalogItemPaint(15804939)
 }
 
+clientData[20211] = {
+  name: 'Medallion Bronze Paint',
+  classObj: new CatalogItemPaint(11370089, 20211, 'Medallion Bronze Paint', '', 'car_g_ico_clr_blinginBronze.swf')
+}
+
 clientData[15001] = {
   name: 'Downtown Radiator Springs',
   classObj: new CatalogItemWorldZone('Downtown Radiator Springs', 100, 'car_f_gui_ttl_radiatorSprings_en_US.swf', 'car_w_env_rsp_RadiatorSprings', 'car_g_map_env_radiatorSprings.swf', 'scripts/isoworld/radiator_springs.lua', 'Music', 'zoneRadiatorSprings02', 'dp_npt_315')
@@ -1337,7 +1342,7 @@ clientData[25501] = {
   classObj: null
 }
 
-clientData[25501].classObj = new CatalogItemQuestReward(clientData[25501].name, 0, 1, 'car_g_ico_clr_blinginBronze.swf', 0)
+clientData[25501].classObj = new CatalogItemQuestReward(clientData[25501].name, 0, 1, 'car_g_ico_clr_blinginBronze.swf', 20211)
 
 clientData[25011] = {
   name: 'Holiday Quest',
