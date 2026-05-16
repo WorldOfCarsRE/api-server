@@ -1229,7 +1229,7 @@ clientData[25002] = {
   classObj: null
 }
 
-clientData[25002].classObj = new CatalogItemQuest(clientData[25002].name, '', '', '', [], [], 2003, 2004, 2005)
+clientData[25002].classObj = new CatalogItemQuest(clientData[25002].name, '', '', '', [25015, 25103], [25016, 25017], 2003, 2004, 2005)
 
 clientData[25003] = {
   name: "Lookin' for Junk",
@@ -1364,6 +1364,27 @@ clientData[25014] = {
 }
 
 clientData[25014].classObj = new CatalogItemQuest(clientData[25014].name, '', 'car_g_qst_adv_LASpeedway.jpg', 'car_g_ico_adv_mcQueen.ajpg', [], [], 2036, 2037, 2038, true)
+
+clientData[25015] = {
+  name: 'Go and compete in a local Carburetor County race.',
+  classObj: null
+}
+
+clientData[25015].classObj = new CatalogItemQuestStep(clientData[25015].name, 2039)
+
+clientData[25016] = {
+  name: 'Quest 25002 Coin Reward',
+  classObj: null
+}
+
+clientData[25016].classObj = new CatalogItemQuestReward(clientData[25016].name, 3, 10)
+
+clientData[25017] = {
+  name: 'Quest 25002 Item Reward',
+  classObj: null
+}
+
+clientData[25017].classObj = new CatalogItemQuestReward(clientData[25017].name, 0, 201)
 
 // Doc's Clinic game
 clientData[61004] = {
