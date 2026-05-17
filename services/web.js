@@ -140,7 +140,7 @@ server.app.post('/dxd/flashAPI/login', async (req, res) => {
 
 server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
   const username = req.body.username
-  const status = await db.isUsernameAvailable(username)
+  const status = await db.isUsernameAvailable(username, true)
 
   const root = create().ele('response')
   root.ele('success').txt(status)
