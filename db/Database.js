@@ -159,14 +159,14 @@ class Database {
     res.send(xml)
   }
 
-  async isUsernameAvailable (username) {
+  async isUsernameAvailable (username, fromRegister) {
     const account = await Account.exists({ username })
 
     if (account) {
       return false
     }
 
-    if (process.env.LOCALHOST_INSTANCE !== 'true') {
+    if (fromRegister && process.env.LOCALHOST_INSTANCE !== 'true') {
       // Check the Sunrise Games database as well.
       return await this.checkUsernameAvailability(username)
     }
@@ -317,7 +317,7 @@ class Database {
       if (errorCode === 0) {
         // Create a brand new account
         // Email, first name, last name and year of birth is unused here as we already have a Sunrise Games account.
-        account = await this.createAccount(username, password, 'default@sunrise.games', "Lightning", "McQueen", "1983", true)
+        account = await this.createAccount(username, password, 'default@sunrise.games', "Lightning", "McQueen", "1983", true, false)
       } else {
         return false
       }
@@ -383,8 +383,8 @@ class Database {
     return saved.carData
   }
 
-  async createAccount (username, password, email, firstName, lastName, bdayYear, bypassMainRegister) {
-    if (!await this.isUsernameAvailable(username)) {
+  async createAccount (username, password, email, firstName, lastName, bdayYear, bypassMainRegister, fromRegister) {
+    if (!await this.isUsernameAvailable(username, fromRegister)) {
       // Sanity check
       return false
     }

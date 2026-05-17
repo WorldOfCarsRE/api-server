@@ -176,7 +176,8 @@ server.app.post('/dxd/flashAPI/createAccount', async (req, res) => {
     req.body.firstName,
     req.body.lastName,
     req.body.bdayYear,
-    false
+    false,
+    true
   )
   const accountId = await db.getAccountIdFromUser(req.body.username)
 
