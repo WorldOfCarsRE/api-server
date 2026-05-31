@@ -99,7 +99,7 @@ clientData[5503] = {
 
 clientData[20210] = {
   name: 'Red Lightening',
-  classObj: new CatalogItemPaint(15804939)
+  classObj: new CatalogItemPaint(15804939, 20210, 'Red Lightening', '', 'car_g_ico_clr_redLightning.swf')
 }
 
 clientData[20211] = {
@@ -557,12 +557,12 @@ clientData[51146] = {
 
 clientData[20206] = {
   name: 'Gray Vee',
-  classObj: new CatalogItemPaint(10526621)
+  classObj: new CatalogItemPaint(10526621, 20206, 'Gray Vee', '', 'car_g_ico_clr_grayVee.swf')
 }
 
 clientData[20207] = {
   name: 'Octagonal Orange',
-  classObj: new CatalogItemPaint(15033856)
+  classObj: new CatalogItemPaint(15033856, 20207, 'Octagonal Orange', '', 'car_g_ico_clr_octagonalOrange.swf')
 }
 
 clientData[31011] = {
@@ -657,7 +657,7 @@ clientData[32027] = {
 
 clientData[20209] = {
   name: 'Powerhouse Purple',
-  classObj: new CatalogItemPaint(10571765)
+  classObj: new CatalogItemPaint(10571765, 20209, 'Powerhouse Purple', '', 'car_g_ico_clr_powerhousePurple.swf')
 }
 
 clientData[20201] = {
@@ -667,7 +667,7 @@ clientData[20201] = {
 
 clientData[20205] = {
   name: 'Chick Hicks Green',
-  classObj: new CatalogItemPaint(7322195)
+  classObj: new CatalogItemPaint(7322195, 20205, 'Chick Hicks Green', '', 'car_g_ico_clr_chickHicksGreen.swf')
 }
 
 clientData[33275] = {
