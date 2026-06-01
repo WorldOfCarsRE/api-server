@@ -1146,7 +1146,10 @@ clientData[15001].classObj.dropPoints['22002'] = 'dp_lightning_225'
 
 // TODO: Figure out proper animation for these ids?
 clientData[60010] = clientData[31011]
+clientData[60010].itemId = 60010
+
 clientData[60020] = clientData[31011]
+clientData[60020].itemId = 60020
 
 clientData[22004] = {
   name: "Ramone's House of Body Art",
@@ -1159,6 +1162,7 @@ clientData[15001].classObj.dropPoints['22004'] = 'dp_ramone_180'
 
 // TODO: Figure out proper animation for this id?
 clientData[60026] = clientData[31011]
+clientData[60026].itemId = 60026
 
 clientData[22005] = {
   name: "Sally's Cozy Cone Gift Shop",
