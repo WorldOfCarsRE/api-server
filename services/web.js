@@ -139,7 +139,7 @@ server.app.post('/dxd/flashAPI/login', async (req, res) => {
 })
 
 server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
-  const username = req.body.username
+  const username = req.body.username.toLowerCase()
   const status = await db.isUsernameAvailable(username, true)
 
   const root = create().ele('response')
@@ -169,8 +169,9 @@ server.app.post('/dxd/flashAPI/checkUsernameAvailability', async (req, res) => {
 })
 
 server.app.post('/dxd/flashAPI/createAccount', async (req, res) => {
+  const username = req.body.username.toLowerCase()
   const status = await db.createAccount(
-    req.body.username.toLowerCase(),
+    username,
     req.body.password,
     req.body.email,
     req.body.firstName,
@@ -179,7 +180,7 @@ server.app.post('/dxd/flashAPI/createAccount', async (req, res) => {
     false,
     true
   )
-  const accountId = await db.getAccountIdFromUser(req.body.username)
+  const accountId = await db.getAccountIdFromUser(username)
 
   const root = create().ele('response')
   root.ele('success').txt(status)
