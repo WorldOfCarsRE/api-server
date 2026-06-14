@@ -180,7 +180,7 @@ server.app.post('/dxd/flashAPI/createAccount', async (req, res) => {
     false,
     true
   )
-  const accountId = await db.getAccountIdFromUser(username)
+  const accountId = status ? await db.getAccountIdFromUser(username) : -1
 
   const root = create().ele('response')
   root.ele('success').txt(!!status)
